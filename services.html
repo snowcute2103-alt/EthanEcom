@@ -1,0 +1,472 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dịch vụ | Ethan Ecom — Giải pháp E-commerce & Design toàn diện</title>
+<meta name="description" content="9 dịch vụ chuyên sâu của Ethan Ecom: Web Development, UI/UX Design, E-commerce Solutions, Digital Marketing và hơn thế nữa.">
+<link rel="stylesheet" href="assets/css/shared.css">
+<style>
+/* ── PAGE-SPECIFIC STYLES ── */
+
+/* ── IMG PLACEHOLDERS ── */
+.img-ph{border-radius:12px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;min-height:40px}
+.img-ph::before{content:attr(data-label);position:absolute;z-index:1;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;color:rgba(255,255,255,.85);text-align:center;padding:0 24px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.ph-web{background:linear-gradient(135deg,#1D3251 0%,#2a4a76 100%);height:260px}
+.ph-uiux{background:linear-gradient(135deg,#ec4899 0%,#f43f5e 100%);height:260px}
+.ph-graphic{background:linear-gradient(135deg,#10b981 0%,#34d399 100%);height:260px}
+.ph-motion{background:linear-gradient(135deg,#8b5cf6 0%,#a78bfa 100%);height:260px}
+.ph-photo{background:linear-gradient(135deg,#f59e0b 0%,#fbbf24 100%);height:260px}
+.ph-video{background:linear-gradient(135deg,#dc2626 0%,#ef4444 100%);height:260px}
+.ph-ecom{background:linear-gradient(135deg,#0ea5e9 0%,#38bdf8 100%);height:260px}
+.ph-marketing{background:linear-gradient(135deg,#059669 0%,#10b981 100%);height:260px}
+.ph-tech{background:linear-gradient(135deg,#0d1e35 0%,#1D3251 100%);height:260px}
+
+/* ── SERVICE CARDS ── */
+.srv-detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.srv-detail-card{border-radius:16px;overflow:hidden;background:#fff;border:1.5px solid #eaeff5;transition:all .35s;cursor:pointer}
+.srv-detail-card:hover{transform:translateY(-8px);box-shadow:0 20px 56px rgba(27,79,216,.12);border-color:transparent}
+.srv-thumb{overflow:hidden;position:relative}
+.srv-thumb .img-ph{border-radius:0;transition:filter .4s}
+.srv-detail-card:hover .srv-thumb .img-ph{filter:brightness(.85) saturate(1.1)}
+.srv-num{position:absolute;top:16px;left:16px;width:36px;height:36px;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;color:rgba(255,255,255,.9)}
+.srv-body{padding:24px}
+.srv-tag{display:inline-block;font-size:16px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:10px}
+.srv-body h3{font-family:'Be Vietnam Pro',sans-serif;font-size:18px;font-weight:700;margin-bottom:10px}
+.srv-body p{font-size:16px;color:var(--text);line-height:1.7;margin-bottom:18px}
+.srv-features{display:flex;flex-direction:column;gap:7px}
+.srv-feat{display:flex;align-items:center;gap:8px;font-size:16px;color:var(--text)}
+.srv-feat::before{content:'✓';color:var(--blue);font-weight:700;flex-shrink:0}
+
+/* ── PROCESS ── */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.process-grid::before{content:'';position:absolute;top:60px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,var(--blue),var(--yellow));z-index:0}
+.proc-step{text-align:center;padding:24px 20px;position:relative;z-index:1}
+.proc-num{width:72px;height:72px;border-radius:50%;background:var(--blue);color:#fff;font-family:'Be Vietnam Pro',sans-serif;font-size:22px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 24px rgba(29,50,81,.3)}
+.proc-step h4{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px}
+.proc-step p{font-size:16px;color:var(--text);line-height:1.6}
+
+/* ── PLATFORMS ── */
+.platforms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.plat-card{border-radius:16px;padding:36px;text-align:center;border:1.5px solid #eaeff5;background:#fff;transition:all .35s}
+.plat-card:hover{border-color:var(--blue);box-shadow:0 12px 40px rgba(27,79,216,.1)}
+.plat-name{font-family:'Be Vietnam Pro',sans-serif;font-size:22px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.plat-desc{font-size:16px;color:var(--text);line-height:1.65}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .srv-detail-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid{grid-template-columns:repeat(2,1fr);gap:24px}
+  .process-grid::before{display:none}
+  .platforms-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .srv-detail-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr}
+  .platforms-grid{grid-template-columns:1fr}
+}
+
+/* ══════════════════════════════════════════
+   SERVICES PAGE — EXTRA FX
+══════════════════════════════════════════ */
+
+/* Service card — shimmer sweep on hover (inherits from shared but add glow) */
+@keyframes srv-border-glow{0%,100%{box-shadow:0 0 0 0 rgba(27,79,216,0)}50%{box-shadow:0 0 20px 2px rgba(27,79,216,.12)}}
+.srv-detail-card:hover{animation:srv-border-glow 1.2s ease infinite}
+
+/* Service tag — pop in */
+@keyframes srv-tag-pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+.srv-detail-card .srv-tag{animation:srv-tag-pop .4s cubic-bezier(.34,1.56,.64,1) backwards}
+.srv-detail-card.reveal.active .srv-tag{animation-delay:.25s}
+
+/* Feature list item — slide left stagger */
+@keyframes feat-slide{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:translateX(0)}}
+.srv-detail-card:hover .srv-feat{animation:feat-slide .3s ease backwards}
+.srv-detail-card:hover .srv-feat:nth-child(1){animation-delay:.04s}
+.srv-detail-card:hover .srv-feat:nth-child(2){animation-delay:.10s}
+.srv-detail-card:hover .srv-feat:nth-child(3){animation-delay:.16s}
+.srv-detail-card:hover .srv-feat:nth-child(4){animation-delay:.22s}
+
+/* Process step connector — animated gradient */
+@keyframes proc-gradient{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+.process-grid::before{
+  background:linear-gradient(90deg,var(--blue),#06b6d4,var(--yellow),var(--blue));
+  background-size:300% 100%;
+  animation:proc-gradient 4s linear infinite;
+}
+
+/* Platform cards — neon border glow on hover */
+.plat-card:hover{
+  box-shadow:0 0 0 2px rgba(0,212,255,.3),0 16px 48px rgba(27,79,216,.12);
+  border-color:rgba(0,212,255,.35);
+}
+.plat-name{
+  background:linear-gradient(135deg,var(--navy),#2a4a76);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  transition:filter .3s;
+}
+.plat-card:hover .plat-name{filter:drop-shadow(0 0 8px rgba(27,79,216,.4))}
+
+/* Proc num — glowing ring on hover */
+@keyframes proc-ring-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.proc-num{position:relative;overflow:visible}
+.proc-num::after{
+  content:'';position:absolute;inset:-4px;border-radius:50%;
+  border:2px dashed rgba(255,255,255,.3);
+  animation:proc-ring-spin 6s linear infinite;
+  pointer-events:none;
+}
+.proc-step:hover .proc-num::after{border-color:rgba(255,255,255,.65);animation-duration:1.5s}
+</style>
+</head>
+<body>
+
+<!-- HEADER (injected by shared.js) -->
+<div id="site-header"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-dots"></div>
+  <div class="page-hero-orb page-hero-orb-1"></div>
+  <div class="page-hero-orb page-hero-orb-2"></div>
+  <div class="container page-hero-inner">
+    <nav class="breadcrumb">
+      <a href="index.html">Trang chủ</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Dịch vụ</span>
+    </nav>
+    <div class="page-hero-badge">★ 9 dịch vụ chuyên sâu — Một mái nhà Ethan Ecom</div>
+    <h1 class="page-hero-title">Dịch vụ <em>toàn diện</em><br>cho thương hiệu Việt</h1>
+    <p class="page-hero-sub">Từ thiết kế đến công nghệ, từ thương mại điện tử đến marketing số — chúng tôi đồng hành cùng bạn trên mọi bước đường chinh phục thị trường quốc tế.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main>
+
+  <!-- ALL SERVICES -->
+  <section class="section">
+    <div class="container">
+      <div class="sh c reveal">
+        <div class="sl">Năng lực cốt lõi</div>
+        <h2 class="st">9 dịch vụ chuyên sâu</h2>
+        <div class="divider c"></div>
+        <p class="ss">Mỗi dịch vụ được xây dựng từ kinh nghiệm thực chiến, tối ưu hoá cho thị trường quốc tế.</p>
+      </div>
+      <div class="srv-detail-grid">
+
+        <!-- 1. Web Development -->
+        <div class="srv-detail-card reveal d1" id="web-dev">
+          <div class="srv-thumb">
+            <div class="img-ph ph-web" data-label="🌐  Web Development"><img src="assets/images/services/web-development.jpg" alt="Web Development" onerror="this.style.visibility='hidden'"></div>
+            <div class="srv-num">01</div>
+          </div>
+          <div class="srv-body">
+            <span class="srv-tag tag tag--blue">Technology</span>
+            <h3>Web Development</h3>
+            <p>Xây dựng hạ tầng thương mại điện tử chuyên nghiệp, tốc độ tối ưu và trải nghiệm người dùng quốc tế hàng đầu.</p>
+            <div class="srv-features">
+              <div class="srv-feat">Website thương mại điện tử tốc độ cao</div>
+              <div class="srv-feat">Landing page tối ưu chuyển đổi</div>
+              <div class="srv-feat">Tích hợp Amazon, Etsy, TikTok Shop</div>
+              <div class="srv-feat">Responsive & Mobile-first</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. UI/UX Design -->
+        <div class="srv-detail-card reveal d2" id="uiux">
+          <div class="srv-thumb">
+            <div class="img-ph ph-uiux" data-label="🎨  UI/UX Design"><img src="assets/images/services/uiux-design.jpg" alt="UI/UX Design" onerror="this.style.visibility='hidden'"></div>
+            <div class="srv-num">02</div>
+          </div>
+          <div class="srv-body">
+            <span class="srv-tag tag tag--pink">Design</span>
+            <h3>UI/UX Design</h3>
+            <p>Thiết kế giao diện theo hành vi khách hàng quốc tế, tối đa hoá tỷ lệ chuyển đổi và trải nghiệm mua sắm.</p>
+            <div class="srv-features">
+              <div class="srv-feat">Research & User Journey Mapping</div>
+              <div class="srv-feat">Wireframe & Prototype</div>
+              <div class="srv-feat">Design System & Component Library</div>
+              <div class="srv-feat">A/B Testing & Conversion Optimization</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Graphic Design -->
+        <div class="srv-detail-card reveal d3" id="graphic">
+          <div class="srv-thumb">
+            <div class="img-ph ph-graphic" data-label="✏️  Graphic Design"><img src="assets/images/services/graphic-design.jpg" alt="Graphic Design" onerror="this.style.visibility='hidden'"></div>
+            <div class="srv-num">03</div>
+          </div>
+          <div class="srv-body">
+            <span class="srv-tag tag tag--green">Design</span>
+            <h3>Graphic Design</h3>
+            <p>Nhận diện thương hiệu và hình ảnh sản phẩm chuẩn thị hiếu phương Tây, nổi bật trên sàn quốc tế.</p>
+            <div class="srv-features">
+              <div class="srv-feat">Brand Identity & Logo Design</div>
+              <div class="srv-feat">Amazon/Etsy Product Images</div>
+              <div class="srv-feat">Packaging & Label Design</div>
+              <div class="srv-feat">Social Media Graphics</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Motion Graphics -->
+        <div class="srv-detail-card reveal d1" id="motion">
+          <div class="srv-thumb">
+            <div class="img-ph ph-motion" data-label="🎬  Motion Graphics"><img src="assets/images/services/motion-graphics.jpg" alt="Motion Graphics" onerror="this.style.visibility='hidden'"></div>
+            <div class="srv-num">04</div>
+          </div>
+          <div class="srv-body">
+            <span class="srv-tag tag tag--purple">Media</span>
+            <h3>Motion Graphics</h3>
+            <p>Nội dung hình ảnh động ấn tượng cho chiến dịch quảng cáo số, thu hút ánh nhìn và tăng tương tác.</p>
+            <div class="srv-features">
+              <div class="srv-feat">Animated Logo & Brand Elements</div>
+              <div class="srv-feat">Product Demo Animations</div>
+              <div class="srv-feat">Social Media Animations</div>
+              <div class="srv-feat">Ad Creative Animations</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Photography -->
+        <div class="srv-detail-card reveal d2">
+          <div class="srv-thumb">
+            <div class="img-ph ph-photo" data-label="📸  Photography"><img src="assets/images/services/photography.jpg" alt="Photography" onerror="this.style.visibility='hidden'"></div>
+            <div class="srv-num">05</div>
+          </div>
+          <div class="srv-body">
+            <span class="srv-tag tag tag--yellow">Media</span>
+            <h3>Photography</h3>
+            <p>Chụp ảnh sản phẩm chuyên nghiệp, thể hiện chất lượng chi tiết và giá trị hàng hoá đến từng pixel.</p>
+            <div class="srv-features">
+              <div class="srv-feat">Product Photography (Studio & Lifestyle)</div>
+              <div class="srv-feat">Amazon Main & Infographic Images</div>
+              <div class="srv-feat">Etsy Listing Photos</div>
+              <div class="srv-feat">Post-processing & Retouching</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Video Production -->
+        <div class="srv-detail-card reveal d3">
+          <div class="srv-thumb">
+            <div class="img-ph ph-video" data-label="🎥  Video Production"><img src="assets/images/services/video-production.jpg" alt="Video Production" onerror="this.style.visibility='hidden'"></div>
+            <div class="srv-num">06</div>
+          </div>
+          <div class="srv-body">
+            <span class="srv-tag tag tag--red">Media</span>
+            <h3>Video Production</h3>
+            <p>Video ngắn TikTok/Reels tối ưu hoá cho viral engagement, kể câu chuyện thương hiệu cuốn hút.</p>
+            <div class="srv-features">
+              <div class="srv-feat">TikTok Shop Product Videos</div>
+              <div class="srv-feat">Instagram Reels & Stories</div>
+              <div class="srv-feat">Amazon A+ Content Videos</div>
+              <div class="srv-feat">Brand Story & Company Videos</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. E-com Solutions -->
+        <div class="srv-detail-card reveal d1" id="ecom">
+          <div class="srv-thumb">
+            <div class="img-ph ph-ecom" data-label="🛒  E-com Solutions"><img src="assets/images/services/ecom-solutions.jpg" alt="E-com Solutions" onerror="this.style.visibility='hidden'"></div>
+            <div class="srv-num">07</div>
+          </div>
+          <div class="srv-body">
+            <span class="srv-tag tag tag--blue">E-commerce</span>
+            <h3>E-com Solutions</h3>
+            <p>Giải pháp vận hành toàn diện trên Amazon, Etsy và TikTok Shop — từ setup đến tối ưu doanh số.</p>
+            <div class="srv-features">
+              <div class="srv-feat">Amazon Store Setup & SEO</div>
+              <div class="srv-feat">Etsy Shop Optimization</div>
+              <div class="srv-feat">TikTok Shop US Launch</div>
+              <div class="srv-feat">Inventory & Order Management</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Digital Marketing -->
+        <div class="srv-detail-card reveal d2" id="marketing">
+          <div class="srv-thumb">
+            <div class="img-ph ph-marketing" data-label="📊  Digital Marketing"><img src="assets/images/services/digital-marketing.jpg" alt="Digital Marketing" onerror="this.style.visibility='hidden'"></div>
+            <div class="srv-num">08</div>
+          </div>
+          <div class="srv-body">
+            <span class="srv-tag tag tag--green">Marketing</span>
+            <h3>Digital Marketing</h3>
+            <p>Chiến dịch quảng cáo đa kênh, tối ưu ngân sách thông minh và tăng trưởng doanh thu bền vững.</p>
+            <div class="srv-features">
+              <div class="srv-feat">Amazon PPC & Sponsored Ads</div>
+              <div class="srv-feat">TikTok Ads & Spark Ads</div>
+              <div class="srv-feat">Social Media Marketing</div>
+              <div class="srv-feat">Analytics & Performance Reporting</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Tech Optimization -->
+        <div class="srv-detail-card reveal d3">
+          <div class="srv-thumb">
+            <div class="img-ph ph-tech" data-label="⚙️  Tech Optimization"><img src="assets/images/services/tech-optimization.jpg" alt="Tech Optimization" onerror="this.style.visibility='hidden'"></div>
+            <div class="srv-num">09</div>
+          </div>
+          <div class="srv-body">
+            <span class="srv-tag tag tag--blue">Technology</span>
+            <h3>Tech Optimization</h3>
+            <p>Cập nhật công nghệ liên tục, nâng cấp hệ thống và tối ưu hiệu suất để luôn dẫn đầu thị trường.</p>
+            <div class="srv-features">
+              <div class="srv-feat">Website Performance Audit</div>
+              <div class="srv-feat">Core Web Vitals Optimization</div>
+              <div class="srv-feat">E-commerce Platform Migration</div>
+              <div class="srv-feat">API Integration & Automation</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="sh c reveal">
+        <div class="sl">Quy trình làm việc</div>
+        <h2 class="st">Từ ý tưởng đến kết quả</h2>
+        <div class="divider c"></div>
+        <p class="ss">Quy trình rõ ràng, minh bạch — bạn luôn biết dự án đang ở đâu.</p>
+      </div>
+      <div class="process-grid">
+        <div class="proc-step reveal d1">
+          <div class="proc-num">1</div>
+          <h4>Tư vấn & Phân tích</h4>
+          <p>Lắng nghe nhu cầu, phân tích thị trường và xác định mục tiêu rõ ràng cho dự án.</p>
+        </div>
+        <div class="proc-step reveal d2">
+          <div class="proc-num">2</div>
+          <h4>Lên kế hoạch & Báo giá</h4>
+          <p>Xây dựng kế hoạch chi tiết, timeline và báo giá minh bạch trước khi bắt đầu.</p>
+        </div>
+        <div class="proc-step reveal d3">
+          <div class="proc-num">3</div>
+          <h4>Thực hiện & Review</h4>
+          <p>Triển khai với cập nhật tiến độ thường xuyên, review và chỉnh sửa theo phản hồi.</p>
+        </div>
+        <div class="proc-step reveal d4">
+          <div class="proc-num">4</div>
+          <h4>Bàn giao & Hỗ trợ</h4>
+          <p>Bàn giao đúng hẹn, hỗ trợ sau triển khai và đảm bảo kết quả dài hạn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMS -->
+  <section class="section">
+    <div class="container">
+      <div class="sh c reveal">
+        <div class="sl">Nền tảng chúng tôi phục vụ</div>
+        <h2 class="st">Chuyên gia trên mọi sàn</h2>
+        <div class="divider c"></div>
+        <p class="ss">Kinh nghiệm thực chiến trên các sàn thương mại điện tử quốc tế hàng đầu.</p>
+      </div>
+      <div class="platforms-grid">
+        <div class="plat-card reveal d1">
+          <div class="plat-name">AMAZON</div>
+          <div class="plat-desc">Top Global Sellers — FBA, FBM, Sponsored Ads, A+ Content, Store Design</div>
+        </div>
+        <div class="plat-card reveal d2">
+          <div class="plat-name">ETSY</div>
+          <div class="plat-desc">Handmade & Print-on-Demand — SEO, Listing Optimization, Shop Branding</div>
+        </div>
+        <div class="plat-card reveal d3">
+          <div class="plat-name">TIKTOK SHOP</div>
+          <div class="plat-desc">TikTok Shop US — Affiliate, Spark Ads, Live Commerce, Creator Partnerships</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--blue" style="text-align:center;position:relative;overflow:hidden">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="reveal">
+        <div class="sl" style="color:var(--yellow)">Sẵn sàng bắt đầu?</div>
+        <h2 class="st" style="color:#fff;margin-top:10px">Nhận tư vấn miễn phí<br>từ đội ngũ Ethan Ecom</h2>
+        <p style="color:rgba(255,255,255,.75);margin:18px auto 32px;max-width:500px;font-size:16px;line-height:1.8">Chia sẻ nhu cầu của bạn — chúng tôi sẽ đề xuất giải pháp phù hợp nhất trong vòng 24 giờ.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+          <a href="contact.html" class="btn btn--yellow">Tư vấn miễn phí →</a>
+          <a href="portfolio.html" class="btn btn--outline">Xem công trình</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER (injected by shared.js) -->
+<div id="site-footer"></div>
+
+<!-- Shared JS (must be last) -->
+<script src="assets/js/shared.js"></script>
+<script src="assets/js/page-animations.js"></script>
+<script>
+/* ── PAGE-SPECIFIC JAVASCRIPT ── */
+
+/* Service card — interactive cursor trail on thumb */
+(function(){
+  document.querySelectorAll('.srv-thumb').forEach(function(thumb){
+    thumb.addEventListener('mousemove', function(e){
+      var r = thumb.getBoundingClientRect();
+      var x = e.clientX - r.left;
+      var y = e.clientY - r.top;
+      thumb.style.setProperty('--mx', x + 'px');
+      thumb.style.setProperty('--my', y + 'px');
+    });
+  });
+})();
+
+/* Process steps — active state when in viewport */
+(function(){
+  var steps = document.querySelectorAll('.proc-step');
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e,i){
+      if(e.isIntersecting){
+        var num = e.target.querySelector('.proc-num');
+        if(num){
+          num.style.transition='box-shadow .4s,transform .4s cubic-bezier(.34,1.56,.64,1)';
+          num.style.boxShadow='0 0 0 6px rgba(29,50,81,.2),0 8px 24px rgba(29,50,81,.3)';
+          num.style.transform='scale(1.08)';
+        }
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.7});
+  steps.forEach(function(s){ obs.observe(s); });
+})();
+
+/* Platform cards — counter up on name enter */
+(function(){
+  var cards = document.querySelectorAll('.plat-card');
+  var names = ['AMAZON','ETSY','TIKTOK SHOP'];
+  cards.forEach(function(card, i){
+    card.addEventListener('mouseenter', function(){
+      var nameEl = card.querySelector('.plat-name');
+      if(!nameEl) return;
+      nameEl.style.transition='letter-spacing .3s cubic-bezier(.4,0,.2,1)';
+      nameEl.style.letterSpacing='4px';
+    });
+    card.addEventListener('mouseleave', function(){
+      var nameEl = card.querySelector('.plat-name');
+      if(!nameEl) return;
+      nameEl.style.letterSpacing='';
+    });
+  });
+})();
+</script>
+</body>
+</html>

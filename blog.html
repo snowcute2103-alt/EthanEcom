@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stories | Ethan Ecom Blog — Câu chuyện thương mại điện tử</title>
+<meta name="description" content="Câu chuyện, kiến thức và kinh nghiệm thực chiến từ đội ngũ Ethan Ecom về E-commerce, Design và Digital Marketing.">
+<link rel="stylesheet" href="assets/css/shared.css">
+<style>
+/* ── PAGE-SPECIFIC STYLES ── */
+
+/* ── IMG PLACEHOLDERS ── */
+.img-ph{border-radius:12px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;min-height:40px}
+.img-ph::before{content:attr(data-label);position:absolute;z-index:1;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;color:rgba(255,255,255,.85);text-align:center;padding:0 24px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.ph-feat{background:linear-gradient(135deg,#1D3251 0%,#0d1e35 100%);height:460px;border-radius:0}
+.ph-b1{background:linear-gradient(135deg,#1D3251 0%,#2a4a76 100%);border-radius:0}
+.ph-b2{background:linear-gradient(135deg,#dc2626 0%,#ef4444 100%);border-radius:0}
+.ph-b3{background:linear-gradient(135deg,#059669 0%,#10b981 100%);border-radius:0}
+.ph-b4{background:linear-gradient(135deg,#8b5cf6 0%,#a78bfa 100%);border-radius:0}
+.ph-b5{background:linear-gradient(135deg,#f59e0b 0%,#fbbf24 100%);border-radius:0}
+.ph-b6{background:linear-gradient(135deg,#ec4899 0%,#f43f5e 100%);border-radius:0}
+
+/* ── FEATURED POST ── */
+.featured-post{border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.08);border:1.5px solid #eaeff5;display:grid;grid-template-columns:1fr 1fr}
+.feat-thumb{overflow:hidden}
+.feat-thumb .img-ph{transition:filter .4s}
+.featured-post:hover .feat-thumb .img-ph{filter:brightness(.85)}
+.feat-body{padding:48px 44px;display:flex;flex-direction:column;justify-content:center}
+.feat-label{display:inline-flex;align-items:center;gap:6px;font-size:16px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--yellow);background:rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.15);padding:5px 12px;border-radius:20px;margin-bottom:18px;width:fit-content}
+.feat-body h2{font-family:'Be Vietnam Pro',sans-serif;font-size:clamp(20px,2.5vw,28px);font-weight:700;line-height:1.3;margin-bottom:14px}
+.feat-body p{font-size:16px;color:var(--text);line-height:1.75;margin-bottom:24px}
+.feat-meta{display:flex;align-items:center;gap:16px;font-size:16px;color:var(--text);margin-bottom:24px;flex-wrap:wrap}
+.feat-meta strong{color:var(--navy);font-weight:600}
+
+/* ── BLOG GRID ── */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.bcard{border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 2px 14px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border:1.5px solid #eaeff5}
+.bcard:hover{transform:translateY(-6px);box-shadow:0 16px 44px rgba(0,0,0,.1);border-color:transparent}
+.bthumb{overflow:hidden}
+.bthumb .img-ph{transition:filter .4s;height:200px}
+.bcard:hover .bthumb .img-ph{filter:brightness(.85)}
+.bbody{padding:24px}
+.btag{font-size:16px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.bcard h3{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;line-height:1.45;margin-bottom:10px}
+.bcard p{font-size:16px;color:var(--text);line-height:1.65;margin-bottom:16px}
+.bmeta{display:flex;align-items:center;justify-content:space-between;font-size:16px;color:var(--text);border-top:1px solid #eef1f5;padding-top:14px;margin-top:4px}
+.bread{display:inline-flex;align-items:center;gap:6px;font-size:16px;font-weight:700;color:var(--blue);transition:gap .2s}
+.bread:hover{gap:10px}
+
+/* ── SIDEBAR ── */
+.blog-layout{display:grid;grid-template-columns:1fr 300px;gap:48px}
+.sidebar-card{background:#fff;border-radius:14px;padding:28px;border:1.5px solid #eaeff5;margin-bottom:24px}
+.sidebar-card h4{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid var(--yellow);display:inline-block}
+.topic-list{display:flex;flex-direction:column;gap:10px}
+.topic-item{display:flex;align-items:center;justify-content:space-between;font-size:16px;color:var(--text);padding:8px 12px;border-radius:8px;cursor:pointer;transition:all .2s}
+.topic-item:hover{background:var(--gray);color:var(--blue);padding-left:16px}
+.topic-count{font-size:16px;font-weight:700;color:var(--blue);background:#EEF2FF;padding:2px 8px;border-radius:12px}
+.recent-post{display:flex;gap:14px;align-items:flex-start;padding-bottom:14px;border-bottom:1px solid #eef1f5;margin-bottom:14px}
+.recent-post:last-child{border:none;margin:0;padding:0}
+.recent-thumb{width:60px;height:60px;border-radius:8px;flex-shrink:0;overflow:hidden}
+.recent-thumb .img-ph{height:60px;min-height:auto;border-radius:8px}
+.recent-info h5{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;line-height:1.35;margin-bottom:4px}
+.recent-info span{font-size:16px;color:var(--text)}
+
+/* ── NEWSLETTER ── */
+.newsletter{background:linear-gradient(135deg,var(--blue),#4f76e8);border-radius:16px;padding:36px;color:#fff;text-align:center}
+.newsletter h4{font-family:'Be Vietnam Pro',sans-serif;font-size:18px;font-weight:700;margin-bottom:10px}
+.newsletter p{font-size:16px;color:rgba(255,255,255,.8);line-height:1.65;margin-bottom:20px}
+.newsletter input{width:100%;padding:12px 16px;border-radius:8px;border:none;font-size:16px;margin-bottom:10px;font-family:'Inter',sans-serif;outline:none}
+.newsletter .btn{width:100%;justify-content:center}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .blog-layout{grid-template-columns:1fr}
+  .blog-grid{grid-template-columns:repeat(2,1fr)}
+  .featured-post{grid-template-columns:1fr}
+  .ph-feat{height:300px}
+}
+@media(max-width:768px){
+  .blog-grid{grid-template-columns:1fr}
+  .feat-body{padding:28px}
+}
+
+/* ══════════════════════════════════════════
+   BLOG PAGE — EXTRA FX
+══════════════════════════════════════════ */
+
+/* Featured post — parallax inner image */
+.feat-thumb{overflow:hidden}
+.feat-thumb .img-ph img{transition:transform .8s cubic-bezier(.4,0,.2,1)}
+.featured-post:hover .feat-thumb .img-ph img{transform:scale(1.06) translateY(-4px)}
+
+/* Blog card — stagger lift colour on hover */
+@keyframes bcard-glow{0%,100%{box-shadow:0 2px 14px rgba(0,0,0,.06)}50%{box-shadow:0 16px 44px rgba(27,79,216,.14)}}
+.bcard:hover{animation:bcard-glow 1.2s ease infinite}
+
+/* Blog tag — pill slide */
+.btag{display:inline-block;transition:letter-spacing .25s,color .25s}
+.bcard:hover .btag{letter-spacing:2px;color:#0ea5e9}
+
+/* Read more arrow — bounce right */
+@keyframes bread-arrow{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+.bcard:hover .bread{animation:bread-arrow .7s ease infinite}
+
+/* Topic list item — indent highlight bar */
+.topic-item{position:relative;overflow:hidden}
+.topic-item::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--blue);transform:scaleY(0);transform-origin:bottom;
+  transition:transform .25s cubic-bezier(.4,0,.2,1);border-radius:2px;
+}
+.topic-item:hover::before{transform:scaleY(1)}
+
+/* Newsletter input — glow focus */
+.newsletter input{transition:box-shadow .25s;border-radius:8px}
+.newsletter input:focus{outline:none;box-shadow:0 0 0 3px rgba(255,255,255,.35)}
+
+/* Sidebar card — slight float */
+@keyframes sidebar-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.sidebar-card:hover{animation:sidebar-float 2s ease infinite;border-color:var(--blue)}
+
+/* Featured post badge — pulse */
+@keyframes feat-badge-pulse{0%,100%{box-shadow:0 0 0 0 rgba(245,166,35,.35)}70%{box-shadow:0 0 0 8px rgba(245,166,35,0)}}
+.feat-label{animation:feat-badge-pulse 2.5s ease infinite}
+</style>
+</head>
+<body>
+
+<!-- HEADER (injected by shared.js) -->
+<div id="site-header"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-dots"></div>
+  <div class="page-hero-orb page-hero-orb-1"></div>
+  <div class="page-hero-orb page-hero-orb-2"></div>
+  <div class="container page-hero-inner">
+    <nav class="breadcrumb">
+      <a href="index.html">Trang chủ</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Stories</span>
+    </nav>
+    <div class="page-hero-badge">★ Kiến thức thực chiến từ đội ngũ Ethan Ecom</div>
+    <h1 class="page-hero-title">Câu chuyện <em>Ethan Ecom</em></h1>
+    <p class="page-hero-sub">Chia sẻ kiến thức, kinh nghiệm và hành trình chinh phục thị trường toàn cầu — từ Amazon, Etsy đến TikTok Shop và hơn thế nữa.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main>
+
+  <!-- FEATURED POST -->
+  <section class="section">
+    <div class="container">
+      <div class="sh reveal" style="margin-bottom:32px">
+        <div class="sl">Nổi bật</div>
+        <h2 class="st">Bài viết được đọc nhiều nhất</h2>
+      </div>
+      <a href="#" class="featured-post reveal" style="text-decoration:none;color:inherit">
+        <div class="feat-thumb">
+          <div class="img-ph ph-feat" data-label="📦  Amazon Strategy 2024"><img src="assets/images/blog/amazon-strategy.jpg" alt="Amazon Strategy 2024" onerror="this.style.visibility='hidden'"></div>
+        </div>
+        <div class="feat-body">
+          <div class="feat-label">★ Nổi bật</div>
+          <div class="feat-meta">
+            <span class="tag tag--blue">E-commerce</span>
+            <strong>Ethan Ecom Team</strong>
+            <span>15/01/2024 · 12 phút đọc</span>
+          </div>
+          <h2>Chiến lược Amazon 2024: Từ 0 đến Top Seller trong 90 ngày — Lộ trình thực chiến</h2>
+          <p>Ethan Ecom chia sẻ toàn bộ lộ trình thực chiến giúp hàng chục gian hàng Amazon Việt Nam vươn lên Top Seller chỉ trong 3 tháng. Từ chọn sản phẩm, tối ưu listing đến chiến lược PPC hiệu quả.</p>
+          <span class="bread">Đọc bài viết →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- BLOG + SIDEBAR -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="blog-layout">
+
+        <!-- MAIN BLOG POSTS -->
+        <div>
+          <div class="sh reveal" style="margin-bottom:32px">
+            <div class="sl">Tất cả bài viết</div>
+            <h2 class="st">Khám phá kho kiến thức</h2>
+          </div>
+          <div class="blog-grid">
+
+            <div class="bcard reveal d1">
+              <div class="bthumb"><div class="img-ph ph-b1" data-label="📦  Amazon SEO"><img src="assets/images/blog/amazon-seo.jpg" alt="Amazon SEO" onerror="this.style.visibility='hidden'"></div></div>
+              <div class="bbody">
+                <div class="btag">E-commerce</div>
+                <h3>5 chiến lược SEO Amazon giúp top listing trong 30 ngày</h3>
+                <p>Kinh nghiệm thực chiến từ hàng trăm gian hàng Amazon được tối ưu thành công bởi Ethan Ecom.</p>
+                <div class="bmeta">
+                  <span>10/01/2024 · 8 phút</span>
+                  <a href="#" class="bread">Đọc thêm →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="bcard reveal d2">
+              <div class="bthumb"><div class="img-ph ph-b2" data-label="📱  TikTok Marketing"><img src="assets/images/blog/tiktok-marketing.jpg" alt="TikTok Marketing" onerror="this.style.visibility='hidden'"></div></div>
+              <div class="bbody">
+                <div class="btag">Digital Marketing</div>
+                <h3>Cách tạo video TikTok Shop triệu view cho sản phẩm Việt</h3>
+                <p>Công thức viral video đã được kiểm chứng qua nhiều chiến dịch thành công trên TikTok Shop US.</p>
+                <div class="bmeta">
+                  <span>05/01/2024 · 10 phút</span>
+                  <a href="#" class="bread">Đọc thêm →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="bcard reveal d3">
+              <div class="bthumb"><div class="img-ph ph-b3" data-label="🎨  Design Tips"><img src="assets/images/blog/design-tips.jpg" alt="Design Tips" onerror="this.style.visibility='hidden'"></div></div>
+              <div class="bbody">
+                <div class="btag">Design</div>
+                <h3>Thiết kế thương hiệu chuẩn thị hiếu phương Tây — Góc nhìn thực chiến</h3>
+                <p>Những nguyên tắc thiết kế giúp sản phẩm Việt Nam dễ dàng chinh phục thị trường quốc tế.</p>
+                <div class="bmeta">
+                  <span>28/12/2023 · 7 phút</span>
+                  <a href="#" class="bread">Đọc thêm →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="bcard reveal d1">
+              <div class="bthumb"><div class="img-ph ph-b4" data-label="🛒  Etsy Guide"><img src="assets/images/blog/etsy-guide.jpg" alt="Etsy Guide" onerror="this.style.visibility='hidden'"></div></div>
+              <div class="bbody">
+                <div class="btag">E-commerce</div>
+                <h3>Hướng dẫn mở gian hàng Etsy 2024: Từ A đến Z cho người Việt</h3>
+                <p>Toàn bộ quy trình setup Etsy store thành công — từ đăng ký tài khoản đến xuất hiện trong Top search.</p>
+                <div class="bmeta">
+                  <span>20/12/2023 · 15 phút</span>
+                  <a href="#" class="bread">Đọc thêm →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="bcard reveal d2">
+              <div class="bthumb"><div class="img-ph ph-b5" data-label="📊  PPC Strategy"><img src="assets/images/blog/amazon-ppc.jpg" alt="Amazon PPC" onerror="this.style.visibility='hidden'"></div></div>
+              <div class="bbody">
+                <div class="btag">Digital Marketing</div>
+                <h3>Amazon PPC 2024: Cách tối ưu quảng cáo để ROI tăng 3x</h3>
+                <p>Chiến lược PPC thực chiến — không lý thuyết, không chung chung — chỉ những gì đã được kiểm chứng.</p>
+                <div class="bmeta">
+                  <span>15/12/2023 · 12 phút</span>
+                  <a href="#" class="bread">Đọc thêm →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="bcard reveal d3">
+              <div class="bthumb"><div class="img-ph ph-b6" data-label="🎬  Content Creation"><img src="assets/images/blog/content-creation.jpg" alt="Content Creation" onerror="this.style.visibility='hidden'"></div></div>
+              <div class="bbody">
+                <div class="btag">Media</div>
+                <h3>Quy trình sản xuất content TikTok chuyên nghiệp của Ethan Ecom</h3>
+                <p>Từ kịch bản, quay dựng đến phân phối — toàn bộ workflow đằng sau mỗi video triệu view.</p>
+                <div class="bmeta">
+                  <span>10/12/2023 · 9 phút</span>
+                  <a href="#" class="bread">Đọc thêm →</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- PAGINATION -->
+          <div class="pagination reveal">
+            <button class="pg-btn active">1</button>
+            <button class="pg-btn">2</button>
+            <button class="pg-btn">3</button>
+            <span class="pg-btn pg-dots">···</span>
+            <button class="pg-btn">8</button>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div>
+
+          <!-- Topics -->
+          <div class="sidebar-card reveal">
+            <h4>Chủ đề</h4>
+            <div class="topic-list">
+              <div class="topic-item">
+                <span>E-commerce</span>
+                <span class="topic-count">24</span>
+              </div>
+              <div class="topic-item">
+                <span>Digital Marketing</span>
+                <span class="topic-count">18</span>
+              </div>
+              <div class="topic-item">
+                <span>Design</span>
+                <span class="topic-count">15</span>
+              </div>
+              <div class="topic-item">
+                <span>TikTok Shop</span>
+                <span class="topic-count">12</span>
+              </div>
+              <div class="topic-item">
+                <span>Amazon</span>
+                <span class="topic-count">20</span>
+              </div>
+              <div class="topic-item">
+                <span>Etsy</span>
+                <span class="topic-count">10</span>
+              </div>
+              <div class="topic-item">
+                <span>Media & Video</span>
+                <span class="topic-count">8</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Posts -->
+          <div class="sidebar-card reveal">
+            <h4>Bài viết gần đây</h4>
+            <div class="recent-post">
+              <div class="recent-thumb"><div class="img-ph ph-b1" data-label=""><img src="assets/images/blog/amazon-seo.jpg" alt="Amazon SEO" onerror="this.style.visibility='hidden'"></div></div>
+              <div class="recent-info">
+                <h5>5 chiến lược SEO Amazon giúp top listing trong 30 ngày</h5>
+                <span>10/01/2024</span>
+              </div>
+            </div>
+            <div class="recent-post">
+              <div class="recent-thumb"><div class="img-ph ph-b2" data-label=""><img src="assets/images/blog/tiktok-marketing.jpg" alt="TikTok Marketing" onerror="this.style.visibility='hidden'"></div></div>
+              <div class="recent-info">
+                <h5>Cách tạo video TikTok Shop triệu view</h5>
+                <span>05/01/2024</span>
+              </div>
+            </div>
+            <div class="recent-post">
+              <div class="recent-thumb"><div class="img-ph ph-b3" data-label=""><img src="assets/images/blog/design-tips.jpg" alt="Design Tips" onerror="this.style.visibility='hidden'"></div></div>
+              <div class="recent-info">
+                <h5>Thiết kế thương hiệu chuẩn thị hiếu phương Tây</h5>
+                <span>28/12/2023</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="newsletter reveal">
+            <h4>Nhận kiến thức mỗi tuần</h4>
+            <p>Subscribe để không bỏ lỡ bài viết mới nhất từ đội ngũ Ethan Ecom.</p>
+            <input type="email" placeholder="Email của bạn...">
+            <a href="#" class="btn btn--yellow btn--sm">Đăng ký →</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER (injected by shared.js) -->
+<div id="site-footer"></div>
+
+<!-- Shared JS (must be last) -->
+<script src="assets/js/shared.js"></script>
+<script src="assets/js/page-animations.js"></script>
+<script>
+/* ── PAGE-SPECIFIC JAVASCRIPT ── */
+
+/* Featured post — parallax mouse tilt */
+(function(){
+  var feat = document.querySelector('.featured-post');
+  if(!feat) return;
+  feat.addEventListener('mousemove', function(e){
+    var r = feat.getBoundingClientRect();
+    var rx = ((e.clientY - r.top  - r.height/2) / r.height) * -5;
+    var ry = ((e.clientX - r.left - r.width /2) / r.width ) *  5;
+    feat.style.transform = 'perspective(1000px) rotateX('+rx.toFixed(2)+'deg) rotateY('+ry.toFixed(2)+'deg)';
+    feat.style.transition = 'transform .1s linear';
+  });
+  feat.addEventListener('mouseleave', function(){
+    feat.style.transform = '';
+    feat.style.transition = 'transform .6s cubic-bezier(.4,0,.2,1)';
+  });
+})();
+
+/* Blog cards — reading-time progress bar on hover */
+(function(){
+  document.querySelectorAll('.bcard').forEach(function(card){
+    var bar = document.createElement('div');
+    bar.style.cssText = [
+      'position:absolute;bottom:0;left:0;height:3px;width:0',
+      'background:linear-gradient(90deg,var(--blue),#06b6d4)',
+      'transition:width .6s cubic-bezier(.4,0,.2,1)',
+      'border-radius:0 0 14px 14px;z-index:5',
+    ].join(';');
+    card.style.position = 'relative';
+    card.appendChild(bar);
+    card.addEventListener('mouseenter', function(){ bar.style.width = '100%'; });
+    card.addEventListener('mouseleave', function(){ bar.style.width = '0'; });
+  });
+})();
+
+/* Newsletter — confetti on subscribe click */
+(function(){
+  var btn = document.querySelector('.newsletter .btn');
+  var inp = document.querySelector('.newsletter input');
+  if(!btn || !inp) return;
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    if(!inp.value.trim()) { inp.style.boxShadow='0 0 0 3px rgba(220,38,38,.4)'; return; }
+    /* mini particle burst */
+    for(var i=0;i<18;i++){
+      var dot = document.createElement('div');
+      var angle = (Math.PI*2/18)*i;
+      var dist = 40+Math.random()*50;
+      dot.style.cssText = [
+        'position:fixed',
+        'left:'+(btn.getBoundingClientRect().left+btn.offsetWidth/2)+'px',
+        'top:'+(btn.getBoundingClientRect().top+btn.offsetHeight/2)+'px',
+        'width:6px','height:6px','border-radius:50%',
+        'pointer-events:none','z-index:9999',
+        'background:'+(['#00D4FF','#F5A623','#7B61FF','#34d399'][i%4]),
+        'transition:transform .7s cubic-bezier(.4,0,.2,1),opacity .7s',
+      ].join(';');
+      document.body.appendChild(dot);
+      requestAnimationFrame(function(_dot,_angle,_dist){
+        return function(){
+          _dot.style.transform='translate('+(Math.cos(_angle)*_dist).toFixed(1)+'px,'+(Math.sin(_angle)*_dist).toFixed(1)+'px) scale(0)';
+          _dot.style.opacity='0';
+          setTimeout(function(){ _dot.remove(); },750);
+        };
+      }(dot,angle,dist));
+    }
+    inp.value='';
+    btn.textContent='✓ Đã đăng ký!';
+    setTimeout(function(){ btn.textContent='Đăng ký →'; },2500);
+  });
+})();
+
+/* Topic items — active filter state */
+(function(){
+  document.querySelectorAll('.topic-item').forEach(function(item){
+    item.addEventListener('click', function(){
+      document.querySelectorAll('.topic-item').forEach(function(t){ t.style.background=''; t.style.color=''; t.style.paddingLeft=''; });
+      item.style.background = 'var(--gray)';
+      item.style.color = 'var(--blue)';
+      item.style.paddingLeft = '16px';
+    });
+  });
+})();
+</script>
+</body>
+</html>

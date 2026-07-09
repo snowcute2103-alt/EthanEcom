@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Claude Code internal settings
+.claude/
+
+# Editor & IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.sublime-workspace
+
+# Build output
+dist/
+build/
+.next/
+out/
+
+# Puppeteer / Screenshot automation
+screenshots/
+*.png
+*.jpg
+!assets/images/**/*.jpg
+!assets/images/**/*.png
+
+# Logs
+*.log
+logs/
+
+# Temp files
+*.tmp
+*.temp
+.cache/

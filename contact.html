@@ -1,0 +1,448 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liên hệ | Ethan Ecom — Trụ sở Võ Dõng, Đồng Nai · +84 967 473 979</title>
+<meta name="description" content="Liên hệ với Ethan Ecom tại Võ Dõng - Thống Nhất - Đồng Nai. Email: support@ethanecom.com · Phone: +84 967 473 979. Làm việc 7:30–17:00, Thứ 2–Thứ 7.">
+<link rel="stylesheet" href="assets/css/shared.css">
+<style>
+/* ── PAGE-SPECIFIC STYLES ── */
+
+/* ── CONTACT LAYOUT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:flex-start}
+
+/* ── INFO CARDS ── */
+.info-cards{display:flex;flex-direction:column;gap:16px;margin-bottom:40px}
+.info-card{display:flex;align-items:center;gap:16px;background:#fff;border-radius:14px;padding:20px 22px;border:1.5px solid #eaeff5;transition:all .3s}
+.info-card:hover{border-color:var(--blue);box-shadow:0 8px 28px rgba(29,50,81,.1);transform:translateX(4px)}
+.info-ico{width:50px;height:50px;border-radius:12px;background:linear-gradient(135deg,var(--blue),#2a4a76);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;box-shadow:0 6px 18px rgba(29,50,81,.25)}
+.info-card h4{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;color:var(--text);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.info-card p{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;color:var(--navy)}
+
+/* ── SOCIAL LINKS ── */
+.social-row{display:flex;gap:10px;flex-wrap:wrap}
+.soc-btn{display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:8px;border:1.5px solid #dde3ee;font-size:16px;font-weight:600;color:var(--text);transition:all .25s;background:#fff}
+.soc-btn:hover{border-color:var(--blue);color:var(--blue);background:#f0f4ff}
+
+/* ── FORM ── */
+.contact-form-wrap{background:#fff;border-radius:20px;padding:44px;box-shadow:0 4px 32px rgba(0,0,0,.06);border:1.5px solid #eaeff5}
+.contact-form-wrap h3{font-family:'Be Vietnam Pro',sans-serif;font-size:22px;font-weight:700;margin-bottom:6px}
+.contact-form-wrap .sub{font-size:16px;color:var(--text);margin-bottom:28px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-submit{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.form-note{font-size:16px;color:var(--text)}
+
+/* ── SUCCESS MESSAGE ── */
+.form-success{display:none;text-align:center;padding:40px;background:#f0fdf4;border-radius:12px;border:1.5px solid #bbf7d0}
+.form-success h4{font-family:'Be Vietnam Pro',sans-serif;font-size:18px;font-weight:700;color:#15803d;margin-top:12px}
+.form-success p{font-size:16px;color:#166534;margin-top:8px}
+
+/* ── MAP PLACEHOLDER ── */
+.map-ph{height:300px;background:linear-gradient(135deg,#f0f4ff 0%,#e0e7ff 100%);border-radius:16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;border:1.5px solid #dde3ee;margin-top:40px}
+.map-ph h4{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;color:var(--blue)}
+.map-ph p{font-size:16px;color:var(--text)}
+
+/* ── FAQ ── */
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid #eef1f5}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;gap:16px;transition:color .2s}
+.faq-q:hover{color:var(--blue)}
+.faq-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid #dde3ee;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;transition:all .3s;color:var(--text)}
+.faq-item.open .faq-icon{background:var(--blue);border-color:var(--blue);color:#fff;transform:rotate(45deg)}
+.faq-a{display:none;padding-bottom:20px;font-size:16px;color:var(--text);line-height:1.75}
+.faq-item.open .faq-a{display:block}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .frow{grid-template-columns:1fr}
+  .contact-form-wrap{padding:28px}
+}
+
+/* ══════════════════════════════════════════
+   CONTACT PAGE — EXTRA FX
+══════════════════════════════════════════ */
+
+/* Form input — glow focus ring */
+.fg input, .fg textarea, .fg select{
+  display:block;width:100%;padding:12px 16px;border:1.5px solid #dde3ee;
+  border-radius:10px;font-size:16px;font-family:'Inter',sans-serif;
+  transition:border-color .25s,box-shadow .25s;outline:none;
+  background:#fafbfd;color:#1a1a2e;margin-top:6px;
+}
+.fg input:focus,.fg textarea:focus,.fg select:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 0 3.5px rgba(29,50,81,.1);
+  background:#fff;
+}
+.fg label{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;color:var(--navy);display:block}
+.fg{margin-bottom:16px}
+
+/* Form input — shake on invalid */
+@keyframes form-shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+.fg input.invalid,.fg textarea.invalid{
+  border-color:#dc2626;
+  box-shadow:0 0 0 3px rgba(220,38,38,.12);
+  animation:form-shake .35s cubic-bezier(.4,0,.2,1);
+}
+
+/* Info card — hover slide right */
+.info-card:hover{transform:translateX(6px);border-color:var(--blue)}
+
+/* Info icon — spin subtle */
+@keyframes info-ico-spin{from{transform:rotate(-8deg) scale(1)}to{transform:rotate(8deg) scale(1.1)}}
+.info-card:hover .info-ico{animation:info-ico-spin .4s cubic-bezier(.34,1.56,.64,1) forwards}
+
+/* Social button — hover glow */
+.soc-btn:hover{
+  box-shadow:0 0 0 3px rgba(29,50,81,.12);
+  transform:translateY(-3px);
+}
+
+/* FAQ item open — accent bar */
+.faq-item.open{
+  border-left:3px solid var(--blue);
+  padding-left:14px;
+  margin-left:-14px;
+}
+
+/* Map placeholder — subtle pulse */
+@keyframes map-pulse{0%,100%{box-shadow:0 0 0 0 rgba(29,50,81,.1)}50%{box-shadow:0 0 0 10px rgba(29,50,81,0)}}
+.map-ph:hover{animation:map-pulse 1.8s ease infinite;border-color:var(--blue)}
+
+/* Form submit button — loading state */
+#contactForm .btn[disabled]{opacity:.65;cursor:not-allowed}
+
+/* Success checkmark — bounce */
+@keyframes success-bounce{0%{transform:scale(0) rotate(-15deg)}60%{transform:scale(1.2) rotate(5deg)}100%{transform:scale(1) rotate(0deg)}}
+.form-success .success-ico{animation:success-bounce .6s cubic-bezier(.34,1.56,.64,1) forwards}
+</style>
+</head>
+<body>
+
+<!-- HEADER (injected by shared.js) -->
+<div id="site-header"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-dots"></div>
+  <div class="page-hero-orb page-hero-orb-1"></div>
+  <div class="page-hero-orb page-hero-orb-2"></div>
+  <div class="container page-hero-inner">
+    <nav class="breadcrumb">
+      <a href="index.html">Trang chủ</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Liên hệ</span>
+    </nav>
+    <div class="page-hero-badge">★ Phản hồi trong vòng 24 giờ</div>
+    <h1 class="page-hero-title">Liên hệ với <em>chúng tôi</em></h1>
+    <p class="page-hero-sub">Dù bạn muốn bắt đầu một dự án mới, tư vấn về dịch vụ hay chỉ đơn giản là muốn biết thêm — đội ngũ Ethan Ecom luôn sẵn sàng lắng nghe.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main>
+
+  <!-- CONTACT SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT: Info -->
+        <div>
+          <h2 class="st reveal">Hãy bắt đầu một<br>cuộc trò chuyện</h2>
+          <div class="divider reveal"></div>
+          <p class="reveal" style="margin:20px 0 32px;color:var(--text);line-height:1.8;font-size:16px">Đội ngũ Ethan Ecom sẽ phản hồi trong vòng 24 giờ làm việc. Chúng tôi nói tiếng Việt, tiếng Anh và sẵn sàng hỗ trợ bạn trên mọi múi giờ.</p>
+
+          <div class="info-cards">
+            <div class="info-card reveal d1">
+              <div class="info-ico">📍</div>
+              <div>
+                <h4>Địa chỉ</h4>
+                <p>Võ Dõng - Thống Nhất - Đồng Nai</p>
+              </div>
+            </div>
+            <div class="info-card reveal d2">
+              <div class="info-ico">🕐</div>
+              <div>
+                <h4>Giờ làm việc</h4>
+                <p>7:30 – 17:00 · Thứ 2 – Thứ 7</p>
+              </div>
+            </div>
+            <div class="info-card reveal d3">
+              <div class="info-ico">📧</div>
+              <div>
+                <h4>Email CSKH</h4>
+                <p>support@ethanecom.com</p>
+              </div>
+            </div>
+            <div class="info-card reveal d4">
+              <div class="info-ico">📨</div>
+              <div>
+                <h4>Email Tuyển dụng</h4>
+                <p>hr@ethanecom.com</p>
+              </div>
+            </div>
+            <div class="info-card reveal d5">
+              <div class="info-ico">📞</div>
+              <div>
+                <h4>Điện thoại</h4>
+                <p>+84 967 473 979</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <p style="font-size:16px;font-weight:600;color:var(--text);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px">Theo dõi chúng tôi</p>
+            <div class="social-row">
+              <a href="#" class="soc-btn">Dr Dribbble</a>
+              <a href="#" class="soc-btn">𝕏 Twitter</a>
+              <a href="#" class="soc-btn">Ig Instagram</a>
+              <a href="#" class="soc-btn">Be Behance</a>
+            </div>
+          </div>
+
+          <div class="map-ph reveal">
+            <div style="font-size:32px">📍</div>
+            <h4>Võ Dõng - Thống Nhất - Đồng Nai</h4>
+            <p>Phục vụ khách hàng Amazon, Etsy &amp; TikTok Shop toàn cầu</p>
+          </div>
+        </div>
+
+        <!-- RIGHT: Form -->
+        <div class="reveal rr">
+          <div class="contact-form-wrap">
+            <h3>Gửi tin nhắn cho chúng tôi</h3>
+            <p class="sub">Điền thông tin bên dưới — chúng tôi sẽ liên hệ lại trong vòng 24 giờ.</p>
+
+            <form id="contactForm" novalidate>
+              <div class="frow" style="margin-bottom:16px">
+                <div class="fg">
+                  <label for="fname">Họ và tên *</label>
+                  <input type="text" id="fname" name="name" placeholder="Nguyễn Văn A" required>
+                </div>
+                <div class="fg">
+                  <label for="femail">Email *</label>
+                  <input type="email" id="femail" name="email" placeholder="email@example.com" required>
+                </div>
+              </div>
+              <div class="fg">
+                <label for="fphone">Số điện thoại</label>
+                <input type="tel" id="fphone" name="phone" placeholder="+84 xxx xxx xxx">
+              </div>
+              <div class="fg">
+                <label for="fservice">Dịch vụ quan tâm</label>
+                <select id="fservice" name="service">
+                  <option value="">-- Chọn dịch vụ --</option>
+                  <option>Web Development</option>
+                  <option>UI/UX Design</option>
+                  <option>Graphic Design</option>
+                  <option>Motion Graphics</option>
+                  <option>Photography</option>
+                  <option>Video Production</option>
+                  <option>E-com Solutions</option>
+                  <option>Digital Marketing</option>
+                  <option>Tech Optimization</option>
+                  <option>Tư vấn tổng thể</option>
+                </select>
+              </div>
+              <div class="fg">
+                <label for="fsubject">Chủ đề</label>
+                <input type="text" id="fsubject" name="subject" placeholder="Tôi muốn tư vấn về...">
+              </div>
+              <div class="fg">
+                <label for="fmsg">Nội dung *</label>
+                <textarea id="fmsg" name="message" placeholder="Chia sẻ với chúng tôi về dự án, nhu cầu hoặc câu hỏi của bạn..." required style="min-height:140px"></textarea>
+              </div>
+              <div class="form-submit">
+                <button type="submit" class="btn btn--blue">Gửi tin nhắn →</button>
+                <span class="form-note">🔒 Thông tin của bạn được bảo mật tuyệt đối</span>
+              </div>
+            </form>
+
+            <div class="form-success" id="formSuccess">
+              <div style="font-size:40px">✅</div>
+              <h4>Gửi thành công!</h4>
+              <p>Cảm ơn bạn đã liên hệ. Chúng tôi sẽ phản hồi trong vòng 24 giờ.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="sh c reveal">
+        <div class="sl">Câu hỏi thường gặp</div>
+        <h2 class="st">Bạn có thắc mắc gì?</h2>
+        <div class="divider c"></div>
+        <p class="ss">Những câu hỏi phổ biến nhất từ khách hàng của Ethan Ecom.</p>
+      </div>
+      <div style="max-width:720px;margin:0 auto" class="faq-list reveal">
+        <div class="faq-item">
+          <div class="faq-q">Ethan Ecom có phục vụ khách hàng quốc tế không?<span class="faq-icon">+</span></div>
+          <div class="faq-a">Có, chúng tôi phục vụ khách hàng trên toàn thế giới, đặc biệt là các đối tác kinh doanh trên Amazon US, Etsy và TikTok Shop US. Đội ngũ nói thành thạo tiếng Anh và sẵn sàng làm việc theo múi giờ quốc tế.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Thời gian phản hồi và bắt đầu dự án là bao lâu?<span class="faq-icon">+</span></div>
+          <div class="faq-a">Chúng tôi cam kết phản hồi trong vòng 24 giờ làm việc. Sau khi trao đổi và thống nhất yêu cầu, dự án thường bắt đầu trong vòng 3–5 ngày làm việc.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Ethan Ecom có báo giá trước không?<span class="faq-icon">+</span></div>
+          <div class="faq-a">Có. Sau khi tư vấn sơ bộ (miễn phí), chúng tôi sẽ cung cấp báo giá chi tiết và timeline cụ thể trước khi bắt đầu. Không có chi phí ẩn — hoàn toàn minh bạch.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Tôi cần chuẩn bị gì trước khi liên hệ?<span class="faq-icon">+</span></div>
+          <div class="faq-a">Không cần chuẩn bị quá nhiều — chỉ cần mô tả ngắn gọn về sản phẩm/thương hiệu của bạn, mục tiêu muốn đạt được và ngân sách dự kiến. Đội ngũ sẽ tư vấn và đề xuất giải pháp phù hợp nhất.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Ethan Ecom có hỗ trợ sau khi hoàn thành dự án không?<span class="faq-icon">+</span></div>
+          <div class="faq-a">Có. Chúng tôi cung cấp dịch vụ hỗ trợ sau bàn giao và sẵn sàng ký hợp đồng duy trì dài hạn. Thành công của khách hàng là thước đo thành công của Ethan Ecom.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER (injected by shared.js) -->
+<div id="site-footer"></div>
+
+<!-- Shared JS (must be last) -->
+<script src="assets/js/shared.js"></script>
+<script src="assets/js/page-animations.js"></script>
+<script>
+/* ── PAGE-SPECIFIC JAVASCRIPT ── */
+
+/* FAQ accordion — smooth max-height (overrides page-animations.js bare version with icon spin) */
+(function(){
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q   = item.querySelector('.faq-q');
+    var a   = item.querySelector('.faq-a');
+    var ico = item.querySelector('.faq-icon');
+    if(!q || !a) return;
+
+    /* prepare smooth height */
+    a.style.maxHeight = '0';
+    a.style.overflow  = 'hidden';
+    a.style.transition = 'max-height .42s cubic-bezier(.4,0,.2,1), opacity .35s';
+    a.style.opacity   = '0';
+    a.style.display   = 'block';
+
+    q.addEventListener('click', function(){
+      var open = item.classList.contains('open');
+      /* close all */
+      document.querySelectorAll('.faq-item.open').forEach(function(other){
+        if(other === item) return;
+        other.classList.remove('open');
+        var oa = other.querySelector('.faq-a');
+        if(oa){ oa.style.maxHeight='0'; oa.style.opacity='0'; }
+        var oi = other.querySelector('.faq-icon');
+        if(oi){ oi.style.transform=''; }
+      });
+      if(open){
+        item.classList.remove('open');
+        a.style.maxHeight = '0';
+        a.style.opacity   = '0';
+        if(ico) ico.style.transform = '';
+      } else {
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+        a.style.opacity   = '1';
+        if(ico){ ico.style.transition='transform .3s cubic-bezier(.34,1.56,.64,1)'; ico.style.transform='rotate(45deg)'; }
+      }
+    });
+  });
+})();
+
+/* Form — validation + submit with animated success */
+(function(){
+  var form    = document.getElementById('contactForm');
+  var success = document.getElementById('formSuccess');
+  var btn     = form ? form.querySelector('[type=submit]') : null;
+  if(!form || !success) return;
+
+  function validate(){
+    var ok = true;
+    ['fname','femail','fmsg'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(!el) return;
+      el.classList.remove('invalid');
+      if(!el.value.trim()){ el.classList.add('invalid'); ok=false; }
+      else if(id==='femail' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value)){
+        el.classList.add('invalid'); ok=false;
+      }
+    });
+    return ok;
+  }
+
+  /* remove invalid on type */
+  form.querySelectorAll('input,textarea').forEach(function(inp){
+    inp.addEventListener('input', function(){ inp.classList.remove('invalid'); });
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!validate()) return;
+
+    if(btn){ btn.disabled=true; btn.textContent='Đang gửi...'; }
+
+    /* simulate 1.2s send */
+    setTimeout(function(){
+      form.style.display = 'none';
+      success.style.display = 'block';
+      success.style.animation = 'none';
+      requestAnimationFrame(function(){
+        success.style.animation = '';
+        var ico = success.querySelector('div');
+        if(ico) ico.classList.add('success-ico');
+      });
+    }, 1200);
+  });
+})();
+
+/* Info cards — typing indicator on email hover */
+(function(){
+  var emailCard = document.querySelector('.info-card:nth-child(1)');
+  if(!emailCard) return;
+  emailCard.addEventListener('mouseenter', function(){
+    var p = emailCard.querySelector('p');
+    if(!p) return;
+    p.style.transition='color .25s';
+    p.style.color = 'var(--blue)';
+  });
+  emailCard.addEventListener('mouseleave', function(){
+    var p = emailCard.querySelector('p');
+    if(p) p.style.color='';
+  });
+})();
+
+/* Floating status indicator next to send button */
+(function(){
+  var sendBtn = document.querySelector('#contactForm .btn');
+  if(!sendBtn) return;
+  var dot = document.createElement('span');
+  dot.style.cssText = [
+    'display:inline-block','width:8px','height:8px',
+    'border-radius:50%','background:#10b981',
+    'margin-left:8px','vertical-align:middle',
+    'box-shadow:0 0 0 0 rgba(16,185,129,.5)',
+    'animation:con-online 2.5s ease infinite',
+  ].join(';');
+  sendBtn.parentNode.insertBefore(
+    Object.assign(document.createElement('span'),{ style:'display:flex;align-items:center;gap:8px;font-size:16px;color:#10b981;font-weight:600;', innerHTML:'<span style="width:8px;height:8px;border-radius:50%;background:#10b981;display:inline-block;box-shadow:0 0 0 0 rgba(16,185,129,.4);animation:con-online 2.2s ease infinite"></span> Online — phản hồi trong 24h' }),
+    sendBtn.nextSibling
+  );
+  var style = document.createElement('style');
+  style.textContent='@keyframes con-online{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.5)}70%{box-shadow:0 0 0 8px rgba(16,185,129,0)}}';
+  document.head.appendChild(style);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1306 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tuyển dụng & Dịch vụ | Ethan Ecom — Môi trường sáng tạo, phát triển bứt phá</title>
+<meta name="description" content="Gia nhập đội ngũ Ethan Ecom — 14 vị trí đang tuyển dụng trong các lĩnh vực E-commerce, Design, Tech, Production. Xem đầy đủ mô tả công việc, yêu cầu và quyền lợi.">
+<link rel="stylesheet" href="assets/css/shared.css">
+<style>
+/* ── PAGE-SPECIFIC STYLES ── */
+
+/* ── IMG PLACEHOLDERS ── */
+.img-ph{border-radius:12px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;min-height:40px}
+.img-ph::before{content:attr(data-label);position:absolute;z-index:1;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;color:rgba(255,255,255,.85);text-align:center;padding:0 24px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.ph-culture{background:linear-gradient(135deg,#1D3251 0%,#2a4a76 100%);height:480px}
+.ph-team{background:linear-gradient(135deg,#0ea5e9 0%,#38bdf8 100%);height:300px}
+
+/* ── CULTURE SECTION ── */
+.culture-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.culture-img-wrap{overflow:hidden;border-radius:16px}
+.culture-img-wrap .img-ph{will-change:transform;transform-origin:center;border-radius:0}
+
+/* ── BENEFITS ── */
+.benefits-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.benefit-card{display:flex;align-items:flex-start;gap:14px;background:#fff;border-radius:12px;padding:22px;border:1.5px solid #eaeff5;transition:all .3s}
+.benefit-card:hover{border-color:var(--blue);box-shadow:0 8px 28px rgba(27,79,216,.08)}
+.benefit-ico{width:44px;height:44px;border-radius:10px;background:var(--gray);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.benefit-card h4{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;margin-bottom:4px}
+.benefit-card p{font-size:16px;color:var(--text);line-height:1.6}
+
+/* ── JOBS ── */
+.jobs-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.jfbtn{padding:9px 20px;border-radius:24px;border:1.5px solid #dde2ea;background:transparent;font-size:16px;font-weight:500;cursor:pointer;transition:all .25s;color:var(--text);font-family:'Inter',sans-serif}
+.jfbtn.active,.jfbtn:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.jobs-grid{display:flex;flex-direction:column;gap:16px}
+.jcard{background:#fff;border-radius:14px;padding:28px;border:1.5px solid #eaeff5;transition:all .3s;display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px}
+.jcard:hover{border-color:var(--blue);box-shadow:0 8px 28px rgba(27,79,216,.1);transform:translateX(4px)}
+.jcard-left h3{font-family:'Be Vietnam Pro',sans-serif;font-size:17px;font-weight:700;margin-bottom:8px}
+.jcard-left p{font-size:16px;color:var(--text);line-height:1.65;margin-bottom:12px}
+.jcard-tags{display:flex;gap:8px;flex-wrap:wrap}
+.jcard-right{text-align:right;flex-shrink:0}
+.jcard-right .type{font-size:16px;color:var(--text);margin-bottom:8px}
+
+/* ── JOB DEPT TAGS ── */
+.dt{background:#EEF2FF;color:var(--blue)}
+.dc{background:#f0f0f0;color:#111}
+.de{background:#F0FDF4;color:#15803d}
+.dm{background:#FDF2F8;color:#a21caf}
+.dma{background:#FFF5F5;color:#dc2626}
+.do{background:#F5F3FF;color:#7c3aed}
+.df{background:#FFFBEB;color:#92400e}
+.dp{background:#F0FFFE;color:#0d9488}
+
+/* ── APPLICATION FORM MODAL ── */
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9999;align-items:center;justify-content:center;padding:24px}
+.modal.open{display:flex}
+.modal-panel{background:#fff;border-radius:20px;width:100%;max-width:600px;max-height:90vh;overflow-y:auto}
+.modal-header{padding:28px 32px 0;display:flex;align-items:center;justify-content:space-between}
+.modal-header h3{font-family:'Be Vietnam Pro',sans-serif;font-size:20px;font-weight:700}
+.modal-x{width:36px;height:36px;border-radius:50%;border:1.5px solid #dde3ee;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;transition:all .2s;background:#fff;flex-shrink:0}
+.modal-x:hover{background:var(--gray)}
+.modal-body{padding:24px 32px 32px}
+.modal-body .fg{margin-bottom:16px}
+.upload-area{border:2px dashed #dde3ee;border-radius:12px;padding:28px;text-align:center;cursor:pointer;transition:border-color .2s;background:var(--gray)}
+.upload-area:hover{border-color:var(--blue)}
+.upload-area p{font-size:16px;color:var(--text);margin-top:8px}
+.upload-area strong{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;color:var(--navy)}
+
+/* ── SERVICE CARDS (từ services.html) ── */
+.srv-detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.srv-detail-card{border-radius:16px;overflow:hidden;background:#fff;border:1.5px solid #eaeff5;transition:all .35s;cursor:pointer}
+.srv-detail-card:hover{transform:translateY(-8px);box-shadow:0 20px 56px rgba(27,79,216,.12);border-color:transparent}
+.srv-thumb{overflow:hidden;position:relative}
+.srv-thumb .img-ph{border-radius:0;transition:filter .4s}
+.srv-detail-card:hover .srv-thumb .img-ph{filter:brightness(.85) saturate(1.1)}
+.srv-num{position:absolute;top:16px;left:16px;width:36px;height:36px;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;color:rgba(255,255,255,.9)}
+.srv-body{padding:24px}
+.srv-tag{display:inline-block;font-size:16px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:10px}
+.srv-body h3{font-family:'Be Vietnam Pro',sans-serif;font-size:18px;font-weight:700;margin-bottom:10px}
+.srv-body p{font-size:16px;color:var(--text);line-height:1.7;margin-bottom:18px}
+.srv-features{display:flex;flex-direction:column;gap:7px}
+.srv-feat{display:flex;align-items:center;gap:8px;font-size:16px;color:var(--text)}
+.srv-feat::before{content:'✓';color:var(--blue);font-weight:700;flex-shrink:0}
+.img-ph{border-radius:12px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;min-height:40px}
+.img-ph::before{content:attr(data-label);position:absolute;z-index:1;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;color:rgba(255,255,255,.85);text-align:center;padding:0 24px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.ph-web{background:linear-gradient(135deg,#1D3251 0%,#2a4a76 100%);height:220px}
+.ph-uiux{background:linear-gradient(135deg,#ec4899 0%,#f43f5e 100%);height:220px}
+.ph-graphic{background:linear-gradient(135deg,#10b981 0%,#34d399 100%);height:220px}
+.ph-motion{background:linear-gradient(135deg,#8b5cf6 0%,#a78bfa 100%);height:220px}
+.ph-photo{background:linear-gradient(135deg,#f59e0b 0%,#fbbf24 100%);height:220px}
+.ph-video{background:linear-gradient(135deg,#dc2626 0%,#ef4444 100%);height:220px}
+.ph-ecom{background:linear-gradient(135deg,#0ea5e9 0%,#38bdf8 100%);height:220px}
+.ph-marketing{background:linear-gradient(135deg,#059669 0%,#10b981 100%);height:220px}
+.ph-tech{background:linear-gradient(135deg,#0d1e35 0%,#1D3251 100%);height:220px}
+
+/* ── PROCESS ── */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.process-grid::before{content:'';position:absolute;top:60px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,var(--blue),var(--yellow));background-size:300% 100%;animation:proc-gradient 4s linear infinite;z-index:0}
+@keyframes proc-gradient{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+.proc-step{text-align:center;padding:24px 20px;position:relative;z-index:1}
+.proc-num{width:72px;height:72px;border-radius:50%;background:var(--blue);color:#fff;font-family:'Be Vietnam Pro',sans-serif;font-size:22px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 24px rgba(29,50,81,.3);position:relative;overflow:visible}
+.proc-num::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:2px dashed rgba(255,255,255,.3);animation:proc-ring-spin 6s linear infinite;pointer-events:none}
+@keyframes proc-ring-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.proc-step:hover .proc-num::after{border-color:rgba(255,255,255,.65);animation-duration:1.5s}
+.proc-step h4{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px}
+.proc-step p{font-size:16px;color:var(--text);line-height:1.6}
+
+/* ── PLATFORMS GRID ── */
+.platforms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.plat-card{border-radius:16px;padding:36px;text-align:center;border:1.5px solid #eaeff5;background:#fff;transition:all .35s}
+.plat-card:hover{border-color:rgba(0,212,255,.35);box-shadow:0 0 0 2px rgba(0,212,255,.3),0 16px 48px rgba(27,79,216,.12)}
+.plat-name{font-family:'Be Vietnam Pro',sans-serif;font-size:22px;font-weight:800;background:linear-gradient(135deg,var(--navy),#2a4a76);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;transition:filter .3s}
+.plat-card:hover .plat-name{filter:drop-shadow(0 0 8px rgba(27,79,216,.4))}
+.plat-desc{font-size:16px;color:var(--text);line-height:1.65}
+
+/* ── JOB ACCORDION (chi tiết) ── */
+.jcard-accordion{background:#fff;border-radius:14px;border:1.5px solid #eaeff5;overflow:hidden;transition:border-color .3s;margin-bottom:12px}
+.jcard-accordion:hover{border-color:rgba(27,79,216,.25)}
+.jcard-accordion.open{border-color:var(--blue)}
+.jcard-head{display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;padding:24px 28px;cursor:pointer;transition:background .2s}
+.jcard-head:hover{background:#f7f9ff}
+.jcard-accordion.open .jcard-head{background:#EEF2FF}
+.jcard-head-left .jtag{display:inline-block;font-size:16px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:3px 10px;border-radius:6px;margin-bottom:8px}
+.jcard-head-left h3{font-family:'Be Vietnam Pro',sans-serif;font-size:18px;font-weight:700;margin:0 0 6px;color:var(--navy)}
+.jcard-salary{display:inline-flex;align-items:center;gap:6px;font-size:16px;color:var(--text);font-weight:500}
+.jcard-head-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.jcard-dept-badge{padding:5px 14px;border-radius:6px;font-size:16px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.jcard-chevron{width:34px;height:34px;border-radius:50%;border:1.5px solid #dde2ea;display:flex;align-items:center;justify-content:center;transition:transform .3s,background .2s,border-color .2s;color:var(--text);flex-shrink:0}
+.jcard-accordion.open .jcard-chevron{transform:rotate(180deg);background:var(--blue);border-color:var(--blue);color:#fff}
+.jcard-body{display:none;padding:0 28px 28px}
+.jcard-accordion.open .jcard-body{display:block}
+.jcard-cols{display:grid;grid-template-columns:1fr 1fr;gap:36px;padding-top:20px;border-top:1px solid #eaeff5}
+.jcard-section-title{font-size:16px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#9ca3af;margin:0 0 10px}
+.jdetail-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px}
+.jdetail-list li{font-size:16px;color:var(--text);line-height:1.6;padding-left:14px;position:relative}
+.jdetail-list li::before{content:'–';position:absolute;left:0;color:var(--blue)}
+.jperks-list{list-style:none;padding:0;margin:0 0 18px;display:flex;flex-direction:column;gap:8px}
+.jperks-list li{display:flex;align-items:flex-start;gap:8px;font-size:16px;color:var(--text);line-height:1.55}
+.jperks-list li svg{flex-shrink:0;margin-top:1px}
+.japply-link{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:8px;background:var(--blue);color:#fff;font-size:16px;font-weight:700;text-decoration:none;transition:opacity .2s,transform .2s;margin-top:2px}
+.japply-link:hover{opacity:.88;transform:translateX(2px)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .culture-grid{grid-template-columns:1fr;gap:40px}
+  .srv-detail-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid{grid-template-columns:repeat(2,1fr);gap:24px}
+  .process-grid::before{display:none}
+  .platforms-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .benefits-grid{grid-template-columns:1fr}
+  .jcard{grid-template-columns:1fr;gap:16px}
+  .jcard-right{text-align:left}
+  .srv-detail-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr}
+  .platforms-grid{grid-template-columns:1fr}
+  .jcard-cols{grid-template-columns:1fr}
+  .jcard-head{padding:18px 18px;flex-wrap:wrap}
+  .jcard-body{padding:0 18px 20px}
+  .jcard-dept-badge{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER (injected by shared.js) -->
+<div id="site-header"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-dots"></div>
+  <div class="page-hero-orb page-hero-orb-1"></div>
+  <div class="page-hero-orb page-hero-orb-2"></div>
+  <div class="container page-hero-inner">
+    <nav class="breadcrumb">
+      <a href="index.html">Trang chủ</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Tuyển dụng</span>
+    </nav>
+    <div class="page-hero-badge">★ Đang tuyển dụng — 14 vị trí mở · 9 dịch vụ chuyên sâu</div>
+    <h1 class="page-hero-title">Dịch vụ &amp; <em>Tuyển dụng</em><br>Ethan Ecom</h1>
+    <p class="page-hero-sub">Khám phá 9 dịch vụ E-commerce toàn diện và gia nhập đội ngũ sáng tạo — hỗ trợ máy tính, ăn trưa tại công ty, lương thưởng hấp dẫn.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main>
+
+  <!-- ═══════════════════════════════════════
+       DỊCH VỤ — 9 dịch vụ chuyên sâu
+  ═══════════════════════════════════════ -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="sh c reveal">
+        <div class="sl">Năng lực cốt lõi</div>
+        <h2 class="st">9 dịch vụ chuyên sâu</h2>
+        <div class="divider c"></div>
+        <p class="ss">Mỗi dịch vụ được xây dựng từ kinh nghiệm thực chiến, tối ưu hoá cho thị trường quốc tế.</p>
+      </div>
+      <div class="srv-detail-grid">
+
+        <div class="srv-detail-card reveal d1" id="web-dev">
+          <div class="srv-thumb">
+            <div class="img-ph ph-web" data-label="🌐  Web Development"><img src="assets/images/services/web-development.jpg" alt="Web Development" onerror="this.style.visibility='hidden'"></div>
+            <div class="srv-num">01</div>
+          </div>
+          <div class="srv-body">
+            <span class="srv-tag tag tag--blue">Technology</span>
+            <h3>Web Development</h3>
+            <p>Xây dựng hạ tầng thương mại điện tử chuyên nghiệp, tốc độ tối ưu và trải nghiệm người dùng quốc tế hàng đầu.</p>
+            <div class="srv-features">
+              <div class="srv-feat">Website thương mại điện tử tốc độ cao</div>
+              <div class="srv-feat">Landing page tối ưu chuyển đổi</div>
+              <div class="srv-feat">Tích hợp Amazon, Etsy, TikTok Shop</div>
+              <div class="srv-feat">Responsive & Mobile-first</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="srv-detail-card reveal d2" id="uiux">
+          <div class="srv-thumb">
+            <div class="img-ph ph-uiux" data-label="🎨  UI/UX Design"><img src="assets/images/services/uiux-design.jpg" alt="UI/UX Design" onerror="this.style.visibility='hidden'"></div>
+            <div class="srv-num">02</div>
+          </div>
+          <div class="srv-body">
+            <span class="srv-tag tag tag--pink">Design</span>
+            <h3>UI/UX Design</h3>
+            <p>Thiết kế giao diện theo hành vi khách hàng quốc tế, tối đa hoá tỷ lệ chuyển đổi và trải nghiệm mua sắm.</p>
+            <div class="srv-features">
+              <div class="srv-feat">Research & User Journey Mapping</div>
+              <div class="srv-feat">Wireframe & Prototype</div>
+              <div class="srv-feat">Design System & Component Library</div>
+              <div class="srv-feat">A/B Testing & Conversion Optimization</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="srv-detail-card reveal d3" id="graphic">
+          <div class="srv-thumb">
+            <div class="img-ph ph-graphic" data-label="✏️  Graphic Design"><img src="assets/images/services/graphic-design.jpg" alt="Graphic Design" onerror="this.style.visibility='hidden'"></div>
+            <div class="srv-num">03</div>
+          </div>
+          <div class="srv-body">
+            <span class="srv-tag tag tag--green">Design</span>
+            <h3>Graphic Design</h3>
+            <p>Nhận diện thương hiệu và hình ảnh sản phẩm chuẩn thị hiếu phương Tây, nổi bật trên sàn quốc tế.</p>
+            <div class="srv-features">
+              <div class="srv-feat">Brand Identity & Logo Design</div>
+              <div class="srv-feat">Amazon/Etsy Product Images</div>
+              <div class="srv-feat">Packaging & Label Design</div>
+              <div class="srv-feat">Social Media Graphics</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="srv-detail-card reveal d1" id="motion">
+          <div class="srv-thumb">
+            <div class="img-ph ph-motion" data-label="🎬  Motion Graphics"><img src="assets/images/services/motion-graphics.jpg" alt="Motion Graphics" onerror="this.style.visibility='hidden'"></div>
+            <div class="srv-num">04</div>
+          </div>
+          <div class="srv-body">
+            <span class="srv-tag tag tag--purple">Media</span>
+            <h3>Motion Graphics</h3>
+            <p>Nội dung hình ảnh động ấn tượng cho chiến dịch quảng cáo số, thu hút ánh nhìn và tăng tương tác.</p>
+            <div class="srv-features">
+              <div class="srv-feat">Animated Logo & Brand Elements</div>
+              <div class="srv-feat">Product Demo Animations</div>
+              <div class="srv-feat">Social Media Animations</div>
+              <div class="srv-feat">Ad Creative Animations</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="srv-detail-card reveal d2">
+          <div class="srv-thumb">
+            <div class="img-ph ph-photo" data-label="📸  Photography"><img src="assets/images/services/photography.jpg" alt="Photography" onerror="this.style.visibility='hidden'"></div>
+            <div class="srv-num">05</div>
+          </div>
+          <div class="srv-body">
+            <span class="srv-tag tag tag--yellow">Media</span>
+            <h3>Photography</h3>
+            <p>Chụp ảnh sản phẩm chuyên nghiệp, thể hiện chất lượng chi tiết và giá trị hàng hoá đến từng pixel.</p>
+            <div class="srv-features">
+              <div class="srv-feat">Product Photography (Studio & Lifestyle)</div>
+              <div class="srv-feat">Amazon Main & Infographic Images</div>
+              <div class="srv-feat">Etsy Listing Photos</div>
+              <div class="srv-feat">Post-processing & Retouching</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="srv-detail-card reveal d3">
+          <div class="srv-thumb">
+            <div class="img-ph ph-video" data-label="🎥  Video Production"><img src="assets/images/services/video-production.jpg" alt="Video Production" onerror="this.style.visibility='hidden'"></div>
+            <div class="srv-num">06</div>
+          </div>
+          <div class="srv-body">
+            <span class="srv-tag tag tag--red">Media</span>
+            <h3>Video Production</h3>
+            <p>Video ngắn TikTok/Reels tối ưu hoá cho viral engagement, kể câu chuyện thương hiệu cuốn hút.</p>
+            <div class="srv-features">
+              <div class="srv-feat">TikTok Shop Product Videos</div>
+              <div class="srv-feat">Instagram Reels & Stories</div>
+              <div class="srv-feat">Amazon A+ Content Videos</div>
+              <div class="srv-feat">Brand Story & Company Videos</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="srv-detail-card reveal d1" id="ecom">
+          <div class="srv-thumb">
+            <div class="img-ph ph-ecom" data-label="🛒  E-com Solutions"><img src="assets/images/services/ecom-solutions.jpg" alt="E-com Solutions" onerror="this.style.visibility='hidden'"></div>
+            <div class="srv-num">07</div>
+          </div>
+          <div class="srv-body">
+            <span class="srv-tag tag tag--blue">E-commerce</span>
+            <h3>E-com Solutions</h3>
+            <p>Giải pháp vận hành toàn diện trên Amazon, Etsy và TikTok Shop — từ setup đến tối ưu doanh số.</p>
+            <div class="srv-features">
+              <div class="srv-feat">Amazon Store Setup & SEO</div>
+              <div class="srv-feat">Etsy Shop Optimization</div>
+              <div class="srv-feat">TikTok Shop US Launch</div>
+              <div class="srv-feat">Inventory & Order Management</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="srv-detail-card reveal d2" id="marketing">
+          <div class="srv-thumb">
+            <div class="img-ph ph-marketing" data-label="📊  Digital Marketing"><img src="assets/images/services/digital-marketing.jpg" alt="Digital Marketing" onerror="this.style.visibility='hidden'"></div>
+            <div class="srv-num">08</div>
+          </div>
+          <div class="srv-body">
+            <span class="srv-tag tag tag--green">Marketing</span>
+            <h3>Digital Marketing</h3>
+            <p>Chiến dịch quảng cáo đa kênh, tối ưu ngân sách thông minh và tăng trưởng doanh thu bền vững.</p>
+            <div class="srv-features">
+              <div class="srv-feat">Amazon PPC & Sponsored Ads</div>
+              <div class="srv-feat">TikTok Ads & Spark Ads</div>
+              <div class="srv-feat">Social Media Marketing</div>
+              <div class="srv-feat">Analytics & Performance Reporting</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="srv-detail-card reveal d3">
+          <div class="srv-thumb">
+            <div class="img-ph ph-tech" data-label="⚙️  Tech Optimization"><img src="assets/images/services/tech-optimization.jpg" alt="Tech Optimization" onerror="this.style.visibility='hidden'"></div>
+            <div class="srv-num">09</div>
+          </div>
+          <div class="srv-body">
+            <span class="srv-tag tag tag--blue">Technology</span>
+            <h3>Tech Optimization</h3>
+            <p>Cập nhật công nghệ liên tục, nâng cấp hệ thống và tối ưu hiệu suất để luôn dẫn đầu thị trường.</p>
+            <div class="srv-features">
+              <div class="srv-feat">Website Performance Audit</div>
+              <div class="srv-feat">Core Web Vitals Optimization</div>
+              <div class="srv-feat">E-commerce Platform Migration</div>
+              <div class="srv-feat">API Integration & Automation</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUY TRÌNH -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="sh c reveal">
+        <div class="sl">Quy trình làm việc</div>
+        <h2 class="st">Từ ý tưởng đến kết quả</h2>
+        <div class="divider c"></div>
+        <p class="ss">Quy trình rõ ràng, minh bạch — bạn luôn biết dự án đang ở đâu.</p>
+      </div>
+      <div class="process-grid">
+        <div class="proc-step reveal d1">
+          <div class="proc-num">1</div>
+          <h4>Tư vấn & Phân tích</h4>
+          <p>Lắng nghe nhu cầu, phân tích thị trường và xác định mục tiêu rõ ràng cho dự án.</p>
+        </div>
+        <div class="proc-step reveal d2">
+          <div class="proc-num">2</div>
+          <h4>Lên kế hoạch & Báo giá</h4>
+          <p>Xây dựng kế hoạch chi tiết, timeline và báo giá minh bạch trước khi bắt đầu.</p>
+        </div>
+        <div class="proc-step reveal d3">
+          <div class="proc-num">3</div>
+          <h4>Thực hiện & Review</h4>
+          <p>Triển khai với cập nhật tiến độ thường xuyên, review và chỉnh sửa theo phản hồi.</p>
+        </div>
+        <div class="proc-step reveal d4">
+          <div class="proc-num">4</div>
+          <h4>Bàn giao & Hỗ trợ</h4>
+          <p>Bàn giao đúng hẹn, hỗ trợ sau triển khai và đảm bảo kết quả dài hạn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMS -->
+  <section class="section">
+    <div class="container">
+      <div class="sh c reveal">
+        <div class="sl">Nền tảng chúng tôi phục vụ</div>
+        <h2 class="st">Chuyên gia trên mọi sàn</h2>
+        <div class="divider c"></div>
+        <p class="ss">Kinh nghiệm thực chiến trên các sàn thương mại điện tử quốc tế hàng đầu.</p>
+      </div>
+      <div class="platforms-grid">
+        <div class="plat-card reveal d1">
+          <div class="plat-name">AMAZON</div>
+          <div class="plat-desc">Top Global Sellers — FBA, FBM, Sponsored Ads, A+ Content, Store Design</div>
+        </div>
+        <div class="plat-card reveal d2">
+          <div class="plat-name">ETSY</div>
+          <div class="plat-desc">Handmade & Print-on-Demand — SEO, Listing Optimization, Shop Branding</div>
+        </div>
+        <div class="plat-card reveal d3">
+          <div class="plat-name">TIKTOK SHOP</div>
+          <div class="plat-desc">TikTok Shop US — Affiliate, Spark Ads, Live Commerce, Creator Partnerships</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       VĂN HOÁ & TUYỂN DỤNG
+  ═══════════════════════════════════════ -->
+
+  <!-- CULTURE -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="culture-grid">
+        <div class="culture-img-wrap reveal rl">
+          <div class="img-ph ph-culture" data-label="🚀  Văn hoá Ethan Ecom" data-px="0.18">
+            <img src="assets/images/careers/culture.jpg" alt="Văn hoá Ethan Ecom" onerror="this.style.visibility='hidden'">
+          </div>
+        </div>
+        <div>
+          <div class="sl reveal">Văn hoá công ty</div>
+          <h2 class="st reveal">Nơi ý tưởng<br><em style="color:var(--blue);font-style:normal">được tôn trọng</em></h2>
+          <div class="divider reveal"></div>
+          <p class="reveal" style="margin-top:22px;color:var(--text);line-height:1.85;font-size:16px">Tại Ethan Ecom, chúng tôi tin rằng mỗi người đều có tiềm năng vô hạn chờ được khám phá. Môi trường làm việc sáng tạo, cởi mở của chúng tôi là nơi mà ý tưởng khác biệt không chỉ được chấp nhận — mà còn được <strong>tôn trọng và hiện thực hoá</strong>.</p>
+          <p class="reveal" style="margin-top:14px;color:var(--text);line-height:1.85;font-size:16px">Phương châm đội nhóm: <strong style="color:var(--blue)">"Đồng lòng đồng sức, bứt phá gặt thành công"</strong></p>
+          <a href="#jobs" class="btn btn--blue reveal" style="margin-top:28px">Xem vị trí tuyển dụng →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="sh c reveal">
+        <div class="sl">Phúc lợi</div>
+        <h2 class="st">Tại sao chọn Ethan Ecom?</h2>
+        <div class="divider c"></div>
+        <p class="ss">Những gì chúng tôi mang lại cho từng thành viên trong đội ngũ.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card reveal d1">
+          <div class="benefit-ico">🍱</div>
+          <div>
+            <h4>Ăn trưa & hỗ trợ máy tính</h4>
+            <p>Trợ cấp ăn trưa tại công ty và được hỗ trợ máy tính làm việc đầy đủ ngay từ ngày đầu.</p>
+          </div>
+        </div>
+        <div class="benefit-card reveal d2">
+          <div class="benefit-ico">💰</div>
+          <div>
+            <h4>Lương thưởng hấp dẫn</h4>
+            <p>Thưởng KPI, OT, Bonus hiệu quả công việc, thưởng Lễ/Tết và lương tháng 13 đầy đủ.</p>
+          </div>
+        </div>
+        <div class="benefit-card reveal d3">
+          <div class="benefit-ico">🛡️</div>
+          <div>
+            <h4>BHXH, BHYT đầy đủ</h4>
+            <p>Chế độ bảo hiểm xã hội và y tế đầy đủ theo đúng quy định của Luật Lao động Việt Nam.</p>
+          </div>
+        </div>
+        <div class="benefit-card reveal d4">
+          <div class="benefit-ico">📚</div>
+          <div>
+            <h4>Đào tạo kỹ năng chuyên sâu</h4>
+            <p>Được đào tạo kỹ năng mềm và chuyên môn hướng tới khách hàng quốc tế Amazon, Etsy, TikTok Shop.</p>
+          </div>
+        </div>
+        <div class="benefit-card reveal d1">
+          <div class="benefit-ico">✈️</div>
+          <div>
+            <h4>Du lịch & team building</h4>
+            <p>Du lịch và team building hàng năm trong môi trường trẻ trung, năng động và sáng tạo.</p>
+          </div>
+        </div>
+        <div class="benefit-card reveal d2">
+          <div class="benefit-ico">📈</div>
+          <div>
+            <h4>Lộ trình thăng tiến rõ ràng</h4>
+            <p>Kế hoạch phát triển sự nghiệp minh bạch, cơ hội thăng tiến thực chiến theo kết quả công việc.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOB LISTINGS -->
+  <section class="section" id="jobs">
+    <div class="container">
+      <div class="sh c reveal">
+        <div class="sl">Vị trí tuyển dụng</div>
+        <h2 class="st">14 vị trí đang mở</h2>
+        <div class="divider c"></div>
+        <p class="ss">Tìm vị trí phù hợp và bắt đầu hành trình cùng Ethan Ecom tại Võ Dõng - Thống Nhất - Đồng Nai.</p>
+      </div>
+
+      <div class="jobs-filter reveal">
+        <button class="jfbtn active">Tất cả</button>
+        <button class="jfbtn" data-dept="tech">Tech</button>
+        <button class="jfbtn" data-dept="creative">Creative</button>
+        <button class="jfbtn" data-dept="media">Media</button>
+        <button class="jfbtn" data-dept="ecom">E-commerce</button>
+        <button class="jfbtn" data-dept="marketing">Marketing</button>
+        <button class="jfbtn" data-dept="production">Production</button>
+        <button class="jfbtn" data-dept="finance">Finance</button>
+        <button class="jfbtn" data-dept="hr">HR</button>
+      </div>
+
+      <div class="jobs-grid" id="jobsList">
+
+        <!-- 1. Leader TikTokShop US -->
+        <div class="jcard-accordion reveal" data-dept="ecom">
+          <div class="jcard-head" onclick="toggleJob(this)">
+            <div class="jcard-head-left">
+              <span class="jtag de">E-Commerce · Không giới hạn</span>
+              <h3>Leader TikTokShop US</h3>
+              <span class="jcard-salary">💰 UP TO 20 Triệu + KPI + OT</span>
+            </div>
+            <div class="jcard-head-right">
+              <span class="jcard-dept-badge de">Chỉ huy</span>
+              <div class="jcard-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+            </div>
+          </div>
+          <div class="jcard-body">
+            <div class="jcard-cols">
+              <div>
+                <p class="jcard-section-title">Mô tả công việc</p>
+                <ul class="jdetail-list">
+                  <li>Chịu trách nhiệm build và vận hành tài nguyên TikTok Shop US của công ty.</li>
+                  <li>Phát triển các hướng đi mới: xây kênh video, định hướng content, booking KOL/KOC, Livestream, Ads.</li>
+                  <li>Quản lý các member trong team, tính thưởng phạt cho seller, idea, designer.</li>
+                  <li>Trực tiếp làm việc với cấp trên để nghiên cứu phát triển mảng TikTok Shop, tăng doanh số và độ phủ.</li>
+                  <li>Đưa ra plan hoạt động của team, quyết định niche bán hàng, lộ trình phát triển.</li>
+                </ul>
+                <p class="jcard-section-title" style="margin-top:18px">Yêu cầu</p>
+                <ul class="jdetail-list">
+                  <li>Tiếng Anh tốt, IELTS 5.5 trở lên hoặc tương đương.</li>
+                  <li>Kinh nghiệm 6 tháng trở lên ở vị trí tương đương, hoặc đã xây kênh TikTok ở thị trường VN/Asia/US/UK.</li>
+                  <li>Chăm chỉ, chịu khó, có trách nhiệm với công việc.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="jcard-section-title">Quyền lợi</p>
+                <ul class="jperks-list">
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương cứng UP TO 20 triệu + KPI + OT</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Hỗ trợ máy tính làm việc</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Trợ cấp ăn trưa tại Công ty</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT + thưởng Lễ/Tết, lương tháng 13</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Đào tạo kỹ năng mềm, du lịch team building hàng năm</li>
+                </ul>
+                <a href="mailto:hr@ethanecom.com?subject=Leader TikTokShop US - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Seller POD & Dropship -->
+        <div class="jcard-accordion reveal" data-dept="ecom">
+          <div class="jcard-head" onclick="toggleJob(this)">
+            <div class="jcard-head-left">
+              <span class="jtag de">E-Commerce · Không giới hạn</span>
+              <h3>Seller POD &amp; Seller Dropship</h3>
+              <span class="jcard-salary">💰 UP TO 15 Triệu + KPI + OT</span>
+            </div>
+            <div class="jcard-head-right">
+              <span class="jcard-dept-badge de">E-Com</span>
+              <div class="jcard-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+            </div>
+          </div>
+          <div class="jcard-body">
+            <div class="jcard-cols">
+              <div>
+                <p class="jcard-section-title">Mô tả công việc</p>
+                <ul class="jdetail-list">
+                  <li>Tìm kiếm sản phẩm hot trend (US), quản lý tài khoản bán hàng (Ebay, Etsy, Amazon, TikTok Shop US).</li>
+                  <li>Tìm kiếm và làm việc với supplier để cải tiến sản phẩm và xử lý đơn hàng.</li>
+                </ul>
+                <p class="jcard-section-title" style="margin-top:18px">Yêu cầu</p>
+                <ul class="jdetail-list">
+                  <li>Có kinh nghiệm liên quan đến Ecommerce VN/cross border.</li>
+                  <li>Khả năng làm việc độc lập, nghiêm túc trong công việc.</li>
+                  <li>Thành thật, chịu khó học hỏi.</li>
+                  <li>Ưu tiên ứng viên biết sơ về chỉnh sửa hình ảnh, website hoặc có kiến thức IT tốt.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="jcard-section-title">Quyền lợi</p>
+                <ul class="jperks-list">
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương cứng UP TO 15 triệu + KPI + OT</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Hỗ trợ máy tính làm việc</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Trợ cấp ăn trưa tại Công ty</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT + thưởng Lễ/Tết, lương tháng 13</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Đào tạo kỹ năng mềm, du lịch team building hàng năm</li>
+                </ul>
+                <a href="mailto:hr@ethanecom.com?subject=Seller POD và Seller Dropship - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Internet Marketing -->
+        <div class="jcard-accordion reveal" data-dept="marketing">
+          <div class="jcard-head" onclick="toggleJob(this)">
+            <div class="jcard-head-left">
+              <span class="jtag dma">Marketing · 10 người</span>
+              <h3>Nhân viên Internet Marketing</h3>
+              <span class="jcard-salary">💰 Từ 8 Triệu + KPI lên tới 30 Triệu</span>
+            </div>
+            <div class="jcard-head-right">
+              <span class="jcard-dept-badge dma">Marketing</span>
+              <div class="jcard-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+            </div>
+          </div>
+          <div class="jcard-body">
+            <div class="jcard-cols">
+              <div>
+                <p class="jcard-section-title">Mô tả công việc</p>
+                <ul class="jdetail-list">
+                  <li>Nghiên cứu thị trường và lên ý tưởng sản phẩm cho các nền tảng thương mại điện tử thị trường US, EU.</li>
+                  <li>Đăng tải sản phẩm lên website.</li>
+                  <li>Được hướng dẫn và đào tạo nghiệp vụ trong quá trình làm việc.</li>
+                </ul>
+                <p class="jcard-section-title" style="margin-top:18px">Yêu cầu</p>
+                <ul class="jdetail-list">
+                  <li>Sử dụng thành thạo các công cụ AI như ChatGPT, Midjourney là một lợi thế.</li>
+                  <li>Có khả năng giao tiếp cơ bản bằng Tiếng Anh.</li>
+                  <li>Thành thạo máy tính và tin học văn phòng.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="jcard-section-title">Quyền lợi</p>
+                <ul class="jperks-list">
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Thu nhập từ 8 triệu + OT + Thưởng KPI lên tới 30 triệu</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Hỗ trợ máy tính làm việc</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Trợ cấp ăn trưa tại Công ty</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT + thưởng Lễ/Tết, lương tháng 13</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Đào tạo kỹ năng mềm, du lịch team building hàng năm</li>
+                </ul>
+                <a href="mailto:hr@ethanecom.com?subject=Nhân viên Internet Marketing - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Video Creator -->
+        <div class="jcard-accordion reveal" data-dept="media">
+          <div class="jcard-head" onclick="toggleJob(this)">
+            <div class="jcard-head-left">
+              <span class="jtag dm">Media · 10 người</span>
+              <h3>Video Creator / Editor</h3>
+              <span class="jcard-salary">💰 Từ 8 Triệu + KPI lên tới 30 Triệu</span>
+            </div>
+            <div class="jcard-head-right">
+              <span class="jcard-dept-badge dm">Media</span>
+              <div class="jcard-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+            </div>
+          </div>
+          <div class="jcard-body">
+            <div class="jcard-cols">
+              <div>
+                <p class="jcard-section-title">Mô tả công việc</p>
+                <ul class="jdetail-list">
+                  <li>Lên ý tưởng nội dung, quay dựng, chụp ảnh, cắt ghép để tạo video cho các sản phẩm của công ty.</li>
+                  <li>Chỉnh sửa và tạo hiệu ứng để hoàn thiện video, clip theo yêu cầu.</li>
+                  <li>Sáng tạo nội dung video theo xu hướng TikTok/Reels.</li>
+                </ul>
+                <p class="jcard-section-title" style="margin-top:18px">Yêu cầu</p>
+                <ul class="jdetail-list">
+                  <li>Có đam mê và năng khiếu quay video, chụp ảnh.</li>
+                  <li>Kiến thức cơ bản về quay phim, chụp ảnh.</li>
+                  <li>Thành thạo Adobe Premiere, After Effects, CapCut, AI.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="jcard-section-title">Quyền lợi</p>
+                <ul class="jperks-list">
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Thu nhập từ 8 triệu + OT + Thưởng KPI lên tới 30 triệu</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Hỗ trợ máy tính làm việc</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Trợ cấp ăn trưa tại Công ty</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT + thưởng Lễ/Tết, lương tháng 13</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Đào tạo kỹ năng mềm, du lịch team building hàng năm</li>
+                </ul>
+                <a href="mailto:hr@ethanecom.com?subject=Video Creator/Editor - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Web Developer -->
+        <div class="jcard-accordion reveal" data-dept="tech">
+          <div class="jcard-head" onclick="toggleJob(this)">
+            <div class="jcard-head-left">
+              <span class="jtag dt">Tech &amp; IT · 3 người · Thử việc 2 tháng</span>
+              <h3>Nhân viên Web Developer</h3>
+              <span class="jcard-salary">💰 8 – 12 Triệu (deal theo kinh nghiệm)</span>
+            </div>
+            <div class="jcard-head-right">
+              <span class="jcard-dept-badge dt">Tech</span>
+              <div class="jcard-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+            </div>
+          </div>
+          <div class="jcard-body">
+            <div class="jcard-cols">
+              <div>
+                <p class="jcard-section-title">Mô tả công việc</p>
+                <ul class="jdetail-list">
+                  <li>Phát triển và bảo trì hệ thống web dựa trên yêu cầu của các dự án thương mại điện tử.</li>
+                  <li>Tham gia thiết kế và phát triển hệ thống, tối ưu hóa trải nghiệm người dùng, nâng cao hiệu quả quản lý và bán hàng.</li>
+                </ul>
+                <p class="jcard-section-title" style="margin-top:18px">Yêu cầu</p>
+                <ul class="jdetail-list">
+                  <li>Frontend CSS/HTML thành thạo.</li>
+                  <li>Đã làm WordPress ít nhất 6 tháng.</li>
+                  <li>Có kỹ năng thiết kế wireframe, layout website.</li>
+                  <li>Tư duy nhanh nhẹn, ứng biến và tự lực tốt.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="jcard-section-title">Quyền lợi</p>
+                <ul class="jperks-list">
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương 8–12 triệu (deal theo năng lực) + OT</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Hỗ trợ máy tính làm việc</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Trợ cấp ăn trưa tại Công ty</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT + thưởng Lễ/Tết, lương tháng 13</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Du lịch, team building hàng năm</li>
+                </ul>
+                <a href="mailto:hr@ethanecom.com?subject=Nhân viên Web Developer - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Graphic Designer -->
+        <div class="jcard-accordion reveal" data-dept="creative">
+          <div class="jcard-head" onclick="toggleJob(this)">
+            <div class="jcard-head-left">
+              <span class="jtag dc">Creative Design · 10 người</span>
+              <h3>Graphic Designer</h3>
+              <span class="jcard-salary">💰 Từ 8 Triệu + KPI lên tới 30 Triệu</span>
+            </div>
+            <div class="jcard-head-right">
+              <span class="jcard-dept-badge dc">Creative</span>
+              <div class="jcard-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+            </div>
+          </div>
+          <div class="jcard-body">
+            <div class="jcard-cols">
+              <div>
+                <p class="jcard-section-title">Mô tả công việc</p>
+                <ul class="jdetail-list">
+                  <li>Thiết kế các sản phẩm in ấn theo yêu cầu dành cho thị trường nước ngoài (áo thun, cốc, poster, mũ…).</li>
+                  <li>Lên ý tưởng thiết kế và tạo ra sản phẩm từ ý tưởng.</li>
+                </ul>
+                <p class="jcard-section-title" style="margin-top:18px">Yêu cầu</p>
+                <ul class="jdetail-list">
+                  <li>Thành thạo Photoshop, Illustrator. Biết vẽ tay, vẽ digital là lợi thế.</li>
+                  <li>Luôn sáng tạo, tư duy logic, chịu khó, không ngại khổ.</li>
+                  <li>Chăm chỉ, cẩn thận, chủ động trong công việc.</li>
+                  <li>Khả năng làm việc nhóm tốt; tuân thủ deadline, tinh thần học hỏi.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="jcard-section-title">Quyền lợi</p>
+                <ul class="jperks-list">
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Thu nhập từ 8 triệu + OT + Thưởng KPI lên tới 30 triệu</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Hỗ trợ máy tính làm việc</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Trợ cấp ăn trưa tại Công ty</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT + thưởng Lễ/Tết, lương tháng 13</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Đào tạo kỹ năng mềm, du lịch team building hàng năm</li>
+                </ul>
+                <a href="mailto:hr@ethanecom.com?subject=Graphic Designer - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. HR -->
+        <div class="jcard-accordion reveal" data-dept="hr">
+          <div class="jcard-head" onclick="toggleJob(this)">
+            <div class="jcard-head-left">
+              <span class="jtag df">HR &amp; Admin · 1 người</span>
+              <h3>Nhân viên Nhân Sự (HR)</h3>
+              <span class="jcard-salary">💰 Từ 9 Triệu + OT + Thưởng</span>
+            </div>
+            <div class="jcard-head-right">
+              <span class="jcard-dept-badge df">HR</span>
+              <div class="jcard-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+            </div>
+          </div>
+          <div class="jcard-body">
+            <div class="jcard-cols">
+              <div>
+                <p class="jcard-section-title">Mô tả công việc</p>
+                <ul class="jdetail-list">
+                  <li>Quản lý hồ sơ nhân viên.</li>
+                  <li>Hỗ trợ tuyển dụng từ đăng tuyển, phỏng vấn đến lựa chọn ứng viên.</li>
+                  <li>Thiết lập và duy trì các chương trình đào tạo và phát triển nhân viên.</li>
+                  <li>Hỗ trợ đánh giá hiệu suất và xử lý các vấn đề quan hệ nhân viên.</li>
+                </ul>
+                <p class="jcard-section-title" style="margin-top:18px">Yêu cầu</p>
+                <ul class="jdetail-list">
+                  <li>Tốt nghiệp Đại học chuyên ngành Quản trị Nhân lực, Tâm lý học hoặc các ngành liên quan.</li>
+                  <li>Có ít nhất 1–3 năm kinh nghiệm trong lĩnh vực nhân sự.</li>
+                  <li>Kỹ năng giao tiếp, làm việc nhóm, tổ chức tốt. Có tinh thần bảo mật thông tin.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="jcard-section-title">Quyền lợi</p>
+                <ul class="jperks-list">
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Thu nhập từ 9 triệu + OT + Thưởng hiệu quả công việc</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Hỗ trợ máy tính + Trợ cấp ăn trưa</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT + thưởng Lễ/Tết, lương tháng 13</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Đào tạo kỹ năng mềm, du lịch team building hàng năm</li>
+                </ul>
+                <a href="mailto:hr@ethanecom.com?subject=Nhân viên Nhân Sự HR - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Kế toán tổng hợp -->
+        <div class="jcard-accordion reveal" data-dept="finance">
+          <div class="jcard-head" onclick="toggleJob(this)">
+            <div class="jcard-head-left">
+              <span class="jtag df">Finance · 2 người</span>
+              <h3>Nhân viên Kế Toán Tổng Hợp</h3>
+              <span class="jcard-salary">💰 Từ 7 Triệu + OT + Thưởng</span>
+            </div>
+            <div class="jcard-head-right">
+              <span class="jcard-dept-badge df">Finance</span>
+              <div class="jcard-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+            </div>
+          </div>
+          <div class="jcard-body">
+            <div class="jcard-cols">
+              <div>
+                <p class="jcard-section-title">Mô tả công việc</p>
+                <ul class="jdetail-list">
+                  <li>Quản lý &amp; hạch toán toàn bộ hoạt động thu chi của công ty.</li>
+                  <li>Tổng hợp và đối soát doanh thu từ các nền tảng (theo tuần/tháng).</li>
+                  <li>Theo dõi công nợ với nhà cung cấp, đối tác vận chuyển, nền tảng bán hàng.</li>
+                  <li>Lập báo cáo tài chính nội bộ hàng tháng/quý/năm cho Ban Giám đốc.</li>
+                  <li>Quản lý thủ tục BHXH, BHYT, BHTN cho nhân viên.</li>
+                </ul>
+                <p class="jcard-section-title" style="margin-top:18px">Yêu cầu</p>
+                <ul class="jdetail-list">
+                  <li>Tốt nghiệp Đại học chuyên ngành Kế toán, Tài chính, Kiểm toán hoặc ngành liên quan. Chấp nhận sinh viên mới ra trường.</li>
+                  <li>Có khả năng phân tích và xử lý số liệu chính xác. Tinh thần trách nhiệm cao.</li>
+                  <li>Luôn cập nhật kiến thức về luật thuế, chuẩn mực kế toán.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="jcard-section-title">Quyền lợi</p>
+                <ul class="jperks-list">
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Thu nhập từ 7 triệu + OT + Thưởng hiệu quả công việc</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Hỗ trợ máy tính + Trợ cấp ăn trưa</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT + thưởng Lễ/Tết, lương tháng 13</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Đào tạo kỹ năng mềm, du lịch team building hàng năm</li>
+                </ul>
+                <a href="mailto:hr@ethanecom.com?subject=Nhân viên Kế Toán Tổng Hợp - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Quản lý xưởng thêu -->
+        <div class="jcard-accordion reveal" data-dept="production">
+          <div class="jcard-head" onclick="toggleJob(this)">
+            <div class="jcard-head-left">
+              <span class="jtag dp">Production · 1 người</span>
+              <h3>Quản Lý Xưởng Thêu</h3>
+              <span class="jcard-salary">💰 Từ 8 Triệu + Bonus</span>
+            </div>
+            <div class="jcard-head-right">
+              <span class="jcard-dept-badge dp">Sản xuất</span>
+              <div class="jcard-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+            </div>
+          </div>
+          <div class="jcard-body">
+            <div class="jcard-cols">
+              <div>
+                <p class="jcard-section-title">Mô tả công việc</p>
+                <ul class="jdetail-list">
+                  <li>Quản lý và điều phối các hoạt động sản xuất tại xưởng thêu.</li>
+                  <li>Lập kế hoạch, phân công công việc và giám sát tiến độ sản xuất.</li>
+                  <li>Đảm bảo chất lượng sản phẩm thêu và hiệu suất vận hành máy thêu.</li>
+                  <li>Phối hợp nhịp nhàng với các bộ phận liên quan trong quy trình sản xuất.</li>
+                </ul>
+                <p class="jcard-section-title" style="margin-top:18px">Yêu cầu</p>
+                <ul class="jdetail-list">
+                  <li>Có ít nhất 2 năm kinh nghiệm quản lý sản xuất tại xưởng thêu.</li>
+                  <li>Cẩn thận, tỉ mỉ, chịu khó. Sẵn sàng tăng ca khi có yêu cầu.</li>
+                  <li>Ưu tiên ứng viên có khả năng xử lý file thêu.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="jcard-section-title">Quyền lợi</p>
+                <ul class="jperks-list">
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương cứng từ 8 triệu + Bonus</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT đầy đủ theo Luật lao động</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương tháng 13, nghỉ lễ theo quy định</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Ăn trưa và nghỉ trưa tại văn phòng</li>
+                </ul>
+                <a href="mailto:hr@ethanecom.com?subject=Quản Lý Xưởng Thêu - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Kỹ thuật thêu -->
+        <div class="jcard-accordion reveal" data-dept="production">
+          <div class="jcard-head" onclick="toggleJob(this)">
+            <div class="jcard-head-left">
+              <span class="jtag dp">Production · 4 người</span>
+              <h3>Nhân viên Kỹ Thuật Thêu</h3>
+              <span class="jcard-salary">💰 Từ 7 Triệu + Bonus</span>
+            </div>
+            <div class="jcard-head-right">
+              <span class="jcard-dept-badge dp">Sản xuất</span>
+              <div class="jcard-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+            </div>
+          </div>
+          <div class="jcard-body">
+            <div class="jcard-cols">
+              <div>
+                <p class="jcard-section-title">Mô tả công việc</p>
+                <ul class="jdetail-list">
+                  <li>Vận hành máy thêu để sản xuất đơn hàng theo yêu cầu.</li>
+                  <li>Kiểm tra sản phẩm và mẫu thêu để đảm bảo đúng tiêu chuẩn đơn hàng.</li>
+                  <li>Xuất file thêu phù hợp với máy thêu.</li>
+                </ul>
+                <p class="jcard-section-title" style="margin-top:18px">Yêu cầu</p>
+                <ul class="jdetail-list">
+                  <li>Có ít nhất 12 tháng kinh nghiệm vận hành máy thêu.</li>
+                  <li>Cẩn thận, tỉ mỉ, chịu khó. Sẵn sàng tăng ca khi có yêu cầu.</li>
+                  <li>Ưu tiên ứng viên có khả năng xử lý file thêu.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="jcard-section-title">Quyền lợi</p>
+                <ul class="jperks-list">
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương cứng từ 7 triệu + Bonus</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT đầy đủ theo Luật lao động</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương tháng 13, nghỉ lễ theo quy định</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Ăn trưa và nghỉ trưa tại văn phòng</li>
+                </ul>
+                <a href="mailto:hr@ethanecom.com?subject=Nhân viên Kỹ Thuật Thêu - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Kiểm hàng -->
+        <div class="jcard-accordion reveal" data-dept="production">
+          <div class="jcard-head" onclick="toggleJob(this)">
+            <div class="jcard-head-left">
+              <span class="jtag dp">Production · 2 người · Không cần kinh nghiệm</span>
+              <h3>Nhân viên Kiểm Hàng</h3>
+              <span class="jcard-salary">💰 Từ 6 Triệu + Bonus</span>
+            </div>
+            <div class="jcard-head-right">
+              <span class="jcard-dept-badge dp">Sản xuất</span>
+              <div class="jcard-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+            </div>
+          </div>
+          <div class="jcard-body">
+            <div class="jcard-cols">
+              <div>
+                <p class="jcard-section-title">Mô tả công việc</p>
+                <ul class="jdetail-list">
+                  <li>Cắt chỉ thừa, vệ sinh và hoàn thiện sản phẩm.</li>
+                  <li>Kiểm tra sản phẩm và mẫu thêu để đảm bảo đúng theo yêu cầu đơn hàng.</li>
+                  <li>Thực hiện các công việc hỗ trợ khác trong quá trình sản xuất.</li>
+                </ul>
+                <p class="jcard-section-title" style="margin-top:18px">Yêu cầu</p>
+                <ul class="jdetail-list">
+                  <li>Không yêu cầu kinh nghiệm — được đào tạo ngay tại xưởng.</li>
+                  <li>Cẩn thận, tỉ mỉ, chịu khó, ham học hỏi.</li>
+                  <li>Sẵn sàng tăng ca khi có yêu cầu.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="jcard-section-title">Quyền lợi</p>
+                <ul class="jperks-list">
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương cứng từ 6 triệu + Bonus</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT đầy đủ theo Luật lao động</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương tháng 13, nghỉ lễ theo quy định</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Ăn trưa và nghỉ trưa tại văn phòng</li>
+                </ul>
+                <a href="mailto:hr@ethanecom.com?subject=Nhân viên Kiểm Hàng - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. QC -->
+        <div class="jcard-accordion reveal" data-dept="production">
+          <div class="jcard-head" onclick="toggleJob(this)">
+            <div class="jcard-head-left">
+              <span class="jtag dp">Production · 4 người · Không cần kinh nghiệm</span>
+              <h3>Nhân viên Kiểm Soát Chất Lượng (QC)</h3>
+              <span class="jcard-salary">💰 Từ 7 Triệu + Bonus</span>
+            </div>
+            <div class="jcard-head-right">
+              <span class="jcard-dept-badge dp">Sản xuất</span>
+              <div class="jcard-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+            </div>
+          </div>
+          <div class="jcard-body">
+            <div class="jcard-cols">
+              <div>
+                <p class="jcard-section-title">Mô tả công việc</p>
+                <ul class="jdetail-list">
+                  <li>Kiểm tra chất lượng thành phẩm và mẫu thêu để đảm bảo đúng tiêu chuẩn đơn hàng và đủ điều kiện xuất xưởng.</li>
+                  <li>Hoàn thiện, đóng gói sản phẩm và dán nhãn trước khi giao cho khách hàng.</li>
+                  <li>Thực hiện các công việc hỗ trợ khác trong quá trình sản xuất.</li>
+                </ul>
+                <p class="jcard-section-title" style="margin-top:18px">Yêu cầu</p>
+                <ul class="jdetail-list">
+                  <li>Không yêu cầu kinh nghiệm — được đào tạo ngay tại xưởng.</li>
+                  <li>Cẩn thận, tỉ mỉ, chịu khó, ham học hỏi.</li>
+                  <li>Sẵn sàng tăng ca khi có yêu cầu.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="jcard-section-title">Quyền lợi</p>
+                <ul class="jperks-list">
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương cứng từ 7 triệu + Bonus</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT đầy đủ theo Luật lao động</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương tháng 13, nghỉ lễ theo quy định</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Ăn trưa và nghỉ trưa tại văn phòng</li>
+                </ul>
+                <a href="mailto:hr@ethanecom.com?subject=Nhân viên Kiểm Soát Chất Lượng QC - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 13. Kỹ thuật máy laser -->
+        <div class="jcard-accordion reveal" data-dept="production">
+          <div class="jcard-head" onclick="toggleJob(this)">
+            <div class="jcard-head-left">
+              <span class="jtag dp">Production · Không giới hạn</span>
+              <h3>Nhân viên Kỹ Thuật Máy Laser</h3>
+              <span class="jcard-salary">💰 Từ 7 Triệu + Bonus</span>
+            </div>
+            <div class="jcard-head-right">
+              <span class="jcard-dept-badge dp">Sản xuất</span>
+              <div class="jcard-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+            </div>
+          </div>
+          <div class="jcard-body">
+            <div class="jcard-cols">
+              <div>
+                <p class="jcard-section-title">Mô tả công việc</p>
+                <ul class="jdetail-list">
+                  <li>Vận hành máy laser để cắt, khắc hoặc xử lý vật liệu theo yêu cầu thiết kế.</li>
+                  <li>Thiết lập và điều chỉnh thông số máy laser để đảm bảo độ chính xác.</li>
+                  <li>Bảo trì, vệ sinh và kiểm tra định kỳ máy laser.</li>
+                  <li>Phối hợp với bộ phận thêu để hoàn thiện sản phẩm.</li>
+                </ul>
+                <p class="jcard-section-title" style="margin-top:18px">Yêu cầu</p>
+                <ul class="jdetail-list">
+                  <li>Kinh nghiệm vận hành máy laser hoặc các thiết bị công nghệ cao.</li>
+                  <li>Hiểu biết về kỹ thuật laser và an toàn lao động.</li>
+                  <li>Cẩn thận, tập trung, có khả năng đọc bản vẽ kỹ thuật.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="jcard-section-title">Quyền lợi</p>
+                <ul class="jperks-list">
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương cứng từ 7 triệu + Bonus</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT đầy đủ theo Luật lao động</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương tháng 13, nghỉ lễ theo quy định</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Ăn trưa và nghỉ trưa tại văn phòng</li>
+                </ul>
+                <a href="mailto:hr@ethanecom.com?subject=Nhân viên Kỹ Thuật Máy Laser - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 14. Vận hành máy in -->
+        <div class="jcard-accordion reveal" data-dept="production">
+          <div class="jcard-head" onclick="toggleJob(this)">
+            <div class="jcard-head-left">
+              <span class="jtag dp">Production · 2 người</span>
+              <h3>Nhân viên Vận Hành Máy In</h3>
+              <span class="jcard-salary">💰 Từ 8 Triệu + Bonus</span>
+            </div>
+            <div class="jcard-head-right">
+              <span class="jcard-dept-badge dp">Sản xuất</span>
+              <div class="jcard-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+            </div>
+          </div>
+          <div class="jcard-body">
+            <div class="jcard-cols">
+              <div>
+                <p class="jcard-section-title">Mô tả công việc</p>
+                <ul class="jdetail-list">
+                  <li>Vận hành máy in để sản xuất sản phẩm theo yêu cầu đơn hàng.</li>
+                  <li>Đảm bảo chất lượng in ấn đạt tiêu chuẩn xuất khẩu.</li>
+                  <li>Phối hợp với các bộ phận liên quan trong quy trình sản xuất.</li>
+                </ul>
+                <p class="jcard-section-title" style="margin-top:18px">Thông tin làm việc</p>
+                <ul class="jdetail-list">
+                  <li>Giờ làm: 7:30 – 17:00, Thứ 2 đến Thứ 7 (nghỉ trưa 1h30')</li>
+                  <li>Địa chỉ: Võ Dõng – Thống Nhất – Đồng Nai</li>
+                  <li>Liên hệ: +84 967 473 979</li>
+                </ul>
+              </div>
+              <div>
+                <p class="jcard-section-title">Quyền lợi</p>
+                <ul class="jperks-list">
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương cứng từ 8 triệu + Bonus</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT đầy đủ theo Luật lao động</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương tháng 13, nghỉ lễ theo quy định</li>
+                  <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Ăn trưa và nghỉ trưa tại văn phòng</li>
+                </ul>
+                <a href="mailto:hr@ethanecom.com?subject=Nhân viên Vận Hành Máy In - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--blue" style="text-align:center">
+    <div class="container">
+      <div class="reveal">
+        <div class="sl" style="color:var(--yellow)">Không thấy vị trí phù hợp?</div>
+        <h2 class="st" style="color:#fff;margin-top:10px">Gửi CV tự nguyện —<br>chúng tôi luôn tìm kiếm tài năng</h2>
+        <p style="color:rgba(255,255,255,.75);margin:18px auto 32px;max-width:500px;font-size:16px;line-height:1.8">Nếu bạn đam mê E-commerce, Design hay Technology và muốn cùng xây dựng điều gì đó lớn — gửi CV về <strong style="color:#fff">hr@ethanecom.com</strong> với tiêu đề <strong style="color:#fff">[Tên Vị Trí] – [Họ và Tên]</strong>.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+          <a href="mailto:hr@ethanecom.com" class="btn btn--yellow">Gửi CV về hr@ethanecom.com →</a>
+          <a href="about.html" class="btn btn--outline">Tìm hiểu về chúng tôi</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER (injected by shared.js) -->
+<div id="site-footer"></div>
+
+<!-- APPLICATION MODAL -->
+<div class="modal" id="applyModal">
+  <div class="modal-panel">
+    <div class="modal-header">
+      <h3>Ứng tuyển: <span id="modalJobTitle"></span></h3>
+      <button class="modal-x" id="modalClose">✕</button>
+    </div>
+    <div class="modal-body">
+      <div style="background:#EEF2FF;border-radius:10px;padding:14px 16px;margin-bottom:20px;font-size:16px;color:var(--blue);line-height:1.7">
+        📨 CV sẽ được gửi về <strong>hr@ethanecom.com</strong><br>
+        Vui lòng đặt tiêu đề email theo cú pháp: <strong>[Tên Vị Trí] – [Họ và Tên]</strong>
+      </div>
+      <form id="applyForm" novalidate>
+        <div class="fg" style="margin-bottom:16px">
+          <label for="aname">Họ và tên *</label>
+          <input type="text" id="aname" placeholder="Nguyễn Văn A" required>
+        </div>
+        <div class="fg" style="margin-bottom:16px">
+          <label for="aemail">Email *</label>
+          <input type="email" id="aemail" placeholder="email@example.com" required>
+        </div>
+        <div class="fg" style="margin-bottom:16px">
+          <label for="aphone">Số điện thoại</label>
+          <input type="tel" id="aphone" placeholder="+84 xxx xxx xxx">
+        </div>
+        <div class="fg" style="margin-bottom:16px">
+          <label for="aexp">Kinh nghiệm làm việc</label>
+          <select id="aexp">
+            <option>Dưới 1 năm</option>
+            <option>1–2 năm</option>
+            <option>3–5 năm</option>
+            <option>Trên 5 năm</option>
+          </select>
+        </div>
+        <div class="fg" style="margin-bottom:16px">
+          <label>Upload CV (PDF hoặc DOC, tối đa 5MB)</label>
+          <div class="upload-area" id="uploadArea">
+            <div style="font-size:28px">📎</div>
+            <strong>Kéo thả file vào đây</strong>
+            <p>hoặc click để chọn file</p>
+            <input type="file" accept=".pdf,.doc,.docx" style="display:none" id="cvFile">
+          </div>
+          <div id="fileName" style="font-size:16px;color:var(--blue);margin-top:8px;display:none"></div>
+        </div>
+        <div class="fg" style="margin-bottom:20px">
+          <label for="amsg">Giới thiệu bản thân ngắn gọn</label>
+          <textarea id="amsg" placeholder="Chia sẻ về kinh nghiệm, điểm mạnh và lý do bạn muốn gia nhập Ethan Ecom..." style="min-height:100px"></textarea>
+        </div>
+        <button type="submit" class="btn btn--blue" style="width:100%;justify-content:center">Gửi hồ sơ →</button>
+      </form>
+      <div id="applySuccess" style="display:none;text-align:center;padding:32px;background:#f0fdf4;border-radius:12px;border:1.5px solid #bbf7d0;margin-top:8px">
+        <div style="font-size:36px">🎉</div>
+        <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-size:18px;font-weight:700;color:#15803d;margin-top:12px">Gửi thành công!</h4>
+        <p style="font-size:16px;color:#166534;margin-top:8px">Chúng tôi sẽ xem xét hồ sơ và liên hệ lại trong vòng 3–5 ngày làm việc.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Shared JS (must be last) -->
+<script src="assets/js/shared.js"></script>
+<script>
+/* ── PAGE-SPECIFIC JAVASCRIPT ── */
+
+// Job accordion toggle
+function toggleJob(header) {
+  var job = header.parentElement;
+  var isOpen = job.classList.contains('open');
+  document.querySelectorAll('.jcard-accordion.open').forEach(function(j) { j.classList.remove('open'); });
+  if (!isOpen) job.classList.add('open');
+}
+
+// Job filter
+document.querySelectorAll('.jfbtn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.jfbtn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const dept = btn.dataset.dept;
+    document.querySelectorAll('#jobsList .jcard-accordion').forEach(card => {
+      const show = !dept || card.dataset.dept === dept;
+      card.style.display = show ? '' : 'none';
+    });
+  });
+});
+
+// Modal open/close
+function openModal(title) {
+  document.getElementById('modalJobTitle').textContent = title;
+  document.getElementById('applyModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('applyForm').style.display = 'block';
+  document.getElementById('applySuccess').style.display = 'none';
+}
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById('applyModal').addEventListener('click', e => {
+  if (e.target === e.currentTarget) closeModal();
+});
+function closeModal() {
+  document.getElementById('applyModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// File upload area
+const uploadArea = document.getElementById('uploadArea');
+const cvFile = document.getElementById('cvFile');
+const fileName = document.getElementById('fileName');
+uploadArea.addEventListener('click', () => cvFile.click());
+cvFile.addEventListener('change', () => {
+  if (cvFile.files[0]) {
+    fileName.textContent = '📎 ' + cvFile.files[0].name;
+    fileName.style.display = 'block';
+  }
+});
+uploadArea.addEventListener('dragover', e => { e.preventDefault(); uploadArea.style.borderColor = 'var(--blue)'; });
+uploadArea.addEventListener('dragleave', () => { uploadArea.style.borderColor = ''; });
+uploadArea.addEventListener('drop', e => {
+  e.preventDefault();
+  uploadArea.style.borderColor = '';
+  if (e.dataTransfer.files[0]) {
+    cvFile.files = e.dataTransfer.files;
+    fileName.textContent = '📎 ' + e.dataTransfer.files[0].name;
+    fileName.style.display = 'block';
+  }
+});
+
+// Form submit (demo)
+document.getElementById('applyForm').addEventListener('submit', e => {
+  e.preventDefault();
+  document.getElementById('applyForm').style.display = 'none';
+  document.getElementById('applySuccess').style.display = 'block';
+});
+</script>
+</body>
+</html>

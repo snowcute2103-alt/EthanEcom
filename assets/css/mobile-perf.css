@@ -1,0 +1,224 @@
+/* ================================================================
+   ETHAN ECOM — Mobile Performance & Readability Optimizations
+   Applied on screens < 768px.
+   Goals:
+     • Remove GPU-heavy effects (will-change, backdrop-filter, complex shadows)
+     • Kill mouse-only interactions (hover states, spotlight, tilt)
+     • Reduce transition durations for faster perceived response
+     • Improve text readability (line-height, contrast, spacing)
+     • Disable decorative animations that cause layout thrash
+   ================================================================ */
+
+@media (max-width: 767px) {
+
+  /* ── 0. CONTACT POPUP — remove backdrop blur, simplify dialog ── */
+  .cp-overlay {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(0, 0, 0, 0.88) !important;
+  }
+
+  .cp-dialog {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+    padding: 28px 20px 24px !important;
+    animation-duration: 0.25s !important;
+  }
+
+  /* ── 1. KILL will-change on everything ── */
+  *,
+  *::before,
+  *::after {
+    will-change: auto !important;
+  }
+
+  /* ── 2. SIMPLIFY all transitions to max 200ms ── */
+  *,
+  *::before,
+  *::after {
+    transition-duration: 200ms !important;
+    transition-delay: 0s !important;
+    animation-duration: 400ms !important;
+    animation-delay: 0s !important;
+  }
+
+  /* ── 3. DISABLE backdrop-filter (very expensive on mobile GPU) ── */
+  .header,
+  .header.scrolled,
+  .mob-nav,
+  .hdr-glass,
+  [style*="backdrop-filter"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background-color: #0d1b3e !important;
+  }
+
+  /* ── 4. FOOTER TICKER — pause marquee to save battery ── */
+  .foot-ticker-track {
+    animation-play-state: paused !important;
+    /* Show static line instead of scrolling */
+    overflow: hidden;
+  }
+
+  /* ── 5. FOOTER AURORA — disable orb animations ── */
+  .foot-aurora,
+  .foot-orb-1,
+  .foot-orb-2,
+  .foot-orb-3,
+  .foot-dots,
+  .foot-scan {
+    display: none !important;
+  }
+
+  /* ── 6. PAGE HERO — remove expensive decorative layers ── */
+  .page-hero-dots,
+  .page-hero-orb,
+  .hero-orb,
+  #heroDots,
+  #orb1, #orb2, #orb3, #orb4 {
+    display: none !important;
+  }
+
+  /* ── 7. REMOVE box-shadow complexity (use simple 1-layer shadow) ── */
+  .srv-card,
+  .srv-detail-card,
+  .val-card,
+  .dept-card,
+  .plat-card,
+  .team-card,
+  .tcard,
+  .jcard,
+  .bcard,
+  .info-card,
+  .case-card,
+  .featured-post {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10) !important;
+    transform: none !important;
+  }
+
+  /* ── 8. DISABLE hover transforms on cards (no hover on touch) ── */
+  .srv-card:hover,
+  .srv-detail-card:hover,
+  .val-card:hover,
+  .dept-card:hover,
+  .plat-card:hover,
+  .team-card:hover,
+  .tcard:hover,
+  .jcard:hover,
+  .bcard:hover,
+  .port-item:hover {
+    transform: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10) !important;
+  }
+
+  /* ── 9. READABILITY — increase line height and paragraph spacing ── */
+  p, li, .tl-text, .bcard-exc, .srv-desc {
+    line-height: 1.75 !important;
+  }
+
+  p + p,
+  .section p {
+    margin-top: 0.75em;
+  }
+
+  /* ── 10. PORTFOLIO ROWS — disable hover-only image portal ── */
+  .port-portal,
+  .port-amb {
+    display: none !important;
+  }
+
+  /* ── 11. PROGRESS BAR — keep but simplify ── */
+  /* scroll progress bar stays — it's cheap (width only, no repaint) */
+
+  /* ── 12. STATS — disable 3D tilt (GPU perspective) ── */
+  .stat {
+    transform: none !important;
+    perspective: none !important;
+  }
+
+  /* ── 13. SECTION SCROLL REVEAL — faster, simpler ── */
+  .reveal {
+    transition: opacity 0.25s ease, transform 0.25s ease !important;
+  }
+
+  /* ── 14. LETTER REVEAL — show immediately if JS bailed ── */
+  .letter-reveal span {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* ── 15. INFO CARD — no slide-in delay ── */
+  .info-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* ── 16. GRADIENT TEXT — fallback to solid for readability ── */
+  /* Only override if browser doesn't support bg-clip cleanly */
+  @supports not (-webkit-background-clip: text) {
+    .gradient-text,
+    [class*="grad-text"] {
+      background: none !important;
+      -webkit-text-fill-color: currentColor !important;
+      color: #1B4FD8 !important;
+    }
+  }
+
+  /* ── 17. TIMELINE — simplify dot animation ── */
+  .tl-dot {
+    transition: background 0.2s, box-shadow 0.2s !important;
+  }
+
+  .tl-dot.lit {
+    box-shadow: 0 0 0 4px rgba(27, 79, 216, 0.2) !important;
+  }
+
+  /* ── 18. BLOG IMAGE ZOOM — no scale transform on touch ── */
+  .bcard .bthumb img,
+  .featured-post .feat-thumb img {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* ── 19. BTT BUTTON — always visible below fold, simple style ── */
+  .btt {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  /* ── 20. FONT RENDERING — optimize for small screens ── */
+  body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeSpeed;
+  }
+
+  /* ── 21. REMOVE complex multi-stop gradients from backgrounds ── */
+  .section--blue .val-card,
+  .section--blue .dept-card {
+    background: rgba(255, 255, 255, 0.06) !important;
+  }
+
+  /* ── 22. PORTFOLIO FILTER — make tappable with larger touch targets ── */
+  .fbtn {
+    min-height: 44px !important;
+    padding: 10px 18px !important;
+    font-size: 14px !important;
+  }
+
+  /* ── 23. SCROLL SNAP — smooth scroll only (no physics) ── */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* ── 24. HERO ENTRANCE — show immediately without stagger delay ── */
+  .page-hero-inner > * {
+    transition-delay: 0s !important;
+  }
+
+  /* ── 25. SECTION PADDING — tighter on mobile for less scrolling ── */
+  .section,
+  [class*="section--"] {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+}
