@@ -48,10 +48,10 @@ function buildHeader() {
 /* ── BUILD FOOTER HTML ── */
 function buildFooter() {
   const tickerItems = [
-    'E-commerce Solutions', 'Web Development', 'UI/UX Design',
-    'Digital Marketing', 'Motion Graphics', 'TikTok Shop',
-    'Amazon & Etsy', 'Graphic Design', 'Video Production',
-    'Tech Optimization', 'Photography', 'Brand Identity',
+    'Cross-border E-commerce', 'Print On Demand', 'Thêu công nghiệp',
+    'TikTok Shop US', 'Etsy', 'Amazon', 'eBay',
+    'In giấy & Nhựa 3D', 'Tự chủ sản xuất', 'Đồng lòng đồng sức',
+    'Bứt phá gặt thành công', 'Made in Đồng Nai',
   ];
   const tickerHTML = [...tickerItems, ...tickerItems].map(t =>
     `<span class="foot-ticker-item"><span class="foot-ticker-sep"></span>${t}</span>`
@@ -84,7 +84,7 @@ function buildFooter() {
           <a href="index.html" class="logo">
             <img src="assets/images/logo.jpg" alt="Ethan Ecom">
           </a>
-          <p>Nơi hàng Việt vươn tầm thế giới qua thiết kế đỉnh cao và công nghệ thực chiến. Đồng lòng đồng sức, bứt phá gặt thành công.</p>
+          <p>Nơi khơi nguồn sáng tạo và hỗ trợ sự phát triển cá nhân. Doanh nghiệp TMĐT xuyên biên giới tự chủ sản xuất — Đồng lòng đồng sức, bứt phá gặt thành công.</p>
           <div class="foot-soc">
             <a class="fsoc" href="#" aria-label="Dribbble">Dr</a>
             <a class="fsoc" href="#" aria-label="Twitter">𝕏</a>
@@ -129,7 +129,7 @@ function buildFooter() {
           <div class="fcon">
             <div class="fcon-item">
               <div class="fcon-ico">📍</div>
-              <div class="fcon-txt"><h6>Địa chỉ</h6><p>Võ Dõng - Thống Nhất - Đồng Nai</p></div>
+              <div class="fcon-txt"><h6>Địa chỉ</h6><p>61/1G Võ Dõng 2, Thống Nhất, Đồng Nai</p></div>
             </div>
             <div class="fcon-item">
               <div class="fcon-ico">🕐</div>
@@ -160,7 +160,7 @@ function buildFooter() {
   <!-- Bottom bar -->
   <div class="foot-bot">
     <div class="container">
-      <p>© 2025 <a href="index.html">Ethan Ecom</a>. All rights reserved. · Được xây dựng với ❤️ tại Việt Nam</p>
+      <p>© 2017–2026 <a href="index.html">Ethan Ecom</a> — Công Ty TNHH MTV Phát Triển Công Nghệ Ethan. All rights reserved. · Được xây dựng với ❤️ tại Đồng Nai, Việt Nam</p>
     </div>
   </div>
 
