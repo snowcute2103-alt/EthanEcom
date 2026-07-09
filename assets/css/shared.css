@@ -901,3 +901,75 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
   .btt { bottom: 16px; right: 16px; }
   .mob-nav a { font-size: 19px; }
 }
+
+/* ══════════════════════════════════════════════════
+   HOVER-TO-FOCUS — hover 1 card, các card cùng lưới mờ đi
+   Áp dụng site-wide qua shared.css. Chỉ bật trên thiết bị
+   có con trỏ thật (không ảnh hưởng touch/mobile).
+══════════════════════════════════════════════════ */
+@media (hover: hover) and (pointer: fine) {
+  /* Card đang hover luôn nổi lên trên các card bị mờ */
+  .values-grid .val-card:hover,
+  .team-grid .team-card:hover,
+  .dept-grid .dept-card:hover,
+  .svb-grid .svb-card:hover,
+  .blog-grid .bcard:hover,
+  .testi-grid .tcard:hover,
+  .benefits-grid .benefit-card:hover,
+  .platforms-grid .plat-card:hover,
+  .process-grid .proc-step:hover,
+  .info-cards .info-card:hover,
+  .srv-detail-grid .srv-detail-card:hover,
+  .case-grid .case-card:hover { position: relative; z-index: 3; }
+
+  /* Bảo đảm blur/opacity chuyển động mượt cho các card dùng transition riêng */
+  .blog-grid .bcard { transition: transform .3s, box-shadow .3s, filter .45s ease, opacity .45s ease; }
+  .testi-grid .tcard { transition: transform .35s cubic-bezier(.4,0,.2,1), box-shadow .35s, border-color .35s, background .35s, filter .45s ease, opacity .45s ease; }
+  .process-grid .proc-step { transition: filter .45s ease, opacity .45s ease, transform .45s ease; }
+
+  /* Làm mờ + tối + thu nhỏ các card KHÔNG được hover trong cùng lưới */
+  .values-grid:hover .val-card:not(:hover),
+  .team-grid:hover .team-card:not(:hover),
+  .dept-grid:hover .dept-card:not(:hover),
+  .svb-grid:hover .svb-card:not(:hover),
+  .blog-grid:hover .bcard:not(:hover),
+  .testi-grid:hover .tcard:not(:hover),
+  .benefits-grid:hover .benefit-card:not(:hover),
+  .platforms-grid:hover .plat-card:not(:hover),
+  .process-grid:hover .proc-step:not(:hover),
+  .info-cards:hover .info-card:not(:hover),
+  .srv-detail-grid:hover .srv-detail-card:not(:hover),
+  .case-grid:hover .case-card:not(:hover) {
+    filter: blur(3px);
+    opacity: .45;
+    transform: scale(.97);
+  }
+
+  /* Nhấn mạnh hơn cho GIÁ TRỊ CỐT LÕI: mờ sâu hơn + card hover nhỉnh lên */
+  .values-grid:hover .val-card:not(:hover) {
+    filter: blur(4px);
+    opacity: .4;
+    transform: scale(.94);
+  }
+  .values-grid .val-card:hover { transform: translateY(-6px) scale(1.03); }
+}
+
+/* Tôn trọng người dùng tắt hiệu ứng chuyển động: chỉ giữ độ mờ nhẹ, bỏ blur/scale */
+@media (prefers-reduced-motion: reduce) {
+  .values-grid:hover .val-card:not(:hover),
+  .team-grid:hover .team-card:not(:hover),
+  .dept-grid:hover .dept-card:not(:hover),
+  .svb-grid:hover .svb-card:not(:hover),
+  .blog-grid:hover .bcard:not(:hover),
+  .testi-grid:hover .tcard:not(:hover),
+  .benefits-grid:hover .benefit-card:not(:hover),
+  .platforms-grid:hover .plat-card:not(:hover),
+  .process-grid:hover .proc-step:not(:hover),
+  .info-cards:hover .info-card:not(:hover),
+  .srv-detail-grid:hover .srv-detail-card:not(:hover),
+  .case-grid:hover .case-card:not(:hover) {
+    filter: none;
+    transform: none;
+    opacity: .6;
+  }
+}
