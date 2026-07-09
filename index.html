@@ -2350,6 +2350,111 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
 }
+
+/* ═══════════════════════════════════════════════════════════
+   LIGHT THEME — làm trang chủ SÁNG RÕ, giảm hiệu ứng & bóng mờ
+   ═══════════════════════════════════════════════════════════ */
+/* 1) Gỡ toàn bộ lớp trang trí blur/glow/aurora/texture/scan */
+.stats-aurora,.cult-aurora,.cult-bg,.port-aurora,.skills-aurora,.team-aurora,
+.testi-aurora,.blog-aurora,.about-aurora,.careers-aurora,.cprem-bg,.cprem-glow,
+.cprem-grid,.svb-bg,.svb-blob,.orb,.hero-dots,.hero-grid,.stat-scanner,
+.stat-corner,.cult-scanlines,.cult-particles,.cult-noise,.cvg-grid,
+.stat-crosshair,.stat-ico-ping{ display:none !important; }
+
+/* 2) Nền tối → sáng (trắng / xám nhạt xen kẽ) */
+.svc-bento,.stats-section,.section--team-dark,.section--blog-dark{ background:#ffffff !important; }
+.platforms-section,.culture-section,.section--skills-dark,.section--testi-dark,
+.cprem-section,.about-scifi{ background:#f4f7fb !important; }
+
+/* 3) Bỏ glow chữ + bóng neon trong các section được lật sáng */
+.svc-bento *,.stats-section *,.culture-section *,.section--skills-dark *,
+.section--team-dark *,.section--testi-dark *,.section--blog-dark *,
+.cprem-section *,.platforms-section *,.about-scifi *{ text-shadow:none !important; }
+
+/* 4) Chữ → tối rõ (đè cả inline color trắng) */
+.svc-bento .svb-h2,.svc-bento .svb-desc,
+.stats-section h2,.stats-section .stat-num,.stats-section .stat-lbl,.stats-section .stat-sub,
+.culture-section .cult-heading,.culture-section .cult-sub,.culture-section .cult-eyebrow,.culture-section .cult-badge,
+.section--skills-dark .st,.section--skills-dark p,.section--skills-dark .sl,.section--skills-dark .skill-name,.section--skills-dark .skill-pct,
+.section--team-dark .st,.section--team-dark .ss,.section--team-dark .sl,
+.section--testi-dark .st,.section--testi-dark .ss,.section--testi-dark .sl,.section--testi-dark .tcard p,.section--testi-dark .tcard h5,
+.section--blog-dark .st,.section--blog-dark .ss,.section--blog-dark .sl,
+.cprem-section .cprem-headline,.cprem-section .cprem-desc,.cprem-section .cprem-tagline,.cprem-section .cprem-citem-value,.cprem-section .cprem-form-title,
+.platforms-section .platforms-title{ color:#1a1a2e !important; }
+
+/* nhãn phụ / caption → xám đậm dễ đọc */
+.section--testi-dark .tcard span,.section--blog-dark .bmeta,.cprem-section .cprem-citem-label,
+.section--skills-dark .skill-pct{ color:#5b6472 !important; }
+
+/* 5) Chữ gradient (em) → navy đặc, bỏ hiệu ứng tô gradient */
+.svc-bento em,.stats-section em,.culture-section em,.section--skills-dark em,
+.section--team-dark em,.section--testi-dark em,.section--blog-dark em,.about-scifi em{
+  -webkit-text-fill-color:var(--blue) !important; color:var(--blue) !important;
+  background:none !important; -webkit-text-stroke:0 !important;
+}
+/* tiêu đề outline-stroke (stats "Thành công", số outline) → tô đặc navy nhạt */
+.stats-section h2 span{ -webkit-text-stroke:0 !important; color:#1a1a2e !important; }
+
+/* 6) Card nền mờ (thiết kế cho nền tối) → trắng đặc, viền nhạt, bóng nhẹ */
+.svb-card--dark,.tcard,.tcard-dark,.stat{
+  background:#ffffff !important; border:1.5px solid #e8edf5 !important;
+  box-shadow:0 6px 22px rgba(29,50,81,.06) !important; color:#1a1a2e !important;
+}
+.stat{ border-radius:16px !important; }
+.section--team-dark .tm{ box-shadow:0 6px 22px rgba(29,50,81,.08) !important; }
+
+/* 7) Divider neon → gạch xám nhạt */
+.section--skills-dark .divider,.section--team-dark .divider,.section--testi-dark .divider,
+.section--blog-dark .divider,.about-scifi .divider{ box-shadow:none !important; }
+
+/* 8) Thanh skill: nền sáng, giữ màu fill nhưng bỏ glow */
+.section--skills-dark .skill-bar{ background:#e8edf5 !important; }
+.section--skills-dark .skill-fill{ box-shadow:none !important; }
+
+/* 9) Hero: giữ ảnh nhưng bớt tối + gỡ neon để "sáng" hơn */
+.hero-overlay{ background:linear-gradient(180deg,rgba(13,27,62,.55),rgba(13,27,62,.62)) !important; }
+
+/* ── v2: các khối dùng ẢNH NỀN tối → chuyển sáng ── */
+/* 10) Service card: bỏ ảnh nền + overlay → card trắng sạch */
+.svb-card--dark .svb-img,.svb-card--dark .svb-overlay,.svb-card--dark::after{ display:none !important; }
+.svb-card--dark{ background:#fff !important; border:1.5px solid #e8edf5 !important; box-shadow:0 6px 22px rgba(29,50,81,.06) !important; }
+.svb-card--dark .svb-body h3{ color:#1a1a2e !important; }
+.svb-card--dark .svb-body p{ color:#5b6472 !important; }
+.svb-card--dark .svb-num{ -webkit-text-stroke:1.4px rgba(29,50,81,.18) !important; }
+.svb-card--dark .svb-icon{ background:#f5f7fb !important; border-color:#e8edf5 !important; }
+.svb-card--dark .svb-icon svg{ stroke:#9ca3af !important; }
+.svb-card--dark .svb-arrow svg{ stroke:#1a1a2e !important; }
+
+/* 11) About sci-fi (5 trụ giá trị): static state SÁNG, chữ tối */
+.about-pillar{ border-color:#e2e8f2 !important; }
+.about-overlay-eyebrow,.about-overlay-sub{ color:#5b6472 !important; }
+.about-overlay-h1{ color:#1a1a2e !important; }
+.about-overlay-h1 .outline{ -webkit-text-stroke:1.4px rgba(29,50,81,.35) !important; color:transparent !important; }
+.ap-static{ background:transparent !important; }
+.ap-num{ color:#8794a8 !important; }
+.about-pillar:hover .ap-num,.about-pillar.is-active .ap-num{ color:var(--blue) !important; }
+.ap-label{ color:#b3bccb !important; }
+.about-pillar:hover .ap-label,.about-pillar.is-active .ap-label{ color:#5b6472 !important; }
+.ap-crosshair{ color:#c3ccdb !important; }
+/* portal (hover) giữ nguyên ảnh + chữ trắng cho dễ đọc trên ảnh */
+.about-pillar .ap-portal .ap-portal-title,.about-pillar .ap-portal .ap-portal-desc{ color:#fff !important; }
+
+/* 12) Team accordion: giảm overlay đen → ảnh sáng hơn, nhãn tối */
+.tm:not(.tm-active) .tm-ov{ background:linear-gradient(to top,rgba(13,27,62,.55) 0%,rgba(13,27,62,.12) 55%,transparent 100%) !important; }
+.tm.tm-active .tm-ov{ background:linear-gradient(to top,rgba(13,27,62,.9) 0%,rgba(13,27,62,.4) 45%,transparent 100%) !important; }
+.tm-vert{ color:#fff !important; }
+
+/* 13) Careers voyage: GIỮ tông tối nguyên bản (dải CTA tương phản có chủ đích) */
+
+/* 14) Contact: form card trắng, input sáng, chữ tối */
+.cprem-section{ background:#f4f7fb !important; }
+.cprem-form-card{ background:#fff !important; border:1.5px solid #e8edf5 !important; box-shadow:0 10px 40px rgba(29,50,81,.08) !important; }
+.cprem-form-title{ color:#1a1a2e !important; }
+.cprem-input{ background:#f6f8fb !important; border-color:#dfe5ef !important; color:#1a1a2e !important; }
+.cprem-label{ color:#8794a8 !important; }
+.cprem-citem{ background:#fff !important; border:1.5px solid #eef1f6 !important; }
+.cprem-citem-value{ color:#1a1a2e !important; }
+.cprem-border-spin{ opacity:.25 !important; }
 </style>
 </head>
 <body>
