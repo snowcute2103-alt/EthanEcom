@@ -973,3 +973,73 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
     opacity: .6;
   }
 }
+
+/* ══════════════════════════════════════════════════
+   STORYTELLING FX — nâng cấp hiệu ứng (Bucks Sauce → Ethan)
+   Nguyên tắc: mượt, chuyên nghiệp; chỉ 2 font; tôn trọng
+   reduced-motion; hiệu ứng phức tạp chỉ bật ở desktop.
+══════════════════════════════════════════════════ */
+
+/* 1) Reduced-motion: tắt mọi chuyển động, hiện nội dung ngay */
+@media (prefers-reduced-motion: reduce) {
+  body.will-animate .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .marquee-track { animation: none !important; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+}
+
+/* 2) Đường dashed vàng phân tách section — chi tiết nhận diện tinh giản */
+.sec-divider { display: flex; justify-content: center; padding: 4px 0; }
+.sec-divider::before {
+  content: ''; width: min(360px, 60%); height: 0;
+  border-top: 1.5px dashed rgba(245, 166, 35, .55);
+}
+.section--blue + .sec-divider::before,
+.sec-divider.on-dark::before { border-top-color: rgba(245, 166, 35, .4); }
+
+/* 3) Số outline lớn mờ — điểm nhấn thị giác không cần thêm màu */
+.outline-num {
+  font-family: 'Be Vietnam Pro', sans-serif; font-weight: 800; line-height: 1;
+  font-size: clamp(48px, 7vw, 96px); letter-spacing: -.02em;
+  -webkit-text-stroke: 1.5px rgba(29, 50, 81, .16); color: transparent;
+  pointer-events: none; user-select: none;
+}
+.outline-num.on-dark { -webkit-text-stroke-color: rgba(255, 255, 255, .16); }
+.outline-num.gold    { -webkit-text-stroke-color: rgba(245, 166, 35, .45); }
+
+/* 4) Quote lớn hiện dần TỪNG DÒNG khi cuộn (chỉ đổi động tác, không đổi font) */
+.q-line { display: block; }
+
+/* 5) Sliding-pill cho filter tab (Portfolio / lọc bộ phận) — tint trượt, chữ luôn đọc được */
+.pill-tabs { position: relative; }
+.pill-ind {
+  position: absolute; top: 0; left: 0; height: 100%; border-radius: 999px;
+  background: rgba(29, 50, 81, .10); border: 1.5px solid rgba(29, 50, 81, .30);
+  transition: transform .4s cubic-bezier(.4,0,.2,1), width .4s cubic-bezier(.4,0,.2,1), opacity .3s;
+  z-index: 0; pointer-events: none; opacity: 0;
+}
+.pill-tabs .fbtn { position: relative; z-index: 1; transition: color .3s; }
+/* Trong chế độ pill: bỏ nền đặc của nút, để pill làm nền trượt; chữ dùng navy đậm */
+.pill-tabs .fbtn.active, .pill-tabs .fbtn:hover {
+  background: transparent !important; color: var(--blue) !important; border-color: transparent !important;
+  font-weight: 700;
+}
+.pill-tabs.on-dark .pill-ind { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.35); }
+.pill-tabs.on-dark .fbtn.active, .pill-tabs.on-dark .fbtn:hover { color: #fff !important; }
+
+/* 6) Team hover/tap reveal — hiện chức danh + trích dẫn giá trị cốt lõi */
+.team-card .team-quote {
+  max-height: 0; opacity: 0; overflow: hidden; margin-top: 0;
+  font-size: 14px; color: var(--text); line-height: 1.6; font-style: italic;
+  transition: max-height .45s cubic-bezier(.4,0,.2,1), opacity .35s, margin-top .35s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .team-card:hover .team-quote { max-height: 120px; opacity: 1; margin-top: 12px; }
+}
+/* Fallback không-hover (touch): mở bằng .is-open (JS toggle khi tap) */
+.team-card.is-open .team-quote { max-height: 140px; opacity: 1; margin-top: 12px; }
+
+/* 7) Marquee helper (logo đối tác / testimonial mobile) — dừng khi hover */
+.marquee { overflow: hidden; position: relative; }
+.marquee-track { display: flex; width: max-content; will-change: transform; animation: marquee-scroll 28s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }

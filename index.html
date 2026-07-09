@@ -436,16 +436,18 @@
 .svb-card{background:#fff;border-radius:28px;padding:36px 32px;border:1.5px solid rgba(0,0,0,.07);transition:all .45s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;min-height:350px}
 .svb-card--wide{grid-column:span 2}
 .svb-card-bg{position:absolute;inset:0;background:linear-gradient(135deg,#f8f9fc,transparent);opacity:0;transition:opacity .5s;pointer-events:none;border-radius:28px}
-.svb-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(29,50,81,.1);border-color:rgba(29,50,81,.12)}
+.svb-card:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 12px 40px rgba(29,50,81,.1);border-color:rgba(29,50,81,.12)}
 .svb-card:hover .svb-card-bg{opacity:1}
 .svb-card-inner{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
 .svb-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:48px}
 .svb-icon{width:42px;height:42px;border-radius:50%;background:#f5f7fb;border:1.5px solid #eaeff5;display:flex;align-items:center;justify-content:center;transition:all .3s cubic-bezier(.4,0,.2,1);flex-shrink:0}
 .svb-icon svg{width:17px;height:17px;stroke:#9ca3af;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:stroke .3s}
-.svb-card:hover .svb-icon{background:#0d1b3e;border-color:#0d1b3e;box-shadow:0 0 0 6px rgba(13,27,62,.08)}
-.svb-card:hover .svb-icon svg{stroke:#fff}
-.svb-num{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;color:#d1d9e8;letter-spacing:2px;transition:color .3s}
-.svb-card:hover .svb-num{color:#0d1b3e}
+/* hover: icon đổi từ navy sang VÀNG nhấn nhá */
+.svb-card:hover .svb-icon{background:#f5a623;border-color:#f5a623;box-shadow:0 0 0 6px rgba(245,166,35,.14)}
+.svb-card:hover .svb-icon svg{stroke:#0d1b3e}
+/* số thứ tự dạng outline lớn mờ */
+.svb-num{font-family:'Be Vietnam Pro',sans-serif;font-size:34px;font-weight:800;letter-spacing:-.01em;-webkit-text-stroke:1.4px rgba(29,50,81,.18);color:transparent;transition:-webkit-text-stroke-color .3s}
+.svb-card:hover .svb-num{-webkit-text-stroke-color:rgba(245,166,35,.6)}
 .svb-body{margin-top:auto}
 .svb-card h3{font-family:'Be Vietnam Pro',sans-serif;font-size:22px;font-weight:700;color:#0d1b3e;margin-bottom:10px;line-height:1.2}
 .svb-card p{font-size:16px;color:#6b7280;line-height:1.72;display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
@@ -464,12 +466,12 @@
 .svb-card--dark:hover{transform:translateY(-4px);border-color:rgba(0,212,255,.28);box-shadow:0 0 0 1px rgba(0,212,255,.14),0 20px 60px rgba(0,0,0,.4),0 0 40px rgba(0,212,255,.06)}
 .svb-card--dark:hover .svb-img{opacity:.85;transform:scale(1.07)}
 .svb-card--dark:hover .svb-overlay{background:linear-gradient(to top,rgba(7,13,26,.78) 20%,rgba(7,13,26,.28) 60%,rgba(7,13,26,.08) 100%)}
-.svb-card--dark .svb-num{color:rgba(255,255,255,.2)}
-.svb-card--dark:hover .svb-num{color:rgba(0,212,255,.7)}
+.svb-card--dark .svb-num{-webkit-text-stroke:1.4px rgba(255,255,255,.22);color:transparent}
+.svb-card--dark:hover .svb-num{-webkit-text-stroke-color:rgba(245,166,35,.7)}
 .svb-card--dark .svb-icon{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
 .svb-card--dark .svb-icon svg{stroke:rgba(255,255,255,.5)}
-.svb-card--dark:hover .svb-icon{background:rgba(0,212,255,.15);border-color:rgba(0,212,255,.4);box-shadow:0 0 0 6px rgba(0,212,255,.07)}
-.svb-card--dark:hover .svb-icon svg{stroke:#00D4FF}
+.svb-card--dark:hover .svb-icon{background:#f5a623;border-color:#f5a623;box-shadow:0 0 0 6px rgba(245,166,35,.14)}
+.svb-card--dark:hover .svb-icon svg{stroke:#0d1b3e}
 .svb-card--dark h3{color:#fff}
 .svb-card--dark p{color:rgba(255,255,255,.52)}
 .svb-card--dark .svb-arrow svg{stroke:#00D4FF}
@@ -2836,6 +2838,8 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
 })();
 </script>
 
+<div class="sec-divider on-dark reveal"></div>
+
 <!-- STATS -->
 <section class="section--blue stats-section" style="padding:80px 0;position:relative;overflow:hidden;background:#000">
   <div class="stats-aurora" aria-hidden="true">
@@ -3981,6 +3985,8 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
   startTimer();
 })();
 </script>
+
+<div class="sec-divider on-dark reveal"></div>
 
 <!-- BLOG / STORIES -->
 <section class="section section--blog-dark" id="stories">

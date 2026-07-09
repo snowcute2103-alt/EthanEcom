@@ -295,19 +295,78 @@ function initReveal() {
 /* ── COUNTER ANIMATION (noop — handled by gsap-animations.js glitch counter) ── */
 function initCounters() {}
 
-/* ── SKILL BAR FILL ── */
+/* ── SKILL BAR FILL + PERCENT COUNT-UP (chạy song song thanh bar) ── */
 function initSkillBars() {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.width = e.target.dataset.w + '%';
-        const skillEl = e.target.closest('.skill');
-        if (skillEl) setTimeout(() => skillEl.classList.add('animated'), 100);
-        obs.unobserve(e.target);
+      if (!e.isIntersecting) return;
+      const target = parseInt(e.target.dataset.w, 10) || 0;
+      e.target.style.width = target + '%';
+      const skillEl = e.target.closest('.skill');
+      if (skillEl) setTimeout(() => skillEl.classList.add('animated'), 100);
+      // Đếm số % lên đồng bộ với bar (~1.4s, khớp transition width)
+      const pct = skillEl && skillEl.querySelector('.skill-pct');
+      if (pct) {
+        if (reduce) { pct.textContent = target + '%'; }
+        else {
+          const start = performance.now(), dur = 1400;
+          const tick = now => {
+            const p = Math.min((now - start) / dur, 1);
+            const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+            pct.textContent = Math.round(eased * target) + '%';
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        }
       }
+      obs.unobserve(e.target);
     });
   }, { threshold: 0.3 });
   document.querySelectorAll('.skill-fill[data-w]').forEach(el => obs.observe(el));
+}
+
+/* ── SLIDING PILL cho filter tab (Portfolio / lọc bộ phận) ── */
+function initFilterPills() {
+  document.querySelectorAll('.filter-row, .pill-tabs').forEach(row => {
+    const btns = row.querySelectorAll('.fbtn');
+    if (btns.length < 2) return;
+    row.classList.add('pill-tabs');
+    if (getComputedStyle(row).position === 'static') row.style.position = 'relative';
+    const ind = document.createElement('span');
+    ind.className = 'pill-ind';
+    row.insertBefore(ind, row.firstChild);
+    const move = el => {
+      if (!el) return;
+      const r = row.getBoundingClientRect(), b = el.getBoundingClientRect();
+      ind.style.width = b.width + 'px';
+      ind.style.transform = `translateX(${b.left - r.left + row.scrollLeft}px)`;
+      ind.style.opacity = '1';
+    };
+    const current = () => row.querySelector('.fbtn.active') || btns[0];
+    requestAnimationFrame(() => move(current()));
+    btns.forEach(b => {
+      b.addEventListener('click', () => {
+        btns.forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        move(b);
+      });
+      b.addEventListener('mouseenter', () => move(b));
+    });
+    row.addEventListener('mouseleave', () => move(current()));
+    window.addEventListener('resize', () => move(current()));
+  });
+}
+
+/* ── TEAM CARD tap-to-reveal (fallback cho touch, hover đã có CSS) ── */
+function initTeamReveal() {
+  const isTouch = window.matchMedia('(hover: none)').matches;
+  if (!isTouch) return;
+  document.querySelectorAll('.team-card .team-quote').forEach(q => {
+    const card = q.closest('.team-card');
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => card.classList.toggle('is-open'));
+  });
 }
 
 /* ── BACK TO TOP ── */
@@ -534,6 +593,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   initCounters();
   initSkillBars();
+  initFilterPills();
+  initTeamReveal();
   initBackTop();
   initSmoothScroll();
   initParallax();
