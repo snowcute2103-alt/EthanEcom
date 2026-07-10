@@ -114,12 +114,12 @@ function buildFooter() {
         <div>
           <h5>Dịch vụ</h5>
           <div class="flinks">
-            <a href="careers.html#services">Web Development</a>
-            <a href="careers.html#services">UI/UX Design</a>
-            <a href="careers.html#services">Graphic Design</a>
-            <a href="careers.html#services">Motion Graphics</a>
-            <a href="careers.html#services">E-com Solutions</a>
-            <a href="careers.html#services">Digital Marketing</a>
+            <a href="services.html">TMĐT xuyên biên giới</a>
+            <a href="services.html">Print On Demand (POD)</a>
+            <a href="services.html">Thêu công nghiệp</a>
+            <a href="services.html">In giấy &amp; Sticker</a>
+            <a href="services.html">In nhựa 3D</a>
+            <a href="services.html">Digital Marketing</a>
           </div>
         </div>
 
