@@ -7,7 +7,7 @@
 /* ── NAV PAGES (single source of truth) ── */
 const NAV_LINKS = [
   { href: 'index.html',     label: 'Trang chủ',   icon: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
-  { href: 'about.html',     label: 'Về chúng tôi',icon: '<circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>' },
+  { href: 'about.html',     label: 'Giới thiệu',  icon: '<circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>' },
   { href: 'portfolio.html', label: 'Portfolio',    icon: '<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>' },
   { href: 'blog.html',      label: 'Câu chuyện',   icon: '<path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>' },
   { href: 'careers.html',   label: 'Tuyển dụng',  icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>' },
@@ -15,25 +15,32 @@ const NAV_LINKS = [
 
 /* ── BUILD HEADER HTML ── */
 function buildHeader() {
-  const navItems = NAV_LINKS.map(l =>
+  /* Logo ở chính giữa: 3 mục bên trái, 3 mục bên phải (Liên hệ khép cuối). */
+  const leftItems = NAV_LINKS.slice(0, 3).map(l =>
     `<a href="${l.href}">${l.label}</a>`
   ).join('');
+  const rightItems = NAV_LINKS.slice(3).map(l =>
+    `<a href="${l.href}">${l.label}</a>`
+  ).join('') + `<a href="contact.html">Liên hệ</a>`;
   const mobItems = NAV_LINKS.map(l =>
     `<a href="${l.href}">${l.label}</a>`
   ).join('');
 
   return `
+<a href="#main" class="skip-link">Bỏ qua tới nội dung</a>
 <header class="header" id="hdr">
   <div class="hdr-line"></div>
-  <div class="hi">
+  <div class="hi hi--center">
+    <nav class="nav nav-left" id="mainNav">
+      ${leftItems}
+    </nav>
     <a href="index.html" class="logo">
       <img src="assets/images/logo.jpg" alt="Ethan Ecom">
     </a>
-    <nav class="nav" id="mainNav">
-      ${navItems}
-      <a href="contact.html" class="nav-cta">Liên hệ</a>
+    <nav class="nav nav-right">
+      ${rightItems}
     </nav>
-    <div class="hamburger" id="hbg" aria-label="Menu" role="button" aria-expanded="false">
+    <div class="hamburger" id="hbg" role="button" tabindex="0" aria-label="Mở menu" aria-controls="mob" aria-expanded="false">
       <span></span><span></span><span></span>
     </div>
   </div>
@@ -86,10 +93,11 @@ function buildFooter() {
           </a>
           <p>Nơi khơi nguồn sáng tạo và hỗ trợ sự phát triển cá nhân. Doanh nghiệp TMĐT xuyên biên giới tự chủ sản xuất — Đồng lòng đồng sức, bứt phá gặt thành công.</p>
           <div class="foot-soc">
-            <a class="fsoc" href="#" aria-label="Dribbble">Dr</a>
-            <a class="fsoc" href="#" aria-label="Twitter">𝕏</a>
-            <a class="fsoc" href="#" aria-label="Instagram">Ig</a>
-            <a class="fsoc" href="#" aria-label="Behance">Be</a>
+            <a class="fsoc fsoc--fb" href="https://facebook.com/ethanecom3979" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+            <span class="fsoc" aria-hidden="true" title="Dribbble (sắp ra mắt)">Dr</span>
+            <span class="fsoc" aria-hidden="true" title="Twitter (sắp ra mắt)">𝕏</span>
+            <span class="fsoc" aria-hidden="true" title="Instagram (sắp ra mắt)">Ig</span>
+            <span class="fsoc" aria-hidden="true" title="Behance (sắp ra mắt)">Be</span>
           </div>
           <div class="foot-status">
             <span class="foot-status-dot"></span>
@@ -102,7 +110,7 @@ function buildFooter() {
           <h5>Điều hướng</h5>
           <div class="flinks">
             <a href="index.html">Trang chủ</a>
-            <a href="about.html">Về chúng tôi</a>
+            <a href="about.html">Giới thiệu</a>
             <a href="portfolio.html">Portfolio</a>
             <a href="blog.html">Câu chuyện</a>
             <a href="careers.html">Tuyển dụng</a>
@@ -128,24 +136,24 @@ function buildFooter() {
           <h5>Liên hệ</h5>
           <div class="fcon">
             <div class="fcon-item">
-              <div class="fcon-ico">📍</div>
-              <div class="fcon-txt"><h6>Địa chỉ</h6><p>61/1G Võ Dõng 2, Thống Nhất, Đồng Nai</p></div>
+              <div class="fcon-ico" aria-hidden="true">📍</div>
+              <div class="fcon-txt"><h6>Địa chỉ</h6><p>61/1G Võ Dõng, Gia Kiệm, Đồng Nai</p></div>
             </div>
             <div class="fcon-item">
-              <div class="fcon-ico">🕐</div>
+              <div class="fcon-ico" aria-hidden="true">🕐</div>
               <div class="fcon-txt"><h6>Giờ làm việc</h6><p>7:30 – 17:00 · Thứ 2 – Thứ 7</p></div>
             </div>
             <div class="fcon-item">
-              <div class="fcon-ico">📧</div>
-              <div class="fcon-txt"><h6>Email CSKH</h6><p>support@ethanecom.com</p></div>
+              <div class="fcon-ico" aria-hidden="true">📨</div>
+              <div class="fcon-txt"><h6>Email Tuyển dụng</h6><p><a href="mailto:hr@ethanecom.com">hr@ethanecom.com</a></p></div>
             </div>
             <div class="fcon-item">
-              <div class="fcon-ico">📨</div>
-              <div class="fcon-txt"><h6>Email Tuyển dụng</h6><p>hr@ethanecom.com</p></div>
+              <div class="fcon-ico" aria-hidden="true">📞</div>
+              <div class="fcon-txt"><h6>Hotline</h6><p><a href="tel:+84967473979">+84 967 473 979</a></p></div>
             </div>
             <div class="fcon-item">
-              <div class="fcon-ico">📞</div>
-              <div class="fcon-txt"><h6>Phone</h6><p>+84 967 473 979</p></div>
+              <div class="fcon-ico" aria-hidden="true">📘</div>
+              <div class="fcon-txt"><h6>Facebook</h6><p><a href="https://facebook.com/ethanecom3979" target="_blank" rel="noopener">facebook.com/ethanecom3979</a></p></div>
             </div>
           </div>
         </div>
@@ -164,8 +172,7 @@ function buildFooter() {
     </div>
   </div>
 
-</footer>
-<button class="btt" id="btt" aria-label="Về đầu trang">↑</button>`;
+</footer>`;
 }
 
 /* ── INJECT COMPONENTS ── */
@@ -196,7 +203,10 @@ function initHeader() {
 
   /* Detect if page starts on a dark background (hero sections) */
   const hero = document.querySelector('.hero, .page-hero');
-  const isDarkHero = hero && !document.body.classList.contains('light-header');
+  const smh = document.querySelector('.smh');
+  /* A light .smh scroll-morph section sitting ABOVE any dark hero → page starts on light bg */
+  const smhFirst = !!smh && (!hero || (smh.compareDocumentPosition(hero) & Node.DOCUMENT_POSITION_FOLLOWING));
+  const isDarkHero = !smhFirst && hero && !document.body.classList.contains('light-header');
   if (isDarkHero) {
     hdr.classList.add('on-dark');
   } else {
@@ -217,6 +227,13 @@ function initHeader() {
 
       hdr.classList.toggle('scrolled', scrolled);
       if (btt) btt.classList.toggle('show', y > 300);
+
+      /* Light .smh at top: dark-text header over it, switch to light-text once past it */
+      if (smhFirst) {
+        const overLight = smh.getBoundingClientRect().bottom > 80;
+        hdr.classList.toggle('on-light', overLight);
+        hdr.classList.toggle('on-dark', !overLight);
+      }
 
       /* When on a dark hero and user scrolls past it */
       if (isDarkHero && hero) {
@@ -242,6 +259,21 @@ function initHeader() {
   onScroll();
 }
 
+/* ── SKIP-TO-CONTENT LINK ──
+   Hidden/revealed via inline styles so it works even if a cached
+   stylesheet lacks the .skip-link rule (no stale-CSS flash). */
+function initSkipLink() {
+  const sk = document.querySelector('.skip-link');
+  if (!sk) return;
+  const HIDDEN = 'position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden;';
+  const SHOWN  = 'position:absolute;left:12px;top:10px;z-index:2000;width:auto;height:auto;'
+              + 'background:#0F2244;color:#fff;padding:12px 20px;border-radius:0 0 8px 0;'
+              + "font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:15px;box-shadow:0 6px 20px rgba(0,0,0,.35);";
+  sk.style.cssText = HIDDEN;
+  sk.addEventListener('focus', () => { sk.style.cssText = SHOWN; });
+  sk.addEventListener('blur',  () => { sk.style.cssText = HIDDEN; });
+}
+
 /* ── HAMBURGER MENU ── */
 function initHamburger() {
   const hbg = document.getElementById('hbg');
@@ -253,26 +285,40 @@ function initHamburger() {
     mob.setAttribute('aria-hidden', 'false');
     hbg.classList.add('open');
     hbg.setAttribute('aria-expanded', 'true');
+    hbg.setAttribute('aria-label', 'Đóng menu');
     document.body.style.overflow = 'hidden';
+    /* Move keyboard focus into the menu */
+    const first = mob.querySelector('a');
+    if (first) setTimeout(() => first.focus(), 60);
   }
 
-  function closeMenu() {
+  function closeMenu(returnFocus) {
     mob.classList.remove('open');
     mob.setAttribute('aria-hidden', 'true');
     hbg.classList.remove('open');
     hbg.setAttribute('aria-expanded', 'false');
+    hbg.setAttribute('aria-label', 'Mở menu');
     document.body.style.overflow = '';
+    if (returnFocus) hbg.focus();
   }
 
   hbg.addEventListener('click', () => {
     mob.classList.contains('open') ? closeMenu() : openMenu();
   });
 
-  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  /* Keyboard: hamburger is a div[role=button] — support Enter/Space */
+  hbg.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+      e.preventDefault();
+      mob.classList.contains('open') ? closeMenu(true) : openMenu();
+    }
+  });
 
-  /* Close on Escape */
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeMenu(false)));
+
+  /* Close on Escape — return focus to the toggle */
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && mob.classList.contains('open')) closeMenu();
+    if (e.key === 'Escape' && mob.classList.contains('open')) closeMenu(true);
   });
 
   /* Close when clicking backdrop (outside links) */
@@ -293,7 +339,34 @@ function initReveal() {
 }
 
 /* ── COUNTER ANIMATION (noop — handled by gsap-animations.js glitch counter) ── */
-function initCounters() {}
+function initCounters() {
+  const nums = document.querySelectorAll('.eco-num[data-n]');
+  if (!nums.length) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finalText = el => (el.dataset.n + (el.dataset.s || ''));
+  if (reduce || !('IntersectionObserver' in window)) {
+    nums.forEach(el => { el.textContent = finalText(el); });
+    return;
+  }
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target; obs.unobserve(el);
+      const end = parseInt(el.dataset.n, 10) || 0;
+      const suf = el.dataset.s || '';
+      const dur = 1500; let t0 = null;
+      const step = ts => {
+        if (!t0) t0 = ts;
+        const p = Math.min((ts - t0) / dur, 1);
+        const ease = 1 - Math.pow(1 - p, 4); // easeOutQuart
+        el.textContent = Math.round(end * ease) + suf;
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.5 });
+  nums.forEach(el => { el.textContent = '0' + (el.dataset.s || ''); obs.observe(el); });
+}
 
 /* ── SKILL BAR FILL + PERCENT COUNT-UP (chạy song song thanh bar) ── */
 function initSkillBars() {
@@ -588,6 +661,7 @@ function initNavIndicator() {
 document.addEventListener('DOMContentLoaded', () => {
   injectComponents();
   setActiveNav();
+  initSkipLink();
   initHeader();
   initHamburger();
   initReveal();
@@ -598,6 +672,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackTop();
   initSmoothScroll();
   initParallax();
-  initNavEffects();
-  initNavIndicator();
+  /* minimalist header — nav ripple + sliding glow indicator removed */
 });

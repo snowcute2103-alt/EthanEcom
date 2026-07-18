@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Về chúng tôi | Ethan Ecom — Đồng lòng đồng sức, bứt phá thành công</title>
+<title>Giới thiệu | Ethan Ecom — Đồng lòng đồng sức, bứt phá thành công</title>
 <meta name="description" content="Về Ethan Ecom — doanh nghiệp TMĐT xuyên biên giới tại Đồng Nai, tự chủ sản xuất POD/thêu/in. Câu chuyện thương hiệu, tầm nhìn, 5 giá trị cốt lõi và đội ngũ 88 thành viên.">
-<link rel="stylesheet" href="assets/css/shared.css">
+<link rel="stylesheet" href="assets/css/shared.css?v=housef02">
 <style>
 /* ── PAGE-SPECIFIC STYLES ── */
 
 /* ── IMG PLACEHOLDERS ── */
 .img-ph{border-radius:12px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;min-height:40px}
-.img-ph::before{content:attr(data-label);position:absolute;z-index:1;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;color:rgba(255,255,255,.85);text-align:center;padding:0 24px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.img-ph::before{content:attr(data-label);position:absolute;z-index:1;font-family:var(--font-lead);font-size:16px;font-weight:600;color:rgba(255,255,255,.85);text-align:center;padding:0 24px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
 .ph-story{background:linear-gradient(135deg,#2a4a76 0%,#1D3251 40%,#0d1e35 100%);height:500px}
 .ph-team{background:linear-gradient(135deg,#2a4a76 0%,#1D3251 60%,#0d1e35 100%);height:400px}
-.ph-avatar{width:110px;height:110px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-family:'Be Vietnam Pro',sans-serif;font-size:26px;font-weight:700;color:#fff;border:4px solid rgba(255,255,255,.2);transition:transform .3s,border-color .3s}
+.ph-avatar{width:110px;height:110px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-family:var(--font-lead);font-size:26px;font-weight:600;color:#fff;border:4px solid rgba(255,255,255,.2);transition:transform .3s,border-color .3s}
 .av1{background:linear-gradient(135deg,#6366f1,#8b5cf6)}
 .av2{background:linear-gradient(135deg,#ec4899,#f43f5e)}
 .av3{background:linear-gradient(135deg,#0ea5e9,#38bdf8)}
@@ -24,7 +24,18 @@
 .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 .story-img-wrap{overflow:hidden;border-radius:16px}
 .story-img-wrap .img-ph{will-change:transform;transform-origin:center;border-radius:0}
-.story-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(27,79,216,.08);border:1px solid rgba(27,79,216,.15);color:var(--blue);font-size:16px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:7px 16px;border-radius:20px;margin-bottom:20px}
+.story-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(27,79,216,.08);border:1px solid rgba(27,79,216,.15);color:var(--blue);font-size:16px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:7px 16px;border-radius:20px;margin-bottom:20px}
+
+/* ── INK REVEAL — culture showcase (full-bleed, edge to edge) ── */
+.ink-stage{position:relative;overflow:hidden;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);height:clamp(340px,44vw,640px);background:#eaf3fb;transition:box-shadow .6s ease}
+/* frame/shadow only appears once the photo has been fully revealed */
+.ink-stage.is-revealed{box-shadow:0 18px 50px rgba(15,34,68,.18)}
+.ink-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ink-canvas{position:absolute;inset:0;z-index:1;cursor:crosshair;touch-action:none}
+/* Touch / no-hover devices: show the photo directly (mobile-friendly, QT-2) */
+@media (hover:none){.ink-canvas{display:none}}
+/* Respect reduced motion (QT-3): reveal the image, drop the interactive mask */
+@media (prefers-reduced-motion:reduce){.ink-canvas{display:none}}
 
 /* ── CORE VALUES ── */
 .values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:24px}
@@ -37,8 +48,8 @@
 .val-card:nth-child(5)::before{background:linear-gradient(90deg,#10b981,#34d399)}
 .val-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(27,79,216,.1);border-color:transparent}
 .val-ico-lg{width:56px;height:56px;border-radius:14px;background:var(--gray);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:18px}
-.val-card h3{font-family:'Be Vietnam Pro',sans-serif;font-size:18px;font-weight:700;margin-bottom:6px}
-.val-card .val-en{font-size:16px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.val-card h3{font-family:var(--font-lead);font-size:18px;font-weight:600;margin-bottom:6px}
+.val-card .val-en{font-size:16px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
 .val-card p{font-size:16px;color:var(--text);line-height:1.7}
 
 /* ── TEAM ── */
@@ -46,19 +57,18 @@
 .team-card{background:#fff;border-radius:16px;padding:32px 24px;text-align:center;border:1.5px solid #eaeff5;transition:all .35s}
 .team-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(27,79,216,.1);border-color:transparent}
 .team-card:hover .ph-avatar{transform:scale(1.06);border-color:var(--yellow)}
-.team-card h4{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;margin-bottom:4px}
+.team-card h4{font-family:var(--font-lead);font-size:16px;font-weight:600;margin-bottom:4px}
 .team-card .role{font-size:16px;color:var(--blue);font-weight:600;margin-bottom:4px}
 .team-card .dept{font-size:16px;color:var(--text)}
 .team-socials{display:flex;justify-content:center;gap:8px;margin-top:14px}
-.tsoc{width:30px;height:30px;border-radius:8px;background:var(--gray);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:var(--text);transition:all .2s;cursor:pointer}
-.tsoc:hover{background:var(--blue);color:#fff}
+.tsoc{width:30px;height:30px;border-radius:8px;background:var(--gray);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600;color:var(--text2)}
 
 /* ── DEPARTMENTS ── */
 .dept-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .dept-card{border-radius:16px;padding:28px;text-align:center;background:#fff;border:1.5px solid #eaeff5;transition:all .3s}
 .dept-card:hover{background:#fff;border-color:var(--blue);box-shadow:0 12px 36px rgba(29,50,81,.1);transform:translateY(-4px)}
 .dept-ico{font-size:36px;margin-bottom:16px;display:block}
-.dept-card h4{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;color:#000;margin-bottom:8px}
+.dept-card h4{font-family:var(--font-lead);font-size:16px;font-weight:600;color:#000;margin-bottom:8px}
 .dept-card p{font-size:16px;color:rgba(0,0,0,.55);line-height:1.6}
 
 /* ── STATS ── */
@@ -66,7 +76,7 @@
 .stat{padding:60px 32px;text-align:center;border-right:1px solid rgba(255,255,255,.14);position:relative;z-index:1}
 .stat:last-child{border-right:none}
 .stat-ico{font-size:32px;margin-bottom:14px;display:block}
-.stat-num{font-family:'Be Vietnam Pro',sans-serif;font-size:clamp(36px,4vw,56px);font-weight:800;color:#fff;display:block;line-height:1}
+.stat-num{font-family:var(--font-lead);font-size:clamp(28px,3.4vw,44px);font-weight:700;color:#fff;display:block;line-height:1}
 .stat-lbl{font-size:16px;color:rgba(255,255,255,.6);letter-spacing:2px;text-transform:uppercase;margin-top:10px}
 
 /* ── TIMELINE ZIGZAG ── */
@@ -82,17 +92,17 @@
 .tl-dot.lit{background:var(--blue);box-shadow:0 0 0 5px rgba(27,79,216,.18),0 0 16px rgba(27,79,216,.35);transform:scale(1.3)}
 /* Year + label — nằm trên content */
 .tl-meta{margin-bottom:10px}
-.tl-year{display:block;font-family:'Be Vietnam Pro',sans-serif;font-size:22px;font-weight:800;color:var(--blue);line-height:1}
-.tl-label{display:block;font-size:16px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:2px;margin-top:4px}
+.tl-year{display:block;font-family:var(--font-lead);font-size:22px;font-weight:700;color:var(--blue);line-height:1}
+.tl-label{display:block;font-size:16px;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:2px;margin-top:4px}
 /* Content */
-.tl-card-title{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px;margin-top:0}
+.tl-card-title{font-family:var(--font-lead);font-size:16px;font-weight:600;color:#1a1a2e;margin-bottom:8px;margin-top:0}
 .tl-text{font-size:16px;color:#475569;line-height:1.8;margin:0 0 16px}
 /* Image block */
 .tl-img{border-radius:12px;overflow:hidden;border:1px solid #e8eef8;box-shadow:0 4px 20px rgba(27,79,216,.07)}
 .tl-img img{width:100%;height:auto;display:block}
 .tl-img-ph{background:linear-gradient(135deg,#f0f4ff 0%,#e2eaf8 100%);min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border-radius:12px;border:1px solid #dce5f5}
-.tl-img-ph span{font-size:40px;line-height:1}
-.tl-img-ph p{font-size:16px;font-weight:700;color:rgba(27,79,216,.45);text-transform:uppercase;letter-spacing:1.5px;margin:0}
+.tl-img-ph span{font-size:34px;line-height:1}
+.tl-img-ph p{font-size:16px;font-weight:600;color:rgba(27,79,216,.45);text-transform:uppercase;letter-spacing:1.5px;margin:0}
 /* Even: swap sides */
 .tl-item:nth-child(even) .tl-left{order:3;padding-right:0;padding-left:48px}
 .tl-item:nth-child(even) .tl-center{order:2}
@@ -100,12 +110,16 @@
 /* Mobile */
 @media(max-width:768px){
   .timeline::before{left:0;transform:none}
-  .tl-item{grid-template-columns:1fr;padding-bottom:48px}
+  /* Stack BOTH text and image (previously half the milestones lost their text) */
+  .tl-item{grid-template-columns:1fr;padding-bottom:48px;display:flex;flex-direction:column;gap:16px}
   .tl-center{display:none}
-  .tl-item:nth-child(odd) .tl-left,
-  .tl-item:nth-child(even) .tl-left{display:none}
-  .tl-item:nth-child(odd) .tl-right,
-  .tl-item:nth-child(even) .tl-right{order:1;padding:0}
+  .tl-item .tl-left,
+  .tl-item .tl-right{display:block;padding:0;margin:0}
+  /* Text first, image second — regardless of the desktop alternating side */
+  .tl-item:nth-child(odd) .tl-left{order:1}
+  .tl-item:nth-child(odd) .tl-right{order:2}
+  .tl-item:nth-child(even) .tl-right{order:1}
+  .tl-item:nth-child(even) .tl-left{order:2}
   .tl-year{font-size:18px}
 }
 
@@ -184,7 +198,7 @@
     <nav class="breadcrumb">
       <a href="index.html">Trang chủ</a>
       <span class="breadcrumb-sep">/</span>
-      <span>Về chúng tôi</span>
+      <span>Giới thiệu</span>
     </nav>
     <div class="page-hero-badge">★ Đồng lòng đồng sức — Bứt phá gặt thành công</div>
     <h1 class="page-hero-title">Về <em>Ethan Ecom</em></h1>
@@ -193,7 +207,7 @@
 </section>
 
 <!-- MAIN CONTENT -->
-<main>
+<main id="main">
 
   <!-- COMPANY STORY -->
   <section class="section">
@@ -216,6 +230,23 @@
             <img src="assets/images/about/office.jpg" alt="Ethan Ecom Office" onerror="this.style.visibility='hidden'">
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sec-divider reveal"></div>
+
+  <!-- INK REVEAL — CULTURE SHOWCASE -->
+  <section class="section">
+    <div class="container">
+      <div class="sh c reveal">
+        <div class="sl">Không gian Ethan</div>
+        <h2 class="st">Chạm để khám phá nơi chúng tôi làm việc</h2>
+        <div class="divider c"></div>
+      </div>
+      <div class="ink-stage reveal" data-ink>
+        <img src="assets/images/about/congty.jpg" alt="Không gian làm việc tại công ty Ethan Ecom" loading="lazy" onerror="this.style.visibility='hidden'">
+        <canvas class="ink-canvas" aria-hidden="true"></canvas>
       </div>
     </div>
   </section>
@@ -243,8 +274,8 @@
         </div>
       </div>
       <div class="reveal" style="margin-top:32px;text-align:center;background:linear-gradient(135deg,#1D3251,#2a4a76);color:#fff;border-radius:16px;padding:36px 28px">
-        <div class="reveal d1" style="font-size:16px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--yellow);margin-bottom:10px">Nguyên tắc bất di bất dịch</div>
-        <p style="font-family:'Be Vietnam Pro',sans-serif;font-size:clamp(20px,2.6vw,28px);font-weight:700;line-height:1.4;margin:0">
+        <div class="reveal d1" style="font-size:16px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--yellow);margin-bottom:10px">Nguyên tắc bất di bất dịch</div>
+        <p style="font-family:var(--font-lead);font-size:clamp(20px,2.6vw,28px);font-weight:600;line-height:1.4;margin:0">
           <span class="q-line reveal d2">"Không đánh đổi sự tử tế và uy tín</span>
           <span class="q-line reveal d3">để lấy doanh số."</span>
         </p>
@@ -323,28 +354,28 @@
       </div>
       <div class="team-grid">
         <div class="team-card reveal d1">
-          <div class="ph-avatar av1"><img src="assets/images/team/ceo.jpg" alt="Founder Nguyễn Đình Duy" onerror="this.style.visibility='hidden'">DN</div>
+          <div class="ph-avatar av1"><img src="assets/images/about/ceo.jpg" alt="Founder Nguyễn Đình Duy" onerror="this.style.visibility='hidden'">DN</div>
           <h4>Nguyễn Đình Duy</h4>
           <div class="role">Founder</div>
           <div class="dept">Định hướng &amp; Điều hành chung</div>
           <p class="team-quote">"Đủ chắc, đủ lì và đủ đồng lòng để phát triển trong ngành đầy thử thách."</p>
-          <div class="team-socials"><span class="tsoc">in</span><span class="tsoc">𝕏</span></div>
+          <div class="team-socials" aria-hidden="true"><span class="tsoc">in</span><span class="tsoc">𝕏</span></div>
         </div>
         <div class="team-card reveal d2">
-          <div class="ph-avatar av2"><img src="assets/images/team/coo.jpg" alt="CEO Đoàn Thị Minh Nguyệt" onerror="this.style.visibility='hidden'">NĐ</div>
+          <div class="ph-avatar av2"><img src="assets/images/about/coo.jpg" alt="CEO Đoàn Thị Minh Nguyệt" onerror="this.style.visibility='hidden'">NĐ</div>
           <h4>Đoàn Thị Minh Nguyệt</h4>
           <div class="role">CEO</div>
           <div class="dept">Đồng điều hành &amp; Vận hành</div>
           <p class="team-quote">"Con người là tài sản lớn nhất — cơ hội thăng tiến luôn mở với tất cả."</p>
-          <div class="team-socials"><span class="tsoc">in</span><span class="tsoc">𝕏</span></div>
+          <div class="team-socials" aria-hidden="true"><span class="tsoc">in</span><span class="tsoc">𝕏</span></div>
         </div>
         <div class="team-card reveal d3">
-          <div class="ph-avatar av3"><img src="assets/images/team/ecom-lead.jpg" alt="CPO Trần Vũ Quốc Bảo" onerror="this.style.visibility='hidden'">QB</div>
+          <div class="ph-avatar av3"><img src="assets/images/about/ecom-lead.jpg" alt="CPO Trần Vũ Quốc Bảo" onerror="this.style.visibility='hidden'">QB</div>
           <h4>Trần Vũ Quốc Bảo</h4>
           <div class="role">CPO</div>
           <div class="dept">Đứng đầu Khối Sản Xuất</div>
           <p class="team-quote">"Tự chủ sản xuất là lợi thế cạnh tranh bền vững đối thủ khó sao chép."</p>
-          <div class="team-socials"><span class="tsoc">in</span><span class="tsoc">𝕏</span></div>
+          <div class="team-socials" aria-hidden="true"><span class="tsoc">in</span><span class="tsoc">𝕏</span></div>
         </div>
       </div>
     </div>
@@ -527,7 +558,7 @@
 <div id="site-footer"></div>
 
 <!-- Shared JS (must be last) -->
-<script src="assets/js/shared.js"></script>
+<script src="assets/js/shared.js?v=housef02"></script>
 <script src="assets/js/page-animations.js"></script>
 <script>
 /* ── PAGE-SPECIFIC JAVASCRIPT ── */
@@ -581,6 +612,193 @@
     });
   },{threshold:0.6});
   document.querySelectorAll('.dept-card').forEach(function(c){ obs.observe(c); });
+})();
+
+/* Ink Reveal — soft watercolor cloud/mist mask (pale blue + white clouds).
+   Light swipes bloom the photo open like smoke and it STAYS revealed; once
+   ~half is uncovered the rest dissolves. The cloud mask is static. */
+(function(){
+  var stage = document.querySelector('[data-ink]');
+  if(!stage) return;
+  var canvas = stage.querySelector('.ink-canvas');
+  if(!canvas) return;
+
+  /* Touch / reduced-motion: CSS already hides the mask, so leave the photo visible */
+  if(window.matchMedia('(hover: none)').matches) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  /* reveal config — big soft brush blooms over its lifetime; low per-frame
+     deposit so overlap/repeat passes clear it gradually (haze → clear). */
+  var BRUSH=205, R_START=18, R_VARY=0.28, LIFETIME=620, STAMP_STEP=15,
+      DEPOSIT=0.19, SEGMENTS=40, WOBBLE=[0.12,0.07,0.045], G_INNER=0.05,
+      BLUR=4, MAX_PUFFS=800, COV_THRESHOLD=0.5, FINISH_MS=1000;
+
+  var ctx = canvas.getContext('2d');
+  var dims={w:0,h:0}, lastPos=null, puffs=[], running=false;
+  var covered=false, finishAt=0, lastCov=0, revealedDone=false;
+
+  /* Off-screen buffer accumulates reveal alpha so the effect persists. */
+  var buf = document.createElement('canvas');
+  var bctx = buf.getContext('2d');
+
+  /* Off-screen watercolor cloud/mist mask — pre-rendered once so it stays static. */
+  var maskCanvas = document.createElement('canvas');
+  var mctx = maskCanvas.getContext('2d');
+
+  /* Tiny sampler to estimate how much of the photo has been revealed. */
+  var sample = document.createElement('canvas'); sample.width=80; sample.height=32;
+  var sctx = sample.getContext('2d',{willReadFrequently:true});
+  function coverage(){
+    sctx.clearRect(0,0,sample.width,sample.height);
+    sctx.drawImage(buf,0,0,sample.width,sample.height);
+    var d=sctx.getImageData(0,0,sample.width,sample.height).data, n=0;
+    for(var i=3;i<d.length;i+=4){ if(d[i]>170) n++; }
+    return n/(sample.width*sample.height);
+  }
+
+  /* Pre-render a soft watercolor sky (pale blue + white cloud/mist) into
+     maskCanvas — static, matching the reference palette. */
+  function buildMask(){
+    var W=Math.max(1,Math.round(dims.w)), H=Math.max(1,Math.round(dims.h));
+    if(maskCanvas.width!==W) maskCanvas.width=W;
+    if(maskCanvas.height!==H) maskCanvas.height=H;
+    mctx.setTransform(1,0,0,1,0,0);
+    mctx.clearRect(0,0,W,H);
+    /* base — white at the top & bottom edges, watercolor blue in the centre */
+    var g=mctx.createLinearGradient(0,0,0,H);
+    g.addColorStop(0.00,'#ffffff');
+    g.addColorStop(0.14,'#eaf3fb');
+    g.addColorStop(0.50,'#8ab6e0');
+    g.addColorStop(0.86,'#eaf3fb');
+    g.addColorStop(1.00,'#ffffff');
+    mctx.fillStyle=g; mctx.fillRect(0,0,W,H);
+
+    function blob(cx,cy,r,c0,c1){
+      var rg=mctx.createRadialGradient(cx,cy,0,cx,cy,r);
+      rg.addColorStop(0,c0); rg.addColorStop(1,c1);
+      mctx.fillStyle=rg;
+      mctx.beginPath(); mctx.arc(cx,cy,r,0,6.283); mctx.fill();
+    }
+    var area=W*H;
+    /* soft blue mottling through the centre for watercolour depth */
+    for(var i=Math.round(area/60000);i>0;i--)
+      blob(Math.random()*W, (0.34+Math.random()*0.32)*H, 70+Math.random()*150,
+           'rgba(108,155,205,0.30)','rgba(108,155,205,0)');
+    /* fluffy white clouds hugging the top edge */
+    for(var j=Math.round(area/9000);j>0;j--)
+      blob(Math.random()*W, Math.random()*0.26*H, 45+Math.random()*170,
+           'rgba(255,255,255,'+(0.35+Math.random()*0.5)+')','rgba(255,255,255,0)');
+    /* fluffy white clouds hugging the bottom edge */
+    for(var k=Math.round(area/9000);k>0;k--)
+      blob(Math.random()*W, (0.74+Math.random()*0.26)*H, 45+Math.random()*170,
+           'rgba(255,255,255,'+(0.35+Math.random()*0.5)+')','rgba(255,255,255,0)');
+  }
+
+  function drawMask(){
+    ctx.globalCompositeOperation='source-over';
+    ctx.filter='none';
+    ctx.drawImage(maskCanvas,0,0,dims.w,dims.h);
+  }
+
+  function paint(now){
+    drawMask();
+    /* punch the accumulated reveal out of the mask, softened for a smoky edge */
+    ctx.globalCompositeOperation='destination-out';
+    if(BLUR) ctx.filter='blur('+BLUR+'px)';
+    ctx.drawImage(buf,0,0,dims.w,dims.h);
+    ctx.filter='none';
+    /* final smoke dissolve — clears every leftover glitter speck uniformly */
+    if(covered){
+      var f=Math.min(1,(now-finishAt)/FINISH_MS); f=f*f*(3-2*f);
+      ctx.globalAlpha=f; ctx.fillStyle='#000'; ctx.fillRect(0,0,dims.w,dims.h); ctx.globalAlpha=1;
+    }
+    ctx.globalCompositeOperation='source-over';
+  }
+
+  function resize(){
+    var rect=stage.getBoundingClientRect();
+    var dpr=Math.min(window.devicePixelRatio||1,2);
+    dims={w:rect.width,h:rect.height};
+    canvas.width=Math.round(rect.width*dpr);
+    canvas.height=Math.round(rect.height*dpr);
+    canvas.style.width=rect.width+'px';
+    canvas.style.height=rect.height+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    if(buf.width!==Math.round(dims.w) || buf.height!==Math.round(dims.h)){
+      buf.width=Math.max(1,Math.round(dims.w));
+      buf.height=Math.max(1,Math.round(dims.h));
+      bctx.setTransform(1,0,0,1,0,0);
+    }
+    buildMask();
+    paint(performance.now());
+  }
+
+  /* deposit one soft wobbly puff of reveal into the buffer */
+  function deposit(x,y,r,seed){
+    var g=bctx.createRadialGradient(x,y,r*G_INNER,x,y,r);
+    g.addColorStop(0,'rgba(0,0,0,1)');
+    g.addColorStop(0.55,'rgba(0,0,0,0.7)');
+    g.addColorStop(1,'rgba(0,0,0,0)');
+    bctx.globalAlpha=DEPOSIT;
+    bctx.fillStyle=g;
+    bctx.beginPath();
+    for(var i=0;i<=SEGMENTS;i++){
+      var a=(i/SEGMENTS)*Math.PI*2;
+      var wob=0.82+WOBBLE[0]*Math.sin(a*3+seed)+WOBBLE[1]*Math.sin(a*5+seed*2.1)+WOBBLE[2]*Math.sin(a*7+seed*0.7);
+      var px=x+Math.cos(a)*r*wob, py=y+Math.sin(a)*r*wob;
+      if(i===0) bctx.moveTo(px,py); else bctx.lineTo(px,py);
+    }
+    bctx.closePath(); bctx.fill();
+    bctx.globalAlpha=1;
+  }
+
+  function loop(){
+    var now=performance.now();
+    for(var i=puffs.length-1;i>=0;i--){
+      var p=puffs[i];
+      var t=(now-p.born)/LIFETIME;
+      if(t>=1){ deposit(p.x,p.y,p.rmax,p.seed); puffs.splice(i,1); continue; }
+      var ease=1-Math.pow(1-t,3);          // easeOutCubic — smoke spreading out
+      deposit(p.x,p.y,R_START+(p.rmax-R_START)*ease,p.seed);
+    }
+    /* throttled check: once enough is revealed, trigger the final dissolve */
+    if(!covered && now-lastCov>150){
+      lastCov=now;
+      if(coverage()>=COV_THRESHOLD){ covered=true; finishAt=now; }
+    }
+    paint(now);
+    var finishing = covered && (now-finishAt) < FINISH_MS;
+    /* photo fully revealed → now bring in the framing shadow */
+    if(covered && !finishing && !revealedDone){ revealedDone=true; stage.classList.add('is-revealed'); }
+    /* animate only while revealing or dissolving — the cloud mask itself is static */
+    if(puffs.length || finishing) requestAnimationFrame(loop);
+    else running=false;
+  }
+  function start(){ if(!running){ running=true; requestAnimationFrame(loop); } }
+
+  function addPuff(x,y){
+    if(puffs.length>=MAX_PUFFS) puffs.shift();
+    puffs.push({x:x,y:y,born:performance.now(),seed:Math.random()*6.283,
+      rmax:BRUSH*(1-R_VARY+Math.random()*R_VARY)});
+  }
+  function stampAlong(x,y){
+    if(!lastPos){ addPuff(x,y); }
+    else{
+      var dx=x-lastPos.x, dy=y-lastPos.y, dist=Math.hypot(dx,dy);
+      var steps=Math.max(1,Math.ceil(dist/STAMP_STEP));
+      for(var i=1;i<=steps;i++) addPuff(lastPos.x+dx*i/steps, lastPos.y+dy*i/steps);
+    }
+    lastPos={x:x,y:y};
+    start();
+  }
+  function relPos(e){ var r=canvas.getBoundingClientRect(); return {x:e.clientX-r.left, y:e.clientY-r.top}; }
+
+  canvas.addEventListener('mouseenter',function(e){ var p=relPos(e); lastPos=p; stampAlong(p.x,p.y); });
+  canvas.addEventListener('mousemove', function(e){ var p=relPos(e); stampAlong(p.x,p.y); });
+  canvas.addEventListener('mouseleave',function(){ lastPos=null; });
+
+  resize();
+  window.addEventListener('resize', resize);
 })();
 </script>
 </body>

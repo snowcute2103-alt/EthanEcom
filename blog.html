@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stories | Ethan Ecom Blog — Câu chuyện thương mại điện tử</title>
 <meta name="description" content="Câu chuyện, kiến thức và kinh nghiệm thực chiến từ đội ngũ Ethan Ecom về E-commerce, Design và Digital Marketing.">
-<link rel="stylesheet" href="assets/css/shared.css">
+<link rel="stylesheet" href="assets/css/shared.css?v=housef02">
 <style>
 /* ── PAGE-SPECIFIC STYLES ── */
 
 /* ── IMG PLACEHOLDERS ── */
 .img-ph{border-radius:12px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;min-height:40px}
-.img-ph::before{content:attr(data-label);position:absolute;z-index:1;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;color:rgba(255,255,255,.85);text-align:center;padding:0 24px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.img-ph::before{content:attr(data-label);position:absolute;z-index:1;font-family:var(--font-lead);font-size:16px;font-weight:600;color:rgba(255,255,255,.85);text-align:center;padding:0 24px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
 .ph-feat{background:linear-gradient(135deg,#1D3251 0%,#0d1e35 100%);height:460px;border-radius:0}
 .ph-b1{background:linear-gradient(135deg,#1D3251 0%,#2a4a76 100%);border-radius:0}
 .ph-b2{background:linear-gradient(135deg,#dc2626 0%,#ef4444 100%);border-radius:0}
@@ -26,8 +26,8 @@
 .feat-thumb .img-ph{transition:filter .4s}
 .featured-post:hover .feat-thumb .img-ph{filter:brightness(.85)}
 .feat-body{padding:48px 44px;display:flex;flex-direction:column;justify-content:center}
-.feat-label{display:inline-flex;align-items:center;gap:6px;font-size:16px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--yellow);background:rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.15);padding:5px 12px;border-radius:20px;margin-bottom:18px;width:fit-content}
-.feat-body h2{font-family:'Be Vietnam Pro',sans-serif;font-size:clamp(20px,2.5vw,28px);font-weight:700;line-height:1.3;margin-bottom:14px}
+.feat-label{display:inline-flex;align-items:center;gap:6px;font-size:16px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--yellow);background:rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.15);padding:5px 12px;border-radius:20px;margin-bottom:18px;width:fit-content}
+.feat-body h2{font-family:var(--font-lead);font-size:clamp(20px,2.5vw,28px);font-weight:600;line-height:1.3;margin-bottom:14px}
 .feat-body p{font-size:16px;color:var(--text);line-height:1.75;margin-bottom:24px}
 .feat-meta{display:flex;align-items:center;gap:16px;font-size:16px;color:var(--text);margin-bottom:24px;flex-wrap:wrap}
 .feat-meta strong{color:var(--navy);font-weight:600}
@@ -40,31 +40,31 @@
 .bthumb .img-ph{transition:filter .4s;height:200px}
 .bcard:hover .bthumb .img-ph{filter:brightness(.85)}
 .bbody{padding:24px}
-.btag{font-size:16px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
-.bcard h3{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;line-height:1.45;margin-bottom:10px}
+.btag{font-size:16px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.bcard h3{font-family:var(--font-lead);font-size:16px;font-weight:600;line-height:1.45;margin-bottom:10px}
 .bcard p{font-size:16px;color:var(--text);line-height:1.65;margin-bottom:16px}
 .bmeta{display:flex;align-items:center;justify-content:space-between;font-size:16px;color:var(--text);border-top:1px solid #eef1f5;padding-top:14px;margin-top:4px}
-.bread{display:inline-flex;align-items:center;gap:6px;font-size:16px;font-weight:700;color:var(--blue);transition:gap .2s}
+.bread{display:inline-flex;align-items:center;gap:6px;font-size:16px;font-weight:600;color:var(--blue);transition:gap .2s}
 .bread:hover{gap:10px}
 
 /* ── SIDEBAR ── */
 .blog-layout{display:grid;grid-template-columns:1fr 300px;gap:48px}
 .sidebar-card{background:#fff;border-radius:14px;padding:28px;border:1.5px solid #eaeff5;margin-bottom:24px}
-.sidebar-card h4{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid var(--yellow);display:inline-block}
+.sidebar-card h4{font-family:var(--font-lead);font-size:16px;font-weight:600;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid var(--yellow);display:inline-block}
 .topic-list{display:flex;flex-direction:column;gap:10px}
 .topic-item{display:flex;align-items:center;justify-content:space-between;font-size:16px;color:var(--text);padding:8px 12px;border-radius:8px;cursor:pointer;transition:all .2s}
 .topic-item:hover{background:var(--gray);color:var(--blue);padding-left:16px}
-.topic-count{font-size:16px;font-weight:700;color:var(--blue);background:#EEF2FF;padding:2px 8px;border-radius:12px}
+.topic-count{font-size:16px;font-weight:600;color:var(--blue);background:#EEF2FF;padding:2px 8px;border-radius:12px}
 .recent-post{display:flex;gap:14px;align-items:flex-start;padding-bottom:14px;border-bottom:1px solid #eef1f5;margin-bottom:14px}
 .recent-post:last-child{border:none;margin:0;padding:0}
 .recent-thumb{width:60px;height:60px;border-radius:8px;flex-shrink:0;overflow:hidden}
 .recent-thumb .img-ph{height:60px;min-height:auto;border-radius:8px}
-.recent-info h5{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;line-height:1.35;margin-bottom:4px}
+.recent-info h5{font-family:var(--font-lead);font-size:16px;font-weight:600;line-height:1.35;margin-bottom:4px}
 .recent-info span{font-size:16px;color:var(--text)}
 
 /* ── NEWSLETTER ── */
 .newsletter{background:linear-gradient(135deg,var(--blue),#4f76e8);border-radius:16px;padding:36px;color:#fff;text-align:center}
-.newsletter h4{font-family:'Be Vietnam Pro',sans-serif;font-size:18px;font-weight:700;margin-bottom:10px}
+.newsletter h4{font-family:var(--font-lead);font-size:18px;font-weight:600;margin-bottom:10px}
 .newsletter p{font-size:16px;color:rgba(255,255,255,.8);line-height:1.65;margin-bottom:20px}
 .newsletter input{width:100%;padding:12px 16px;border-radius:8px;border:none;font-size:16px;margin-bottom:10px;font-family:'Inter',sans-serif;outline:none}
 .newsletter .btn{width:100%;justify-content:center}
@@ -147,7 +147,7 @@
 </section>
 
 <!-- MAIN CONTENT -->
-<main>
+<main id="main">
 
   <!-- FEATURED POST -->
   <section class="section">
@@ -361,7 +361,7 @@
 <div id="site-footer"></div>
 
 <!-- Shared JS (must be last) -->
-<script src="assets/js/shared.js"></script>
+<script src="assets/js/shared.js?v=housef02"></script>
 <script src="assets/js/page-animations.js"></script>
 <script>
 /* ── PAGE-SPECIFIC JAVASCRIPT ── */

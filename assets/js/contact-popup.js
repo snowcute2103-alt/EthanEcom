@@ -440,69 +440,79 @@
     0%, 100% { box-shadow: 0 0 0 0 rgba(0,212,255,.5), 0 8px 32px rgba(0,0,0,.5); }
     50%       { box-shadow: 0 0 0 8px rgba(0,212,255,0), 0 8px 32px rgba(0,0,0,.5); }
   }
-  .cp-trigger {
+  /* Dock holds the two stacked rectangular buttons (design ref) */
+  .cp-dock {
     position: fixed;
-    bottom: 80px;
-    right: 0;
+    bottom: 90px;
+    right: 22px;
     z-index: 9000;
     display: flex;
-    align-items: center;
-    gap: 10px;
-    background: linear-gradient(135deg, #00D4FF 0%, #7B61FF 100%);
-    color: #000;
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 16px;
-    font-weight: 800;
-    letter-spacing: 0.3px;
-    padding: 13px 16px 13px 20px;
-    border-radius: 12px 0 0 12px;
-    border: none;
-    cursor: pointer;
-    animation: cp-tab-in 0.6s 1s cubic-bezier(0.34,1.56,0.64,1) both,
-               cp-tab-pulse 2.8s 2s ease-in-out infinite;
-    transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), filter 0.2s;
-    white-space: nowrap;
-    box-shadow: 0 8px 32px rgba(0,0,0,.5);
-  }
-  .cp-trigger:hover {
-    transform: translateX(-4px);
-    filter: brightness(1.1);
-    animation: none;
-    box-shadow: 0 0 0 3px rgba(0,212,255,.35), 0 12px 36px rgba(0,0,0,.55);
-  }
-  .cp-trigger-icon {
-    font-size: 18px;
-    line-height: 1;
-    flex-shrink: 0;
-  }
-  .cp-trigger-icon-img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    flex-shrink: 0;
-    filter: brightness(0);
-  }
-  .cp-trigger-text {
-    display: flex;
     flex-direction: column;
-    gap: 1px;
-    text-align: left;
+    align-items: stretch;
+    gap: 12px;
   }
-  .cp-trigger-label {
-    font-size: 16px;
+  .cp-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    padding: 15px 30px;
+    font-family: 'Fahkwang', sans-serif;
+    font-size: 11px;
     font-weight: 700;
-    opacity: 0.7;
-    letter-spacing: 1px;
+    letter-spacing: 1.6px;
     text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0;
+    border: 2px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1),
+                background 0.25s, color 0.25s, border-color 0.25s, box-shadow 0.25s;
   }
-  .cp-trigger-main {
-    font-size: 16px;
-    font-weight: 800;
+  /* 1 — Ứng tuyển ngay: khung viền sáng (nền trắng, chữ navy) */
+  .cp-trigger--apply {
+    background: #fff;
+    color: var(--navy, #16305C);
+    border-color: var(--navy, #16305C);
+    box-shadow: 0 12px 30px rgba(15,34,68,.20);
+    animation: cp-tab-in 0.6s 1s cubic-bezier(0.34,1.56,0.64,1) both;
+  }
+  .cp-trigger--apply:hover {
+    background: var(--yellow, #F4B41A);
+    color: var(--navy-deep, #0F2244);
+    border-color: var(--yellow, #F4B41A);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 38px rgba(244,180,26,.38);
+  }
+  /* 2 — Liên hệ ngay: khung nền đậm (navy đặc, chữ trắng) */
+  .cp-trigger--contact {
+    background: linear-gradient(135deg, var(--navy, #16305C) 0%, var(--navy-deep, #0F2244) 100%);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 12px 30px rgba(15,34,68,.35);
+    animation: cp-tab-in 0.6s 1.12s cubic-bezier(0.34,1.56,0.64,1) both;
+  }
+  .cp-trigger--contact:hover {
+    background: #fff;
+    color: var(--text, #1A2433);
+    border-color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 16px 38px rgba(0,0,0,.28);
+  }
+  .cp-trigger:focus-visible {
+    outline: 3px solid var(--yellow, #F4B41A);
+    outline-offset: 3px;
   }
   @media (max-width: 768px) {
+    .cp-dock { bottom: 80px; right: 14px; gap: 10px; }
     .cp-trigger {
+      min-width: 168px;
+      padding: 13px 22px;
+      font-size: 11px;
+      letter-spacing: 1.2px;
       animation: none !important;
-      box-shadow: 0 8px 32px rgba(0,0,0,.5) !important;
     }
   }
   `;
@@ -585,13 +595,10 @@
 
   /* ── TRIGGER BUTTON HTML ── */
   const TRIGGER_HTML = `
-    <button class="cp-trigger" id="cpTrigger" aria-label="Mở form ứng tuyển">
-      <img src="assets/images/user.png" alt="" class="cp-trigger-icon-img">
-      <span class="cp-trigger-text">
-        <span class="cp-trigger-label">Tuyển dụng</span>
-        <span class="cp-trigger-main">Ứng tuyển ngay</span>
-      </span>
-    </button>
+    <div class="cp-dock">
+      <button class="cp-trigger cp-trigger--apply" id="cpTrigger" aria-label="Ứng tuyển ngay">Ứng tuyển ngay</button>
+      <a class="cp-trigger cp-trigger--contact" href="contact.html" aria-label="Liên hệ ngay">Liên hệ ngay</a>
+    </div>
   `;
 
   /* ── MOUNT ── */

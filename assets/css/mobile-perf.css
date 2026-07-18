@@ -215,10 +215,6 @@
     transition-delay: 0s !important;
   }
 
-  /* ── 25. SECTION PADDING — tighter on mobile for less scrolling ── */
-  .section,
-  [class*="section--"] {
-    padding-top: 48px !important;
-    padding-bottom: 48px !important;
-  }
+  /* ── 25. SECTION PADDING — now governed by fluid clamp() in shared.css
+     (.section { padding: clamp(48px,8vw,96px) 0 }), so no mobile override needed. ── */
 }

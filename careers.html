@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tuyển dụng & Dịch vụ | Ethan Ecom — Môi trường sáng tạo, phát triển bứt phá</title>
 <meta name="description" content="Gia nhập đội ngũ Ethan Ecom — 14 vị trí đang tuyển dụng trong các lĩnh vực E-commerce, Design, Tech, Production. Xem đầy đủ mô tả công việc, yêu cầu và quyền lợi.">
-<link rel="stylesheet" href="assets/css/shared.css">
+<link rel="stylesheet" href="assets/css/shared.css?v=housef02">
 <style>
 /* ── PAGE-SPECIFIC STYLES ── */
 
 /* ── IMG PLACEHOLDERS ── */
 .img-ph{border-radius:12px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;min-height:40px}
-.img-ph::before{content:attr(data-label);position:absolute;z-index:1;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;color:rgba(255,255,255,.85);text-align:center;padding:0 24px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.img-ph::before{content:attr(data-label);position:absolute;z-index:1;font-family:var(--font-lead);font-size:16px;font-weight:600;color:rgba(255,255,255,.85);text-align:center;padding:0 24px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
 .ph-culture{background:linear-gradient(135deg,#1D3251 0%,#2a4a76 100%);height:480px}
 .ph-team{background:linear-gradient(135deg,#0ea5e9 0%,#38bdf8 100%);height:300px}
 
@@ -25,7 +25,7 @@
 .benefit-card{display:flex;align-items:flex-start;gap:14px;background:#fff;border-radius:12px;padding:22px;border:1.5px solid #eaeff5;transition:all .3s}
 .benefit-card:hover{border-color:var(--blue);box-shadow:0 8px 28px rgba(27,79,216,.08)}
 .benefit-ico{width:44px;height:44px;border-radius:10px;background:var(--gray);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
-.benefit-card h4{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;margin-bottom:4px}
+.benefit-card h4{font-family:var(--font-lead);font-size:16px;font-weight:600;margin-bottom:4px}
 .benefit-card p{font-size:16px;color:var(--text);line-height:1.6}
 
 /* ── JOBS ── */
@@ -35,7 +35,7 @@
 .jobs-grid{display:flex;flex-direction:column;gap:16px}
 .jcard{background:#fff;border-radius:14px;padding:28px;border:1.5px solid #eaeff5;transition:all .3s;display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px}
 .jcard:hover{border-color:var(--blue);box-shadow:0 8px 28px rgba(27,79,216,.1);transform:translateX(4px)}
-.jcard-left h3{font-family:'Be Vietnam Pro',sans-serif;font-size:17px;font-weight:700;margin-bottom:8px}
+.jcard-left h3{font-family:var(--font-lead);font-size:17px;font-weight:600;margin-bottom:8px}
 .jcard-left p{font-size:16px;color:var(--text);line-height:1.65;margin-bottom:12px}
 .jcard-tags{display:flex;gap:8px;flex-wrap:wrap}
 .jcard-right{text-align:right;flex-shrink:0}
@@ -52,37 +52,82 @@
 .dp{background:#F0FFFE;color:#0d9488}
 
 /* ── APPLICATION FORM MODAL ── */
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9999;align-items:center;justify-content:center;padding:24px}
+/* ── APPLY MODAL (author-form-card style: staggered spring + 2-col) ── */
+.modal{display:none;position:fixed;inset:0;background:rgba(15,34,68,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:9999;align-items:center;justify-content:center;padding:24px}
 .modal.open{display:flex}
-.modal-panel{background:#fff;border-radius:20px;width:100%;max-width:600px;max-height:90vh;overflow-y:auto}
-.modal-header{padding:28px 32px 0;display:flex;align-items:center;justify-content:space-between}
-.modal-header h3{font-family:'Be Vietnam Pro',sans-serif;font-size:20px;font-weight:700}
-.modal-x{width:36px;height:36px;border-radius:50%;border:1.5px solid #dde3ee;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;transition:all .2s;background:#fff;flex-shrink:0}
-.modal-x:hover{background:var(--gray)}
-.modal-body{padding:24px 32px 32px}
-.modal-body .fg{margin-bottom:16px}
-.upload-area{border:2px dashed #dde3ee;border-radius:12px;padding:28px;text-align:center;cursor:pointer;transition:border-color .2s;background:var(--gray)}
-.upload-area:hover{border-color:var(--blue)}
-.upload-area p{font-size:16px;color:var(--text);margin-top:8px}
-.upload-area strong{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;color:var(--navy)}
+.modal-panel{background:#fff;border-radius:16px;width:100%;max-width:640px;max-height:90vh;overflow-y:auto;box-shadow:0 30px 80px rgba(15,34,68,.35),0 0 0 1px rgba(15,34,68,.05);transform-origin:center;animation:modal-pop .5s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes modal-pop{from{opacity:0;transform:translateY(18px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
+.modal-header{padding:26px 30px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.modal-header h3{font-family:var(--font-lead);font-size:20px;font-weight:600;color:var(--navy);line-height:1.3}
+.modal-header h3 span{color:var(--blue)}
+.modal-sub{font-size:16px;color:var(--text2);margin-top:6px;line-height:1.5}
+.modal-x{width:36px;height:36px;border-radius:10px;border:1.5px solid #dde3ee;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;transition:all .2s;background:#fff;flex-shrink:0;color:var(--text2)}
+.modal-x:hover{background:var(--gray);color:var(--navy);border-color:var(--blue)}
+.modal-body{padding:22px 30px 30px}
+/* Accessible form validation states */
+.fg input.invalid,.fg textarea.invalid{border-color:#dc2626;box-shadow:0 0 0 3px rgba(220,38,38,.12)}
+.fg-err{display:block;color:#dc2626;font-size:13px;font-weight:600;margin-top:5px}
+.fg-err:empty{display:none}
+.upload-area.invalid{border-color:#dc2626!important}
+#cvError{color:#dc2626;font-size:13px;font-weight:600;margin-top:8px;display:none}
+#cvError.show{display:block}
+
+/* staggered fade-up children (framer-motion stagger emulation) */
+.modal.open .stg{opacity:0;animation:stg-up .5s cubic-bezier(.34,1.56,.64,1) forwards;animation-delay:calc(var(--d,0)*.08s + .1s)}
+@keyframes stg-up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.modal-panel,.modal.open .stg{animation:none!important;opacity:1!important;transform:none!important}}
+
+/* 2-column apply grid */
+.apply-grid{display:grid;grid-template-columns:1fr 2fr;gap:26px;align-items:start}
+.apply-two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.apply-full{grid-column:1/-1}
+.apply-actions{grid-column:1/-1;display:flex;justify-content:flex-end;gap:12px;padding-top:6px;border-top:1px solid #eef1f5;margin-top:4px;padding-top:20px}
+.req{color:#e5484d}
+.tip{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#e7eef8;color:var(--blue);font-size:11px;font-weight:700;cursor:help;position:relative;font-style:normal}
+.tip::after{content:attr(data-tip);position:absolute;bottom:130%;left:50%;transform:translateX(-50%) translateY(4px);background:var(--navy);color:#fff;font-size:12px;font-weight:500;line-height:1.4;padding:7px 10px;border-radius:8px;width:max-content;max-width:200px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:5;box-shadow:0 8px 24px rgba(15,34,68,.3)}
+.tip:hover::after{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* CV upload column (avatar-style dropzone) */
+.upload-area{border:2px dashed #cdd8ea;border-radius:14px;padding:22px 16px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;background:var(--gray);display:flex;flex-direction:column;align-items:center;gap:6px}
+.upload-area:hover{border-color:var(--blue);background:#f0f6ff}
+.cv-avatar{position:relative;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#e7eef8,#dbe6fb);display:flex;align-items:center;justify-content:center;color:var(--blue);margin-bottom:4px}
+.cv-plus{position:absolute;right:-4px;top:-4px;width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600;border:2px solid #fff;box-shadow:0 4px 12px rgba(30,127,224,.4)}
+.upload-area .cv-title{font-family:var(--font-lead);font-size:16px;font-weight:600;color:var(--navy)}
+.upload-area .cv-hint{font-size:16px;color:var(--text2)}
+.cv-filename{font-size:16px;color:var(--blue);margin-top:10px;font-weight:600;word-break:break-all;text-align:center}
+.cv-add-btn{width:100%;justify-content:center;margin-top:12px}
+@media(max-width:560px){
+  .apply-grid{grid-template-columns:1fr}
+  .apply-two{grid-template-columns:1fr}
+  .modal-body{padding:20px 20px 24px}
+  .modal-header{padding:22px 20px 0}
+}
 
 /* ── SERVICE CARDS (từ services.html) ── */
 .srv-detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+/* Grid: chỉ ẩn khi .armed (JS bật) → thả .dropped từng cái. Không có JS thì hiện bình thường (an toàn). */
+.srv-detail-grid.armed .srv-detail-card{opacity:0;transform:translateY(-30px) scale(.94);
+  transition:opacity .5s var(--ease),transform .7s cubic-bezier(.34,1.42,.5,1),box-shadow .35s}
+.srv-detail-grid.armed .srv-detail-card .srv-thumb .img-ph{transform:scale(1.16);transition:transform 1s var(--ease)}
+.srv-detail-grid.armed .srv-detail-card .srv-num{opacity:0;transform:translateY(-6px) scale(.8);transition:opacity .4s .2s,transform .5s .2s var(--ease)}
+.srv-detail-grid.armed .srv-detail-card.dropped{opacity:1;transform:none}
+.srv-detail-grid.armed .srv-detail-card.dropped .srv-thumb .img-ph{transform:none}
+.srv-detail-grid.armed .srv-detail-card.dropped .srv-num{opacity:1;transform:none}
 .srv-detail-card{border-radius:16px;overflow:hidden;background:#fff;border:1.5px solid #eaeff5;transition:all .35s;cursor:pointer}
 .srv-detail-card:hover{transform:translateY(-8px);box-shadow:0 20px 56px rgba(27,79,216,.12);border-color:transparent}
 .srv-thumb{overflow:hidden;position:relative}
 .srv-thumb .img-ph{border-radius:0;transition:filter .4s}
 .srv-detail-card:hover .srv-thumb .img-ph{filter:brightness(.85) saturate(1.1)}
-.srv-num{position:absolute;top:16px;left:16px;width:36px;height:36px;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;color:rgba(255,255,255,.9)}
+.srv-num{position:absolute;top:16px;left:16px;width:36px;height:36px;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--font-lead);font-size:16px;font-weight:600;color:rgba(255,255,255,.9)}
 .srv-body{padding:24px}
-.srv-tag{display:inline-block;font-size:16px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:10px}
-.srv-body h3{font-family:'Be Vietnam Pro',sans-serif;font-size:18px;font-weight:700;margin-bottom:10px}
+.srv-tag{display:inline-block;font-size:16px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:10px}
+.srv-body h3{font-family:var(--font-lead);font-size:18px;font-weight:600;margin-bottom:10px}
 .srv-body p{font-size:16px;color:var(--text);line-height:1.7;margin-bottom:18px}
 .srv-features{display:flex;flex-direction:column;gap:7px}
 .srv-feat{display:flex;align-items:center;gap:8px;font-size:16px;color:var(--text)}
-.srv-feat::before{content:'✓';color:var(--blue);font-weight:700;flex-shrink:0}
+.srv-feat::before{content:'✓';color:var(--blue);font-weight:600;flex-shrink:0}
 .img-ph{border-radius:12px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;min-height:40px}
-.img-ph::before{content:attr(data-label);position:absolute;z-index:1;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;color:rgba(255,255,255,.85);text-align:center;padding:0 24px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.img-ph::before{content:attr(data-label);position:absolute;z-index:1;font-family:var(--font-lead);font-size:16px;font-weight:600;color:rgba(255,255,255,.85);text-align:center;padding:0 24px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
 .ph-web{background:linear-gradient(135deg,#1D3251 0%,#2a4a76 100%);height:220px}
 .ph-uiux{background:linear-gradient(135deg,#ec4899 0%,#f43f5e 100%);height:220px}
 .ph-graphic{background:linear-gradient(135deg,#10b981 0%,#34d399 100%);height:220px}
@@ -98,18 +143,18 @@
 .process-grid::before{content:'';position:absolute;top:60px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,var(--blue),var(--yellow));background-size:300% 100%;animation:proc-gradient 4s linear infinite;z-index:0}
 @keyframes proc-gradient{0%{background-position:0% 50%}100%{background-position:200% 50%}}
 .proc-step{text-align:center;padding:24px 20px;position:relative;z-index:1}
-.proc-num{width:72px;height:72px;border-radius:50%;background:var(--blue);color:#fff;font-family:'Be Vietnam Pro',sans-serif;font-size:22px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 24px rgba(29,50,81,.3);position:relative;overflow:visible}
+.proc-num{width:72px;height:72px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--font-lead);font-size:22px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 24px rgba(29,50,81,.3);position:relative;overflow:visible}
 .proc-num::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:2px dashed rgba(255,255,255,.3);animation:proc-ring-spin 6s linear infinite;pointer-events:none}
 @keyframes proc-ring-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .proc-step:hover .proc-num::after{border-color:rgba(255,255,255,.65);animation-duration:1.5s}
-.proc-step h4{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px}
+.proc-step h4{font-family:var(--font-lead);font-size:16px;font-weight:600;margin-bottom:8px}
 .proc-step p{font-size:16px;color:var(--text);line-height:1.6}
 
 /* ── PLATFORMS GRID ── */
 .platforms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .plat-card{border-radius:16px;padding:36px;text-align:center;border:1.5px solid #eaeff5;background:#fff;transition:all .35s}
 .plat-card:hover{border-color:rgba(0,212,255,.35);box-shadow:0 0 0 2px rgba(0,212,255,.3),0 16px 48px rgba(27,79,216,.12)}
-.plat-name{font-family:'Be Vietnam Pro',sans-serif;font-size:22px;font-weight:800;background:linear-gradient(135deg,var(--navy),#2a4a76);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;transition:filter .3s}
+.plat-name{font-family:var(--font-lead);font-size:22px;font-weight:700;background:linear-gradient(135deg,var(--navy),#2a4a76);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;transition:filter .3s}
 .plat-card:hover .plat-name{filter:drop-shadow(0 0 8px rgba(27,79,216,.4))}
 .plat-desc{font-size:16px;color:var(--text);line-height:1.65}
 
@@ -120,25 +165,25 @@
 .jcard-head{display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;padding:24px 28px;cursor:pointer;transition:background .2s}
 .jcard-head:hover{background:#f7f9ff}
 .jcard-accordion.open .jcard-head{background:#EEF2FF}
-.jcard-head-left .jtag{display:inline-block;font-size:16px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:3px 10px;border-radius:6px;margin-bottom:8px}
-.jcard-head-left h3{font-family:'Be Vietnam Pro',sans-serif;font-size:18px;font-weight:700;margin:0 0 6px;color:var(--navy)}
+.jcard-head-left .jtag{display:inline-block;font-size:16px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;padding:3px 10px;border-radius:6px;margin-bottom:8px}
+.jcard-head-left h3{font-family:var(--font-lead);font-size:18px;font-weight:600;margin:0 0 6px;color:var(--navy)}
 .jcard-salary{display:inline-flex;align-items:center;gap:6px;font-size:16px;color:var(--text);font-weight:500}
 .jcard-head-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
-.jcard-dept-badge{padding:5px 14px;border-radius:6px;font-size:16px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.jcard-dept-badge{padding:5px 14px;border-radius:6px;font-size:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
 .jcard-chevron{width:34px;height:34px;border-radius:50%;border:1.5px solid #dde2ea;display:flex;align-items:center;justify-content:center;transition:transform .3s,background .2s,border-color .2s;color:var(--text);flex-shrink:0}
 .jcard-accordion.open .jcard-chevron{transform:rotate(180deg);background:var(--blue);border-color:var(--blue);color:#fff}
 .jcard-body{display:none;padding:0 28px 28px}
 .jcard-accordion.open .jcard-body{display:block}
 .jcard-cols{display:grid;grid-template-columns:1fr 1fr;gap:36px;padding-top:20px;border-top:1px solid #eaeff5}
-.jcard-section-title{font-size:16px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#9ca3af;margin:0 0 10px}
+.jcard-section-title{font-size:16px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#9ca3af;margin:0 0 10px}
 .jdetail-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px}
 .jdetail-list li{font-size:16px;color:var(--text);line-height:1.6;padding-left:14px;position:relative}
 .jdetail-list li::before{content:'–';position:absolute;left:0;color:var(--blue)}
 .jperks-list{list-style:none;padding:0;margin:0 0 18px;display:flex;flex-direction:column;gap:8px}
 .jperks-list li{display:flex;align-items:flex-start;gap:8px;font-size:16px;color:var(--text);line-height:1.55}
 .jperks-list li svg{flex-shrink:0;margin-top:1px}
-.japply-link{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:8px;background:var(--blue);color:#fff;font-size:16px;font-weight:700;text-decoration:none;transition:opacity .2s,transform .2s;margin-top:2px}
-.japply-link:hover{opacity:.88;transform:translateX(2px)}
+.japply-link{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border:none;border-radius:8px;background:linear-gradient(135deg,var(--blue-br),#1668C9);color:#fff;font-size:16px;font-weight:600;font-family:var(--font-lead);text-decoration:none;cursor:pointer;transition:filter .2s,transform .2s,box-shadow .2s;margin-top:2px;box-shadow:0 4px 14px rgba(30,127,224,.3)}
+.japply-link:hover{filter:brightness(1.05);transform:translateX(2px);box-shadow:0 8px 22px rgba(30,127,224,.42)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
@@ -160,6 +205,147 @@
   .jcard-body{padding:0 18px 20px}
   .jcard-dept-badge{display:none}
 }
+
+/* ── HIRING PROCESS (5 bước phỏng vấn) ── */
+.hire-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.hire-step{position:relative;background:#fff;border:1.5px solid #eaeff5;border-radius:14px;padding:26px 20px 24px;text-align:center;transition:border-color .3s,box-shadow .3s,transform .3s}
+.hire-step:hover{border-color:var(--blue);box-shadow:0 14px 40px rgba(27,79,216,.1);transform:translateY(-4px)}
+.hire-num{width:56px;height:56px;border-radius:16px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-family:var(--font-lead);font-size:20px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--blue),#3a6bff);box-shadow:0 8px 22px rgba(27,79,216,.28)}
+.hire-step:nth-child(even) .hire-num{background:linear-gradient(135deg,#f5a623,#f7b94e);box-shadow:0 8px 22px rgba(245,166,35,.3)}
+.hire-step h4{font-family:var(--font-lead);font-size:16px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.hire-step p{font-size:16px;color:var(--text);line-height:1.6}
+.hire-step .hire-meta{display:inline-block;margin-top:12px;font-size:16px;font-weight:600;color:var(--blue);background:#EEF2FF;border-radius:999px;padding:4px 12px}
+
+/* ── LIFE AT COMPANY (chia sẻ nhân viên) ── */
+.emp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.emp-card{background:#fff;border:1.5px solid #eaeff5;border-radius:16px;padding:28px 26px;display:flex;flex-direction:column;gap:16px;transition:border-color .3s,box-shadow .3s,transform .3s}
+.emp-card:hover{border-color:var(--blue);box-shadow:0 16px 44px rgba(27,79,216,.1);transform:translateY(-4px)}
+.emp-quote-mark{font-family:var(--font-lead);font-size:36px;line-height:.6;color:var(--yellow);font-weight:700}
+.emp-quote{font-size:16px;color:var(--text2,#374151);line-height:1.75;flex:1}
+.emp-person{display:flex;align-items:center;gap:14px;border-top:1px solid #f0f2f6;padding-top:16px}
+.emp-avatar{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-lead);font-weight:700;font-size:18px;color:#fff;background:linear-gradient(135deg,var(--blue),#3a6bff);flex-shrink:0}
+.emp-name{font-family:var(--font-lead);font-size:16px;font-weight:600;color:var(--navy)}
+.emp-role{font-size:16px;color:var(--text);margin-top:2px}
+.life-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
+.life-tile{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:flex-end;padding:16px;color:#fff;font-family:var(--font-lead);font-weight:600;font-size:16px;background:linear-gradient(135deg,var(--navy),#2a4a76)}
+.life-tile:nth-child(2){background:linear-gradient(135deg,#1B4FD8,#3a6bff)}
+.life-tile:nth-child(3){background:linear-gradient(135deg,#c8861a,#f5a623)}
+.life-tile:nth-child(4){background:linear-gradient(135deg,#0f9d6b,#2ec48f)}
+.life-tile span{position:relative;z-index:1;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.life-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9}
+@media(max-width:1024px){
+  .hire-grid{grid-template-columns:repeat(2,1fr)}
+  .emp-grid{grid-template-columns:1fr 1fr}
+  .life-strip{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .hire-grid{grid-template-columns:1fr}
+  .emp-grid{grid-template-columns:1fr}
+  .life-strip{grid-template-columns:1fr 1fr}
+}
+/* ── MOVED: Scroll-morph team showcase (from homepage) ── */
+/* ══════════════════════════════════════════════════════════
+   SCROLL-MORPH HERO — faithful port of scroll-morph-hero
+   Circle of image cards → morphs to bottom arc on scroll.
+   Base (no JS / reduced-motion) = simple grid fallback.
+══════════════════════════════════════════════════════════ */
+.smh{position:relative;background:#fafafa}
+.smh-pin{position:relative}
+.smh-stage{position:relative;max-width:1120px;margin:0 auto;padding:72px 24px;display:flex;flex-wrap:wrap;gap:16px;justify-content:center;align-items:flex-start}
+
+/* Centre (circle-state) text */
+.smh-intro{flex-basis:100%;text-align:center;margin-bottom:26px}
+.smh-eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:14px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#1b4fd8;margin-bottom:14px}
+.smh-eyebrow::before,.smh-eyebrow::after{content:'';width:26px;height:2px;border-radius:1px;background:linear-gradient(90deg,#1b4fd8,rgba(27,79,216,0))}
+.smh-eyebrow::before{background:linear-gradient(90deg,rgba(27,79,216,0),#1b4fd8)}
+.smh-title{font-family:var(--font-lead);font-size:clamp(26px,4vw,44px);font-weight:700;color:#0d1b3e;line-height:1.05;letter-spacing:-1px}
+.smh-title span{color:#b8c6d9}
+.smh-hint{display:inline-flex;align-items:center;gap:9px;margin-top:18px;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#9ca3af}
+.smh-hint svg{width:15px;height:15px;stroke:#f5a623;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;animation:smh-bob 1.8s ease-in-out infinite}
+@keyframes smh-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+/* Arc-state text (top) — only in morph mode */
+.smh-arc{display:none}
+
+/* Cards (fallback grid: 5 per row) */
+.smh-card{position:relative;width:calc(20% - 16px);aspect-ratio:3/4}
+.smh-flip{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.8,.2,1);will-change:transform}
+.smh-card:hover{z-index:50}
+.smh-card:hover .smh-flip,.smh-card.is-flipped .smh-flip{transform:rotateY(180deg)}
+.smh-face{position:absolute;inset:0;border-radius:14px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 12px 30px -10px rgba(13,27,62,.42),0 2px 8px -4px rgba(13,27,62,.3)}
+.smh-front{background:linear-gradient(135deg,#e9edf4,#cdd7e6)}
+.smh-front::after{content:'';position:absolute;inset:0;background:rgba(6,12,24,.10);transition:background .3s;z-index:1}
+.smh-card:hover .smh-front::after{background:transparent}
+.smh-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.smh-card--ph .smh-front{background:linear-gradient(140deg,#eef1f7,#d3dce9)}
+.smh-card--ph .smh-front::before{content:'';position:absolute;top:50%;left:50%;width:34%;height:34%;transform:translate(-50%,-50%);z-index:0;background:rgba(13,27,62,.24);-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='18' height='18' rx='2'/><circle cx='9' cy='9' r='2'/><path d='m21 15-3.5-3.5L9 20'/></svg>") center/contain no-repeat;mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='18' height='18' rx='2'/><circle cx='9' cy='9' r='2'/><path d='m21 15-3.5-3.5L9 20'/></svg>") center/contain no-repeat}
+.smh-back{transform:rotateY(180deg);background:linear-gradient(155deg,#12224a,#070d1a);border:1px solid rgba(43,143,255,.34);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px;gap:5px}
+.smh-back b{color:#fff;font-family:var(--font-lead);font-weight:600;font-size:clamp(10px,.85vw,13px);line-height:1.2}
+.smh-back span{color:#2B8FFF;font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
+
+/* ── MORPH MODE (JS-enabled, ≥ intro) ── */
+.smh-on{height:var(--smh-h,260vh)}
+.smh-on .smh-pin{position:sticky;top:0;height:100vh;overflow:hidden;background:#fafafa}
+/* Đưa mỗi card lên GPU layer riêng → di chuyển 20 card + đổ bóng KHÔNG repaint mỗi frame (hết khựng) */
+.smh-on .smh-card{will-change:transform;backface-visibility:hidden;transform:translateZ(0)}
+.smh-on .smh-stage{position:absolute;top:120px;left:0;right:0;bottom:0;max-width:none;margin:0;padding:0;display:block}
+@media(max-width:768px){ .smh-on .smh-stage{top:64px} }
+.smh-on .smh-intro{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(560px,88%);margin:0;z-index:6;pointer-events:none}
+.smh-on .smh-arc{display:block;position:absolute;top:8%;left:50%;transform:translateX(-50%);width:min(680px,90%);text-align:center;z-index:6;opacity:0;pointer-events:none}
+.smh-on .smh-arc h3{font-family:var(--font-lead);font-size:clamp(24px,3.2vw,36px);font-weight:700;color:#0d1b3e;letter-spacing:-.5px;line-height:1.08;margin-bottom:14px}
+.smh-on .smh-arc p{font-size:clamp(14px,1.1vw,16px);line-height:1.7;color:#6b7280;max-width:560px;margin:0 auto}
+.smh-on .smh-arc p strong{color:#0d1b3e}
+.smh-on .smh-card{position:absolute;top:50%;left:50%;width:var(--iw,64px);height:var(--ih,90px);margin-left:calc(var(--iw,64px) / -2);margin-top:calc(var(--ih,90px) / -2);will-change:transform}
+.smh-on .smh-face{border-radius:12px}
+
+/* ── SCROLL-MORPH HERO — grid fallback responsive (morph mode is JS-driven) ── */
+@media(max-width:900px){
+  .smh-stage{padding:56px 20px}
+  .smh-card{width:calc(25% - 12px)}   /* 4 per row */
+}
+@media(max-width:600px){
+  .smh-card{width:calc(33.333% - 11px)} /* 3 per row */
+}
+@media(max-width:380px){
+  .smh-card{width:calc(50% - 8px)}      /* 2 per row */
+}
+/* Circle-state text must fit inside the tighter mobile ring */
+@media(max-width:560px){
+  .smh-title{font-size:23px;letter-spacing:-.3px;line-height:1.12}
+  .smh-eyebrow{font-size:11px;letter-spacing:2px;gap:8px;margin-bottom:10px}
+  .smh-eyebrow::before,.smh-eyebrow::after{width:16px}
+  .smh-hint{font-size:10px;letter-spacing:2px;margin-top:11px}
+  .smh-on .smh-intro{width:min(228px,74%)}
+  .smh-on .smh-arc{top:6%}
+  .smh-on .smh-arc h3{font-size:24px}
+}
+
+/* ── Header luôn tối (nền đen giống trang chủ) — hero careers có nền sáng nên
+   dùng thanh nav tối đặc để chữ trắng vẫn đọc rõ ── */
+#hdr{
+  /* nền tối + lưới chấm mờ y hệt .page-hero-dots của blog/about (rgba .04, 36px) */
+  background:
+    radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px) 0 0 / 36px 36px,
+    rgba(3,6,13,.9) !important;
+  backdrop-filter:blur(24px) saturate(1.6) !important;
+  -webkit-backdrop-filter:blur(24px) saturate(1.6) !important;
+  box-shadow:0 1px 0 rgba(255,255,255,.06), 0 8px 40px rgba(0,0,0,.45) !important;
+}
+#hdr .nav a{color:rgba(255,255,255,.78) !important}
+#hdr .nav a:hover,#hdr .nav a.active{color:#fff !important;background:rgba(255,255,255,.07) !important}
+#hdr .nav a::after{background:linear-gradient(90deg,#2B8FFF,#F4B41A) !important;box-shadow:0 0 8px rgba(34,211,238,.7) !important}
+#hdr .hamburger{border-color:rgba(255,255,255,.14) !important;background:rgba(255,255,255,.06) !important}
+#hdr .hamburger span{background:rgba(255,255,255,.85) !important}
+#hdr .hdr-line{display:block !important}
+#hdr .nav-cta{background:linear-gradient(135deg,var(--blue-br) 0%,#1668C9 100%) !important;color:#fff !important}
+#hdr::before,#hdr::after{opacity:1 !important}  /* aurora glow như header on-dark của blog */
+/* Mép dưới header mờ dần xuống hero sáng (bỏ đường cắt cứng) → chiều sâu "dark hero" như blog */
+#hdr{
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.06),
+    0 26px 26px -8px rgba(6,11,26,.72),
+    0 64px 60px -28px rgba(6,11,26,.55) !important;
+}
 </style>
 </head>
 <body>
@@ -168,6 +354,50 @@
 <div id="site-header"></div>
 
 <!-- PAGE HERO -->
+<!-- SERVICES — Scroll-morph hero (circle → bottom arc) -->
+<section class="smh" id="smh-team">
+  <div class="smh-pin">
+    <div class="smh-stage" data-morph>
+
+      <!-- Circle-state centre text -->
+      <div class="smh-intro">
+        <span class="smh-eyebrow">Năng lực cốt lõi</span>
+        <h2 class="smh-title">Chúng tôi <span>làm gì?</span></h2>
+        <div class="smh-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg> Cuộn để khám phá</div>
+      </div>
+
+      <!-- Arc-state text (fades in when the arc forms) -->
+      <div class="smh-arc" aria-hidden="true">
+        <h3>Hệ sinh thái dịch vụ Ethan Ecom</h3>
+        <p>Năng lực nội tại vận hành trọn vẹn chuỗi TMĐT xuyên biên giới — từ thiết kế, sản xuất đến bán hàng đa sàn quốc tế, tất cả tự chủ trong <strong>Ethan Ecom</strong>.</p>
+      </div>
+
+      <!-- 20 cards · 9 ảnh dịch vụ thật + 11 ảnh placeholder (thay <img> sau) -->
+      <div class="smh-card" data-i="0"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" src="assets/images/services/graphic-design.jpg" alt="Graphic Design — Ethan Ecom" loading="lazy"></div><div class="smh-face smh-back"><b>Graphic Design</b><span>Ethan Ecom</span></div></div></div>
+      <div class="smh-card smh-card--ph" data-i="1"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" alt="" loading="lazy"><!-- TODO: thêm ảnh --></div><div class="smh-face smh-back"><b>Ethan Ecom</b><span>Sáng tạo</span></div></div></div>
+      <div class="smh-card" data-i="2"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" src="assets/images/services/uiux-design.jpg" alt="UI/UX Design — Ethan Ecom" loading="lazy"></div><div class="smh-face smh-back"><b>UI/UX Design</b><span>Ethan Ecom</span></div></div></div>
+      <div class="smh-card smh-card--ph" data-i="3"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" alt="" loading="lazy"><!-- TODO: thêm ảnh --></div><div class="smh-face smh-back"><b>Ethan Ecom</b><span>Sáng tạo</span></div></div></div>
+      <div class="smh-card" data-i="4"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" src="assets/images/services/web-development.jpg" alt="Web Development — Ethan Ecom" loading="lazy"></div><div class="smh-face smh-back"><b>Web Development</b><span>Ethan Ecom</span></div></div></div>
+      <div class="smh-card smh-card--ph" data-i="5"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" alt="" loading="lazy"><!-- TODO: thêm ảnh --></div><div class="smh-face smh-back"><b>Ethan Ecom</b><span>Sáng tạo</span></div></div></div>
+      <div class="smh-card" data-i="6"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" src="assets/images/services/motion-graphics.jpg" alt="Motion Graphics — Ethan Ecom" loading="lazy"></div><div class="smh-face smh-back"><b>Motion Graphics</b><span>Ethan Ecom</span></div></div></div>
+      <div class="smh-card smh-card--ph" data-i="7"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" alt="" loading="lazy"><!-- TODO: thêm ảnh --></div><div class="smh-face smh-back"><b>Ethan Ecom</b><span>Sáng tạo</span></div></div></div>
+      <div class="smh-card" data-i="8"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" src="assets/images/services/photography.jpg" alt="Photography — Ethan Ecom" loading="lazy"></div><div class="smh-face smh-back"><b>Photography</b><span>Ethan Ecom</span></div></div></div>
+      <div class="smh-card smh-card--ph" data-i="9"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" alt="" loading="lazy"><!-- TODO: thêm ảnh --></div><div class="smh-face smh-back"><b>Ethan Ecom</b><span>Sáng tạo</span></div></div></div>
+      <div class="smh-card" data-i="10"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" src="assets/images/services/video-production.jpg" alt="Video Production — Ethan Ecom" loading="lazy"></div><div class="smh-face smh-back"><b>Video Production</b><span>Ethan Ecom</span></div></div></div>
+      <div class="smh-card smh-card--ph" data-i="11"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" alt="" loading="lazy"><!-- TODO: thêm ảnh --></div><div class="smh-face smh-back"><b>Ethan Ecom</b><span>Sáng tạo</span></div></div></div>
+      <div class="smh-card" data-i="12"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" src="assets/images/services/ecom-solutions.jpg" alt="E-com Solutions — Ethan Ecom" loading="lazy"></div><div class="smh-face smh-back"><b>E-com Solutions</b><span>Ethan Ecom</span></div></div></div>
+      <div class="smh-card smh-card--ph" data-i="13"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" alt="" loading="lazy"><!-- TODO: thêm ảnh --></div><div class="smh-face smh-back"><b>Ethan Ecom</b><span>Sáng tạo</span></div></div></div>
+      <div class="smh-card" data-i="14"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" src="assets/images/services/digital-marketing.jpg" alt="Digital Marketing — Ethan Ecom" loading="lazy"></div><div class="smh-face smh-back"><b>Digital Marketing</b><span>Ethan Ecom</span></div></div></div>
+      <div class="smh-card smh-card--ph" data-i="15"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" alt="" loading="lazy"><!-- TODO: thêm ảnh --></div><div class="smh-face smh-back"><b>Ethan Ecom</b><span>Sáng tạo</span></div></div></div>
+      <div class="smh-card" data-i="16"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" src="assets/images/services/tech-optimization.jpg" alt="Tech Optimization — Ethan Ecom" loading="lazy"></div><div class="smh-face smh-back"><b>Tech Optimization</b><span>Ethan Ecom</span></div></div></div>
+      <div class="smh-card smh-card--ph" data-i="17"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" alt="" loading="lazy"><!-- TODO: thêm ảnh --></div><div class="smh-face smh-back"><b>Ethan Ecom</b><span>Sáng tạo</span></div></div></div>
+      <div class="smh-card smh-card--ph" data-i="18"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" alt="" loading="lazy"><!-- TODO: thêm ảnh --></div><div class="smh-face smh-back"><b>Ethan Ecom</b><span>Sáng tạo</span></div></div></div>
+      <div class="smh-card smh-card--ph" data-i="19"><div class="smh-flip"><div class="smh-face smh-front"><img class="smh-img" alt="" loading="lazy"><!-- TODO: thêm ảnh --></div><div class="smh-face smh-back"><b>Ethan Ecom</b><span>Sáng tạo</span></div></div></div>
+
+    </div>
+  </div>
+</section>
+
 <section class="page-hero">
   <div class="page-hero-dots"></div>
   <div class="page-hero-orb page-hero-orb-1"></div>
@@ -185,7 +415,7 @@
 </section>
 
 <!-- MAIN CONTENT -->
-<main>
+<main id="main">
 
   <!-- ═══════════════════════════════════════
        DỊCH VỤ — 9 dịch vụ chuyên sâu
@@ -200,7 +430,7 @@
       </div>
       <div class="srv-detail-grid">
 
-        <div class="srv-detail-card reveal d1" id="web-dev">
+        <div class="srv-detail-card" id="web-dev">
           <div class="srv-thumb">
             <div class="img-ph ph-web" data-label="🌐  Web Development"><img src="assets/images/services/web-development.jpg" alt="Web Development" onerror="this.style.visibility='hidden'"></div>
             <div class="srv-num">01</div>
@@ -218,7 +448,7 @@
           </div>
         </div>
 
-        <div class="srv-detail-card reveal d2" id="uiux">
+        <div class="srv-detail-card" id="uiux">
           <div class="srv-thumb">
             <div class="img-ph ph-uiux" data-label="🎨  UI/UX Design"><img src="assets/images/services/uiux-design.jpg" alt="UI/UX Design" onerror="this.style.visibility='hidden'"></div>
             <div class="srv-num">02</div>
@@ -236,7 +466,7 @@
           </div>
         </div>
 
-        <div class="srv-detail-card reveal d3" id="graphic">
+        <div class="srv-detail-card" id="graphic">
           <div class="srv-thumb">
             <div class="img-ph ph-graphic" data-label="✏️  Graphic Design"><img src="assets/images/services/graphic-design.jpg" alt="Graphic Design" onerror="this.style.visibility='hidden'"></div>
             <div class="srv-num">03</div>
@@ -254,7 +484,7 @@
           </div>
         </div>
 
-        <div class="srv-detail-card reveal d1" id="motion">
+        <div class="srv-detail-card" id="motion">
           <div class="srv-thumb">
             <div class="img-ph ph-motion" data-label="🎬  Motion Graphics"><img src="assets/images/services/motion-graphics.jpg" alt="Motion Graphics" onerror="this.style.visibility='hidden'"></div>
             <div class="srv-num">04</div>
@@ -272,7 +502,7 @@
           </div>
         </div>
 
-        <div class="srv-detail-card reveal d2">
+        <div class="srv-detail-card">
           <div class="srv-thumb">
             <div class="img-ph ph-photo" data-label="📸  Photography"><img src="assets/images/services/photography.jpg" alt="Photography" onerror="this.style.visibility='hidden'"></div>
             <div class="srv-num">05</div>
@@ -290,7 +520,7 @@
           </div>
         </div>
 
-        <div class="srv-detail-card reveal d3">
+        <div class="srv-detail-card">
           <div class="srv-thumb">
             <div class="img-ph ph-video" data-label="🎥  Video Production"><img src="assets/images/services/video-production.jpg" alt="Video Production" onerror="this.style.visibility='hidden'"></div>
             <div class="srv-num">06</div>
@@ -308,7 +538,7 @@
           </div>
         </div>
 
-        <div class="srv-detail-card reveal d1" id="ecom">
+        <div class="srv-detail-card" id="ecom">
           <div class="srv-thumb">
             <div class="img-ph ph-ecom" data-label="🛒  E-com Solutions"><img src="assets/images/services/ecom-solutions.jpg" alt="E-com Solutions" onerror="this.style.visibility='hidden'"></div>
             <div class="srv-num">07</div>
@@ -326,7 +556,7 @@
           </div>
         </div>
 
-        <div class="srv-detail-card reveal d2" id="marketing">
+        <div class="srv-detail-card" id="marketing">
           <div class="srv-thumb">
             <div class="img-ph ph-marketing" data-label="📊  Digital Marketing"><img src="assets/images/services/digital-marketing.jpg" alt="Digital Marketing" onerror="this.style.visibility='hidden'"></div>
             <div class="srv-num">08</div>
@@ -344,7 +574,7 @@
           </div>
         </div>
 
-        <div class="srv-detail-card reveal d3">
+        <div class="srv-detail-card">
           <div class="srv-thumb">
             <div class="img-ph ph-tech" data-label="⚙️  Tech Optimization"><img src="assets/images/services/tech-optimization.jpg" alt="Tech Optimization" onerror="this.style.visibility='hidden'"></div>
             <div class="srv-num">09</div>
@@ -463,7 +693,7 @@
       </div>
       <div class="culture-grid" style="align-items:stretch;gap:32px">
         <div class="benefit-card reveal rl" style="display:block;padding:36px 32px;border-top:4px solid #10b981">
-          <h3 style="font-family:'Be Vietnam Pro',sans-serif;font-size:20px;font-weight:700;margin-bottom:18px;color:#0f9d6b">✅ Bạn sẽ phát triển ở Ethan nếu…</h3>
+          <h3 style="font-family:var(--font-lead);font-size:20px;font-weight:600;margin-bottom:18px;color:#0f9d6b">✅ Bạn sẽ phát triển ở Ethan nếu…</h3>
           <ul style="margin:0;padding-left:20px;color:var(--text);line-height:1.9;font-size:16px">
             <li>Bạn học vì thích và muốn, không vì bị ép.</li>
             <li>Khi cách cũ hết hiệu quả, bạn tự đi tìm cách mới mà không cần ai nhắc.</li>
@@ -472,7 +702,7 @@
           </ul>
         </div>
         <div class="benefit-card reveal rr" style="display:block;padding:36px 32px;border-top:4px solid #f5a623">
-          <h3 style="font-family:'Be Vietnam Pro',sans-serif;font-size:20px;font-weight:700;margin-bottom:18px;color:#c8861a">⚠️ Bạn có thể chưa hợp nếu…</h3>
+          <h3 style="font-family:var(--font-lead);font-size:20px;font-weight:600;margin-bottom:18px;color:#c8861a">⚠️ Bạn có thể chưa hợp nếu…</h3>
           <ul style="margin:0;padding-left:20px;color:var(--text);line-height:1.9;font-size:16px">
             <li>Bạn làm tốt phần việc của mình nhưng ít chủ động ngoài đó.</li>
             <li>Bạn cần sự ổn định và có thể dự đoán được — 6 tháng qua Ethan tái cơ cấu, đổi sản phẩm, đổi KPI.</li>
@@ -546,7 +776,7 @@
         <div class="sl">Vị trí tuyển dụng</div>
         <h2 class="st">14 vị trí đang mở</h2>
         <div class="divider c"></div>
-        <p class="ss">Tìm vị trí phù hợp và bắt đầu hành trình cùng Ethan Ecom tại 61/1G Võ Dõng 2, Thống Nhất, Đồng Nai.</p>
+        <p class="ss">Tìm vị trí phù hợp và bắt đầu hành trình cùng Ethan Ecom tại 61/1G Võ Dõng, Gia Kiệm, Đồng Nai.</p>
       </div>
 
       <div class="jobs-filter reveal">
@@ -603,7 +833,7 @@
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT + thưởng Lễ/Tết, lương tháng 13</li>
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Đào tạo kỹ năng mềm, du lịch team building hàng năm</li>
                 </ul>
-                <a href="mailto:hr@ethanecom.com?subject=Leader TikTokShop US - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+                <button type="button" class="japply-link" onclick="openModal('Leader TikTokShop US')">Ứng tuyển ngay →</button>
               </div>
             </div>
           </div>
@@ -647,7 +877,7 @@
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT + thưởng Lễ/Tết, lương tháng 13</li>
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Đào tạo kỹ năng mềm, du lịch team building hàng năm</li>
                 </ul>
-                <a href="mailto:hr@ethanecom.com?subject=Seller POD và Seller Dropship - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+                <button type="button" class="japply-link" onclick="openModal('Seller POD và Seller Dropship')">Ứng tuyển ngay →</button>
               </div>
             </div>
           </div>
@@ -691,7 +921,7 @@
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT + thưởng Lễ/Tết, lương tháng 13</li>
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Đào tạo kỹ năng mềm, du lịch team building hàng năm</li>
                 </ul>
-                <a href="mailto:hr@ethanecom.com?subject=Nhân viên Internet Marketing - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+                <button type="button" class="japply-link" onclick="openModal('Nhân viên Internet Marketing')">Ứng tuyển ngay →</button>
               </div>
             </div>
           </div>
@@ -735,7 +965,7 @@
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT + thưởng Lễ/Tết, lương tháng 13</li>
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Đào tạo kỹ năng mềm, du lịch team building hàng năm</li>
                 </ul>
-                <a href="mailto:hr@ethanecom.com?subject=Video Creator/Editor - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+                <button type="button" class="japply-link" onclick="openModal('Video Creator/Editor')">Ứng tuyển ngay →</button>
               </div>
             </div>
           </div>
@@ -779,7 +1009,7 @@
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT + thưởng Lễ/Tết, lương tháng 13</li>
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Du lịch, team building hàng năm</li>
                 </ul>
-                <a href="mailto:hr@ethanecom.com?subject=Nhân viên Web Developer - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+                <button type="button" class="japply-link" onclick="openModal('Nhân viên Web Developer')">Ứng tuyển ngay →</button>
               </div>
             </div>
           </div>
@@ -823,7 +1053,7 @@
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT + thưởng Lễ/Tết, lương tháng 13</li>
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Đào tạo kỹ năng mềm, du lịch team building hàng năm</li>
                 </ul>
-                <a href="mailto:hr@ethanecom.com?subject=Graphic Designer - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+                <button type="button" class="japply-link" onclick="openModal('Graphic Designer')">Ứng tuyển ngay →</button>
               </div>
             </div>
           </div>
@@ -867,7 +1097,7 @@
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT + thưởng Lễ/Tết, lương tháng 13</li>
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Đào tạo kỹ năng mềm, du lịch team building hàng năm</li>
                 </ul>
-                <a href="mailto:hr@ethanecom.com?subject=Nhân viên Nhân Sự HR - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+                <button type="button" class="japply-link" onclick="openModal('Nhân viên Nhân Sự HR')">Ứng tuyển ngay →</button>
               </div>
             </div>
           </div>
@@ -912,7 +1142,7 @@
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> BHXH, BHYT + thưởng Lễ/Tết, lương tháng 13</li>
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Đào tạo kỹ năng mềm, du lịch team building hàng năm</li>
                 </ul>
-                <a href="mailto:hr@ethanecom.com?subject=Nhân viên Kế Toán Tổng Hợp - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+                <button type="button" class="japply-link" onclick="openModal('Nhân viên Kế Toán Tổng Hợp')">Ứng tuyển ngay →</button>
               </div>
             </div>
           </div>
@@ -956,7 +1186,7 @@
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương tháng 13, nghỉ lễ theo quy định</li>
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Ăn trưa và nghỉ trưa tại văn phòng</li>
                 </ul>
-                <a href="mailto:hr@ethanecom.com?subject=Quản Lý Xưởng Thêu - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+                <button type="button" class="japply-link" onclick="openModal('Quản Lý Xưởng Thêu')">Ứng tuyển ngay →</button>
               </div>
             </div>
           </div>
@@ -999,7 +1229,7 @@
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương tháng 13, nghỉ lễ theo quy định</li>
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Ăn trưa và nghỉ trưa tại văn phòng</li>
                 </ul>
-                <a href="mailto:hr@ethanecom.com?subject=Nhân viên Kỹ Thuật Thêu - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+                <button type="button" class="japply-link" onclick="openModal('Nhân viên Kỹ Thuật Thêu')">Ứng tuyển ngay →</button>
               </div>
             </div>
           </div>
@@ -1042,7 +1272,7 @@
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương tháng 13, nghỉ lễ theo quy định</li>
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Ăn trưa và nghỉ trưa tại văn phòng</li>
                 </ul>
-                <a href="mailto:hr@ethanecom.com?subject=Nhân viên Kiểm Hàng - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+                <button type="button" class="japply-link" onclick="openModal('Nhân viên Kiểm Hàng')">Ứng tuyển ngay →</button>
               </div>
             </div>
           </div>
@@ -1085,7 +1315,7 @@
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương tháng 13, nghỉ lễ theo quy định</li>
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Ăn trưa và nghỉ trưa tại văn phòng</li>
                 </ul>
-                <a href="mailto:hr@ethanecom.com?subject=Nhân viên Kiểm Soát Chất Lượng QC - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+                <button type="button" class="japply-link" onclick="openModal('Nhân viên Kiểm Soát Chất Lượng QC')">Ứng tuyển ngay →</button>
               </div>
             </div>
           </div>
@@ -1129,7 +1359,7 @@
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương tháng 13, nghỉ lễ theo quy định</li>
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Ăn trưa và nghỉ trưa tại văn phòng</li>
                 </ul>
-                <a href="mailto:hr@ethanecom.com?subject=Nhân viên Kỹ Thuật Máy Laser - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+                <button type="button" class="japply-link" onclick="openModal('Nhân viên Kỹ Thuật Máy Laser')">Ứng tuyển ngay →</button>
               </div>
             </div>
           </div>
@@ -1160,7 +1390,7 @@
                 <p class="jcard-section-title" style="margin-top:18px">Thông tin làm việc</p>
                 <ul class="jdetail-list">
                   <li>Giờ làm: 7:30 – 17:00, Thứ 2 đến Thứ 7 (nghỉ trưa 1h30')</li>
-                  <li>Địa chỉ: 61/1G Võ Dõng 2, Thống Nhất, Đồng Nai</li>
+                  <li>Địa chỉ: 61/1G Võ Dõng, Gia Kiệm, Đồng Nai</li>
                   <li>Liên hệ: +84 967 473 979</li>
                 </ul>
               </div>
@@ -1172,12 +1402,105 @@
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lương tháng 13, nghỉ lễ theo quy định</li>
                   <li><svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Ăn trưa và nghỉ trưa tại văn phòng</li>
                 </ul>
-                <a href="mailto:hr@ethanecom.com?subject=Nhân viên Vận Hành Máy In - Họ và Tên" class="japply-link">Gửi CV ứng tuyển →</a>
+                <button type="button" class="japply-link" onclick="openModal('Nhân viên Vận Hành Máy In')">Ứng tuyển ngay →</button>
               </div>
             </div>
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- QUY TRÌNH TUYỂN DỤNG -->
+  <section class="section section--gray" id="hiring-process">
+    <div class="container">
+      <div class="sh c reveal">
+        <div class="sl">Quy trình tuyển dụng</div>
+        <h2 class="st">5 bước để trở thành người Ethan</h2>
+        <div class="divider c"></div>
+        <p class="ss">Minh bạch và nhanh gọn — từ lúc gửi CV đến ngày nhận việc, bạn luôn biết mình đang ở đâu. Toàn bộ quy trình thường hoàn tất trong 1–2 tuần.</p>
+      </div>
+      <div class="hire-grid">
+        <div class="hire-step reveal d1">
+          <div class="hire-num">1</div>
+          <h4>Gửi hồ sơ</h4>
+          <p>Nộp CV qua form ứng tuyển hoặc email <strong>hr@ethanecom.com</strong>, tiêu đề <strong>[Tên Vị Trí] – [Họ và Tên]</strong>.</p>
+        </div>
+        <div class="hire-step reveal d2">
+          <div class="hire-num">2</div>
+          <h4>Sàng lọc &amp; liên hệ</h4>
+          <p>HR xem xét hồ sơ và phản hồi cho ứng viên phù hợp.</p>
+          <span class="hire-meta">3–5 ngày làm việc</span>
+        </div>
+        <div class="hire-step reveal d3">
+          <div class="hire-num">3</div>
+          <h4>Phỏng vấn chuyên môn</h4>
+          <p>Trao đổi với Trưởng bộ phận, có thể kèm bài test nhỏ hoặc case thực tế theo vị trí.</p>
+        </div>
+        <div class="hire-step reveal d4">
+          <div class="hire-num">4</div>
+          <h4>Phỏng vấn văn hoá</h4>
+          <p>Gặp Ban Giám đốc để cùng soi chiếu định hướng và 5 giá trị cốt lõi của Ethan.</p>
+        </div>
+        <div class="hire-step reveal d1">
+          <div class="hire-num">5</div>
+          <h4>Offer &amp; Onboarding</h4>
+          <p>Nhận offer, thử việc có hỗ trợ máy tính, đào tạo và người kèm cặp ngay từ ngày đầu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ĐỜI SỐNG CÔNG TY (Life at Company) -->
+  <section class="section" id="life">
+    <div class="container">
+      <div class="sh c reveal">
+        <div class="sl">Đời sống công ty</div>
+        <h2 class="st">Người Ethan nói gì về Ethan?</h2>
+        <div class="divider c"></div>
+        <p class="ss">Không phải quảng cáo — đây là những chia sẻ thật về môi trường làm việc, từ chính các thành viên trong đội ngũ 88 người.</p>
+      </div>
+      <div class="emp-grid">
+        <div class="emp-card reveal d1">
+          <div class="emp-quote-mark">"</div>
+          <p class="emp-quote">Điều mình thích nhất ở Ethan là mọi người thật sự "đồng lòng". Khi đơn hàng dồn dập mùa lễ, cả team ở lại phụ nhau đóng gói — không có chuyện "việc ai người đó lo".</p>
+          <div class="emp-person">
+            <div class="emp-avatar">HL</div>
+            <div>
+              <div class="emp-name">Hồng Loan</div>
+              <div class="emp-role">Seller POD · Khối Kinh Doanh</div>
+            </div>
+          </div>
+        </div>
+        <div class="emp-card reveal d2">
+          <div class="emp-quote-mark">"</div>
+          <p class="emp-quote">Mình vào Ethan khi chưa biết gì về thiết kế cho thị trường Mỹ. Sau 6 tháng được đào tạo và làm thật, giờ mình tự tin lên design bán chạy. Ở đây học được là được làm ngay.</p>
+          <div class="emp-person">
+            <div class="emp-avatar" style="background:linear-gradient(135deg,#c8861a,#f5a623)">MT</div>
+            <div>
+              <div class="emp-name">Minh Trí</div>
+              <div class="emp-role">Graphic Designer · Creative Design</div>
+            </div>
+          </div>
+        </div>
+        <div class="emp-card reveal d3">
+          <div class="emp-quote-mark">"</div>
+          <p class="emp-quote">Xưởng thêu tự chủ nên mình được nhìn sản phẩm từ file design đến thành phẩm giao đi Mỹ. Cảm giác "cái mình làm ra có người thật ở nửa vòng trái đất dùng" rất khác.</p>
+          <div class="emp-person">
+            <div class="emp-avatar" style="background:linear-gradient(135deg,#0f9d6b,#2ec48f)">QB</div>
+            <div>
+              <div class="emp-name">Quốc Bảo</div>
+              <div class="emp-role">Kỹ thuật thêu · Khối Sản Xuất</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="life-strip reveal">
+        <div class="life-tile"><span>🎉 Sinh nhật hàng tháng</span></div>
+        <div class="life-tile"><span>✈️ Du lịch &amp; team building</span></div>
+        <div class="life-tile"><span>🍱 Ăn trưa tại công ty</span></div>
+        <div class="life-tile"><span>🎄 Tiệc Christmas</span></div>
       </div>
     </div>
   </section>
@@ -1204,57 +1527,78 @@
 
 <!-- APPLICATION MODAL -->
 <div class="modal" id="applyModal">
-  <div class="modal-panel">
-    <div class="modal-header">
-      <h3>Ứng tuyển: <span id="modalJobTitle"></span></h3>
-      <button class="modal-x" id="modalClose">✕</button>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+    <div class="modal-header stg" style="--d:0">
+      <div>
+        <h3 id="modalHeading">Ứng tuyển: <span id="modalJobTitle"></span></h3>
+        <p class="modal-sub">CV gửi về <strong>hr@ethanecom.com</strong> · tiêu đề <strong>[Tên Vị Trí] – [Họ và Tên]</strong></p>
+      </div>
+      <button class="modal-x" id="modalClose" aria-label="Đóng">✕</button>
     </div>
     <div class="modal-body">
-      <div style="background:#EEF2FF;border-radius:10px;padding:14px 16px;margin-bottom:20px;font-size:16px;color:var(--blue);line-height:1.7">
-        📨 CV sẽ được gửi về <strong>hr@ethanecom.com</strong><br>
-        Vui lòng đặt tiêu đề email theo cú pháp: <strong>[Tên Vị Trí] – [Họ và Tên]</strong>
-      </div>
       <form id="applyForm" novalidate>
-        <div class="fg" style="margin-bottom:16px">
-          <label for="aname">Họ và tên *</label>
-          <input type="text" id="aname" placeholder="Nguyễn Văn A" required>
-        </div>
-        <div class="fg" style="margin-bottom:16px">
-          <label for="aemail">Email *</label>
-          <input type="email" id="aemail" placeholder="email@example.com" required>
-        </div>
-        <div class="fg" style="margin-bottom:16px">
-          <label for="aphone">Số điện thoại</label>
-          <input type="tel" id="aphone" placeholder="+84 xxx xxx xxx">
-        </div>
-        <div class="fg" style="margin-bottom:16px">
-          <label for="aexp">Kinh nghiệm làm việc</label>
-          <select id="aexp">
-            <option>Dưới 1 năm</option>
-            <option>1–2 năm</option>
-            <option>3–5 năm</option>
-            <option>Trên 5 năm</option>
-          </select>
-        </div>
-        <div class="fg" style="margin-bottom:16px">
-          <label>Upload CV (PDF hoặc DOC, tối đa 5MB)</label>
-          <div class="upload-area" id="uploadArea">
-            <div style="font-size:28px">📎</div>
-            <strong>Kéo thả file vào đây</strong>
-            <p>hoặc click để chọn file</p>
-            <input type="file" accept=".pdf,.doc,.docx" style="display:none" id="cvFile">
+        <div class="apply-grid">
+
+          <!-- LEFT: CV upload column -->
+          <div class="apply-upload-col stg" style="--d:1">
+            <div class="upload-area" id="uploadArea">
+              <div class="cv-avatar">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg>
+                <span class="cv-plus">+</span>
+              </div>
+              <p class="cv-title">Tải lên CV</p>
+              <p class="cv-hint">PDF / DOC · tối đa 5MB</p>
+              <input type="file" accept=".pdf,.doc,.docx" style="display:none" id="cvFile">
+            </div>
+            <div id="fileName" class="cv-filename" style="display:none"></div>
+            <button type="button" class="btn btn--outline btn--sm cv-add-btn" id="cvAddBtn">Chọn tệp CV</button>
+            <p id="cvError" role="alert"></p>
           </div>
-          <div id="fileName" style="font-size:16px;color:var(--blue);margin-top:8px;display:none"></div>
+
+          <!-- RIGHT: fields -->
+          <div class="apply-fields">
+            <div class="fg stg" style="--d:2">
+              <label for="aname">Họ và tên <span class="req">*</span></label>
+              <input type="text" id="aname" placeholder="Nguyễn Văn A" autocomplete="name" required>
+            </div>
+            <div class="fg stg" style="--d:3">
+              <label for="aemail">Email <span class="req">*</span></label>
+              <input type="email" id="aemail" placeholder="email@example.com" autocomplete="email" inputmode="email" required>
+            </div>
+            <div class="apply-two stg" style="--d:4">
+              <div class="fg" style="margin:0">
+                <label for="aphone">Số điện thoại</label>
+                <input type="tel" id="aphone" placeholder="+84 xxx xxx xxx" autocomplete="tel" inputmode="tel">
+              </div>
+              <div class="fg" style="margin:0">
+                <label for="aexp">Kinh nghiệm <span class="tip" data-tip="Tổng thời gian bạn đã làm ở vị trí tương đương.">i</span></label>
+                <select id="aexp">
+                  <option>Dưới 1 năm</option>
+                  <option>1–2 năm</option>
+                  <option>3–5 năm</option>
+                  <option>Trên 5 năm</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- FULL WIDTH: intro -->
+          <div class="fg apply-full stg" style="--d:5">
+            <label for="amsg">Giới thiệu bản thân ngắn gọn</label>
+            <textarea id="amsg" placeholder="Chia sẻ về kinh nghiệm, điểm mạnh và lý do bạn muốn gia nhập Ethan Ecom..." style="min-height:96px"></textarea>
+          </div>
+
+          <!-- ACTIONS -->
+          <div class="apply-actions stg" style="--d:6">
+            <button type="button" class="btn btn--ghost btn--sm" id="modalCancel">Huỷ</button>
+            <button type="submit" class="btn btn--blue">Gửi hồ sơ →</button>
+          </div>
+
         </div>
-        <div class="fg" style="margin-bottom:20px">
-          <label for="amsg">Giới thiệu bản thân ngắn gọn</label>
-          <textarea id="amsg" placeholder="Chia sẻ về kinh nghiệm, điểm mạnh và lý do bạn muốn gia nhập Ethan Ecom..." style="min-height:100px"></textarea>
-        </div>
-        <button type="submit" class="btn btn--blue" style="width:100%;justify-content:center">Gửi hồ sơ →</button>
       </form>
       <div id="applySuccess" style="display:none;text-align:center;padding:32px;background:#f0fdf4;border-radius:12px;border:1.5px solid #bbf7d0;margin-top:8px">
         <div style="font-size:36px">🎉</div>
-        <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-size:18px;font-weight:700;color:#15803d;margin-top:12px">Gửi thành công!</h4>
+        <h4 style="font-family:var(--font-lead);font-size:18px;font-weight:600;color:#15803d;margin-top:12px">Gửi thành công!</h4>
         <p style="font-size:16px;color:#166534;margin-top:8px">Chúng tôi sẽ xem xét hồ sơ và liên hệ lại trong vòng 3–5 ngày làm việc.</p>
       </div>
     </div>
@@ -1262,7 +1606,7 @@
 </div>
 
 <!-- Shared JS (must be last) -->
-<script src="assets/js/shared.js"></script>
+<script src="assets/js/shared.js?v=housef02"></script>
 <script>
 /* ── PAGE-SPECIFIC JAVASCRIPT ── */
 
@@ -1270,9 +1614,25 @@
 function toggleJob(header) {
   var job = header.parentElement;
   var isOpen = job.classList.contains('open');
-  document.querySelectorAll('.jcard-accordion.open').forEach(function(j) { j.classList.remove('open'); });
-  if (!isOpen) job.classList.add('open');
+  document.querySelectorAll('.jcard-accordion.open').forEach(function(j) {
+    j.classList.remove('open');
+    var h = j.querySelector('.jcard-head'); if(h) h.setAttribute('aria-expanded','false');
+  });
+  if (!isOpen) { job.classList.add('open'); header.setAttribute('aria-expanded','true'); }
+  else header.setAttribute('aria-expanded','false');
 }
+
+// A11y: make each job header a real keyboard-operable disclosure button
+document.querySelectorAll('.jcard-head').forEach(function(head, idx){
+  head.setAttribute('role','button');
+  head.setAttribute('tabindex','0');
+  head.setAttribute('aria-expanded','false');
+  var body = head.parentElement.querySelector('.jcard-body');
+  if(body){ var bid = 'jcard-body-'+idx; body.id = bid; head.setAttribute('aria-controls', bid); }
+  head.addEventListener('keydown', function(e){
+    if(e.key==='Enter' || e.key===' ' || e.key==='Spacebar'){ e.preventDefault(); toggleJob(head); }
+  });
+});
 
 // Job filter
 document.querySelectorAll('.jfbtn').forEach(btn => {
@@ -1287,52 +1647,321 @@ document.querySelectorAll('.jfbtn').forEach(btn => {
   });
 });
 
-// Modal open/close
+// ── Apply modal: open/close + focus management ──
+var applyModal   = document.getElementById('applyModal');
+var applyPanel   = applyModal.querySelector('.modal-panel');
+var applyForm    = document.getElementById('applyForm');
+var applySuccess = document.getElementById('applySuccess');
+var uploadArea   = document.getElementById('uploadArea');
+var cvFile       = document.getElementById('cvFile');
+var fileNameEl   = document.getElementById('fileName');
+var cvError      = document.getElementById('cvError');
+var applyTrigger = null;
+var MAX_CV = 5 * 1024 * 1024;                 // 5MB
+var CV_OK  = /\.(pdf|docx?)$/i;               // .pdf / .doc / .docx
+
+function fgSetError(el, msg){
+  el.classList.add('invalid'); el.setAttribute('aria-invalid','true');
+  var fg = el.closest('.fg'); if(!fg) return;
+  var err = fg.querySelector('.fg-err');
+  if(!err){ err=document.createElement('span'); err.className='fg-err'; err.id=el.id+'-err';
+            err.setAttribute('role','alert'); fg.appendChild(err); el.setAttribute('aria-describedby',err.id); }
+  err.textContent = msg;
+}
+function fgClearError(el){
+  el.classList.remove('invalid'); el.removeAttribute('aria-invalid');
+  var fg = el.closest('.fg'); if(!fg) return;
+  var err = fg.querySelector('.fg-err'); if(err) err.textContent='';
+}
+function showCvError(msg){ cvError.textContent=msg; cvError.classList.add('show'); uploadArea.classList.add('invalid'); }
+function clearCvError(){ cvError.textContent=''; cvError.classList.remove('show'); uploadArea.classList.remove('invalid'); }
+function validCv(file){
+  if(!file) return 'Vui lòng đính kèm CV (PDF hoặc DOC).';
+  if(!CV_OK.test(file.name)) return 'Định dạng không hợp lệ — chỉ nhận PDF, DOC hoặc DOCX.';
+  if(file.size > MAX_CV) return 'Tệp quá lớn — tối đa 5MB.';
+  return '';
+}
+
 function openModal(title) {
+  applyTrigger = document.activeElement;
   document.getElementById('modalJobTitle').textContent = title;
-  document.getElementById('applyModal').classList.add('open');
+  applyModal.classList.add('open');
   document.body.style.overflow = 'hidden';
-  document.getElementById('applyForm').style.display = 'block';
-  document.getElementById('applySuccess').style.display = 'none';
+  applyForm.style.display = 'block';
+  applySuccess.style.display = 'none';
+  applyForm.reset();
+  fgClearError(document.getElementById('aname'));
+  fgClearError(document.getElementById('aemail'));
+  clearCvError();
+  fileNameEl.style.display = 'none'; fileNameEl.textContent = '';
+  setTimeout(function(){ var f=document.getElementById('aname'); if(f) f.focus(); }, 80);
+}
+function closeModal() {
+  applyModal.classList.remove('open');
+  document.body.style.overflow = '';
+  if (applyTrigger && applyTrigger.focus) { applyTrigger.focus(); applyTrigger = null; }
 }
 document.getElementById('modalClose').addEventListener('click', closeModal);
-document.getElementById('applyModal').addEventListener('click', e => {
-  if (e.target === e.currentTarget) closeModal();
+document.getElementById('modalCancel').addEventListener('click', closeModal);
+applyModal.addEventListener('click', function(e){ if (e.target === e.currentTarget) closeModal(); });
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape' && applyModal.classList.contains('open')) closeModal();
 });
-function closeModal() {
-  document.getElementById('applyModal').classList.remove('open');
-  document.body.style.overflow = '';
+/* Focus trap inside the dialog */
+applyPanel.addEventListener('keydown', function(e){
+  if (e.key !== 'Tab') return;
+  var f = Array.prototype.filter.call(
+    applyPanel.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])'),
+    function(el){ return el.offsetParent !== null; });
+  if (!f.length) return;
+  var first=f[0], last=f[f.length-1];
+  if (e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+  else if (!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+});
+
+// ── CV upload (enforce type + size) ──
+uploadArea.addEventListener('click', function(){ cvFile.click(); });
+document.getElementById('cvAddBtn').addEventListener('click', function(){ cvFile.click(); });
+function handleFile(file){
+  if (file && validCv(file)){ showCvError(validCv(file)); cvFile.value=''; fileNameEl.style.display='none'; return; }
+  clearCvError();
+  if (file){ fileNameEl.textContent='📎 '+file.name; fileNameEl.style.display='block'; }
 }
-
-// File upload area
-const uploadArea = document.getElementById('uploadArea');
-const cvFile = document.getElementById('cvFile');
-const fileName = document.getElementById('fileName');
-uploadArea.addEventListener('click', () => cvFile.click());
-cvFile.addEventListener('change', () => {
-  if (cvFile.files[0]) {
-    fileName.textContent = '📎 ' + cvFile.files[0].name;
-    fileName.style.display = 'block';
-  }
-});
-uploadArea.addEventListener('dragover', e => { e.preventDefault(); uploadArea.style.borderColor = 'var(--blue)'; });
-uploadArea.addEventListener('dragleave', () => { uploadArea.style.borderColor = ''; });
-uploadArea.addEventListener('drop', e => {
-  e.preventDefault();
-  uploadArea.style.borderColor = '';
-  if (e.dataTransfer.files[0]) {
-    cvFile.files = e.dataTransfer.files;
-    fileName.textContent = '📎 ' + e.dataTransfer.files[0].name;
-    fileName.style.display = 'block';
-  }
+cvFile.addEventListener('change', function(){ handleFile(cvFile.files[0]); });
+uploadArea.addEventListener('dragover', function(e){ e.preventDefault(); uploadArea.style.borderColor='var(--blue)'; });
+uploadArea.addEventListener('dragleave', function(){ uploadArea.style.borderColor=''; });
+uploadArea.addEventListener('drop', function(e){
+  e.preventDefault(); uploadArea.style.borderColor='';
+  if (e.dataTransfer.files[0]){ cvFile.files = e.dataTransfer.files; handleFile(e.dataTransfer.files[0]); }
 });
 
-// Form submit (demo)
-document.getElementById('applyForm').addEventListener('submit', e => {
+// ── Submit — validate BEFORE showing success ──
+applyForm.addEventListener('submit', function(e){
   e.preventDefault();
-  document.getElementById('applyForm').style.display = 'none';
-  document.getElementById('applySuccess').style.display = 'block';
+  var ok=true, firstBad=null;
+  var name=document.getElementById('aname'), email=document.getElementById('aemail');
+  fgClearError(name); fgClearError(email);
+  if (!name.value.trim()){ fgSetError(name,'Vui lòng nhập họ và tên.'); ok=false; firstBad=firstBad||name; }
+  if (!email.value.trim()){ fgSetError(email,'Vui lòng nhập email.'); ok=false; firstBad=firstBad||email; }
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){ fgSetError(email,'Email chưa đúng định dạng.'); ok=false; firstBad=firstBad||email; }
+  var cvErr = validCv(cvFile.files[0]);
+  if (cvErr){ showCvError(cvErr); ok=false; if(!firstBad) firstBad=document.getElementById('cvAddBtn'); }
+  if (!ok){ if (firstBad && firstBad.focus) firstBad.focus(); return; }
+  applyForm.style.display='none';
+  applySuccess.style.display='block';
 });
+</script>
+<script>
+/* ── SCROLL-MORPH HERO (circle ⇄ bottom-arc) — faithful vanilla port ── */
+(function(){
+  var section = document.querySelector('.smh');
+  if (!section || !section.classList.contains('smh')) return;
+  var stage = section.querySelector('[data-morph]');
+  var pin   = section.querySelector('.smh-pin');
+  var intro = section.querySelector('.smh-intro');
+  var arc   = section.querySelector('.smh-arc');
+  var cards = Array.prototype.slice.call(section.querySelectorAll('.smh-card'));
+  if (!stage || !cards.length) return;
+
+  var N = cards.length;
+  var reduce  = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var mqHover = window.matchMedia('(hover: hover)');
+  var PI = Math.PI;
+  var lerp  = function(a,b,t){ return a*(1-t)+b*t; };
+  var clamp = function(v,lo,hi){ return Math.min(Math.max(v,lo),hi); };
+  /* Hệ số làm mượt độc lập với tốc độ khung hình → chuyển động đều, không khựng dù 30/60/120fps */
+  var smoothK = function(base,dt){ return 1 - Math.pow(1-base, dt); };
+
+  // Tap-to-flip for touch / no-hover devices (desktop uses :hover)
+  cards.forEach(function(c){
+    c.addEventListener('click', function(){ if (!mqHover.matches) c.classList.toggle('is-flipped'); });
+  });
+
+  if (reduce) return;   // keep the accessible static grid fallback
+
+  var W=0, H=0, isMobile=false, IW=64, IH=90;
+  var scatter = [];
+  var cur = cards.map(function(){ return {x:0,y:0,rot:0,scale:1,op:0}; });
+  var phase = 'hidden';                                   // hidden → scatter → line → circle
+  var morphV=0, morphT=0, rotV=0, rotT=0, parX=0, parXT=0, introOp=0, arcOp=0;
+  var started=false, rafId=0, introReady=false;   // introReady: chỉ hiện chữ giữa khi vòng tròn đã ổn định
+  var lastTs=0, inView=true;                        // dt-timing + tạm dừng khi cuộn khỏi vùng
+
+  function setH(){ section.style.setProperty('--smh-h', (window.innerWidth<768?220:260)+'vh'); }
+
+  function measure(){
+    var r = pin.getBoundingClientRect();
+    W = r.width; H = r.height || window.innerHeight;
+    isMobile = W < 768;
+    IW = clamp(Math.min(W,H)*0.072, 52, 96);
+    IH = IW * 1.4;
+    stage.style.setProperty('--iw', IW.toFixed(1)+'px');
+    stage.style.setProperty('--ih', IH.toFixed(1)+'px');
+  }
+
+  function makeScatter(){
+    scatter = cards.map(function(){
+      /* op:1 → các ảnh HIỆN khi rải rác (trước đây op:0 nên không thấy giai đoạn scatter) */
+      return { x:(Math.random()-0.5)*Math.max(W,900)*1.1, y:(Math.random()-0.5)*Math.max(H,600)*1.0,
+               rot:(Math.random()-0.5)*160, scale:0.55, op:1 };
+    });
+  }
+
+  function target(i){
+    if (phase==='hidden' || phase==='scatter') return scatter[i] || {x:0,y:0,rot:0,scale:.5,op:0};
+    if (phase==='line'){
+      var sp = IW + 12, tot = N*sp;
+      return { x: i*sp - tot/2, y:0, rot:0, scale:1, op:1 };
+    }
+    // circle → bottom-arc morph (geometry ported from scroll-morph-hero)
+    var minDim = Math.min(W,H);
+    var cR = Math.min(minDim*0.36, 360);
+    var ca = (i/N)*360, car = ca*PI/180;
+    var cx = Math.cos(car)*cR, cy = Math.sin(car)*cR, crot = ca+90;
+    var baseR = Math.min(W, H*1.5);
+    var aR = baseR * (isMobile?1.4:1.05);
+    var cenY = H*(isMobile?0.34:0.24) + aR;
+    var spread = isMobile?104:132;
+    var startA = -90 - spread/2, step = spread/(N-1);
+    var bounded = -clamp(rotV,0,1) * (spread*0.26);   /* nhẹ hơn nhiều → arc luôn đầy ảnh, không xoay ra vùng trắng */
+    var aa = startA + i*step + bounded, ar = aa*PI/180;
+    var ax = Math.cos(ar)*aR + parX, ay = Math.sin(ar)*aR + cenY, arot = aa+90;
+    var asc = isMobile?1.35:1.7, m = morphV;
+    return { x:lerp(cx,ax,m), y:lerp(cy,ay,m), rot:lerp(crot,arot,m), scale:lerp(1,asc,m), op:1 };
+  }
+
+  function apply(dt){
+    /* easing thấp = chuyển động từ từ; nhân theo dt để đều mọi fps */
+    var e  = smoothK((phase==='circle') ? 0.09 : 0.055, dt);
+    var eo = smoothK(0.06, dt);
+    for (var i=0;i<N;i++){
+      var t = target(i), c = cur[i];
+      c.x += (t.x-c.x)*e; c.y += (t.y-c.y)*e; c.rot += (t.rot-c.rot)*e;
+      c.scale += (t.scale-c.scale)*e; c.op += (t.op-c.op)*eo;
+      var el = cards[i];
+      el.style.opacity = c.op.toFixed(3);
+      /* translate3d → luôn ở GPU layer, transform không kích hoạt repaint */
+      el.style.transform = 'translate3d('+c.x.toFixed(1)+'px,'+c.y.toFixed(1)+'px,0) rotate('+c.rot.toFixed(2)+'deg) scale('+c.scale.toFixed(3)+')';
+    }
+    /* Chữ giữa chỉ hiện khi vòng tròn đã hình thành xong (introReady) → không bị ảnh chèn lên
+       lúc rải rác/xếp hàng; vẫn mờ dần khi cuộn (morphV tăng). */
+    var introTarget = introReady ? clamp(1-morphV*2,0,1) : 0;
+    introOp += (introTarget - introOp)*smoothK(0.07, dt);
+    arcOp   += ((morphV>0.72 ? clamp((morphV-0.72)/0.28,0,1) : 0) - arcOp)*smoothK(0.14, dt);
+    if (intro) intro.style.opacity = introOp.toFixed(3);
+    if (arc)   arc.style.opacity   = arcOp.toFixed(3);
+  }
+
+  function updateScroll(){
+    var scrollable = section.offsetHeight - window.innerHeight;
+    var p = scrollable>0 ? clamp(-section.getBoundingClientRect().top / scrollable, 0, 1) : 0;
+    morphT = clamp(p/0.55, 0, 1);
+    rotT   = clamp((p-0.55)/0.42, 0, 1);
+  }
+
+  function loop(ts){
+    rafId = requestAnimationFrame(loop);
+    var dt = lastTs ? Math.min((ts-lastTs)/16.667, 3) : 1;   // số frame trôi qua (chặn tối đa 3)
+    lastTs = ts;
+    /* Cuộn hẳn khỏi vùng → ngừng tính toán (đỡ tải CPU, mượt cho toàn trang) */
+    if (!inView && phase==='circle') return;
+    if (phase==='circle') updateScroll();
+    var kM = smoothK(0.1, dt), kP = smoothK(0.08, dt);
+    morphV += (morphT-morphV)*kM;
+    rotV   += (rotT-rotV)*kM;
+    parX   += (parXT-parX)*kP;
+    apply(dt);
+  }
+
+  function startIntro(){
+    if (started) return; started = true;
+    setH();
+    section.classList.add('smh-on');                       // pin → sticky 100vh
+    cards.forEach(function(c){ c.style.opacity = '0'; });   // hide before first paint (no flash)
+    measure(); makeScatter();
+    /* Bắt đầu ở trạng thái cụm nhỏ giữa màn hình → NỔ BUNG ra vị trí rải rác
+       (trước đây card chỉ fade tại chỗ nên nhìn "đứng im"). Luôn có chuyển động ngay từ frame đầu. */
+    for (var i=0;i<N;i++){ var s=scatter[i]; cur[i]={x:s.x*0.28,y:s.y*0.28,rot:s.rot*0.5,scale:0.2,op:0}; }
+    phase = 'scatter';
+    if (intro) intro.style.opacity = '0';   // ẩn chữ giữa ngay từ đầu (tránh nháy)
+    lastTs = 0;
+    rafId = requestAnimationFrame(loop);    // rAF ngay từ đầu → luôn có timestamp cho dt
+    /* Nhịp intro: nổ bung (~0.85s) → xếp 1 hàng (~1.5s) → cuộn thành vòng tròn */
+    setTimeout(function(){ phase='line'; }, 850);
+    setTimeout(function(){ phase='circle'; }, 2350);
+    setTimeout(function(){ introReady = true; }, 3350);   // chữ giữa hiện sau khi vòng tròn ổn định
+  }
+
+  /* Chỉ khởi động intro khi: (1) ảnh card đã decode xong, (2) main thread rảnh sau đợt load
+     → tránh cảnh rải rác xong đứng hình ~1s vì trình duyệt còn bận tải trang */
+  function armIntro(){
+    if (started) return;
+    /* Ẩn lưới card tĩnh ngay → trong lúc chờ (decode + main thread rảnh) không thấy "lưới đứng im",
+       rồi intro nổ bung vào. */
+    cards.forEach(function(c){ c.style.opacity = '0'; });
+    var imgs = Array.prototype.slice.call(section.querySelectorAll('.smh-img'))
+      .filter(function(im){ return im.getAttribute('src'); });
+    var proms = imgs.map(function(im){
+      var p; try { p = im.decode ? im.decode() : Promise.resolve(); } catch(e){ p = Promise.resolve(); }
+      return p.catch(function(){});
+    });
+    var kick = function(){
+      var go = function(){ requestAnimationFrame(startIntro); };
+      if (window.requestIdleCallback) requestIdleCallback(go, { timeout: 420 });
+      else setTimeout(function(){ requestAnimationFrame(go); }, 0);
+    };
+    if (proms.length) Promise.all(proms).then(kick); else kick();
+  }
+
+  window.addEventListener('mousemove', function(e){
+    if (phase!=='circle') return;
+    parXT = ((e.clientX/window.innerWidth)*2 - 1) * (isMobile?30:80);
+  });
+
+  var rt;
+  window.addEventListener('resize', function(){
+    clearTimeout(rt);
+    rt = setTimeout(function(){ setH(); if (started) measure(); }, 160);
+  });
+
+  setH();
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ io.disconnect(); armIntro(); } });
+    }, { threshold: 0, rootMargin: '0px 0px -15% 0px' });
+    io.observe(section);
+    /* Theo dõi vùng còn trong màn hình để tạm dừng vòng lặp khi cuộn đi xa */
+    var io2 = new IntersectionObserver(function(es){
+      es.forEach(function(e){ inView = e.isIntersecting; if (inView) lastTs = 0; });
+    }, { threshold: 0 });
+    io2.observe(section);
+  } else { armIntro(); }
+})();
+
+/* ── GRID 9 dịch vụ: thả từng card vào vị trí lần lượt khi cuộn tới ── */
+(function(){
+  var grid = document.querySelector('#services .srv-detail-grid');
+  if (!grid) return;
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.srv-detail-card'));
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Reduced-motion: không animate — để grid hiện bình thường (không .armed) */
+  if (reduce) return;
+
+  grid.classList.add('armed');          // ẩn card, sẵn sàng "thả"
+  var played = false;
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (!e.isIntersecting || played) return;
+      played = true; io.disconnect();
+      var START = 160, STAGGER = 150;   // thả từng card, lần lượt 1→9
+      cards.forEach(function(c, i){
+        setTimeout(function(){ c.classList.add('dropped'); }, START + i*STAGGER);
+      });
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -22% 0px' });   // fire khi mép trên grid vào ~78% màn hình (bền cho grid cao trên mobile)
+  io.observe(grid);
+})();
 </script>
 </body>
 </html>

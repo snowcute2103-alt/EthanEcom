@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dịch vụ | Ethan Ecom — Giải pháp E-commerce & Design toàn diện</title>
 <meta name="description" content="9 dịch vụ chuyên sâu của Ethan Ecom: Web Development, UI/UX Design, E-commerce Solutions, Digital Marketing và hơn thế nữa.">
-<link rel="stylesheet" href="assets/css/shared.css">
+<link rel="stylesheet" href="assets/css/shared.css?v=housef02">
 <style>
 /* ── PAGE-SPECIFIC STYLES ── */
 
 /* ── IMG PLACEHOLDERS ── */
 .img-ph{border-radius:12px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;min-height:40px}
-.img-ph::before{content:attr(data-label);position:absolute;z-index:1;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:600;color:rgba(255,255,255,.85);text-align:center;padding:0 24px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.img-ph::before{content:attr(data-label);position:absolute;z-index:1;font-family:var(--font-lead);font-size:16px;font-weight:600;color:rgba(255,255,255,.85);text-align:center;padding:0 24px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
 .ph-web{background:linear-gradient(135deg,#1D3251 0%,#2a4a76 100%);height:260px}
 .ph-uiux{background:linear-gradient(135deg,#ec4899 0%,#f43f5e 100%);height:260px}
 .ph-graphic{background:linear-gradient(135deg,#10b981 0%,#34d399 100%);height:260px}
@@ -29,28 +29,28 @@
 .srv-thumb{overflow:hidden;position:relative}
 .srv-thumb .img-ph{border-radius:0;transition:filter .4s}
 .srv-detail-card:hover .srv-thumb .img-ph{filter:brightness(.85) saturate(1.1)}
-.srv-num{position:absolute;top:16px;left:16px;width:36px;height:36px;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;color:rgba(255,255,255,.9)}
+.srv-num{position:absolute;top:16px;left:16px;width:36px;height:36px;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--font-lead);font-size:16px;font-weight:600;color:rgba(255,255,255,.9)}
 .srv-body{padding:24px}
-.srv-tag{display:inline-block;font-size:16px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:10px}
-.srv-body h3{font-family:'Be Vietnam Pro',sans-serif;font-size:18px;font-weight:700;margin-bottom:10px}
+.srv-tag{display:inline-block;font-size:16px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:10px}
+.srv-body h3{font-family:var(--font-lead);font-size:18px;font-weight:600;margin-bottom:10px}
 .srv-body p{font-size:16px;color:var(--text);line-height:1.7;margin-bottom:18px}
 .srv-features{display:flex;flex-direction:column;gap:7px}
 .srv-feat{display:flex;align-items:center;gap:8px;font-size:16px;color:var(--text)}
-.srv-feat::before{content:'✓';color:var(--blue);font-weight:700;flex-shrink:0}
+.srv-feat::before{content:'✓';color:var(--blue);font-weight:600;flex-shrink:0}
 
 /* ── PROCESS ── */
 .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
 .process-grid::before{content:'';position:absolute;top:60px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,var(--blue),var(--yellow));z-index:0}
 .proc-step{text-align:center;padding:24px 20px;position:relative;z-index:1}
-.proc-num{width:72px;height:72px;border-radius:50%;background:var(--blue);color:#fff;font-family:'Be Vietnam Pro',sans-serif;font-size:22px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 24px rgba(29,50,81,.3)}
-.proc-step h4{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px}
+.proc-num{width:72px;height:72px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--font-lead);font-size:22px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 24px rgba(29,50,81,.3)}
+.proc-step h4{font-family:var(--font-lead);font-size:16px;font-weight:600;margin-bottom:8px}
 .proc-step p{font-size:16px;color:var(--text);line-height:1.6}
 
 /* ── PLATFORMS ── */
 .platforms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .plat-card{border-radius:16px;padding:36px;text-align:center;border:1.5px solid #eaeff5;background:#fff;transition:all .35s}
 .plat-card:hover{border-color:var(--blue);box-shadow:0 12px 40px rgba(27,79,216,.1)}
-.plat-name{font-family:'Be Vietnam Pro',sans-serif;font-size:22px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.plat-name{font-family:var(--font-lead);font-size:22px;font-weight:700;color:var(--navy);margin-bottom:8px}
 .plat-desc{font-size:16px;color:var(--text);line-height:1.65}
 
 /* ── RESPONSIVE ── */
@@ -118,6 +118,17 @@
   pointer-events:none;
 }
 .proc-step:hover .proc-num::after{border-color:rgba(255,255,255,.65);animation-duration:1.5s}
+
+/* ── POD VALUE CHAIN (Chuỗi vận hành POD) ── */
+.pod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.pod-card{position:relative;background:#fff;border:1.5px solid #eaeff5;border-radius:14px;padding:26px 20px;transition:border-color .3s,box-shadow .3s,transform .3s}
+.pod-card:hover{border-color:var(--blue);box-shadow:0 14px 40px rgba(27,79,216,.1);transform:translateY(-4px)}
+.pod-ico{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;background:linear-gradient(135deg,#EEF2FF,#dbe4ff)}
+.pod-step-no{position:absolute;top:18px;right:20px;font-family:var(--font-lead);font-size:16px;font-weight:700;color:#c9d2e3}
+.pod-card h4{font-family:var(--font-lead);font-size:16px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.pod-card p{font-size:16px;color:var(--text);line-height:1.6}
+@media(max-width:1024px){.pod-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.pod-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -143,7 +154,7 @@
 </section>
 
 <!-- MAIN CONTENT -->
-<main>
+<main id="main">
 
   <!-- ALL SERVICES -->
   <section class="section">
@@ -365,6 +376,50 @@
     </div>
   </section>
 
+  <!-- POD VALUE CHAIN -->
+  <section class="section section--gray" id="pod-chain">
+    <div class="container">
+      <div class="sh c reveal">
+        <div class="sl">Chúng tôi làm gì trong POD</div>
+        <h2 class="st">Chuỗi vận hành Print-On-Demand</h2>
+        <div class="divider c"></div>
+        <p class="ss">Từ ý tưởng đến sản phẩm giao tận tay khách Mỹ — Ethan tự chủ toàn bộ chuỗi giá trị POD, không phụ thuộc bên thứ ba.</p>
+      </div>
+      <div class="pod-grid">
+        <div class="pod-card reveal d1">
+          <span class="pod-step-no">01</span>
+          <div class="pod-ico">🔎</div>
+          <h4>Nghiên cứu thị trường</h4>
+          <p>Săn trend &amp; niche trên thị trường Mỹ, phân tích nhu cầu và mùa vụ để chọn sản phẩm có khả năng bán.</p>
+        </div>
+        <div class="pod-card reveal d2">
+          <span class="pod-step-no">02</span>
+          <div class="pod-ico">🎨</div>
+          <h4>Design</h4>
+          <p>Illustrator &amp; T-shirt design chuẩn thị hiếu phương Tây — từ ý tưởng thành file in/thêu bán chạy.</p>
+        </div>
+        <div class="pod-card reveal d3">
+          <span class="pod-step-no">03</span>
+          <div class="pod-ico">📝</div>
+          <h4>Listing &amp; SEO</h4>
+          <p>Tối ưu tiêu đề, tag, mô tả và hình ảnh sản phẩm để lên top tìm kiếm trên Etsy, Amazon, TikTok Shop.</p>
+        </div>
+        <div class="pod-card reveal d1">
+          <span class="pod-step-no">04</span>
+          <div class="pod-ico">📣</div>
+          <h4>Ads / Media Buying</h4>
+          <p>Chạy quảng cáo đa kênh — TikTok Ads, Facebook, Google &amp; Amazon PPC — tối ưu ngân sách theo lợi nhuận thực.</p>
+        </div>
+        <div class="pod-card reveal d2">
+          <span class="pod-step-no">05</span>
+          <div class="pod-ico">📦</div>
+          <h4>Fulfillment</h4>
+          <p>Sản xuất in-house (thêu, in giấy, in nhựa 3D) + xử lý đơn nguồn ngoài, đóng gói và giao hàng quốc tế.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- PLATFORMS -->
   <section class="section">
     <div class="container">
@@ -376,16 +431,28 @@
       </div>
       <div class="platforms-grid">
         <div class="plat-card reveal d1">
-          <div class="plat-name">AMAZON</div>
-          <div class="plat-desc">Bán hàng POD & thêu — Listing, Sponsored Ads, A+ Content, rating 4–5 sao</div>
+          <div class="plat-name">TIKTOK SHOP US</div>
+          <div class="plat-desc">Sàn trọng tâm — Affiliate, Spark Ads, Live Commerce, Creator Partnerships</div>
         </div>
         <div class="plat-card reveal d2">
           <div class="plat-name">ETSY</div>
-          <div class="plat-desc">Handmade & Print-on-Demand — SEO, Listing Optimization, Shop Branding</div>
+          <div class="plat-desc">Handmade &amp; Print-on-Demand — SEO, Listing Optimization, Shop Branding</div>
         </div>
         <div class="plat-card reveal d3">
-          <div class="plat-name">TIKTOK SHOP</div>
-          <div class="plat-desc">TikTok Shop US — Affiliate, Spark Ads, Live Commerce, Creator Partnerships</div>
+          <div class="plat-name">AMAZON MERCH</div>
+          <div class="plat-desc">Merch on Demand &amp; Seller Central — Listing, Sponsored Ads, A+ Content, rating 4–5 sao</div>
+        </div>
+        <div class="plat-card reveal d1">
+          <div class="plat-name">SHOPIFY</div>
+          <div class="plat-desc">Gian hàng thương hiệu riêng — tối ưu chuyển đổi, tích hợp POD &amp; thanh toán quốc tế</div>
+        </div>
+        <div class="plat-card reveal d2">
+          <div class="plat-name">REDBUBBLE</div>
+          <div class="plat-desc">Print-on-Demand marketplace — upload design, tối ưu tag &amp; mở rộng danh mục sản phẩm</div>
+        </div>
+        <div class="plat-card reveal d3">
+          <div class="plat-name">eBay &amp; TEMU</div>
+          <div class="plat-desc">Mở rộng đa sàn — tận dụng tệp khách hàng lớn, đa dạng hoá nguồn doanh thu</div>
         </div>
       </div>
     </div>
@@ -412,7 +479,7 @@
 <div id="site-footer"></div>
 
 <!-- Shared JS (must be last) -->
-<script src="assets/js/shared.js"></script>
+<script src="assets/js/shared.js?v=housef02"></script>
 <script src="assets/js/page-animations.js"></script>
 <script>
 /* ── PAGE-SPECIFIC JAVASCRIPT ── */
