@@ -8,7 +8,7 @@
 const NAV_LINKS = [
   { href: 'index.html',     label: 'Trang chủ',   icon: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
   { href: 'about.html',     label: 'Giới thiệu',  icon: '<circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>' },
-  { href: 'portfolio.html', label: 'Portfolio',    icon: '<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>' },
+  { href: 'vision.html',    label: 'Tầm nhìn',     icon: '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>' },
   { href: 'blog.html',      label: 'Câu chuyện',   icon: '<path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>' },
   { href: 'careers.html',   label: 'Tuyển dụng',  icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>' },
 ];
@@ -54,124 +54,98 @@ function buildHeader() {
 
 /* ── BUILD FOOTER HTML ── */
 function buildFooter() {
-  const tickerItems = [
-    'Cross-border E-commerce', 'Print On Demand', 'Thêu công nghiệp',
-    'TikTok Shop US', 'Etsy', 'Amazon', 'eBay',
-    'In giấy & Nhựa 3D', 'Tự chủ sản xuất', 'Đồng lòng đồng sức',
-    'Bứt phá gặt thành công', 'Made in Đồng Nai',
-  ];
-  const tickerHTML = [...tickerItems, ...tickerItems].map(t =>
-    `<span class="foot-ticker-item"><span class="foot-ticker-sep"></span>${t}</span>`
-  ).join('');
-
   return `
-<footer class="footer">
+<footer class="site-footer">
+  <div class="ft-container">
 
-  <!-- Aurora bg -->
-  <div class="foot-aurora" aria-hidden="true">
-    <div class="foot-orb-1"></div>
-    <div class="foot-orb-2"></div>
-    <div class="foot-orb-3"></div>
-    <div class="foot-dots"></div>
-    <div class="foot-scan"></div>
-  </div>
+    <!-- Logo -->
+    <div class="ft-logo">
+      <a class="ft-logo-badge" href="index.html" aria-label="Ethan Ecom — về trang chủ">
+        <img src="assets/images/logo.png" alt="Ethan Ecom">
+      </a>
+      <div class="ft-logo-sub">Ecommerce / Print On Demand / Digital Marketing</div>
+    </div>
 
-  <!-- Ticker marquee -->
-  <div class="foot-ticker-wrap">
-    <div class="foot-ticker-track">${tickerHTML}</div>
-  </div>
+    <!-- Nav -->
+    <nav class="ft-nav" aria-label="Điều hướng footer">
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="about.html">Giới thiệu</a></li>
+        <li><a href="vision.html">Tầm nhìn</a></li>
+        <li><a href="blog.html">Câu chuyện</a></li>
+        <li><a href="careers.html">Tuyển dụng</a></li>
+        <li><a href="contact.html">Liên hệ</a></li>
+      </ul>
+    </nav>
 
-  <!-- Main content -->
-  <div class="foot-main">
-    <div class="container">
-      <div class="foot-grid">
+    <hr class="ft-divider">
 
-        <!-- Brand -->
-        <div class="foot-brand">
-          <a href="index.html" class="logo">
-            <img src="assets/images/logo.jpg" alt="Ethan Ecom">
-          </a>
-          <p>Nơi khơi nguồn sáng tạo và hỗ trợ sự phát triển cá nhân. Doanh nghiệp TMĐT xuyên biên giới tự chủ sản xuất — Đồng lòng đồng sức, bứt phá gặt thành công.</p>
-          <div class="foot-soc">
-            <a class="fsoc fsoc--fb" href="https://facebook.com/ethanecom3979" target="_blank" rel="noopener" aria-label="Facebook">f</a>
-            <span class="fsoc" aria-hidden="true" title="Dribbble (sắp ra mắt)">Dr</span>
-            <span class="fsoc" aria-hidden="true" title="Twitter (sắp ra mắt)">𝕏</span>
-            <span class="fsoc" aria-hidden="true" title="Instagram (sắp ra mắt)">Ig</span>
-            <span class="fsoc" aria-hidden="true" title="Behance (sắp ra mắt)">Be</span>
-          </div>
-          <div class="foot-status">
-            <span class="foot-status-dot"></span>
-            Đang nhận dự án mới
-          </div>
-        </div>
+    <!-- 4 columns -->
+    <div class="ft-columns">
 
-        <!-- Nav -->
-        <div>
-          <h5>Điều hướng</h5>
-          <div class="flinks">
-            <a href="index.html">Trang chủ</a>
-            <a href="about.html">Giới thiệu</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="blog.html">Câu chuyện</a>
-            <a href="careers.html">Tuyển dụng</a>
-            <a href="contact.html">Liên hệ</a>
-          </div>
-        </div>
+      <div class="ft-col">
+        <h3>Về Ethan Ecom</h3>
+        <p>Nơi khơi nguồn sáng tạo và hỗ trợ sự phát triển cá nhân. Doanh nghiệp TMĐT xuyên biên giới tự chủ sản xuất — Đồng lòng đồng sức, bứt phá gặt thành công.</p>
+      </div>
 
-        <!-- Services -->
-        <div>
-          <h5>Dịch vụ</h5>
-          <div class="flinks">
-            <a href="services.html">TMĐT xuyên biên giới</a>
-            <a href="services.html">Print On Demand (POD)</a>
-            <a href="services.html">Thêu công nghiệp</a>
-            <a href="services.html">In giấy &amp; Sticker</a>
-            <a href="services.html">In nhựa 3D</a>
-            <a href="services.html">Digital Marketing</a>
-          </div>
-        </div>
+      <div class="ft-col">
+        <h3>Dịch vụ</h3>
+        <ul>
+          <li><a href="services.html">TMĐT xuyên biên giới</a></li>
+          <li><a href="services.html">Print On Demand (POD)</a></li>
+          <li><a href="services.html">Thêu công nghiệp</a></li>
+          <li><a href="services.html">In giấy &amp; Sticker</a></li>
+          <li><a href="services.html">In nhựa 3D</a></li>
+          <li><a href="services.html">Digital Marketing</a></li>
+        </ul>
+      </div>
 
-        <!-- Contact -->
-        <div>
-          <h5>Liên hệ</h5>
-          <div class="fcon">
-            <div class="fcon-item">
-              <div class="fcon-ico" aria-hidden="true">📍</div>
-              <div class="fcon-txt"><h6>Địa chỉ</h6><p>61/1G Võ Dõng, Gia Kiệm, Đồng Nai</p></div>
-            </div>
-            <div class="fcon-item">
-              <div class="fcon-ico" aria-hidden="true">🕐</div>
-              <div class="fcon-txt"><h6>Giờ làm việc</h6><p>7:30 – 17:00 · Thứ 2 – Thứ 7</p></div>
-            </div>
-            <div class="fcon-item">
-              <div class="fcon-ico" aria-hidden="true">📨</div>
-              <div class="fcon-txt"><h6>Email Tuyển dụng</h6><p><a href="mailto:hr@ethanecom.com">hr@ethanecom.com</a></p></div>
-            </div>
-            <div class="fcon-item">
-              <div class="fcon-ico" aria-hidden="true">📞</div>
-              <div class="fcon-txt"><h6>Hotline</h6><p><a href="tel:+84967473979">+84 967 473 979</a></p></div>
-            </div>
-            <div class="fcon-item">
-              <div class="fcon-ico" aria-hidden="true">📘</div>
-              <div class="fcon-txt"><h6>Facebook</h6><p><a href="https://facebook.com/ethanecom3979" target="_blank" rel="noopener">facebook.com/ethanecom3979</a></p></div>
-            </div>
-          </div>
-        </div>
+      <div class="ft-col">
+        <h3>Liên hệ</h3>
+        <p>
+          <span class="ft-label">Địa chỉ</span>
+          61/1G Võ Dõng, Gia Kiệm, Đồng Nai
+        </p>
+        <p>
+          <span class="ft-label">Giờ làm việc</span>
+          7:30 – 17:00 · Thứ 2 – Thứ 7
+        </p>
+      </div>
 
+      <div class="ft-col">
+        <h3>Tuyển dụng &amp; Kết nối</h3>
+        <p>
+          <span class="ft-label">Email tuyển dụng</span>
+          <a href="mailto:hr@ethanecom.com">hr@ethanecom.com</a>
+        </p>
+        <p>
+          <span class="ft-label">Hotline</span>
+          <a href="tel:+84967473979">+84 967 473 979</a>
+        </p>
+        <p>
+          <span class="ft-label">Facebook</span>
+          <a href="https://facebook.com/ethanecom3979" target="_blank" rel="noopener">facebook.com/ethanecom3979</a>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="ft-bottom">
+      <div class="ft-social">
+        Theo dõi chúng tôi:
+        <a href="https://facebook.com/ethanecom3979" target="_blank" rel="noopener">Facebook</a><span class="sep">|</span>
+        <a href="#" rel="noopener">Dribbble</a><span class="sep">|</span>
+        <a href="#" rel="noopener">X</a><span class="sep">|</span>
+        <a href="#" rel="noopener">Instagram</a><span class="sep">|</span>
+        <a href="#" rel="noopener">Behance</a>
+      </div>
+      <div class="ft-copy">
+        © 2017–2026 Ethan Ecom — Công Ty TNHH MTV Phát Triển Công Nghệ Ethan. All rights reserved.
       </div>
     </div>
+
   </div>
-
-  <!-- Divider -->
-  <div class="foot-divider"></div>
-
-  <!-- Bottom bar -->
-  <div class="foot-bot">
-    <div class="container">
-      <p>© 2017–2026 <a href="index.html">Ethan Ecom</a> — Công Ty TNHH MTV Phát Triển Công Nghệ Ethan. All rights reserved. · Được xây dựng với ❤️ tại Đồng Nai, Việt Nam</p>
-    </div>
-  </div>
-
 </footer>`;
 }
 
@@ -207,11 +181,18 @@ function initHeader() {
   /* A light .smh scroll-morph section sitting ABOVE any dark hero → page starts on light bg */
   const smhFirst = !!smh && (!hero || (smh.compareDocumentPosition(hero) & Node.DOCUMENT_POSITION_FOLLOWING));
   const isDarkHero = !smhFirst && hero && !document.body.classList.contains('light-header');
-  if (isDarkHero) {
+  /* Opt-in theo trang (body.header-always-dark): header luôn dùng style tối
+     giống trang chủ, bỏ qua auto-detect nền sáng/tối (vd: careers.html) */
+  const alwaysDark = document.body.classList.contains('header-always-dark');
+  if (alwaysDark || isDarkHero) {
     hdr.classList.add('on-dark');
   } else {
     hdr.classList.add('on-light');
   }
+
+  /* Opt-in theo trang (body.header-reveal-on-scroll): ẩn header khi ở top,
+     chỉ hiện ra khi người dùng cuộn xuống (vd: careers.html) */
+  const revealOnScroll = document.body.classList.contains('header-reveal-on-scroll');
 
   let lastY = window.scrollY;
   let ticking = false;
@@ -229,7 +210,7 @@ function initHeader() {
       if (btt) btt.classList.toggle('show', y > 300);
 
       /* Light .smh at top: dark-text header over it, switch to light-text once past it */
-      if (smhFirst) {
+      if (smhFirst && !alwaysDark) {
         const overLight = smh.getBoundingClientRect().bottom > 80;
         hdr.classList.toggle('on-light', overLight);
         hdr.classList.toggle('on-dark', !overLight);
@@ -241,14 +222,19 @@ function initHeader() {
         hdr.classList.toggle('past-hero', heroBottom < 0);
       }
 
-      /* Hide header khi scroll xuống */
-      if (scrolledDown) hdr.classList.add('nav-hidden');
+      if (revealOnScroll) {
+        /* Ẩn ở top, hiện khi đã cuộn xuống — và giữ hiện suốt */
+        hdr.classList.toggle('nav-hidden', y <= 60);
+      } else {
+        /* Hide header khi scroll xuống */
+        if (scrolledDown) hdr.classList.add('nav-hidden');
 
-      /* Show header khi scroll lên */
-      if (scrolledUp) hdr.classList.remove('nav-hidden');
+        /* Show header khi scroll lên */
+        if (scrolledUp) hdr.classList.remove('nav-hidden');
 
-      /* Ở top trang — luôn hiện header */
-      if (y <= 40) hdr.classList.remove('nav-hidden');
+        /* Ở top trang — luôn hiện header */
+        if (y <= 40) hdr.classList.remove('nav-hidden');
+      }
 
       lastY = y;
       ticking = false;
@@ -329,6 +315,7 @@ function initHamburger() {
 
 /* ── SCROLL REVEAL ── */
 function initReveal() {
+  if (!('IntersectionObserver' in window)) return; // không IO thì đừng ẩn nội dung
   document.body.classList.add('will-animate');
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -657,6 +644,49 @@ function initNavIndicator() {
   });
 }
 
+/* ── CURSOR FX — bông hoa vàng xoè ra sau con trỏ khi hover phần tử bấm được.
+   Giữ nguyên mũi tên chuột gốc (mũi tên nằm trên bông hoa như thiết kế tham khảo).
+   Chỉ chạy trên thiết bị có chuột thật (hover + pointer:fine), bỏ qua reduced-motion. ── */
+function initCursorFx() {
+  if (!window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const fx = document.createElement('div');
+  fx.className = 'cursor-fx';
+  fx.setAttribute('aria-hidden', 'true');
+  /* Vòng la bàn mảnh (xanh) + sao 4 cánh kim chỉ nam (vàng) — nautical, tối giản */
+  fx.innerHTML =
+    `<svg viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="30" fill="none" stroke="#2B8FFF" stroke-width="2.5" opacity=".9"/>
+      <g stroke="#2B8FFF" stroke-width="2.5" stroke-linecap="round" opacity=".9">
+        <line x1="50" y1="13" x2="50" y2="23"/>
+        <line x1="50" y1="77" x2="50" y2="87"/>
+        <line x1="13" y1="50" x2="23" y2="50"/>
+        <line x1="77" y1="50" x2="87" y2="50"/>
+      </g>
+      <path d="M50 31 L55.5 44.5 L69 50 L55.5 55.5 L50 69 L44.5 55.5 L31 50 L44.5 44.5 Z" fill="#F4B41A"/>
+    </svg>`;
+  document.body.appendChild(fx);
+
+  /* Vị trí dùng thuộc tính translate (không transition) — scale/opacity transition riêng */
+  document.addEventListener('mousemove', e => {
+    fx.style.translate = e.clientX + 'px ' + e.clientY + 'px';
+  }, { passive: true });
+
+  const HOT = 'a,button,[role="button"],input[type="submit"],input[type="button"],label[for],summary';
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest(HOT)) fx.classList.add('is-on');
+  }, { passive: true });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest(HOT) && !(e.relatedTarget && e.relatedTarget.closest(HOT))) {
+      fx.classList.remove('is-on');
+    }
+  }, { passive: true });
+  /* nhấn xuống: hoa nhún nhẹ */
+  document.addEventListener('mousedown', () => fx.classList.add('is-press'));
+  document.addEventListener('mouseup', () => fx.classList.remove('is-press'));
+}
+
 /* ── BOOTSTRAP — runs after DOM is ready ── */
 document.addEventListener('DOMContentLoaded', () => {
   injectComponents();
@@ -672,5 +702,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackTop();
   initSmoothScroll();
   initParallax();
+  initCursorFx();
   /* minimalist header — nav ripple + sliding glow indicator removed */
 });

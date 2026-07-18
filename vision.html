@@ -53,10 +53,10 @@
 .rm-now-badge{position:absolute;top:18px;right:18px;background:linear-gradient(135deg,var(--yellow-2,#FFC107),var(--yellow,#F4B41A));color:var(--navy);font-size:var(--fs-caption,12px);font-weight:var(--fw-semibold);letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:14px}
 @media(min-width:769px){.roadmap{grid-template-columns:repeat(3,1fr)}}
 
-/* ── HÀNH TRÌNH 2026 (bìa lịch cosmos) ── */
-.j26-board{position:relative;max-width:1160px;margin:0 auto;aspect-ratio:1000/750;border-radius:20px;overflow:hidden;
+/* ── HÀNH TRÌNH 2026 (bìa lịch cosmos, full màn hình) ── */
+.j26-board{position:relative;width:100%;height:100vh;height:100svh;min-height:640px;overflow:hidden;
   background:radial-gradient(120% 95% at 50% 42%,#3b5bc2 0%,#2c418f 45%,#1d2559 100%);
-  box-shadow:0 30px 80px rgba(15,34,68,.35);font-family:var(--font-numeral)}
+  font-family:var(--font-numeral)}
 .j26-board::before{content:'';position:absolute;inset:0;pointer-events:none;
   background:
     repeating-linear-gradient(113deg,transparent 0 88px,rgba(255,255,255,.06) 88px 89.5px,transparent 89.5px 187px),
@@ -64,55 +64,63 @@
   -webkit-mask-image:radial-gradient(130% 110% at 50% 45%,#000 30%,transparent 78%);
           mask-image:radial-gradient(130% 110% at 50% 45%,#000 30%,transparent 78%)}
 .j26-svg{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
-.j26-path{fill:none;stroke:#7fa3ec;stroke-width:1.3;opacity:.7;vector-effect:non-scaling-stroke}
-.j26-logo{position:absolute;top:5%;left:6.5%;z-index:4;width:clamp(80px,11vw,130px)}
+/* KHÔNG dùng vector-effect:non-scaling-stroke — Chromium sẽ đo dash theo px màn hình,
+   phá chuẩn hoá pathLength="1" → mất 21–47% đoạn cuối đường sau animation */
+.j26-path{fill:none;stroke:#7fa3ec;stroke-width:1.2;opacity:.7}
+.j26-logo{position:absolute;top:5%;left:6.5%;z-index:4;width:clamp(90px,min(12vw,22vh),190px)}
 .j26-logo img{width:100%;height:auto;display:block;filter:drop-shadow(0 6px 18px rgba(0,0,0,.4))}
-.j26-year{position:absolute;right:5%;bottom:2.5%;z-index:2;font-family:'Montserrat',sans-serif;font-weight:500;letter-spacing:-.03em;line-height:1;color:#f6f8fd;font-size:clamp(64px,12vw,142px);text-shadow:0 4px 30px rgba(10,18,50,.35)}
+.j26-year{position:absolute;right:5%;bottom:2.5%;z-index:2;font-family:'Montserrat',sans-serif;font-weight:500;letter-spacing:-.03em;line-height:1;color:#f6f8fd;font-size:clamp(72px,min(13vw,26vh),230px);text-shadow:0 4px 30px rgba(10,18,50,.35)}
 .j26-item{position:absolute;z-index:3;display:flex;flex-direction:column;align-items:flex-start;transform:translate(var(--tx,0),0)}
 .j26-item.c{--tx:-50%;align-items:center;text-align:center}
-.j26-s{font-size:clamp(11px,1.35vw,15.5px);font-weight:600;color:#fff;letter-spacing:.3px;line-height:1.35;white-space:nowrap;text-shadow:0 1px 8px rgba(10,18,50,.55)}
+.j26-s{font-size:clamp(12px,min(1.3vw,2.6vh),21px);font-weight:600;color:#fff;letter-spacing:.3px;line-height:1.35;white-space:nowrap;text-shadow:0 1px 8px rgba(10,18,50,.55)}
 .j26-s em{color:#f2c98a;font-style:normal;font-size:1.9em;line-height:1;vertical-align:-.12em}
-.j26-l{color:#f2c98a;font-size:clamp(19px,2.5vw,29px);line-height:1.08;white-space:nowrap;text-shadow:1px 2px 8px rgba(10,18,50,.45)}
+.j26-l{color:#f2c98a;font-size:clamp(20px,min(2.6vw,5vh),42px);line-height:1.08;white-space:nowrap;text-shadow:1px 2px 8px rgba(10,18,50,.45)}
 .j26-l b{font-weight:600;font-size:1.22em}
 .j26-l .w{color:#fff;font-size:.56em;font-weight:600}
-.j26-dot{position:absolute;z-index:3;width:11px;height:11px;border-radius:50%;background:#f2ad61;box-shadow:0 0 10px rgba(242,173,97,.75);transform:translate(-50%,-50%)}
+.j26-dot{position:absolute;z-index:3;width:13px;height:13px;border-radius:50%;background:#f2ad61;box-shadow:0 0 10px rgba(242,173,97,.75);transform:translate(-50%,-50%)}
+.j26-comet{position:absolute;z-index:4;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;pointer-events:none;opacity:0;transition:opacity .5s ease;
+  background:radial-gradient(circle,#fff 0%,#ffd9a0 45%,rgba(242,173,97,0) 72%);
+  box-shadow:0 0 18px 6px rgba(255,215,160,.55),0 0 46px 14px rgba(242,173,97,.3)}
+.j26-comet.on{opacity:1}
 /* vị trí 12 khối + 12 chấm (desktop) */
-.j26-p1{top:6%;left:28%;--jd:.4s}      .j26-d1{top:11%;left:38%;--jd:.4s}
-.j26-p2{top:5.5%;left:57.5%;--jd:.55s} .j26-d2{top:6.5%;left:55%;--jd:.55s}
-.j26-p3{top:19%;left:17%;--jd:.25s}    .j26-d3{top:16%;left:26%;--jd:.25s}
-.j26-p4{top:13.5%;left:47%;--jd:.9s}   .j26-d4{top:27.5%;left:48%;--jd:.9s}
-.j26-p5{top:19%;left:66%;--jd:.75s}    .j26-d5{top:24%;left:73.5%;--jd:.75s}
-.j26-p6{top:30%;left:7%;--jd:1.1s}     .j26-d6{top:33.5%;left:5%;--jd:1.1s}
-.j26-p7{top:37.5%;left:37%;--jd:1.3s}  .j26-d7{top:48.5%;left:38.5%;--jd:1.3s}
-.j26-p8{top:37%;left:63%;--jd:1.45s}   .j26-d8{top:34.5%;left:60%;--jd:1.45s}
-.j26-p9{top:50.5%;left:47%;--jd:1.85s} .j26-d9{top:58.5%;left:42%;--jd:1.85s}
-.j26-p10{top:53%;left:70%;--jd:1.7s}   .j26-d10{top:64.5%;left:73%;--jd:1.7s}
-.j26-p11{top:63.5%;left:7%;--jd:2.05s} .j26-d11{top:62.5%;left:5%;--jd:2.05s}
-.j26-p12{top:72.5%;left:36.5%;--jd:2.25s}.j26-d12{top:83.5%;left:36%;--jd:2.25s}
-/* scroll animation: vẽ đường + stagger theo hải trình */
-body.will-animate .j26-board .j26-item{opacity:0;transform:translate(var(--tx,0),16px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:var(--jd,0s)}
-body.will-animate .j26-board .j26-dot{opacity:0;transform:translate(-50%,-50%) scale(0);transition:opacity .5s var(--ease),transform .5s var(--ease);transition-delay:var(--jd,0s)}
-body.will-animate .j26-board .j26-path{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.8s ease-out .2s}
-body.will-animate .j26-board .j26-year{opacity:0;transition:opacity 1s var(--ease) 2.2s}
-body.will-animate .j26-board.active .j26-item{opacity:1;transform:translate(var(--tx,0),0)}
-body.will-animate .j26-board.active .j26-dot{opacity:1;transform:translate(-50%,-50%) scale(1)}
-body.will-animate .j26-board.active .j26-path{stroke-dashoffset:0}
-body.will-animate .j26-board.active .j26-year{opacity:1}
+.j26-p1{top:6%;left:28%}      .j26-d1{top:11%;left:38%}
+.j26-p2{top:5.5%;left:57.5%}  .j26-d2{top:6%;left:55.5%}
+.j26-p3{top:19%;left:17%}     .j26-d3{top:16%;left:26%}
+.j26-p4{top:12%;left:47%}     .j26-d4{top:26.5%;left:47.5%}
+.j26-p5{top:19%;left:66%}     .j26-d5{top:24%;left:73.5%}
+.j26-p6{top:30%;left:7%}      .j26-d6{top:33.5%;left:5%}
+.j26-p7{top:36%;left:37%}     .j26-d7{top:48.5%;left:38.5%}
+.j26-p8{top:37%;left:63%}     .j26-d8{top:34.5%;left:60%}
+.j26-p9{top:48.5%;left:47%}   .j26-d9{top:58.5%;left:42%}
+.j26-p10{top:53%;left:70%}    .j26-d10{top:64.5%;left:73%}
+.j26-p11{top:63.5%;left:7%}   .j26-d11{top:62.5%;left:5%}
+.j26-p12{top:70.5%;left:36.5%}.j26-d12{top:83.5%;left:36%}
+/* animation: sao chổi chạy dọc đường kẻ (JS), qua chấm nào thì chấm + chữ đó sáng lên (.lit) */
+body.will-animate .j26-board .j26-item{opacity:0;transform:translate(var(--tx,0),16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+body.will-animate .j26-board .j26-dot{opacity:0;transform:translate(-50%,-50%) scale(0);transition:opacity .45s var(--ease),transform .45s var(--ease)}
+body.will-animate .j26-board .j26-path{stroke-dasharray:1;stroke-dashoffset:1}
+body.will-animate .j26-board .j26-year{opacity:0;transition:opacity 1.2s var(--ease)}
+body.will-animate .j26-board .j26-item.lit{opacity:1;transform:translate(var(--tx,0),0)}
+body.will-animate .j26-board .j26-dot.lit{opacity:1;transform:translate(-50%,-50%) scale(1)}
+body.will-animate .j26-board .j26-year.lit{opacity:1}
 @media (prefers-reduced-motion:reduce){
   body.will-animate .j26-board .j26-item{opacity:1;transform:translate(var(--tx,0),0);transition:none}
   body.will-animate .j26-board .j26-dot{opacity:1;transform:translate(-50%,-50%);transition:none}
-  body.will-animate .j26-board .j26-path{stroke-dasharray:none;stroke-dashoffset:0;transition:none}
+  body.will-animate .j26-board .j26-path{stroke-dasharray:none;stroke-dashoffset:0}
   body.will-animate .j26-board .j26-year{opacity:1;transition:none}
+  .j26-comet{display:none}
 }
 /* mobile: xếp chồng thành lưới, ẩn đường + chấm */
 @media(max-width:768px){
-  .j26-board{aspect-ratio:auto;display:grid;grid-template-columns:1fr 1fr;gap:28px 12px;padding:34px 16px 26px;border-radius:16px}
-  .j26-svg,.j26-dot{display:none}
+  .j26-board{height:auto;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:28px 12px;padding:38px 16px 30px}
+  .j26-svg,.j26-dot,.j26-comet{display:none}
   .j26-board::before{-webkit-mask-image:none;mask-image:none}
   .j26-board .j26-item,.j26-board .j26-item.c{position:static;--tx:0;align-items:center;text-align:center}
+  body.will-animate .j26-board .j26-item{opacity:1;transform:none}
+  body.will-animate .j26-board .j26-year{opacity:1}
   .j26-s{font-size:13px;white-space:normal}
   .j26-l{font-size:22px;white-space:normal}
-  .j26-logo{position:static;grid-column:1/-1;justify-self:center;width:88px}
+  .j26-logo{position:static;grid-column:1/-1;justify-self:center;width:96px}
   .j26-year{position:static;grid-column:1/-1;text-align:center;font-size:56px;margin-top:6px}
 }
 
@@ -258,8 +266,8 @@ body.will-animate .j26-board.active .j26-year{opacity:1}
 
   <div class="sec-divider reveal"></div>
 
-  <!-- HÀNH TRÌNH 2026 (bìa lịch cosmos) -->
-  <section class="section section--gray">
+  <!-- HÀNH TRÌNH 2026 (bìa lịch cosmos, full màn hình) -->
+  <section class="section section--gray" style="padding-bottom:0">
     <div class="container">
       <div class="sh c reveal">
         <div class="sl">Tinh thần Ethan</div>
@@ -267,8 +275,9 @@ body.will-animate .j26-board.active .j26-year{opacity:1}
         <div class="divider c"></div>
         <p class="ss">12 thông điệp văn hoá dẫn lối đội ngũ Ethan trong năm 2026 — mỗi chặng một tinh thần, cùng nhau vươn khơi.</p>
       </div>
+    </div>
 
-      <div class="j26-board reveal" role="img" aria-label="Bản đồ hành trình 2026 của Ethan Ecom với 12 thông điệp văn hoá nối nhau trên một hải trình">
+    <div class="j26-board reveal" role="img" aria-label="Bản đồ hành trình 2026 của Ethan Ecom với 12 thông điệp văn hoá nối nhau trên một hải trình">
         <svg class="j26-svg" viewBox="0 0 1000 750" preserveAspectRatio="none" aria-hidden="true">
           <path class="j26-path" pathLength="1" d="
             M -30,150
@@ -288,6 +297,8 @@ body.will-animate .j26-board.active .j26-year{opacity:1}
             C 15,545 160,610 360,626
             C 550,640 820,650 1050,690"/>
         </svg>
+
+        <div class="j26-comet" aria-hidden="true"></div>
 
         <div class="j26-logo"><img src="assets/images/logo.png" alt="" loading="lazy"></div>
 
@@ -367,7 +378,6 @@ body.will-animate .j26-board.active .j26-year{opacity:1}
         <span class="j26-dot j26-d12"></span>
 
         <div class="j26-year">2026</div>
-      </div>
     </div>
   </section>
 
@@ -394,6 +404,112 @@ body.will-animate .j26-board.active .j26-year{opacity:1}
 <!-- Shared JS (must be last) -->
 <script src="assets/js/shared.js?v=housef02"></script>
 <script src="assets/js/page-animations.js"></script>
+
+<!-- Hành trình 2026: sao chổi chạy dọc đường kẻ từ điểm đầu → điểm cuối, thắp sáng từng chấm -->
+<script>
+(function () {
+  var board = document.querySelector('.j26-board');
+  if (!board) return;
+  var path  = board.querySelector('.j26-path');
+  var comet = board.querySelector('.j26-comet');
+  var year  = board.querySelector('.j26-year');
+  var dots  = [].slice.call(board.querySelectorAll('.j26-dot'));
+  var items = [].slice.call(board.querySelectorAll('.j26-item'));
+
+  function litAll() {
+    dots.forEach(function (d) { d.classList.add('lit'); });
+    items.forEach(function (i) { i.classList.add('lit'); });
+    if (year) year.classList.add('lit');
+    if (path) { path.style.strokeDashoffset = 0; path.style.strokeDasharray = 'none'; }
+  }
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var mobile = window.matchMedia('(max-width: 768px)').matches;
+  if (mobile || !('IntersectionObserver' in window) || !path.getTotalLength) { litAll(); return; }
+
+  var L = path.getTotalLength();
+
+  // ── Bắt chuẩn: neo 12 chấm đúng lên đường kẻ ──
+  // Lấy mẫu path, rồi theo đúng thứ tự hải trình tìm điểm gần nhất với vị trí CSS
+  // của từng chấm → ghi lại tiến độ (fraction) + đặt lại toạ độ % chính xác.
+  var ORDER = [3, 1, 2, 5, 4, 6, 7, 8, 10, 9, 11, 12]; // thứ tự chấm dọc theo đường
+  var N = 2400, samples = [];
+  for (var i = 0; i <= N; i++) samples.push(path.getPointAtLength(i / N * L));
+  var byN = {}, frac = {};
+  dots.forEach(function (d) {
+    var n = (d.className.match(/j26-d(\d+)/) || [])[1];
+    if (n) byN[n] = d;
+  });
+  var prev = 0;
+  ORDER.forEach(function (n) {
+    var d = byN[n]; if (!d) return;
+    var tx = d.offsetLeft / board.clientWidth * 1000;   // vị trí dự kiến → toạ độ viewBox
+    var ty = d.offsetTop / board.clientHeight * 750;
+    var lim = Math.min(prev + Math.round(N * .25), N), best = prev, bd = Infinity;
+    for (var k = prev; k <= lim; k++) {
+      var dx = samples[k].x - tx, dy = samples[k].y - ty, dd = dx * dx + dy * dy;
+      if (dd < bd) { bd = dd; best = k; }
+    }
+    prev = best;
+    frac[n] = best / N;
+    d.style.left = (samples[best].x / 10) + '%';   // % theo viewBox → đúng ở mọi viewport
+    d.style.top  = (samples[best].y / 7.5) + '%';
+  });
+
+  if (reduce) { litAll(); return; }
+
+  // ghép chấm j26-dN với khối chữ j26-pN + tiến độ sáng của nó trên đường
+  var pairs = dots.map(function (d) {
+    var n = (d.className.match(/j26-d(\d+)/) || [])[1];
+    return { dot: d, item: board.querySelector('.j26-p' + n), t: (frac[n] !== undefined ? frac[n] : 1), lit: false };
+  });
+
+  var DUR = 6500;
+  function ease(t) { return .5 - .5 * Math.cos(Math.PI * t); }
+
+  var started = false;
+  function run() {
+    if (started) return; started = true;
+    comet.classList.add('on');
+    var t0 = null;
+    function frame(ts) {
+      if (t0 === null) t0 = ts;
+      var t = Math.min((ts - t0) / DUR, 1), p = ease(t);
+      path.style.strokeDashoffset = 1 - p;
+      var pt = path.getPointAtLength(p * L);
+      comet.style.left = (pt.x / 10) + '%';
+      comet.style.top  = (pt.y / 7.5) + '%';
+      pairs.forEach(function (pr) {
+        if (pr.lit || p < pr.t - .004) return; // sao chổi chạm đúng tiến độ của chấm thì sáng
+        pr.lit = true;
+        pr.dot.classList.add('lit');
+        if (pr.item) pr.item.classList.add('lit');
+      });
+      if (p > .82 && year) year.classList.add('lit');
+      if (t < 1) { requestAnimationFrame(frame); }
+      else {
+        comet.classList.remove('on');
+        path.style.strokeDasharray = 'none'; // vẽ xong: bỏ dash để đường luôn nguyên vẹn
+        pairs.forEach(function (pr) { // phòng hờ: chấm nào chưa sáng thì sáng nốt
+          if (!pr.lit) { pr.dot.classList.add('lit'); if (pr.item) pr.item.classList.add('lit'); }
+        });
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      // chạy khi thấy ≥25% board, hoặc board đã chiếm ≥60% viewport (màn quá thấp
+      // so với board cao 100vh thì ratio không bao giờ đạt ngưỡng)
+      if (e.isIntersecting && (e.intersectionRatio >= .25 || e.intersectionRect.height >= window.innerHeight * .6)) {
+        run(); obs.disconnect();
+      }
+    });
+  }, { threshold: [0, .25, .5] });
+  obs.observe(board);
+})();
+</script>
 
 <!-- Contact popup + dock 2 nút gim (Ứng tuyển ngay / Liên hệ ngay) -->
 <div id="contact-popup-root"></div>
