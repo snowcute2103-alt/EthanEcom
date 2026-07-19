@@ -5,7 +5,7 @@
    ================================================================ */
 
 /* Typography ported from housef.vn — Montserrat (display/UI) · Inter (body) · Fahkwang (lead/quote) · Mulish (long-form) · BaskervilleVN (elegant serif) */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@400;500;600;700&family=Fahkwang:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@400;500;600;700&family=Fahkwang:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 @import url('mobile-perf.css');
 
 /* housef self-hosted serif accent */
@@ -13,7 +13,7 @@
   font-family:"BaskervilleVN";
   src:url("../fonts/Baskerville.woff") format("woff"),
       url("../fonts/Baskerville.ttf") format("truetype");
-  font-weight:400; font-style:normal; font-display:swap;
+  font-weight:var(--fw-regular); font-style:normal; font-display:swap;
 }
 
 /* ── RESET ── */
@@ -54,9 +54,10 @@ ul { list-style: none; }
   --sh-sm:   0 2px 12px rgba(22,48,92,.08);
   --sh-md:   0 8px 32px rgba(22,48,92,.12);
   --sh-lg:   0 20px 60px rgba(22,48,92,.16);
-  --r-sm:    8px;
-  --r-md:    14px;
-  --r-lg:    20px;
+  /* Hướng thiết kế phẳng: góc vuông, không bo (yêu cầu 2026-07) */
+  --r-sm:    0;
+  --r-md:    0;
+  --r-lg:    0;
   /* Typography → chỉnh tại "BẢNG ĐIỀU KHIỂN CHỮ" bên dưới (chỉ 1 nơi) */
   --font-display: var(--font-heading);
   --font-body:    var(--font-text);
@@ -70,65 +71,104 @@ ul { list-style: none; }
    ║  MỌI KIỂU CHỮ CỦA TOÀN WEBSITE ĐƯỢC ĐIỀU KHIỂN TẠI ĐÂY (chỉ 1 nơi).   ║
    ║  Sửa 1 giá trị ở dưới  →  áp dụng cho TẤT CẢ các trang & thành phần.   ║
    ╚══════════════════════════════════════════════════════════════════════╝
-   • FONT:  heading = Fahkwang · text = Mulish · numeral = BaskervilleVN
-   • SIZE:  clamp(min = mobile , ưu tiên , max = desktop) → tự co theo màn hình.
-   • Muốn chữ to/nhỏ hơn → đổi số trong --fs-*  ·  Đậm/nhạt → đổi --fw-*
+   • FONT:  heading = Fahkwang · text = Mulish · numeral = BaskervilleVN · fallback = Montserrat
+   • SIZE:  giá trị theo BỘ QUY TẮC HOUSEF. Breakpoint: >1024 (desktop) · ≤1024 · ≤767.
+            Đổi cỡ ở :root (desktop) & 2 khối @media bên dưới. Đậm/nhạt → --fw-* · giãn chữ → --ls-*
    ────────────────────────────────────────────────────────────────────────
-     Vai trò         Token          Mobile → Desktop   Ghi chú
-     Display/Hero     --fs-display   34 → 54
-     H1               --fs-h1        28 → 44
-     H2               --fs-h2        25 → 32
-     H3               --fs-h3        21 → 26
-     H4 / label       --fs-h4        18 → 20   label in-hoa dùng .sl / .u-label
-     H5               --fs-h5        16 → 18
-     Body / Lead      --fs-md        16 → 18   (đoạn văn chính)
-     UI / phụ         --fs-base      16
-     Small            --fs-small     14
-     Caption          --fs-caption   13
-     Micro / badge    --fs-micro     11
-     ─ đặc biệt ─     --fs-hero (hero lớn) · --fs-brand (wordmark) ·
-                      --fs-stat (số đếm) · --fs-numeral (số serif) · --fs-deco (nền)
+     Vai trò              Token         Desktop → ≤1024 → ≤767   LH
+     Hero "Viết nên..."    --fs-hero      60 → 30 → 30            1.1
+     Heading section lớn   --fs-display   50 → 25 → 22            1.3
+     Số liệu (5,100...)    --fs-stat     100 → 70 → 56  (M.700)   1.0
+     H1                    --fs-h1        40 → 24 → 18            1.2
+     H2                    --fs-h2        32 → 22 → 16            1.3
+     H3                    --fs-h3        24 → 20 → 16            1.3
+     H4 / sub-heading      --fs-h4        20 → 18                 1.3  (label in-hoa: .sl/.u-label)
+     H5 / bước quy trình   --fs-h5        18 → 16                 1.5
+     Body / lead (p)       --fs-md        18 → 15 → 14            1.5
+     Body fallback         --fs-base      16 → 15 → 14            1.5
+     Link "Xem thêm"       --fs-small     14                     1.0
+     Caption               --fs-caption   13
+     Nút "Liên hệ ngay"    --fs-micro     11                     1.0  (ls .02em)
+     Ô nhập form           --fs-input     16  (luôn ≥16, chống iOS zoom)
+     ─ đặc biệt ─  --fs-brand (wordmark ETHAN ECOM) · --fs-numeral (số serif) · --fs-deco (nền)
    ──────────────────────────────────────────────────────────────────────── */
 :root {
-  /* 1) FONT FAMILIES (nguồn) */
+  /* 1) FONT FAMILIES */
   --font-heading: 'Fahkwang', Georgia, serif;                   /* tiêu đề */
-  --font-text:    'Mulish', 'Inter', sans-serif;                /* nội dung / body */
+  --font-text:    'Mulish', 'Inter', sans-serif;                /* body / nội dung */
   --font-numeral: 'BaskervilleVN', 'Fahkwang', Georgia, serif;  /* số / serif nhấn */
+  --font-fallback:'Montserrat', 'Inter', sans-serif;            /* body dự phòng */
 
   /* 2) FONT WEIGHTS */
   --fw-light: 300;    --fw-regular: 400;   --fw-medium: 500;
   --fw-semibold: 600; --fw-bold: 700;      --fw-extrabold: 800;
-  --fw-heading: var(--fw-medium);          /* độ đậm mặc định heading = 500 */
+  --fw-heading: var(--fw-medium);          /* heading mặc định = 500 (housef 400–500) */
 
-  /* 3) LINE-HEIGHTS */
-  --lh-tight: 1.1;  --lh-heading: 1.3;  --lh-loose: 1.8;   /* dùng chung */
-  --lh-display: 1.25; --lh-h1: 1.3; --lh-h2: 1.35; --lh-h3: 1.4;
-  --lh-h4: 1.5; --lh-h5: 1.5; --lh-body: 1.55; --lh-small: 1.5;
+  /* 3) LINE-HEIGHTS (theo bảng housef) */
+  --lh-tight:   1.0;   /* số liệu, tên dự án, nút */
+  --lh-hero:    1.1;   /* hero 60px */
+  --lh-display: 1.3;   /* heading section 50px */
+  --lh-h1: 1.2; --lh-h2: 1.3; --lh-h3: 1.3;
+  --lh-h4: 1.3;        /* sub-heading / label 20px */
+  --lh-h5: 1.5;
+  --lh-body: 1.5;      /* đoạn văn 18px → 27px */
+  --lh-small: 1.5;
+  --lh-heading: 1.3; --lh-loose: 1.8;
 
-  /* 4) SIZES — text (cố định ≥16px cho dễ đọc) */
-  --fs-micro:   11px;
+  /* 4) LETTER-SPACING (theo bảng housef) */
+  --ls-normal: normal;
+  --ls-menu: .05em;    /* nút MENU */
+  --ls-btn:  .02em;    /* nút "Liên hệ ngay" */
+  --ls-wide: .16em;    /* nav in-hoa (giữ nguyên phong cách Ethan) */
+
+  /* 5) SIZES — DESKTOP (>1024px) — mọi cỡ chữ theo bảng housef */
+  --fs-hero:    60px;   /* Hero "Viết nên..."           LH 1.1 */
+  --fs-display: 50px;   /* Heading section lớn           LH 1.3 */
+  --fs-stat:   100px;   /* Số liệu (Mulish 700)          LH 1.0 */
+  --fs-h1:      40px;
+  --fs-h2:      32px;
+  --fs-h3:      24px;
+  --fs-h4:      20px;   /* sub-heading / label / tên dự án */
+  --fs-h5:      18px;
+  --fs-md:      18px;   /* body / lead                   LH 1.5 */
+  --fs-base:    16px;   /* body fallback (Montserrat)    LH 1.5 */
+  --fs-small:   14px;   /* link "Xem thêm" */
   --fs-caption: 13px;
-  --fs-small:   14px;
-  --fs-base:    16px;
-  --fs-md:      clamp(16px, 1.2vw, 18px);   /* body / lead: mobile 16 → desktop 18 */
+  --fs-micro:   11px;   /* nút "Liên hệ ngay" */
+  --fs-input:   16px;   /* ô nhập form — luôn ≥16px, tránh iOS auto-zoom */
+  --fs-numeral: 94px;   /* số serif trang trí */
+  --fs-brand:   clamp(56px, 12vw, 170px);  /* wordmark "ETHAN ECOM" (giữ) */
+  --fs-deco:    clamp(80px, 13vw, 160px);  /* dấu ngoặc / số nền cực lớn */
+  --fs-body:    var(--fs-md);              /* alias cũ */
+}
 
-  /* 5) SIZES — heading scale (tự co: mobile → desktop) */
-  --fs-h5:      clamp(16px, 1.5vw, 18px);
-  --fs-h4:      clamp(18px, 1.7vw, 20px);
-  --fs-h3:      clamp(21px, 2.4vw, 26px);
-  --fs-h2:      clamp(25px, 3.2vw, 32px);
-  --fs-h1:      clamp(28px, 4.4vw, 44px);
-  --fs-display: clamp(34px, 5.2vw, 54px);
-
-  /* 6) SIZES — display đặc biệt (chữ lớn / nhấn) */
-  --fs-hero:    clamp(40px, 7vw, 100px);    /* hero section lớn */
-  --fs-brand:   clamp(56px, 12vw, 170px);   /* wordmark "ETHAN ECOM" */
-  --fs-stat:    clamp(30px, 4vw, 52px);     /* số liệu đếm */
-  --fs-numeral: clamp(40px, 5.6vw, 94px);   /* số serif trang trí */
-  --fs-deco:    clamp(80px, 13vw, 160px);   /* dấu ngoặc / số nền cực lớn */
-
-  /* alias tương thích cũ */
-  --fs-body: var(--fs-md);
+/* SIZES — TABLET & MOBILE ≤1024px (áp cho cả 1024 và 768px, theo bảng) */
+@media (max-width: 1024px) {
+  :root {
+    --fs-hero:    30px;   /* 60 → 30  (LH 110%) */
+    --fs-display: 25px;   /* 50 → 25  (LH 130%) */
+    --fs-stat:    70px;   /* 100 → 70 */
+    --fs-h1:      24px;
+    --fs-h2:      22px;
+    --fs-h3:      20px;
+    --fs-h4:      18px;   /* sub-heading 20 → 18 */
+    --fs-h5:      16px;
+    --fs-md:      15px;   /* body 18 → 15 */
+    --fs-base:    15px;
+    --fs-numeral: 70px;
+  }
+}
+/* SIZES — MOBILE ≤767px (rule chung của theme) */
+@media (max-width: 767px) {
+  :root {
+    --fs-display: 22px;
+    --fs-h1:      18px;
+    --fs-h2:      16px;
+    --fs-h3:      16px;
+    --fs-md:      14px;  /* đoạn văn p generic */
+    --fs-base:    14px;
+    --fs-stat:    56px;
+  }
 }
 
 /* Base heading elements — Fahkwang, weight 500 */
@@ -151,7 +191,7 @@ h6 { font-size: var(--fs-h5); line-height: var(--lh-h5); margin-bottom: 1rem; }
 
 /* Body / long-form + Small/Caption */
 .u-body { font-family: var(--font-alt); font-size: var(--fs-body); line-height: var(--lh-body); }
-small, .u-small, .caption { font-family: var(--font-alt); font-weight: 400;
+small, .u-small, .caption { font-family: var(--font-alt); font-weight:var(--fw-regular);
   font-size: var(--fs-small); line-height: var(--lh-small); }
 
 blockquote { font-family: var(--font-serif); }
@@ -201,8 +241,8 @@ blockquote { font-family: var(--font-serif); }
 /* ── BUTTONS ── */
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 14px 32px; border-radius: 6px;
-  font-family: var(--font-lead); font-weight: 600; font-size: 16px;
+  padding: 14px 32px; border-radius: 0;   /* nút vuông góc, không bo */
+  font-family: var(--font-lead); font-weight:var(--fw-semibold); font-size:var(--fs-base);
   cursor: pointer; border: none; transition: var(--t-base);
   position: relative; overflow: hidden;
 }
@@ -212,29 +252,29 @@ blockquote { font-family: var(--font-serif); }
   transform: translateX(-100%); transition: transform .5s var(--ease);
 }
 .btn:hover::after { transform: translateX(100%); }
-.btn--sm  { padding: 10px 22px; font-size: 16px; }
-.btn--yellow { background: linear-gradient(135deg, var(--yellow-2), var(--yellow)); color: var(--navy); font-weight:600; }
+.btn--sm  { padding: 10px 22px; font-size:var(--fs-base); }
+.btn--yellow { background: linear-gradient(135deg, var(--yellow-2), var(--yellow)); color: var(--navy); font-weight:var(--fw-semibold); }
 .btn--yellow:hover { filter: brightness(1.04); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(244,180,26,.4); }
-.btn--outline { background: transparent; color: var(--navy); border: 2px solid rgba(22,48,92,.35); }
-.btn--outline:hover { border-color: var(--navy); background: rgba(22,48,92,.06); transform: translateY(-2px); }
+.btn--outline { background: rgba(22,48,92,.08); color: var(--navy); border: none; }   /* bỏ viền → nền phẳng */
+.btn--outline:hover { background: rgba(22,48,92,.15); transform: translateY(-2px); }
 .btn--blue  { background: linear-gradient(135deg, var(--blue-br) 0%, #1668C9 100%); color: #fff; box-shadow: 0 6px 20px rgba(30,127,224,.35); }
 .btn--blue:hover  { filter: brightness(1.05); color: #fff; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(30,127,224,.45); }
 .btn--white { background: #fff; color: var(--navy); box-shadow: var(--sh-sm); }
 .btn--white:hover { background: #f5f6f8; transform: translateY(-2px); box-shadow: var(--sh-md); }
-.btn--ghost { background: transparent; color: var(--blue); border: 2px solid var(--blue); }
+.btn--ghost { background: rgba(30,127,224,.1); color: var(--blue); border: none; }   /* bỏ viền → nền phẳng */
 .btn--ghost:hover { background: var(--blue); color: #fff; transform: translateY(-2px); }
 /* Outline buttons within dark sections need white styling */
-.section--blue .btn--outline { color: #fff; border-color: rgba(255,255,255,.45); }
-.section--blue .btn--outline:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+.section--blue .btn--outline { color: #fff; background: rgba(255,255,255,.14); }
+.section--blue .btn--outline:hover { background: rgba(255,255,255,.24); }
 
 /* ── SECTION HEADER ── */
-.sl  { font-size: 16px; font-weight:600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
-.st  { font-family: var(--font-lead); font-size: var(--fs-h2); font-weight: var(--fw-heading); line-height: var(--lh-h2); }
+.sl  { font-size:var(--fs-base); font-weight:var(--fw-semibold); letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+.st  { font-family: var(--font-lead); font-size: var(--fs-display); font-weight: var(--fw-heading); line-height: var(--lh-display); }
 .ss  { font-family: var(--font-lead); font-size: var(--fs-body); color: var(--text); max-width: 560px; margin-top: 14px; line-height: var(--lh-body); }
 .sh  { margin-bottom: 56px; }
 .sh.c { text-align: center; }
 .sh.c .ss { margin: 14px auto 0; }
-.divider   { width: 56px; height: 3px; background: linear-gradient(90deg, var(--blue), var(--yellow)); border-radius: 2px; margin-top: 16px; }
+.divider   { width: 56px; height: 3px; background: linear-gradient(90deg, var(--blue), var(--yellow)); border-radius:0; margin-top: 16px; }
 .divider.c { margin: 16px auto 0; }
 
 /* ── IMAGE PLACEHOLDERS ── */
@@ -279,8 +319,8 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 
 /* ── CARD BASE ── */
 .card {
-  background: #fff; border-radius: var(--r-md);
-  border: 1.5px solid #eaeff5;
+  background: #fff; border-radius: 0;
+  border: none; box-shadow: var(--sh-sm);   /* góc vuông, không viền — tách nền bằng bóng nhẹ */
   transition: var(--t-base);
 }
 .card:hover {
@@ -290,7 +330,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 }
 
 /* ── TAG / BADGE ── */
-.tag      { display: inline-block; font-size: 16px; font-weight:600; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; }
+.tag      { display: inline-block; font-size:var(--fs-base); font-weight:var(--fw-semibold); letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 0; }
 .tag--blue   { background: #EEF2FF; color: var(--blue); }
 .tag--yellow { background: #f0f0f0; color: #111; }
 .tag--green  { background: #F0FDF4; color: #15803d; }
@@ -323,19 +363,25 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 .page-hero-badge   {
   display: inline-flex; align-items: center; gap: 8px;
   background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
-  color: #00D4FF; font-size: 16px; font-weight:600; letter-spacing: 2px;
-  text-transform: uppercase; padding: 7px 16px; border-radius: 20px; margin-bottom: 22px;
+  color: #00D4FF; font-size:var(--fs-base); font-weight:var(--fw-semibold); letter-spacing: 2px;
+  text-transform: uppercase; padding: 7px 16px; border-radius: 0; margin-bottom: 22px;
 }
-.page-hero-title   { font-family: var(--font-lead); font-size: var(--fs-display); font-weight: var(--fw-heading); color: #fff; line-height: var(--lh-display); margin-bottom: 20px; }
+.page-hero-title   { font-family: var(--font-lead); font-size: var(--fs-hero); font-weight: var(--fw-heading); color: #fff; line-height: var(--lh-hero); margin-bottom: 20px; }
 .page-hero-title em { color: #00D4FF; font-style: normal; }
 .page-hero-sub     { font-family: var(--font-lead); font-size: var(--fs-body); color: rgba(255,255,255,.6); max-width: 560px; line-height: var(--lh-body); }
 
 /* ── BREADCRUMB ── */
-.breadcrumb     { display: flex; align-items: center; gap: 8px; font-size: 16px; color: rgba(0,0,0,.45); margin-bottom: 22px; flex-wrap: wrap; }
+.breadcrumb     { display: flex; align-items: center; gap: 8px; font-size:var(--fs-base); color: rgba(0,0,0,.45); margin-bottom: 22px; flex-wrap: wrap; }
 .breadcrumb a   { color: rgba(0,0,0,.55); transition: color .2s; }
 .breadcrumb a:hover { color: var(--blue); }
 .breadcrumb-sep { color: rgba(0,0,0,.25); }
-.breadcrumb span { color: var(--blue); font-weight: 600; }
+.breadcrumb span { color: var(--blue); font-weight:var(--fw-semibold); }
+/* Trên nền tối .page-hero: đổi sang chữ sáng (mặc định đen mờ sẽ chìm mất) */
+.page-hero .breadcrumb        { color: rgba(255,255,255,.5); }
+.page-hero .breadcrumb a      { color: rgba(255,255,255,.75); }
+.page-hero .breadcrumb a:hover{ color: #fff; }
+.page-hero .breadcrumb-sep    { color: rgba(255,255,255,.35); }
+.page-hero .breadcrumb span   { color: var(--blue-br, #2B8FFF); }
 
 /* ══════════════════════════════════════════
    HEADER — Dark Aurora Redesign
@@ -440,7 +486,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 
 /* ── INNER ── */
 .hi {
-  max-width: var(--max-w); margin: 0 auto;
+  max-width: 1300px; margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between;
   height: 160px;
   transition: height .35s cubic-bezier(.4,0,.2,1);
@@ -448,8 +494,8 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 .header.scrolled .hi { height: 118px; }
 
 /* Centered-logo layout: [ nav trái ][ LOGO ][ nav phải ] — logo canh giữa tuyệt đối */
-.hi--center .nav-left  { flex: 1; justify-content: flex-end;  padding-right: clamp(20px, 4vw, 56px); }
-.hi--center .nav-right { flex: 1; justify-content: flex-start; padding-left:  clamp(20px, 4vw, 56px); }
+.hi--center .nav-left  { flex: 1; justify-content: space-between; padding-right: clamp(20px, 4vw, 56px); }
+.hi--center .nav-right { flex: 1; justify-content: space-between; padding-left:  clamp(20px, 4vw, 56px); }
 .hi--center .logo      { flex: 0 0 auto; }
 
 /* ── LOGO ── */
@@ -467,7 +513,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 
 .nav a {
   font-family: var(--font-lead);
-  font-size: 17px; font-weight: 300;
+  font-size:var(--fs-base); font-weight:var(--fw-light);
   letter-spacing: .16em; text-transform: uppercase;
   color: rgba(255,255,255,.82);
   transition: color .25s;
@@ -477,15 +523,20 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 /* thin nav over hero photo — subtle shadow keeps light strokes legible */
 .header.on-dark .nav a { text-shadow: 0 1px 14px rgba(0,0,0,.4); }
 
-/* minimal: colour-only hover/active, no underline */
-.nav a::after { display: none; }
+/* thin white underline slides in on hover (and marks the active page) */
+.nav a::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0;
+  height: 1.5px; background: #fff; border-radius:0;
+  transform: scaleX(0); transform-origin: center;
+  transition: transform .3s cubic-bezier(.4,0,.2,1);
+}
+.nav a:hover::after { transform: scaleX(1); }
 .nav a:hover { color: #fff; }
-.nav a.active { color: #fff; font-weight: 400; }
 
 /* Light-mode nav adjustments */
 .header.on-light .nav a          { color: rgba(0,0,0,.6); }
-.header.on-light .nav a:hover,
-.header.on-light .nav a.active   { color: #000; }
+.header.on-light .nav a::after   { background: #000; }
+.header.on-light .nav a:hover    { color: #000; }
 .header.on-light.scrolled .nav a { color: rgba(0,0,0,.7); }
 
 /* ── CTA BUTTON ── */
@@ -493,10 +544,11 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
   background: transparent !important;
   color: #fff !important;
   padding: 11px 26px !important;
-  border: 1px solid rgba(255,255,255,.5) !important;
-  border-radius: 40px !important;
+  border: none !important;
+  background: rgba(255,255,255,.14) !important;
+  border-radius: 0 !important;
   font-family: var(--font-display) !important;
-  font-weight: 600 !important; font-size: 12px !important;
+  font-weight:var(--fw-semibold) !important; font-size:var(--fs-caption) !important;
   letter-spacing: .16em !important; text-transform: uppercase !important;
   box-shadow: none !important;
   transition: background .25s, color .25s, border-color .25s !important;
@@ -531,7 +583,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 .hamburger {
   display: none; flex-direction: column; gap: 5px;
   cursor: pointer; padding: 8px;
-  border-radius: 10px;
+  border-radius:0;
   border: 1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.06);
   backdrop-filter: blur(8px);
@@ -547,7 +599,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
   background: rgba(255,255,255,.85);
   transition: transform .35s cubic-bezier(.4,0,.2,1),
               opacity .25s, background .3s, width .3s;
-  border-radius: 2px;
+  border-radius:0;
   transform-origin: center;
 }
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -611,7 +663,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 .mob-nav a {
   color: rgba(255,255,255,.65);
   font-family: var(--font-lead);
-  font-size: 22px; font-weight:600;
+  font-size:var(--fs-h4); font-weight:var(--fw-semibold);
   padding: 14px 0;
   position: relative;
   display: flex; align-items: center; gap: 14px;
@@ -624,7 +676,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 /* Number prefix */
 .mob-nav a::before {
   content: counter(mob-link, decimal-leading-zero);
-  font-size: 16px; font-weight:600;
+  font-size:var(--fs-base); font-weight:var(--fw-semibold);
   color: rgba(34,211,238,.5);
   letter-spacing: .08em;
   min-width: 28px;
@@ -635,7 +687,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 .mob-nav a::after {
   content: '→';
   position: absolute; right: 0;
-  font-size: 18px;
+  font-size:var(--fs-md);
   opacity: 0;
   transform: translateX(-8px);
   transition: opacity .25s, transform .3s cubic-bezier(.4,0,.2,1);
@@ -663,8 +715,8 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
   background: linear-gradient(135deg, #0ea5e9, #6366f1);
   color: #fff !important;
   padding: 16px 28px;
-  border-radius: 12px;
-  font-size: 16px;
+  border-radius:0;
+  font-size:var(--fs-base);
   counter-reset: mob-link;
 }
 .mob-nav a:last-child::before { display: none; }
@@ -679,11 +731,56 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
    + Mini tabbar when hidden
 ══════════════════════════════════════════ */
 
+/* ══════════════════════════════════════════
+   TYPO ECO — đồng bộ hệ chữ trang chủ (section "Nền tảng vận hành")
+   Bật theo trang bằng <body class="typo-eco"> (about/portfolio/blog/contact).
+   Careers dùng bản riêng trong trang (có thêm phần smh-*).
+   · Tiêu đề: Fahkwang 400 IN HOA — section 50px (≤1023px: clamp 24→32) · card 20px
+   · Kicker 14px/.22em · Body Mulish: lead 18px, thường 16px · Chữ nhấn gradient chảy
+══════════════════════════════════════════ */
+body.typo-eco .sl{
+  font-family:var(--font-heading);font-size:14px;font-weight:var(--fw-medium,500);
+  letter-spacing:.22em;text-transform:uppercase;color:var(--navy,#16305C);
+}
+body.typo-eco .st,body.typo-eco .page-hero-title,body.typo-eco .faq__title{
+  font-family:var(--font-heading);font-weight:var(--fw-regular,400);
+  font-size:50px;line-height:1.3;letter-spacing:0;text-transform:uppercase;text-wrap:balance;
+}
+body.typo-eco .st,body.typo-eco .faq__title{color:var(--navy,#16305C)}  /* page-hero-title giữ trắng (nền tối) */
+body.typo-eco .page-hero-title em{
+  padding:.18em 0;
+  background:linear-gradient(90deg,#1E7FE0,#2B8FFF,#F4B41A,#2B8FFF,#1E7FE0);
+  background-size:200% 100%;
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;
+  animation:typoGradFlow 2s linear infinite;
+}
+@keyframes typoGradFlow{to{background-position:-200% 0}}
+body.typo-eco .ss,body.typo-eco .page-hero-sub{font-family:var(--font-text);font-size:18px;line-height:1.65}
+body.typo-eco main h3,body.typo-eco main h4{
+  font-family:var(--font-heading);font-size:20px;font-weight:var(--fw-regular,400);
+  line-height:1.35;text-transform:uppercase;
+}
+body.typo-eco .feat-body h2{  /* tiêu đề bài nổi bật (blog) — card lớn */
+  font-family:var(--font-heading);font-size:24px;font-weight:var(--fw-regular,400);
+  line-height:1.3;text-transform:uppercase;
+}
+@media(max-width:1023px){
+  body.typo-eco .st,body.typo-eco .page-hero-title,body.typo-eco .faq__title{font-size:clamp(24px,4.6vw,32px)}
+}
+@media(prefers-reduced-motion:reduce){
+  body.typo-eco .page-hero-title em{animation:none}
+}
+
 /* Header slides up when scrolling down */
 .header.nav-hidden {
   transform: translateY(-100%);
   pointer-events: none;
+  box-shadow: none;
+  border-bottom-color: transparent;
 }
+.header.nav-hidden::before,
+.header.nav-hidden::after { opacity: 0; }
 .header {
   transform: translateY(0);
   transition: transform .45s cubic-bezier(.4,0,.2,1),
@@ -784,7 +881,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
   display: flex; align-items: center; gap: 14px;
   padding: 14px 32px;
   font-family: var(--font-lead);
-  font-size: 16px; font-weight:600; letter-spacing: .18em;
+  font-size:var(--fs-base); font-weight:var(--fw-semibold); letter-spacing: .18em;
   text-transform: uppercase; color: rgba(255,255,255,.3);
   white-space: nowrap;
   transition: color .3s;
@@ -808,7 +905,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 /* ── BRAND COLUMN ── */
 .foot-brand .logo img { filter: brightness(1.1); }
 .foot-brand p {
-  font-size: 16px; line-height: 1.9;
+  font-size:var(--fs-base); line-height: 1.9;
   margin-top: 18px; max-width: 260px;
   color: rgba(255,255,255,.38);
 }
@@ -818,7 +915,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 .fsoc {
   width: 40px; height: 40px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 16px; font-weight:700;
+  font-size:var(--fs-base); font-weight:var(--fw-bold);
   color: rgba(255,255,255,.45);
   background: rgba(255,255,255,.05);
   border: 1px solid rgba(255,255,255,.1);
@@ -828,10 +925,10 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 .foot-status {
   display: inline-flex; align-items: center; gap: 8px;
   margin-top: 22px;
-  padding: 7px 14px; border-radius: 40px;
+  padding: 7px 14px; border-radius:0;
   background: rgba(16,185,129,.08);
   border: 1px solid rgba(16,185,129,.25);
-  font-size: 16px; font-weight:600; letter-spacing: .1em;
+  font-size:var(--fs-base); font-weight:var(--fw-semibold); letter-spacing: .1em;
   color: rgba(16,185,129,.9); text-transform: uppercase;
 }
 .foot-status-dot {
@@ -843,7 +940,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 /* ── NAV COLUMNS ── */
 .footer h5 {
   font-family: var(--font-lead);
-  font-size: 16px; font-weight:600;
+  font-size:var(--fs-base); font-weight:var(--fw-semibold);
   color: rgba(255,255,255,.25);
   margin-bottom: 22px; letter-spacing: .22em;
   text-transform: uppercase;
@@ -854,21 +951,21 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
   position: absolute; bottom: -6px; left: 0;
   width: 20px; height: 1.5px;
   background: linear-gradient(90deg, #2B8FFF, #F4B41A);
-  border-radius: 2px;
+  border-radius:0;
 }
 
 .flinks { display: flex; flex-direction: column; gap: 4px; }
 .flinks a {
-  font-size: 16px; color: rgba(255,255,255,.38);
+  font-size:var(--fs-base); color: rgba(255,255,255,.38);
   display: inline-flex; align-items: center; gap: 0;
   padding: 7px 10px 7px 0;
-  border-radius: 6px;
+  border-radius:0;
   position: relative; overflow: hidden;
   transition: color .25s, padding-left .25s, background .25s;
 }
 .flinks a::before {
   content: '→';
-  font-size: 16px; color: #2B8FFF;
+  font-size:var(--fs-base); color: #2B8FFF;
   opacity: 0; transform: translateX(-8px);
   transition: opacity .2s, transform .25s cubic-bezier(.4,0,.2,1);
   margin-right: 0; flex-shrink: 0;
@@ -884,7 +981,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 .fcon { display: flex; flex-direction: column; gap: 14px; }
 .fcon-item {
   display: flex; align-items: flex-start; gap: 12px;
-  padding: 12px 14px; border-radius: 10px;
+  padding: 12px 14px; border-radius:0;
   background: rgba(255,255,255,.03);
   border: 1px solid rgba(255,255,255,.07);
   transition: background .3s, border-color .3s, transform .3s;
@@ -895,19 +992,19 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
   transform: translateX(4px);
 }
 .fcon-ico {
-  width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0;
+  width: 32px; height: 32px; border-radius:0; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
-  font-size: 16px;
+  font-size:var(--fs-base);
   background: rgba(34,211,238,.08);
   border: 1px solid rgba(34,211,238,.15);
 }
 .fcon-txt h6 {
   font-family: var(--font-lead);
-  font-size: 16px; font-weight:600; letter-spacing: .15em;
+  font-size:var(--fs-base); font-weight:var(--fw-semibold); letter-spacing: .15em;
   text-transform: uppercase; color: rgba(255,255,255,.25);
   margin-bottom: 2px;
 }
-.fcon-txt p { font-size: 16px; font-weight: 500; color: rgba(255,255,255,.65); line-height: 1.5; }
+.fcon-txt p { font-size:var(--fs-base); font-weight:var(--fw-medium); color: rgba(255,255,255,.65); line-height: 1.5; }
 
 /* ── DIVIDER ── */
 .foot-divider {
@@ -922,7 +1019,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 .foot-bot {
   position: relative; z-index: 1;
   padding: 22px 0; text-align: center;
-  font-size: 16px; color: rgba(255,255,255,.22);
+  font-size:var(--fs-base); color: rgba(255,255,255,.22);
   letter-spacing: .04em;
 }
 .foot-bot a { color: rgba(43,143,255,.6); transition: color .2s; }
@@ -933,9 +1030,9 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
   position: fixed; bottom: 28px; right: 28px;
   width: 46px; height: 46px;
   background: var(--blue);
-  color: #fff; border-radius: 12px;
+  color: #fff; border-radius:0;
   display: flex; align-items: center; justify-content: center;
-  font-size: 18px; cursor: pointer;
+  font-size:var(--fs-md); cursor: pointer;
   opacity: 0; transform: translateY(12px) scale(.9);
   transition: all .35s var(--ease); z-index: 500; border: none;
   box-shadow: 0 6px 20px rgba(29,50,81,.35);
@@ -945,10 +1042,10 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 
 /* ── FORM ELEMENTS ── */
 .fg { display: flex; flex-direction: column; gap: 7px; margin-bottom: 16px; }
-.fg label { font-size: 16px; font-weight: 600; letter-spacing: .5px; color: #374151; }
+.fg label { font-size:var(--fs-base); font-weight:var(--fw-semibold); letter-spacing: .5px; color: #374151; }
 .fg input, .fg textarea, .fg select {
   background: #fafbff; border: 1.5px solid #e0e7f3; border-radius: var(--r-sm);
-  padding: 13px 16px; font-family: 'Inter', sans-serif; font-size: 16px;
+  padding: 13px 16px; font-family:var(--font-text); font-size:var(--fs-input);
   color: #1A1A2E; outline: none; transition: border-color .25s, box-shadow .25s, background .25s;
   width: 100%;
 }
@@ -972,7 +1069,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 
 /* ── PAGINATION ── */
 .pagination { display: flex; gap: 8px; align-items: center; justify-content: center; margin-top: 56px; flex-wrap: wrap; }
-.pg-btn { width: 40px; height: 40px; border-radius: var(--r-sm); border: 1.5px solid #dde3ee; background: #fff; font-size: 16px; font-weight: 600; cursor: pointer; transition: var(--t-base); color: var(--text); display: flex; align-items: center; justify-content: center; }
+.pg-btn { width: 40px; height: 40px; border-radius: var(--r-sm); border: 1.5px solid #dde3ee; background: #fff; font-size:var(--fs-base); font-weight:var(--fw-semibold); cursor: pointer; transition: var(--t-base); color: var(--text); display: flex; align-items: center; justify-content: center; }
 .pg-btn:hover, .pg-btn.active { background: var(--blue); color: #fff; border-color: var(--blue); transform: translateY(-2px); box-shadow: var(--sh-sm); }
 .pg-btn.pg-dots { border: none; background: transparent; cursor: default; }
 .pg-btn.pg-dots:hover { background: transparent; color: var(--text); transform: none; box-shadow: none; }
@@ -1000,7 +1097,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 }
 @media (max-width: 480px) {
   .btt { bottom: 16px; right: 16px; }
-  .mob-nav a { font-size: 19px; }
+  .mob-nav a { font-size:var(--fs-md); }
 }
 
 /* ══════════════════════════════════════════════════
@@ -1017,29 +1114,21 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
   .blog-grid .bcard:hover,
   .testi-grid .tcard:hover,
   .benefits-grid .benefit-card:hover,
-  .platforms-grid .plat-card:hover,
-  .process-grid .proc-step:hover,
   .info-cards .info-card:hover,
-  .srv-detail-grid .srv-detail-card:hover,
   .case-grid .case-card:hover { position: relative; z-index: 3; }
 
   /* Bảo đảm blur/opacity chuyển động mượt cho các card dùng transition riêng */
   .blog-grid .bcard { transition: transform .3s, box-shadow .3s, filter .45s ease, opacity .45s ease; }
   .testi-grid .tcard { transition: transform .35s cubic-bezier(.4,0,.2,1), box-shadow .35s, border-color .35s, background .35s, filter .45s ease, opacity .45s ease; }
-  .process-grid .proc-step { transition: filter .45s ease, opacity .45s ease, transform .45s ease; }
 
   /* Làm mờ + tối + thu nhỏ các card KHÔNG được hover trong cùng lưới */
   .values-grid:hover .val-card:not(:hover),
   .team-grid:hover .team-card:not(:hover),
   .dept-grid:hover .dept-card:not(:hover),
   .svb-grid:hover .svb-card:not(:hover),
-  .blog-grid:hover .bcard:not(:hover),
   .testi-grid:hover .tcard:not(:hover),
   .benefits-grid:hover .benefit-card:not(:hover),
-  .platforms-grid:hover .plat-card:not(:hover),
-  .process-grid:hover .proc-step:not(:hover),
   .info-cards:hover .info-card:not(:hover),
-  .srv-detail-grid:hover .srv-detail-card:not(:hover),
   .case-grid:hover .case-card:not(:hover) {
     filter: blur(3px);
     opacity: .45;
@@ -1061,13 +1150,9 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
   .team-grid:hover .team-card:not(:hover),
   .dept-grid:hover .dept-card:not(:hover),
   .svb-grid:hover .svb-card:not(:hover),
-  .blog-grid:hover .bcard:not(:hover),
   .testi-grid:hover .tcard:not(:hover),
   .benefits-grid:hover .benefit-card:not(:hover),
-  .platforms-grid:hover .plat-card:not(:hover),
-  .process-grid:hover .proc-step:not(:hover),
   .info-cards:hover .info-card:not(:hover),
-  .srv-detail-grid:hover .srv-detail-card:not(:hover),
   .case-grid:hover .case-card:not(:hover) {
     filter: none;
     transform: none;
@@ -1099,8 +1184,8 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 
 /* 3) Số outline lớn mờ — điểm nhấn thị giác không cần thêm màu */
 .outline-num {
-  font-family: var(--font-lead); font-weight:700; line-height: 1;
-  font-size: clamp(32px, 5.5vw, 56px); letter-spacing: -.02em;
+  font-family: var(--font-lead); font-weight:var(--fw-bold); line-height: 1;
+  font-size:var(--fs-display); letter-spacing: -.02em;
   -webkit-text-stroke: 1.5px rgba(29, 50, 81, .16); color: transparent;
   pointer-events: none; user-select: none;
 }
@@ -1113,7 +1198,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 /* 5) Sliding-pill cho filter tab (Portfolio / lọc bộ phận) — tint trượt, chữ luôn đọc được */
 .pill-tabs { position: relative; }
 .pill-ind {
-  position: absolute; top: 0; left: 0; height: 100%; border-radius: 999px;
+  position: absolute; top: 0; left: 0; height: 100%; border-radius:0;
   background: rgba(29, 50, 81, .10); border: 1.5px solid rgba(29, 50, 81, .30);
   transition: transform .4s cubic-bezier(.4,0,.2,1), width .4s cubic-bezier(.4,0,.2,1), opacity .3s;
   z-index: 0; pointer-events: none; opacity: 0;
@@ -1122,7 +1207,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 /* Trong chế độ pill: bỏ nền đặc của nút, để pill làm nền trượt; chữ dùng navy đậm */
 .pill-tabs .fbtn.active, .pill-tabs .fbtn:hover {
   background: transparent !important; color: var(--blue) !important; border-color: transparent !important;
-  font-weight:600;
+  font-weight:var(--fw-semibold);
 }
 .pill-tabs.on-dark .pill-ind { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.35); }
 .pill-tabs.on-dark .fbtn.active, .pill-tabs.on-dark .fbtn:hover { color: #fff !important; }
@@ -1130,7 +1215,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 /* 6) Team hover/tap reveal — hiện chức danh + trích dẫn giá trị cốt lõi */
 .team-card .team-quote {
   max-height: 0; opacity: 0; overflow: hidden; margin-top: 0;
-  font-size: 14px; color: var(--text); line-height: 1.6; font-style: italic;
+  font-size:var(--fs-small); color: var(--text); line-height: 1.6; font-style: italic;
   transition: max-height .45s cubic-bezier(.4,0,.2,1), opacity .35s, margin-top .35s;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1167,8 +1252,8 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 .skip-link {
   position: absolute; left: -9999px; top: 0; z-index: 2000;
   background: var(--navy); color: #fff;
-  padding: 12px 20px; border-radius: 0 0 8px 0;
-  font-family: var(--font-lead); font-weight:600; font-size: 15px;
+  padding: 12px 20px; border-radius:0;
+  font-family: var(--font-lead); font-weight:var(--fw-semibold); font-size:var(--fs-small);
 }
 .skip-link:focus { left: 0; top: 0; }
 
@@ -1202,17 +1287,93 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 
 /* 7) Type scale — uppercase micro-labels step BELOW body (16px) to restore hierarchy.
       Body copy + form fields intentionally stay 16px (no iOS auto-zoom). */
-.sl              { font-size: 13px; }
-.tag             { font-size: 12px; }
-.page-hero-badge { font-size: 12px; }
-.breadcrumb      { font-size: 13px; }
-.footer h5       { font-size: 12px; }
-.fcon-txt h6     { font-size: 11px; }
-.foot-ticker-item{ font-size: 12px; }
-.foot-status     { font-size: 11px; }
-.foot-bot        { font-size: 13px; }
+.sl              { font-size:var(--fs-caption); }
+.tag             { font-size:var(--fs-caption); }
+.page-hero-badge { font-size:var(--fs-caption); }
+.breadcrumb      { font-size:var(--fs-caption); }
+.footer h5       { font-size:var(--fs-caption); }
+.fcon-txt h6     { font-size:var(--fs-micro); }
+.foot-ticker-item{ font-size:var(--fs-caption); }
+.foot-status     { font-size:var(--fs-micro); }
+.foot-bot        { font-size:var(--fs-caption); }
 
 /* Mobile: shorter fixed header → smaller anchor offset */
 @media (max-width: 768px) {
   html { scroll-padding-top: 76px; }
 }
+
+/* ══════════════════════════════════════════════════════════
+   FOOTER — navy 800, Ethan cream/navy design system
+   (site-footer / .ft-* ; replaces old .footer/.foot-*)
+   ══════════════════════════════════════════════════════════ */
+.site-footer{background:#142E4A;color:#ffffff;padding:62px 0 32px}
+.site-footer .ft-container{max-width:1400px;margin:0 auto;padding:0 32px}
+
+/* Logo (light badge because the logo art sits on white) */
+.site-footer .ft-logo{text-align:center;margin-bottom:32px}
+.site-footer .ft-logo-badge{display:inline-block;transition:transform .3s ease}
+.site-footer .ft-logo-badge:hover{transform:translateY(-3px)}
+.site-footer .ft-logo-badge:focus-visible{outline:2px solid #CBBA95;outline-offset:6px;border-radius:0}
+.site-footer .ft-logo img{height:140px;width:auto;display:block;filter:drop-shadow(0 6px 18px rgba(0,0,0,.35))}
+.site-footer .ft-logo-sub{font-family:var(--font-heading);font-weight:400;font-size:11px;letter-spacing:.3em;text-transform:uppercase;margin-top:14px;color:#B8CCE0}
+
+/* Top nav */
+.site-footer .ft-nav{margin-bottom:40px}
+.site-footer .ft-nav ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:20px 50px;margin:0;padding:0}
+.site-footer .ft-nav a{font-family:var(--font-heading);font-weight:400;font-size:18px;line-height:1.3;letter-spacing:.12em;text-transform:uppercase;color:#ffffff;text-decoration:none;transition:color .2s}
+.site-footer .ft-nav a:hover{color:#8FADC9}
+.site-footer .ft-nav a:focus-visible{outline:2px solid #CBBA95;outline-offset:4px}
+
+.site-footer .ft-divider{border:none;border-top:1px solid #1D3D5F;margin:0 0 62px}
+
+/* 4 columns */
+.site-footer .ft-columns{display:grid;grid-template-columns:repeat(4,1fr);gap:32px 50px;margin-bottom:62px}
+.site-footer .ft-col h3{font-family:var(--font-heading);font-weight:500;font-size:20px;line-height:1.3;text-transform:uppercase;color:#ffffff;margin:0 0 20px;position:relative;padding-bottom:12px}
+.site-footer .ft-col h3::after{content:'';position:absolute;left:0;bottom:0;width:36px;height:2px;background:#B49F73}
+.site-footer .ft-col p{font-family:var(--font-text);font-size:15px;line-height:1.5;color:#B8CCE0;margin:0 0 24px}
+.site-footer .ft-col p:last-child{margin-bottom:0}
+.site-footer .ft-col ul{list-style:none;margin:0;padding:0}
+.site-footer .ft-col ul li{margin-bottom:12px}
+.site-footer .ft-col ul li:last-child{margin-bottom:0}
+.site-footer .ft-col a{font-family:var(--font-text);font-size:15px;line-height:1.5;color:#B8CCE0;text-decoration:none;transition:color .2s}
+.site-footer .ft-col a:hover{color:#ffffff}
+.site-footer .ft-col a:focus-visible{outline:2px solid #CBBA95;outline-offset:3px}
+.site-footer .ft-label{display:block;font-family:var(--font-text);font-weight:700;color:#ffffff;letter-spacing:.02em;margin-bottom:2px}
+
+/* Bottom bar */
+.site-footer .ft-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding-top:24px;border-top:1px solid #1D3D5F}
+.site-footer .ft-social{font-family:var(--font-text);font-size:15px;line-height:1.5;color:#B8CCE0;display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.site-footer .ft-social a{font-weight:700;color:#ffffff;text-decoration:none;padding:0 8px;transition:color .2s}
+.site-footer .ft-social a:hover{color:#CBBA95}
+.site-footer .ft-social a:focus-visible{outline:2px solid #CBBA95;outline-offset:3px}
+.site-footer .ft-social .sep{color:#274E76}
+.site-footer .ft-copy{font-family:var(--font-text);font-size:15px;line-height:1.5;color:#B8CCE0;text-align:right}
+
+@media (max-width:1024px){
+  .site-footer .ft-nav a{font-size:15px}
+  .site-footer .ft-col h3{font-size:15px}
+  .site-footer .ft-columns{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .site-footer{padding:50px 0 24px}
+  .site-footer .ft-container{padding:0 20px}
+  .site-footer .ft-logo img{height:104px}
+  .site-footer .ft-columns{grid-template-columns:1fr;gap:32px}
+  .site-footer .ft-bottom{flex-direction:column;align-items:flex-start}
+  .site-footer .ft-copy{text-align:left}
+}
+
+/* ═══ CURSOR FX — vòng la bàn + sao kim chỉ nam hiện sau con trỏ khi hover
+   phần tử bấm được. Sinh bởi initCursorFx() trong shared.js; mũi tên hệ thống
+   giữ nguyên nằm đè lên trên. ═══ */
+.cursor-fx{
+  position:fixed;left:0;top:0;width:52px;height:52px;margin:-26px 0 0 -26px;
+  pointer-events:none;z-index:99999;
+  opacity:0;transform:scale(.15) rotate(-30deg);
+  transition:opacity .22s ease,transform .38s cubic-bezier(.34,1.56,.64,1);
+}
+.cursor-fx.is-on{opacity:1;transform:scale(1) rotate(0deg)}
+.cursor-fx.is-press{transform:scale(.82) rotate(8deg);transition-duration:.15s,.15s}
+.cursor-fx svg{width:100%;height:100%;display:block;animation:cursorFxSpin 10s linear infinite}
+@keyframes cursorFxSpin{to{rotate:360deg}}
+@media (hover:none),(pointer:coarse){.cursor-fx{display:none}}

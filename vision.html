@@ -10,21 +10,20 @@
 /* ── PAGE-SPECIFIC STYLES ── */
 
 /* Nhịp chung kiểu orfeo: kicker nhỏ → heading serif lớn có từ khoá nhấn màu → 1 ý/section */
-.btn{border-radius:999px}   /* nút bo tròn dạng pill theo trang mẫu */
 .st--big{font-size:var(--fs-display);line-height:var(--lh-display,1.3)}
 .st em{font-style:normal;color:var(--blue)}
 .section--blue .st em{color:var(--yellow)}
 
 /* ── IMG ── */
-.img-ph{border-radius:12px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;min-height:40px}
+.img-ph{border-radius:0;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;min-height:40px}
 .img-ph img{width:100%;height:100%;object-fit:cover;display:block}
 .ph-vision{background:linear-gradient(135deg,#2a4a76 0%,#1D3251 40%,#0d1e35 100%);height:460px}
 
 /* ── VISION STORY (text + image) ── */
 .story-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
-.story-img-wrap{overflow:hidden;border-radius:16px}
+.story-img-wrap{overflow:hidden;border-radius:0}
 .story-img-wrap .img-ph{border-radius:0}
-.story-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(27,79,216,.08);border:1px solid rgba(27,79,216,.15);color:var(--blue);font-size:var(--fs-base);font-weight:var(--fw-semibold);letter-spacing:2px;text-transform:uppercase;padding:7px 16px;border-radius:20px;margin-bottom:20px}
+.story-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(27,79,216,.08);border:1px solid rgba(27,79,216,.15);color:var(--blue);font-size:var(--fs-base);font-weight:var(--fw-semibold);letter-spacing:2px;text-transform:uppercase;padding:7px 16px;border-radius:0;margin-bottom:20px}
 @media(min-width:769px){.story-grid{grid-template-columns:1fr 1fr;gap:72px}}
 
 /* ── NGUYÊN TẮC — statement full-bleed (điểm nhấn của trang) ── */
@@ -37,14 +36,14 @@
 .ph-dim{color:rgba(255,255,255,.62)}
 .ph-sub{max-width:660px;margin:24px auto 0;color:rgba(255,255,255,.78);font-size:var(--fs-base);line-height:1.85}
 .ph-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:34px}
-.ph-chip{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:9px 18px;border-radius:24px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.07);font-size:var(--fs-base);font-weight:var(--fw-semibold);color:#fff}
+.ph-chip{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:9px 18px;border-radius:0;background:rgba(255,255,255,.1);font-size:var(--fs-base);font-weight:var(--fw-semibold);color:#fff}
 .ph-chip b{font-family:var(--font-numeral);font-weight:var(--fw-semibold);color:var(--yellow)}
 
 /* ── SỨ MỆNH — deck 3 thẻ ảnh tối (kiểu statement cards orfeo) ── */
 /* reveal đặt ở wrapper (không đặt trên thẻ): .reveal.active{transform:none} sẽ đè mất tilt/stagger */
 .m-deck{display:grid;grid-template-columns:1fr;gap:22px;max-width:1180px;margin:0 auto}
 .m-deck>.reveal{display:flex}
-.m-card{position:relative;flex:1;border-radius:22px;overflow:hidden;min-height:400px;display:flex;align-items:flex-end;color:#fff;box-shadow:0 18px 50px rgba(15,34,68,.22);transition:transform .45s var(--ease,ease),box-shadow .45s var(--ease,ease)}
+.m-card{position:relative;flex:1;border-radius:0;overflow:hidden;min-height:400px;display:flex;align-items:flex-end;color:#fff;box-shadow:0 18px 50px rgba(15,34,68,.22);transition:transform .45s var(--ease,ease),box-shadow .45s var(--ease,ease)}
 .m-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .m-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,34,68,.25) 0%,rgba(15,34,68,.62) 42%,rgba(11,23,46,.97) 100%)}
 .m-arrow{position:absolute;top:16px;right:16px;z-index:2;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;font-size:var(--fs-md);color:#fff;backdrop-filter:blur(4px)}
@@ -65,7 +64,7 @@
 .roadmap{display:grid;grid-template-columns:1fr;gap:24px}
 /* .rm-wrap: JS scrub theo cuộn chuột đặt transform ở wrapper — tách khỏi transform tĩnh (stagger) và :hover trên .rm-card */
 .roadmap>.rm-wrap{display:flex;will-change:transform}
-.rm-card{position:relative;flex:1;border-radius:26px;padding:34px 28px 88px;transition:transform .4s var(--ease,ease),box-shadow .4s var(--ease,ease)}
+.rm-card{position:relative;flex:1;border-radius:0;padding:34px 28px 88px;transition:transform .4s var(--ease,ease),box-shadow .4s var(--ease,ease)}
 .rm-card--1{background:#EAF3FB}
 .rm-card--2{background:#FFF3D6}
 .rm-card--3{background:#E8ECFA}
@@ -74,7 +73,7 @@
 .rm-card h3{font-family:var(--font-heading);font-size:var(--fs-md);font-weight:var(--fw-semibold);margin-bottom:10px}
 .rm-card p{font-size:var(--fs-base);color:var(--text);line-height:1.75}
 .rm-arrow{position:absolute;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;background:rgba(22,48,92,.08);display:flex;align-items:center;justify-content:center;font-size:var(--fs-md);color:var(--navy)}
-.rm-now-badge{position:absolute;top:20px;right:20px;background:linear-gradient(135deg,var(--yellow-2,#FFC107),var(--yellow,#F4B41A));color:var(--navy);font-size:var(--fs-caption,12px);font-weight:var(--fw-semibold);letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:14px}
+.rm-now-badge{position:absolute;top:20px;right:20px;background:linear-gradient(135deg,var(--yellow-2,#FFC107),var(--yellow,#F4B41A));color:var(--navy);font-size:var(--fs-caption,12px);font-weight:var(--fw-semibold);letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:0}
 @media(min-width:769px){
   .roadmap{grid-template-columns:repeat(3,1fr);gap:28px;padding-bottom:72px}
   .roadmap>*:nth-child(2) .rm-card{transform:translateY(32px)}

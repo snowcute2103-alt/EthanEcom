@@ -14,46 +14,46 @@
 
 /* ── INFO CARDS ── */
 .info-cards{display:flex;flex-direction:column;gap:16px;margin-bottom:40px}
-.info-card{display:flex;align-items:center;gap:16px;background:#fff;border-radius:14px;padding:20px 22px;border:1.5px solid #eaeff5;transition:all .3s}
+.info-card{display:flex;align-items:center;gap:16px;background:#fff;border-radius:0;padding:20px 22px;border:1.5px solid #eaeff5;transition:all .3s}
 .info-card:hover{border-color:var(--blue);box-shadow:0 8px 28px rgba(29,50,81,.1);transform:translateX(4px)}
-.info-ico{width:50px;height:50px;border-radius:12px;background:linear-gradient(135deg,var(--blue),#2a4a76);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;box-shadow:0 6px 18px rgba(29,50,81,.25)}
-.info-card h4{font-family:var(--font-lead);font-size:16px;font-weight:600;color:var(--text);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.info-card p{font-family:var(--font-lead);font-size:16px;font-weight:600;color:var(--navy)}
+.info-ico{width:50px;height:50px;border-radius:0;background:linear-gradient(135deg,var(--blue),#2a4a76);display:flex;align-items:center;justify-content:center;font-size:var(--fs-h4);flex-shrink:0;box-shadow:0 6px 18px rgba(29,50,81,.25)}
+.info-card h4{font-family:var(--font-lead);font-size:var(--fs-base);font-weight:var(--fw-semibold);color:var(--text);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.info-card p{font-family:var(--font-lead);font-size:var(--fs-base);font-weight:var(--fw-semibold);color:var(--navy)}
 
 /* ── SOCIAL LINKS ── */
 .social-row{display:flex;gap:10px;flex-wrap:wrap}
-.soc-btn{display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:8px;border:1.5px solid #dde3ee;font-size:16px;font-weight:600;color:var(--text);transition:all .25s;background:#fff}
+.soc-btn{display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:0;border:1.5px solid #dde3ee;font-size:var(--fs-base);font-weight:var(--fw-semibold);color:var(--text);transition:all .25s;background:#fff}
 .soc-btn:hover{border-color:var(--blue);color:var(--blue);background:#f0f4ff}
 
 /* ── FORM ── */
-.contact-form-wrap{background:#fff;border-radius:20px;padding:44px;box-shadow:0 4px 32px rgba(0,0,0,.06);border:1.5px solid #eaeff5}
-.contact-form-wrap h3{font-family:var(--font-lead);font-size:22px;font-weight:600;margin-bottom:6px}
-.contact-form-wrap .sub{font-size:16px;color:var(--text);margin-bottom:28px}
+.contact-form-wrap{background:#fff;border-radius:0;padding:44px;box-shadow:0 4px 32px rgba(0,0,0,.06);border:1.5px solid #eaeff5}
+.contact-form-wrap h3{font-family:var(--font-lead);font-size:var(--fs-h4);font-weight:var(--fw-semibold);margin-bottom:6px}
+.contact-form-wrap .sub{font-size:var(--fs-base);color:var(--text);margin-bottom:28px}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .form-submit{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.form-note{font-size:16px;color:var(--text)}
+.form-note{font-size:var(--fs-base);color:var(--text)}
 
 /* ── SUCCESS MESSAGE ── */
-.form-success{display:none;text-align:center;padding:40px;background:#f0fdf4;border-radius:12px;border:1.5px solid #bbf7d0}
-.form-success h4{font-family:var(--font-lead);font-size:18px;font-weight:600;color:#15803d;margin-top:12px}
-.form-success p{font-size:16px;color:#166534;margin-top:8px}
+.form-success{display:none;text-align:center;padding:40px;background:#f0fdf4;border-radius:0;border:1.5px solid #bbf7d0}
+.form-success h4{font-family:var(--font-lead);font-size:var(--fs-md);font-weight:var(--fw-semibold);color:#15803d;margin-top:12px}
+.form-success p{font-size:var(--fs-base);color:#166534;margin-top:8px}
 
 /* ── MAP PLACEHOLDER ── */
-.map-ph{height:300px;background:linear-gradient(135deg,#f0f4ff 0%,#e0e7ff 100%);border-radius:16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;border:1.5px solid #dde3ee;margin-top:40px}
-.map-ph h4{font-family:var(--font-lead);font-size:16px;font-weight:600;color:var(--blue)}
-.map-ph p{font-size:16px;color:var(--text)}
-.map-embed{margin-top:40px;border-radius:16px;overflow:hidden;border:1.5px solid #dde3ee;line-height:0;transition:border-color .3s,box-shadow .3s}
+.map-ph{height:300px;background:linear-gradient(135deg,#f0f4ff 0%,#e0e7ff 100%);border-radius:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;border:1.5px solid #dde3ee;margin-top:40px}
+.map-ph h4{font-family:var(--font-lead);font-size:var(--fs-base);font-weight:var(--fw-semibold);color:var(--blue)}
+.map-ph p{font-size:var(--fs-base);color:var(--text)}
+.map-embed{margin-top:40px;border-radius:0;overflow:hidden;border:1.5px solid #dde3ee;line-height:0;transition:border-color .3s,box-shadow .3s}
 .map-embed:hover{border-color:var(--blue);box-shadow:0 12px 36px rgba(27,79,216,.12)}
 .map-embed iframe{filter:grayscale(.15)}
 
 /* ── FAQ ── */
 .faq-list{display:flex;flex-direction:column;gap:0}
 .faq-item{border-bottom:1px solid #eef1f5}
-.faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;font-family:var(--font-lead);font-size:16px;font-weight:600;gap:16px;transition:color .2s}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;font-family:var(--font-lead);font-size:var(--fs-base);font-weight:var(--fw-semibold);gap:16px;transition:color .2s}
 .faq-q:hover{color:var(--blue)}
-.faq-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid #dde3ee;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;transition:all .3s;color:var(--text)}
+.faq-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid #dde3ee;display:flex;align-items:center;justify-content:center;font-size:var(--fs-base);flex-shrink:0;transition:all .3s;color:var(--text)}
 .faq-item.open .faq-icon{background:var(--blue);border-color:var(--blue);color:#fff;transform:rotate(45deg)}
-.faq-a{display:none;padding-bottom:20px;font-size:16px;color:var(--text);line-height:1.75}
+.faq-a{display:none;padding-bottom:20px;font-size:var(--fs-base);color:var(--text);line-height:1.75}
 .faq-item.open .faq-a{display:block}
 
 /* ── RESPONSIVE ── */
@@ -72,7 +72,7 @@
 /* Form input — glow focus ring */
 .fg input, .fg textarea, .fg select{
   display:block;width:100%;padding:12px 16px;border:1.5px solid #dde3ee;
-  border-radius:10px;font-size:16px;font-family:'Inter',sans-serif;
+  border-radius:0;font-size:var(--fs-base);font-family:var(--font-text);
   transition:border-color .25s,box-shadow .25s;outline:none;
   background:#fafbfd;color:#1a1a2e;margin-top:6px;
 }
@@ -81,7 +81,7 @@
   box-shadow:0 0 0 3.5px rgba(29,50,81,.1);
   background:#fff;
 }
-.fg label{font-family:var(--font-lead);font-size:16px;font-weight:600;color:var(--navy);display:block}
+.fg label{font-family:var(--font-lead);font-size:var(--fs-base);font-weight:var(--fw-semibold);color:var(--navy);display:block}
 .fg{margin-bottom:16px}
 
 /* Form input — shake on invalid */
@@ -92,7 +92,7 @@
   animation:form-shake .35s cubic-bezier(.4,0,.2,1);
 }
 /* Accessible inline error text (announced to screen readers via role=alert) */
-.fg-err{display:block;color:#dc2626;font-size:13px;font-weight:600;margin-top:5px;min-height:0}
+.fg-err{display:block;color:#dc2626;font-size:var(--fs-caption);font-weight:var(--fw-semibold);margin-top:5px;min-height:0}
 .fg-err:empty{display:none}
 
 /* Info card — hover slide right */
@@ -134,13 +134,13 @@
 }
 .faq__grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:320px 1fr;gap:64px;align-items:start}
 .faq__head{position:sticky;top:96px}
-.faq__eyebrow{font-family:var(--font-display);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--c-accent);display:block;margin-bottom:14px}
-.faq__title{font-family:var(--font-serif);font-style:italic;font-weight:400;font-size:clamp(64px,8vw,108px);line-height:.95;letter-spacing:-.01em;color:var(--c-ink)}
-.faq__sub{font-family:var(--font-alt);font-size:15px;line-height:1.7;color:var(--c-body);margin-top:22px;max-width:280px}
+.faq__eyebrow{font-family:var(--font-display);font-size:var(--fs-caption);font-weight:var(--fw-semibold);letter-spacing:.22em;text-transform:uppercase;color:var(--c-accent);display:block;margin-bottom:14px}
+.faq__title{font-family:var(--font-serif);font-style:italic;font-weight:var(--fw-regular);font-size:var(--fs-hero);line-height:.95;letter-spacing:-.01em;color:var(--c-ink)}
+.faq__sub{font-family:var(--font-alt);font-size:var(--fs-small);line-height:1.7;color:var(--c-body);margin-top:22px;max-width:280px}
 .faq__list{border-top:1px solid var(--c-line)}
 .faq .faq-item{border-bottom:1px solid var(--c-line);border-left:0;padding-left:0;margin-left:0}
 .faq-item__btn{width:100%;background:none;border:0;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:24px;text-align:left;padding:28px 0}
-.faq-item__q{font-family:var(--font-lead);font-weight:500;font-size:21px;line-height:1.4;color:var(--c-ink);transition:color .25s ease}
+.faq-item__q{font-family:var(--font-lead);font-weight:var(--fw-medium);font-size:var(--fs-h4);line-height:1.4;color:var(--c-ink);transition:color .25s ease}
 .faq-item__btn:hover .faq-item__q{color:var(--c-accent)}
 .faq-item__icon{flex:none;width:20px;height:20px;position:relative}
 .faq-item__icon::before,.faq-item__icon::after{content:"";position:absolute;top:50%;left:50%;background:currentColor;color:var(--c-ink);transition:transform .35s cubic-bezier(.4,0,.2,1)}
@@ -149,29 +149,101 @@
 .faq-item.is-open .faq-item__icon::before{transform:translate(-50%,-50%) rotate(45deg)}
 .faq-item.is-open .faq-item__icon::after{transform:translate(-50%,-50%) rotate(-45deg)}
 .faq-item__panel{overflow:hidden;max-height:0;transition:max-height .45s cubic-bezier(.4,0,.2,1)}
-.faq-item__a{font-family:var(--font-alt);font-size:16px;font-weight:400;line-height:1.75;color:var(--c-body);padding:0 48px 30px 0;max-width:62ch}
-.faq-item__btn:focus-visible{outline:2px solid var(--c-accent);outline-offset:4px;border-radius:4px}
+.faq-item__a{font-family:var(--font-alt);font-size:var(--fs-base);font-weight:var(--fw-regular);line-height:1.75;color:var(--c-body);padding:0 48px 30px 0;max-width:62ch}
+.faq-item__btn:focus-visible{outline:2px solid var(--c-accent);outline-offset:4px;border-radius:0}
 @media(max-width:900px){
   .faq{padding:72px 20px}
   .faq__grid{grid-template-columns:1fr;gap:40px}
   .faq__head{position:static}
-  .faq-item__q{font-size:18px}
+  .faq-item__q{font-size:var(--fs-md)}
 }
 @media(prefers-reduced-motion:reduce){
   .faq-item__panel,.faq-item__icon::before,.faq-item__icon::after{transition:none}
 }
+
+/* ═══ LAMP HERO — đèn rọi từ trần (port từ shadcn lamp hero) ═══ */
+.lamp-hero{
+  --lamp-w: 36rem;        /* bề rộng line + cone khi mở hết */
+  --lamp-core-w: 20rem;
+  --lamp-cone-h: 19rem;
+  --lamp-top: 0rem;       /* đèn nằm sát mép trên cùng của trang */
+  --lamp-c: 214,233,255;  /* màu ánh sáng: trắng ngả xanh */
+  display:flex; align-items:center;
+  min-height:min(88vh, 860px);
+  padding:150px 0 160px;
+}
+.lamp-hero::before{ content:none }   /* bỏ radial cyan mặc định của .page-hero */
+.lamp-hero > canvas{ display:none }  /* bỏ particles — giữ nền đen sạch cho ánh đèn */
+.lamp-hero .page-hero-inner{ display:flex; flex-direction:column; align-items:center; text-align:center; width:100% }
+.lamp-hero .page-hero-sub{ max-width:640px }
+
+.lamp{ position:absolute; top:0; left:50%; transform:translateX(-50%); z-index:0;
+  width:100vw; height:calc(var(--lamp-top) + 26rem); pointer-events:none }
+.lamp__cone{ position:absolute; top:var(--lamp-top); width:var(--lamp-w); height:var(--lamp-cone-h); z-index:1;
+  -webkit-mask-image:linear-gradient(to top, transparent, #fff 48%);
+          mask-image:linear-gradient(to top, transparent, #fff 48%) }
+.lamp__cone--l{ right:50%; background:conic-gradient(from 180deg at top right, rgba(var(--lamp-c),.4) 0deg, transparent 58deg) }
+.lamp__cone--r{ left:50%;  background:conic-gradient(from 122deg at top left, transparent 0deg, rgba(var(--lamp-c),.4) 58deg, transparent 58.5deg) }
+/* Vòm sáng: vòng cung nhạt dần theo khoảng cách (radial ellipse, không cắt ngang) */
+.lamp__dome{ position:absolute; top:var(--lamp-top); left:50%; transform:translateX(-50%); z-index:2;
+  width:68rem; max-width:180vw; height:24rem;
+  background:radial-gradient(ellipse 50% 100% at 50% 0%,
+    rgba(var(--lamp-c),.42) 0%, rgba(var(--lamp-c),.14) 45%, transparent 72%) }
+.lamp__glow{ position:absolute; top:calc(var(--lamp-top) - 2.5rem); left:50%; transform:translateX(-50%); z-index:3;
+  width:34rem; height:10rem; border-radius:50%; background:rgba(var(--lamp-c),.42); filter:blur(56px) }
+.lamp__core{ position:absolute; top:calc(var(--lamp-top) - 1rem); left:50%; transform:translateX(-50%); z-index:3;
+  width:var(--lamp-core-w); height:9rem; border-radius:50%; background:rgba(var(--lamp-c),.6); filter:blur(34px) }
+.lamp__line{ position:absolute; top:var(--lamp-top); left:50%; transform:translateX(-50%); z-index:4;
+  width:var(--lamp-w); height:2px; border-radius:0; background:rgba(var(--lamp-c),.95);
+  box-shadow:0 0 26px 4px rgba(var(--lamp-c),.6) }
+
+/* Entrance: đèn mở rộng dần từ 50% bề rộng (tương đương framer-motion whileInView bản gốc) */
+@keyframes lampWiden{ from{ width:calc(var(--lamp-w)/2); opacity:.5 } }
+@keyframes lampCore{  from{ width:calc(var(--lamp-core-w)/2) } }
+@keyframes lampFade{  from{ opacity:0 } }
+.lamp__cone,.lamp__line{ animation:lampWiden .8s ease-in-out .3s both }
+.lamp__core{ animation:lampCore .8s ease-in-out .3s both }
+.lamp__dome{ animation:lampFade .8s ease-in-out .3s both }
+
+/* Actions */
+.lamp-actions{ display:flex; flex-wrap:wrap; justify-content:center; gap:14px; margin-top:36px }
+.lamp-btn{ display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:12px 28px;
+  border-radius:0; font-family:var(--font-alt); font-size:var(--fs-base); font-weight:var(--fw-semibold);
+  transition:background .25s, border-color .25s, transform .25s }
+.lamp-btn--ghost{ color:#fff; border:1px solid rgba(255,255,255,.22); background:rgba(255,255,255,.03) }
+.lamp-btn--ghost:hover{ background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.4) }
+.lamp-btn--solid{ background:#fff; color:#0a0a0a }
+.lamp-btn--solid:hover{ background:#dbe9ff; transform:translateY(-2px) }
+.lamp-btn:focus-visible{ outline:2px solid var(--blue-br,#2B8FFF); outline-offset:3px }
+
+@media(max-width:640px){
+  .lamp-hero{ --lamp-w:20rem; --lamp-core-w:11rem; --lamp-cone-h:13rem; --lamp-top:4.5rem;
+    min-height:76vh; padding:124px 0 116px }
+  .lamp__glow{ width:20rem; height:8rem; filter:blur(44px) }
+  .lamp__dome{ width:38rem; height:15rem }
+  .lamp-actions{ width:100% }
+  .lamp-btn{ flex:1 1 auto }
+}
+@media(prefers-reduced-motion:reduce){
+  .lamp__cone,.lamp__line,.lamp__core,.lamp__dome{ animation:none }
+}
 </style>
 </head>
-<body>
+<body class="typo-eco">
 
 <!-- HEADER (injected by shared.js) -->
 <div id="site-header"></div>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="page-hero-dots"></div>
-  <div class="page-hero-orb page-hero-orb-1"></div>
-  <div class="page-hero-orb page-hero-orb-2"></div>
+<!-- PAGE HERO — hiệu ứng đèn rọi (lamp) -->
+<section class="page-hero lamp-hero">
+  <div class="lamp" aria-hidden="true">
+    <div class="lamp__cone lamp__cone--l"></div>
+    <div class="lamp__cone lamp__cone--r"></div>
+    <div class="lamp__dome"></div>
+    <div class="lamp__glow"></div>
+    <div class="lamp__core"></div>
+    <div class="lamp__line"></div>
+  </div>
   <div class="container page-hero-inner">
     <nav class="breadcrumb">
       <a href="index.html">Trang chủ</a>
@@ -181,6 +253,10 @@
     <div class="page-hero-badge">★ Phản hồi trong vòng 24 giờ</div>
     <h1 class="page-hero-title">Liên hệ với <em>chúng tôi</em></h1>
     <p class="page-hero-sub">Dù bạn muốn bắt đầu một dự án mới, tư vấn về dịch vụ hay chỉ đơn giản là muốn biết thêm — đội ngũ Ethan Ecom luôn sẵn sàng lắng nghe.</p>
+    <div class="lamp-actions">
+      <a class="lamp-btn lamp-btn--ghost" href="tel:+84967473979">Gọi +84 967 473 979</a>
+      <a class="lamp-btn lamp-btn--solid" href="#contactForm">Gửi tin nhắn</a>
+    </div>
   </div>
 </section>
 
@@ -196,7 +272,7 @@
         <div>
           <h2 class="st reveal">Hãy bắt đầu một<br>cuộc trò chuyện</h2>
           <div class="divider reveal"></div>
-          <p class="reveal" style="margin:20px 0 32px;color:var(--text);line-height:1.8;font-size:16px">Đội ngũ Ethan Ecom sẽ phản hồi trong vòng 24 giờ làm việc. Chúng tôi nói tiếng Việt, tiếng Anh và sẵn sàng hỗ trợ bạn trên mọi múi giờ.</p>
+          <p class="reveal" style="margin:20px 0 32px;color:var(--text);line-height:1.8;font-size:var(--fs-base)">Đội ngũ Ethan Ecom sẽ phản hồi trong vòng 24 giờ làm việc. Chúng tôi nói tiếng Việt, tiếng Anh và sẵn sàng hỗ trợ bạn trên mọi múi giờ.</p>
 
           <div class="info-cards">
             <div class="info-card reveal d1">
@@ -237,7 +313,7 @@
           </div>
 
           <div class="reveal">
-            <p style="font-size:16px;font-weight:600;color:var(--text);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px">Theo dõi chúng tôi</p>
+            <p style="font-size:var(--fs-base);font-weight:var(--fw-semibold);color:var(--text);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px">Theo dõi chúng tôi</p>
             <div class="social-row">
               <a href="#" class="soc-btn">Dr Dribbble</a>
               <a href="#" class="soc-btn">𝕏 Twitter</a>
@@ -304,7 +380,7 @@
             </form>
 
             <div class="form-success" id="formSuccess">
-              <div style="font-size:34px">✅</div>
+              <div style="font-size:var(--fs-h2)">✅</div>
               <h4>Gửi thành công!</h4>
               <p>Cảm ơn bạn đã liên hệ. Chúng tôi sẽ phản hồi trong vòng 24 giờ.</p>
             </div>
@@ -321,57 +397,57 @@
       <header class="faq__head">
         <span class="faq__eyebrow">Câu hỏi thường gặp</span>
         <h2 class="faq__title">FAQ</h2>
-        <p class="faq__sub">Những câu hỏi phổ biến nhất từ khách hàng của Ethan Ecom.</p>
+        <p class="faq__sub">Những câu hỏi phổ biến nhất từ đối tác và ứng viên của Ethan Ecom.</p>
       </header>
 
       <div class="faq__list reveal">
         <div class="faq-item is-open">
           <button class="faq-item__btn" aria-expanded="true">
-            <span class="faq-item__q">Ethan Ecom có phục vụ khách hàng quốc tế không?</span>
+            <span class="faq-item__q">Ethan Ecom hoạt động trong lĩnh vực gì và hướng tới thị trường nào?</span>
             <span class="faq-item__icon" aria-hidden="true"></span>
           </button>
           <div class="faq-item__panel">
-            <p class="faq-item__a">Có. Ethan Ecom làm việc với khách hàng cả trong nước và quốc tế. Chúng tôi trao đổi qua email, Zalo hoặc video call và linh hoạt múi giờ để đảm bảo tiến độ dự án không bị gián đoạn.</p>
+            <p class="faq-item__a">Ethan Ecom chuyên về Thương mại điện tử xuyên biên giới (Cross-border E-commerce) với mô hình Print On Demand (POD) và tự sản xuất (in ấn, thêu, nhựa 3D). Thị trường chủ lực của chúng tôi là Mỹ, phân phối sản phẩm qua các nền tảng lớn như TikTok Shop, Etsy và Amazon.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-item__btn" aria-expanded="false">
-            <span class="faq-item__q">Thời gian phản hồi và bắt đầu dự án là bao lâu?</span>
+            <span class="faq-item__q">Thời gian xử lý đơn hàng (Lead-time) tại xưởng của Ethan là bao lâu?</span>
             <span class="faq-item__icon" aria-hidden="true"></span>
           </button>
           <div class="faq-item__panel">
-            <p class="faq-item__a">Ethan Ecom thường phản hồi trong vòng 24 giờ làm việc. Sau khi thống nhất phạm vi công việc và báo giá, dự án có thể khởi động trong 2–5 ngày tùy độ phức tạp.</p>
+            <p class="faq-item__a">Lợi thế cạnh tranh lớn nhất của Ethan là sở hữu năng lực tự sản xuất ngay tại Việt Nam. Trung bình, thời gian từ lúc nhận đơn, thiết kế, sản xuất đến khi đóng gói hoàn thiện chỉ mất từ 1 đến 2 ngày, đảm bảo tốc độ giao hàng nhanh chóng.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-item__btn" aria-expanded="false">
-            <span class="faq-item__q">Ethan Ecom có báo giá trước không?</span>
+            <span class="faq-item__q">Ethan Ecom có nhận gia công (dịch vụ B2B) cho các đối tác khác không?</span>
             <span class="faq-item__icon" aria-hidden="true"></span>
           </button>
           <div class="faq-item__panel">
-            <p class="faq-item__a">Có. Mọi dự án đều được báo giá minh bạch trước khi bắt đầu, dựa trên yêu cầu cụ thể của bạn. Không phát sinh chi phí ẩn trong quá trình thực hiện.</p>
+            <p class="faq-item__a">Hiện tại, xưởng sản xuất và hệ thống vận hành tập trung phục vụ tối đa cho các đơn hàng nội bộ của Ethan trên các nền tảng TMĐT. Kế hoạch cung cấp dịch vụ B2B cho các đối tác bên ngoài đã nằm trong định hướng và sẽ được triển khai trong tương lai.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-item__btn" aria-expanded="false">
-            <span class="faq-item__q">Tôi cần chuẩn bị gì trước khi liên hệ?</span>
+            <span class="faq-item__q">Môi trường làm việc và tiêu chí tuyển dụng tại Ethan có gì đặc biệt?</span>
             <span class="faq-item__icon" aria-hidden="true"></span>
           </button>
           <div class="faq-item__panel">
-            <p class="faq-item__a">Bạn chỉ cần mô tả ngắn gọn mục tiêu, sản phẩm/dịch vụ và ngân sách dự kiến (nếu có). Nếu đã có website, tài liệu thương hiệu hoặc ví dụ tham khảo, hãy gửi kèm để Ethan Ecom tư vấn chính xác hơn.</p>
+            <p class="faq-item__a">Chúng tôi tìm kiếm những cộng sự có tính chủ động cao, không ngại thay đổi và có tư duy phát triển dài hạn. Tại Ethan, nhân sự được khuyến khích sử dụng AI để tối ưu hiệu suất, làm việc với tinh thần đồng đội (không đổ lỗi, không bè phái) và được đánh giá khách quan dựa trên lợi nhuận thực tế.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-item__btn" aria-expanded="false">
-            <span class="faq-item__q">Ethan Ecom có hỗ trợ sau khi hoàn thành dự án không?</span>
+            <span class="faq-item__q">Tôi ở Đồng Nai, công ty có lộ trình phát triển lâu dài tại địa phương không?</span>
             <span class="faq-item__icon" aria-hidden="true"></span>
           </button>
           <div class="faq-item__panel">
-            <p class="faq-item__a">Có. Sau khi bàn giao, Ethan Ecom hỗ trợ kỹ thuật, chỉnh sửa nhỏ và hướng dẫn vận hành trong giai đoạn bảo hành. Bạn cũng có thể chọn gói duy trì dài hạn nếu cần đồng hành lâu dài.</p>
+            <p class="faq-item__a">Chắc chắn. Sứ mệnh của chúng tôi là xây dựng một doanh nghiệp thương mại điện tử vươn tầm quốc tế ngay tại quê hương Đồng Nai. Ethan mang đến cơ hội để các bạn trẻ tài năng phát triển sự nghiệp đỉnh cao, thăng tiến rõ ràng mà không cần phải sống xa nhà.</p>
           </div>
         </div>
 
@@ -525,7 +601,7 @@
     'animation:con-online 2.5s ease infinite',
   ].join(';');
   sendBtn.parentNode.insertBefore(
-    Object.assign(document.createElement('span'),{ style:'display:flex;align-items:center;gap:8px;font-size:16px;color:#10b981;font-weight:600;', innerHTML:'<span style="width:8px;height:8px;border-radius:50%;background:#10b981;display:inline-block;box-shadow:0 0 0 0 rgba(16,185,129,.4);animation:con-online 2.2s ease infinite"></span> Online — phản hồi trong 24h' }),
+    Object.assign(document.createElement('span'),{ style:'display:flex;align-items:center;gap:8px;font-size:var(--fs-base);color:#10b981;font-weight:var(--fw-semibold);', innerHTML:'<span style="width:8px;height:8px;border-radius:50%;background:#10b981;display:inline-block;box-shadow:0 0 0 0 rgba(16,185,129,.4);animation:con-online 2.2s ease infinite"></span> Online — phản hồi trong 24h' }),
     sendBtn.nextSibling
   );
   var style = document.createElement('style');
@@ -533,5 +609,9 @@
   document.head.appendChild(style);
 })();
 </script>
+
+<!-- Contact popup + dock 2 nút gim (Ứng tuyển ngay / Liên hệ ngay) -->
+<div id="contact-popup-root"></div>
+<script src="assets/js/contact-popup.js?v=20260718a"></script>
 </body>
 </html>
