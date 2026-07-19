@@ -62,7 +62,8 @@
 
 /* ── LỘ TRÌNH — 3 thẻ số pastel bo lớn, xếp so le (kiểu how-it-works orfeo) ── */
 .roadmap{display:grid;grid-template-columns:1fr;gap:24px}
-.roadmap>.reveal{display:flex}
+/* .rm-wrap: JS scrub theo cuộn chuột đặt transform ở wrapper — tách khỏi transform tĩnh (stagger) và :hover trên .rm-card */
+.roadmap>.rm-wrap{display:flex;will-change:transform}
 .rm-card{position:relative;flex:1;border-radius:26px;padding:34px 28px 88px;transition:transform .4s var(--ease,ease),box-shadow .4s var(--ease,ease)}
 .rm-card--1{background:#EAF3FB}
 .rm-card--2{background:#FFF3D6}
@@ -96,7 +97,7 @@
 /* KHÔNG dùng vector-effect:non-scaling-stroke — Chromium sẽ đo dash theo px màn hình,
    phá chuẩn hoá pathLength="1" → mất 21–47% đoạn cuối đường sau animation */
 .j26-path{fill:none;stroke:#7fa3ec;stroke-width:1.2;opacity:.7}
-.j26-logo{position:absolute;top:5%;left:6.5%;z-index:4;width:clamp(90px,min(12vw,22vh),190px)}
+.j26-logo{position:absolute;top:5%;left:6.5%;z-index:4;width:clamp(80px,min(10.5vw,19vh),165px)}
 .j26-logo img{width:100%;height:auto;display:block;filter:drop-shadow(0 6px 18px rgba(0,0,0,.4))}
 .j26-year{position:absolute;right:5%;bottom:2.5%;z-index:2;font-family:'Montserrat',sans-serif;font-weight:500;letter-spacing:-.03em;line-height:1;color:#f6f8fd;font-size:clamp(72px,min(13vw,26vh),230px);text-shadow:0 4px 30px rgba(10,18,50,.35)}
 .j26-item{position:absolute;z-index:3;display:flex;flex-direction:column;align-items:flex-start;transform:translate(var(--tx,0),0)}
@@ -114,7 +115,7 @@
 /* vị trí 12 khối + 12 chấm (desktop) */
 .j26-p1{top:6%;left:28%}      .j26-d1{top:11%;left:38%}
 .j26-p2{top:5.5%;left:57.5%}  .j26-d2{top:6%;left:55.5%}
-.j26-p3{top:19%;left:17%}     .j26-d3{top:16%;left:26%}
+.j26-p3{top:20%;left:18.5%}   .j26-d3{top:16%;left:26%}
 .j26-p4{top:12%;left:47%}     .j26-d4{top:26.5%;left:47.5%}
 .j26-p5{top:19%;left:66%}     .j26-d5{top:24%;left:73.5%}
 .j26-p6{top:30%;left:7%}      .j26-d6{top:33.5%;left:5%}
@@ -294,7 +295,7 @@ body.will-animate .j26-board .j26-year.lit{opacity:1}
         <p class="ss">Ethan phát triển thương hiệu theo từng bước chắc chắn — mỗi giai đoạn là một nền móng cho giai đoạn kế tiếp.</p>
       </div>
       <div class="roadmap">
-        <div class="reveal rs d1">
+        <div class="rm-wrap">
         <div class="rm-card rm-card--1">
           <span class="rm-now-badge">Hiện tại</span>
           <span class="rm-num">01.</span>
@@ -304,7 +305,7 @@ body.will-animate .j26-board .j26-year.lit{opacity:1}
           <span class="rm-arrow" aria-hidden="true">↗</span>
         </div>
         </div>
-        <div class="reveal rs d2">
+        <div class="rm-wrap">
         <div class="rm-card rm-card--2">
           <span class="rm-num">02.</span>
           <span class="rm-tag">Giai đoạn 2</span>
@@ -313,7 +314,7 @@ body.will-animate .j26-board .j26-year.lit{opacity:1}
           <span class="rm-arrow" aria-hidden="true">↗</span>
         </div>
         </div>
-        <div class="reveal rs d3">
+        <div class="rm-wrap">
         <div class="rm-card rm-card--3">
           <span class="rm-num">03.</span>
           <span class="rm-tag">Giai đoạn 3</span>
@@ -568,6 +569,40 @@ body.will-animate .j26-board .j26-year.lit{opacity:1}
     });
   }, { threshold: [0, .25, .5] });
   obs.observe(board);
+})();
+</script>
+
+<!-- Lộ trình: 3 thẻ trượt lên theo tiến độ cuộn, mỗi thẻ một tốc độ (scrub 2 chiều kiểu orfeo) -->
+<script>
+(function () {
+  var wraps = [].slice.call(document.querySelectorAll('.roadmap .rm-wrap'));
+  if (!wraps.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; // giữ tĩnh
+
+  var F_DESK = [40, 110, 180]; // biên độ trượt từng thẻ (desktop: thẻ sau đi quãng dài hơn)
+  var F_MOB  = 70;             // mobile xếp dọc: mỗi thẻ tự trượt khi vào màn
+  var ticking = false;
+
+  function ease(t) { return 1 - Math.pow(1 - t, 3); }
+
+  function update() {
+    ticking = false;
+    var vh = window.innerHeight, mob = window.innerWidth < 769;
+    wraps.forEach(function (w, i) {
+      // trừ translate hiện tại để lấy vị trí layout gốc — tránh vòng lặp đo trên chính transform
+      var top = w.getBoundingClientRect().top - (w._ty || 0);
+      var p = Math.max(0, Math.min(1, (vh - top) / (vh * .75)));
+      var ty = (1 - ease(p)) * (mob ? F_MOB : F_DESK[i]);
+      w._ty = ty;
+      w.style.transform = 'translateY(' + ty.toFixed(1) + 'px)';
+      w.style.opacity = Math.min(1, p * 1.6);
+    });
+  }
+
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
 })();
 </script>
 
