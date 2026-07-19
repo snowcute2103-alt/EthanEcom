@@ -85,21 +85,20 @@
 
 /* ── HÀNH TRÌNH 2026 (bìa lịch cosmos, full màn hình) ── */
 .j26-board{position:relative;width:100%;height:100vh;height:100svh;min-height:640px;overflow:hidden;
-  background:radial-gradient(120% 95% at 50% 42%,#3b5bc2 0%,#2c418f 45%,#1d2559 100%);
+  /* nền theo ảnh lịch gốc: navy sâu + quầng sáng chân trời dưới đáy */
+  background:
+    radial-gradient(58% 42% at 50% 104%,rgba(110,160,255,.5) 0%,rgba(70,110,220,.2) 48%,transparent 72%),
+    radial-gradient(130% 105% at 50% 36%,#31408f 0%,#27307a 48%,#161c52 100%);
   font-family:var(--font-numeral)}
 .j26-board::before{content:'';position:absolute;inset:0;pointer-events:none;
-  background:
-    repeating-linear-gradient(113deg,transparent 0 88px,rgba(255,255,255,.06) 88px 89.5px,transparent 89.5px 187px),
-    repeating-linear-gradient(107deg,transparent 0 141px,rgba(255,255,255,.045) 141px 142px,transparent 142px 305px);
-  -webkit-mask-image:radial-gradient(130% 110% at 50% 45%,#000 30%,transparent 78%);
-          mask-image:radial-gradient(130% 110% at 50% 45%,#000 30%,transparent 78%)}
+  background:linear-gradient(180deg,rgba(10,14,40,.28) 0%,transparent 30%,transparent 68%,rgba(120,170,255,.10) 100%)}
 .j26-svg{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
 /* KHÔNG dùng vector-effect:non-scaling-stroke — Chromium sẽ đo dash theo px màn hình,
    phá chuẩn hoá pathLength="1" → mất 21–47% đoạn cuối đường sau animation */
-.j26-path{fill:none;stroke:#7fa3ec;stroke-width:1.2;opacity:.7}
-.j26-logo{position:absolute;top:5%;left:6.5%;z-index:4;width:clamp(80px,min(10.5vw,19vh),165px)}
+.j26-path{fill:none;stroke:#9cc3ff;stroke-width:1.3;opacity:.8}
+.j26-logo{position:absolute;top:4.5%;left:7%;z-index:4;width:clamp(85px,min(11vw,19vh),172px)}
 .j26-logo img{width:100%;height:auto;display:block;filter:drop-shadow(0 6px 18px rgba(0,0,0,.4))}
-.j26-year{position:absolute;right:5%;bottom:2.5%;z-index:2;font-family:'Montserrat',sans-serif;font-weight:500;letter-spacing:-.03em;line-height:1;color:#f6f8fd;font-size:clamp(72px,min(13vw,26vh),230px);text-shadow:0 4px 30px rgba(10,18,50,.35)}
+.j26-year{position:absolute;right:5%;bottom:1.5%;z-index:2;font-family:'Montserrat',sans-serif;font-weight:500;letter-spacing:-.03em;line-height:1;color:#f6f8fd;font-size:clamp(72px,min(14vw,27vh),250px);text-shadow:0 4px 30px rgba(10,18,50,.35)}
 .j26-item{position:absolute;z-index:3;display:flex;flex-direction:column;align-items:flex-start;transform:translate(var(--tx,0),0)}
 .j26-item.c{--tx:-50%;align-items:center;text-align:center}
 .j26-s{font-size:clamp(12px,min(1.3vw,2.6vh),21px);font-weight:600;color:#fff;letter-spacing:.3px;line-height:1.35;white-space:nowrap;text-shadow:0 1px 8px rgba(10,18,50,.55)}
@@ -112,19 +111,19 @@
   background:radial-gradient(circle,#fff 0%,#ffd9a0 45%,rgba(242,173,97,0) 72%);
   box-shadow:0 0 18px 6px rgba(255,215,160,.55),0 0 46px 14px rgba(242,173,97,.3)}
 .j26-comet.on{opacity:1}
-/* vị trí 12 khối + 12 chấm (desktop) */
-.j26-p1{top:6%;left:28%}      .j26-d1{top:11%;left:38%}
-.j26-p2{top:5.5%;left:57.5%}  .j26-d2{top:6%;left:55.5%}
-.j26-p3{top:20%;left:18.5%}   .j26-d3{top:16%;left:26%}
-.j26-p4{top:12%;left:47%}     .j26-d4{top:26.5%;left:47.5%}
-.j26-p5{top:19%;left:66%}     .j26-d5{top:24%;left:73.5%}
-.j26-p6{top:30%;left:7%}      .j26-d6{top:33.5%;left:5%}
-.j26-p7{top:36%;left:37%}     .j26-d7{top:48.5%;left:38.5%}
-.j26-p8{top:37%;left:63%}     .j26-d8{top:34.5%;left:60%}
-.j26-p9{top:48.5%;left:47%}   .j26-d9{top:58.5%;left:42%}
-.j26-p10{top:53%;left:70%}    .j26-d10{top:64.5%;left:73%}
-.j26-p11{top:63.5%;left:7%}   .j26-d11{top:62.5%;left:5%}
-.j26-p12{top:70.5%;left:36.5%}.j26-d12{top:83.5%;left:36%}
+/* vị trí 12 khối + 12 chấm (desktop) — toạ độ trích từ ảnh lịch gốc, tất cả khối canh giữa (.c) */
+.j26-p1{top:7.4%;left:38.7%}  .j26-d1{top:11.1%;left:46.1%}
+.j26-p2{top:6.2%;left:79.6%}  .j26-d2{top:6.1%;left:80.7%}
+.j26-p3{top:26.8%;left:29.6%} .j26-d3{top:22.1%;left:30.4%}
+.j26-p4{top:16.7%;left:58.1%} .j26-d4{top:32.7%;left:58.4%}
+.j26-p5{top:25.3%;left:83%}   .j26-d5{top:28.8%;left:96.1%}
+.j26-p6{top:38.5%;left:18.6%} .j26-d6{top:42%;left:5.9%}
+.j26-p7{top:45.5%;left:43.7%} .j26-d7{top:57.6%;left:44.4%}
+.j26-p8{top:45.2%;left:73.6%} .j26-d8{top:41.6%;left:73.9%}
+.j26-p9{top:59.4%;left:55.2%} .j26-d9{top:68.1%;left:49.4%}
+.j26-p10{top:62.3%;left:82.6%}.j26-d10{top:73.9%;left:95.2%}
+.j26-p11{top:75.1%;left:16.4%}.j26-d11{top:72%;left:8.1%}
+.j26-p12{top:83.6%;left:41.8%}.j26-d12{top:96.5%;left:42.3%}
 /* animation: sao chổi chạy dọc đường kẻ (JS), qua chấm nào thì chấm + chữ đó sáng lên (.lit) */
 body.will-animate .j26-board .j26-item{opacity:0;transform:translate(var(--tx,0),16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 body.will-animate .j26-board .j26-dot{opacity:0;transform:translate(-50%,-50%) scale(0);transition:opacity .45s var(--ease),transform .45s var(--ease)}
@@ -340,42 +339,73 @@ body.will-animate .j26-board .j26-year.lit{opacity:1}
 
     <div class="j26-board reveal" role="img" aria-label="Bản đồ hành trình 2026 của Ethan Ecom với 12 thông điệp văn hoá nối nhau trên một hải trình">
         <svg class="j26-svg" viewBox="0 0 1000 750" preserveAspectRatio="none" aria-hidden="true">
+          <!-- trời sao + vệt sao băng (theo ảnh lịch gốc) -->
+          <g fill="#dbe7ff">
+            <circle cx="75" cy="60" r="1.4" opacity=".5"/><circle cx="200" cy="150" r="1" opacity=".35"/>
+            <circle cx="340" cy="45" r="1.2" opacity=".4"/><circle cx="505" cy="110" r="1" opacity=".3"/>
+            <circle cx="660" cy="35" r="1.4" opacity=".45"/><circle cx="795" cy="95" r="1" opacity=".3"/>
+            <circle cx="935" cy="140" r="1.3" opacity=".4"/><circle cx="60" cy="210" r="1" opacity=".3"/>
+            <circle cx="155" cy="260" r="1.2" opacity=".35"/><circle cx="390" cy="240" r="1" opacity=".3"/>
+            <circle cx="590" cy="190" r="1.3" opacity=".4"/><circle cx="720" cy="260" r="1" opacity=".3"/>
+            <circle cx="880" cy="240" r="1.2" opacity=".35"/><circle cx="120" cy="420" r="1" opacity=".3"/>
+            <circle cx="330" cy="450" r="1.2" opacity=".3"/><circle cx="560" cy="430" r="1" opacity=".28"/>
+            <circle cx="780" cy="470" r="1.3" opacity=".35"/><circle cx="930" cy="520" r="1" opacity=".3"/>
+            <circle cx="70" cy="600" r="1.2" opacity=".3"/><circle cx="300" cy="640" r="1" opacity=".28"/>
+            <circle cx="520" cy="680" r="1.2" opacity=".3"/><circle cx="820" cy="660" r="1" opacity=".28"/>
+          </g>
+          <g stroke="#cfe0ff" stroke-width="1.3" stroke-linecap="round">
+            <line x1="120" y1="90" x2="169" y2="56" opacity=".15"/><line x1="260" y1="58" x2="293" y2="35" opacity=".1"/>
+            <line x1="430" y1="140" x2="496" y2="94" opacity=".16"/><line x1="612" y1="70" x2="653" y2="41" opacity=".12"/>
+            <line x1="760" y1="125" x2="834" y2="74" opacity=".18"/><line x1="900" y1="62" x2="945" y2="31" opacity=".13"/>
+            <line x1="842" y1="205" x2="879" y2="179" opacity=".1"/><line x1="930" y1="330" x2="979" y2="296" opacity=".12"/>
+            <line x1="80" y1="300" x2="117" y2="274" opacity=".1"/><line x1="305" y1="335" x2="354" y2="301" opacity=".12"/>
+            <line x1="545" y1="300" x2="578" y2="277" opacity=".09"/><line x1="705" y1="385" x2="766" y2="342" opacity=".13"/>
+            <line x1="180" y1="525" x2="221" y2="496" opacity=".1"/><line x1="425" y1="605" x2="478" y2="568" opacity=".12"/>
+            <line x1="645" y1="565" x2="682" y2="539" opacity=".09"/><line x1="855" y1="625" x2="904" y2="591" opacity=".12"/>
+            <line x1="245" y1="685" x2="278" y2="662" opacity=".09"/><line x1="755" y1="705" x2="796" y2="676" opacity=".1"/>
+          </g>
+          <!-- hải trình: 4 vòng lặp lớn + nút xoắn nhỏ bên trái (vẽ lại theo ảnh lịch gốc) -->
           <path class="j26-path" pathLength="1" d="
-            M -30,150
-            C 60,110 170,140 260,120
-            C 320,106 330,95 380,83
-            C 430,71 490,38 555,45
-            C 680,58 940,80 950,140
-            C 955,185 820,172 735,180
-            C 650,188 560,190 475,199
-            C 290,215 60,180 50,251
-            C 42,330 200,345 385,364
-            C 490,375 520,295 600,259
-            C 700,215 970,300 975,380
-            C 978,455 830,472 730,484
-            C 630,496 520,450 420,439
-            C 300,427 85,395 50,469
-            C 15,545 160,610 360,626
-            C 550,640 820,650 1050,690"/>
+            M 240,132
+            C 310,112 395,90 461,83
+            C 560,72 705,38 807,46
+            C 880,52 955,82 985,150
+            C 998,185 982,212 961,216
+            C 905,225 700,236 584,245
+            C 480,252 370,208 304,166
+            C 250,128 150,148 90,200
+            C 42,242 28,282 59,315
+            C 82,340 102,356 123,373
+            C 152,392 148,428 114,424
+            C 88,420 88,388 120,384
+            C 200,398 340,424 444,432
+            C 560,441 655,350 739,312
+            C 800,285 892,292 940,340
+            C 982,382 988,478 952,554
+            C 902,590 640,548 494,511
+            C 380,492 200,508 81,540
+            C 32,554 14,592 36,626
+            C 62,664 240,706 423,724
+            C 600,738 820,712 1030,688"/>
         </svg>
 
         <div class="j26-comet" aria-hidden="true"></div>
 
         <div class="j26-logo"><img src="assets/images/logo.png" alt="" loading="lazy"></div>
 
-        <div class="j26-item j26-p1">
+        <div class="j26-item j26-p1 c">
           <div class="j26-s">Tầm nhìn mới</div>
           <div class="j26-l"><span class="w">Vị thế</span> <b>M</b>ới</div>
         </div>
         <span class="j26-dot j26-d1"></span>
 
-        <div class="j26-item j26-p2">
+        <div class="j26-item j26-p2 c">
           <div class="j26-s">Tư duy</div>
           <div class="j26-l"><b>Đ</b>ột Phá</div>
         </div>
         <span class="j26-dot j26-d2"></span>
 
-        <div class="j26-item j26-p3">
+        <div class="j26-item j26-p3 c">
           <div class="j26-s">Tôn trọng lẫn nhau</div>
           <div class="j26-l"><span class="w">Cùng nhau</span> <b>T</b>iến bước</div>
         </div>
@@ -393,7 +423,7 @@ body.will-animate .j26-board .j26-year.lit{opacity:1}
         </div>
         <span class="j26-dot j26-d5"></span>
 
-        <div class="j26-item j26-p6">
+        <div class="j26-item j26-p6 c">
           <div class="j26-s">Trọn vẹn niềm tin</div>
           <div class="j26-l"><span class="w">Chinh phục</span> <b>Đ</b>ỉnh cao</div>
         </div>
@@ -425,7 +455,7 @@ body.will-animate .j26-board .j26-year.lit{opacity:1}
         </div>
         <span class="j26-dot j26-d10"></span>
 
-        <div class="j26-item j26-p11">
+        <div class="j26-item j26-p11 c">
           <div class="j26-s">Tranh luận để</div>
           <div class="j26-l"><b>P</b>hát triển</div>
         </div>
@@ -493,7 +523,7 @@ body.will-animate .j26-board .j26-year.lit{opacity:1}
   // ── Bắt chuẩn: neo 12 chấm đúng lên đường kẻ ──
   // Lấy mẫu path, rồi theo đúng thứ tự hải trình tìm điểm gần nhất với vị trí CSS
   // của từng chấm → ghi lại tiến độ (fraction) + đặt lại toạ độ % chính xác.
-  var ORDER = [3, 1, 2, 5, 4, 6, 7, 8, 10, 9, 11, 12]; // thứ tự chấm dọc theo đường
+  var ORDER = [1, 2, 5, 4, 3, 6, 7, 8, 10, 9, 11, 12]; // thứ tự chấm dọc theo đường (path mới theo ảnh gốc)
   var N = 2400, samples = [];
   for (var i = 0; i <= N; i++) samples.push(path.getPointAtLength(i / N * L));
   var byN = {}, frac = {};
