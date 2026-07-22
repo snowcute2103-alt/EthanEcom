@@ -728,21 +728,22 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 .mob-nav.open a:nth-child(6) { transition: opacity .35s .47s, transform .35s .47s cubic-bezier(.34,1.56,.64,1), color .25s; }
 
 /* CTA "Liên hệ" — nút vàng phẳng chữ navy (pattern CTA vàng của site), full-width */
+/* Nhóm 2 nút CTA trong menu (thay cho dock nổi trên mobile) */
+.mob-nav .mob-cta-group { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
 .mob-nav .mob-cta {
-  margin-top: 28px;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--yellow-2), var(--yellow));
-  color: var(--navy, #16305C) !important;
-  padding: 17px 28px;
-  min-height: 52px;
-  border-bottom: none;
-  border-radius: 0;
-  font-size: 15px; font-weight: var(--fw-semibold);
-  letter-spacing: .2em;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  width: 100%; padding: 16px 24px; min-height: 52px;
+  border: 2px solid transparent; border-bottom: none; border-radius: 0; -webkit-appearance: none; appearance: none;
+  font-family: var(--font-lead); font-size: 15px; font-weight: var(--fw-semibold);
+  letter-spacing: .18em; text-transform: uppercase; cursor: pointer;
+  transition: transform .25s, filter .25s, background .25s, color .25s;
 }
-.mob-nav .mob-cta::before { display: none; }
-.mob-nav .mob-cta::after  { display: none; }
-.mob-nav .mob-cta:hover   { transform: translateY(-2px) !important; filter: brightness(1.04); color: var(--navy, #16305C) !important; }
+.mob-nav .mob-cta::before, .mob-nav .mob-cta::after { display: none; }
+.mob-nav .mob-cta:hover, .mob-nav .mob-cta:active { transform: translateY(-2px); filter: brightness(1.04); }
+/* Ứng tuyển ngay — nền trắng chữ navy */
+.mob-nav .mob-cta--apply   { background: #fff; color: var(--navy, #16305C) !important; }
+/* Liên hệ ngay — nền vàng (nổi bật trên nền navy của menu) */
+.mob-nav .mob-cta--contact { background: linear-gradient(135deg, var(--yellow-2), var(--yellow)); color: var(--navy, #16305C) !important; }
 
 /* Chân menu — email + hotline, đẩy xuống đáy màn */
 .mob-nav-foot {

@@ -528,7 +528,8 @@
     outline-offset: 3px;
   }
   @media (max-width: 768px) {
-    .cp-dock { bottom: 20px; right: 14px; gap: 8px; }
+    /* Mobile: bỏ dock nổi — 2 nút đã đưa vào trong menu (mob-nav) */
+    .cp-dock { display: none; }
     .cp-trigger {
       min-width: 148px;
       padding: 12px 18px;

@@ -82,7 +82,10 @@ function buildHeader() {
 </header>
 <nav class="mob-nav" id="mob" aria-hidden="true">
   ${mobItems}
-  <a href="lien-he" class="mob-cta">Liên hệ →</a>
+  <div class="mob-cta-group">
+    <button type="button" class="mob-cta mob-cta--apply" data-cp="apply">Ứng tuyển ngay</button>
+    <button type="button" class="mob-cta mob-cta--contact" data-cp="contact">Liên hệ ngay</button>
+  </div>
   <div class="mob-nav-foot">
     <a href="mailto:support@ethanecom.com">support@ethanecom.com</a>
     <span class="sep">·</span>
@@ -341,6 +344,14 @@ function initHamburger() {
   });
 
   mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeMenu(false)));
+
+  /* Nút "Ứng tuyển ngay" / "Liên hệ ngay" trong menu → đóng menu rồi mở đúng popup của dock */
+  mob.querySelectorAll('[data-cp]').forEach(btn => btn.addEventListener('click', () => {
+    closeMenu(false);
+    var id = btn.getAttribute('data-cp') === 'apply' ? 'cpTrigger' : 'cpTriggerContact';
+    var trigger = document.getElementById(id);
+    if (trigger) setTimeout(function () { trigger.click(); }, 90);
+  }));
 
   /* Close on Escape — return focus to the toggle */
   document.addEventListener('keydown', e => {
