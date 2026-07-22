@@ -66,7 +66,7 @@ function buildHeader() {
     <nav class="nav nav-left" id="mainNav">
       ${leftItems}
     </nav>
-    <a href="/" class="logo">
+    <a href="./" class="logo">
       <img src="assets/images/logo.jpg" alt="Ethan Ecom">
     </a>
     <nav class="nav nav-right">
@@ -97,7 +97,7 @@ function buildFooter() {
 
     <!-- Logo -->
     <div class="ft-logo">
-      <a class="ft-logo-badge" href="/" aria-label="Ethan Ecom, về trang chủ">
+      <a class="ft-logo-badge" href="./" aria-label="Ethan Ecom, về trang chủ">
         <img src="assets/images/logo.png" alt="Ethan Ecom">
       </a>
       <div class="ft-logo-sub">Ecommerce / Print On Demand / Digital Marketing</div>
@@ -106,7 +106,7 @@ function buildFooter() {
     <!-- Nav -->
     <nav class="ft-nav" aria-label="Điều hướng footer">
       <ul>
-        <li><a href="/">Trang chủ</a></li>
+        <li><a href="./">Trang chủ</a></li>
         <li><a href="gioi-thieu">Giới thiệu</a></li>
         <li><a href="tam-nhin">Tầm nhìn</a></li>
         <li><a href="cau-chuyen">Câu chuyện</a></li>
