@@ -612,6 +612,21 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 .header.on-light .hamburger span { background: rgba(0,0,0,.7); }
 .header.on-light .hamburger:hover { border-color: var(--blue); background: rgba(29,50,81,.07); }
 
+/* ── MOBILE CALL BUTTON — nút gọi nhanh (tel:), chỉ hiện ≤768px, cân xứng với hamburger ── */
+.hdr-call {
+  display: none; align-items: center; justify-content: center;
+  width: 44px; height: 40px; box-sizing: border-box; flex: 0 0 auto;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+  -webkit-tap-highlight-color: transparent;
+  transition: background .3s, border-color .3s, color .3s, transform .2s;
+}
+.hdr-call:hover, .hdr-call:active { background: rgba(34,211,238,.14); border-color: rgba(34,211,238,.42); color: #fff; }
+.hdr-call svg { display: block; }
+.header.on-light .hdr-call { border-color: rgba(0,0,0,.14); background: rgba(0,0,0,.04); color: rgba(0,0,0,.78); }
+.header.on-light .hdr-call:hover { border-color: var(--blue); background: rgba(29,50,81,.07); color: var(--blue); }
+
 /* ── MOBILE NAV — full-screen navy hàng hải: lưới chấm + vòng tròn mảnh,
    link IN HOA Fahkwang, số thứ tự vàng, CTA vàng phẳng ── */
 .mob-nav {
@@ -1118,12 +1133,16 @@ body.typo-eco .feat-body h2{  /* tiêu đề bài nổi bật (blog) — card l�
   .foot-main { padding: 52px 0 40px; }
   .page-hero { padding: 124px 0 76px; }
   /* Mobile header height */
-  .hi { height: 64px; }
+  .hi { height: 64px; position: relative; }
   .header.scrolled .hi { height: 56px; }
-  /* Logo nhỏ lại trên mobile */
-  .logo img { height: 60px; }
-  .header.scrolled .logo img { height: 50px; }
-  .logo { padding: 8px 6px; margin: 0 8px 0 0; }
+  /* Bố cục 3 phần: ☰ menu trái · LOGO giữa · ☎ gọi phải */
+  .hamburger { order: 1; }
+  .hdr-call { display: flex; order: 3; }
+  /* Logo canh giữa tuyệt đối, không phụ thuộc bề rộng 2 nút bên */
+  .logo { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+          margin: 0; padding: 0 6px; order: 2; }
+  .logo img { height: 58px; }
+  .header.scrolled .logo img { height: 48px; }
   /* Full-screen mobile menu top offset matches header height */
   .mob-nav { padding-top: 90px; }
 }
