@@ -1150,13 +1150,17 @@ body.typo-eco .feat-body h2{  /* tiêu đề bài nổi bật (blog) — card l�
           margin: 0; padding: 0; order: 2; }
   .logo img { height: 66px; }
   .header.scrolled .logo img { height: 54px; }
-  /* Full-screen mobile menu top offset matches header height */
-  .mob-nav { padding-top: 98px; }
+  /* Menu gọn hơn cho điện thoại: link nhỏ & sát nhau, số & nút nhỏ lại */
+  .mob-nav { padding: 86px 22px 30px; }
+  .mob-nav a { font-size: 16px; padding: 13px 2px; gap: 12px; letter-spacing: .12em; }
+  .mob-nav a::before { font-size: 10px; min-width: 26px; }
+  .mob-nav .mob-cta-group { margin-top: 20px; gap: 10px; }
+  .mob-nav .mob-cta { font-size: 13px; min-height: 46px; padding: 13px 20px; letter-spacing: .16em; }
 }
 @media (max-width: 480px) {
   .btt { bottom: 16px; right: 16px; }
   /* Chỉ link điều hướng trực tiếp (không đụng CTA vàng & chân menu) */
-  .mob-nav > a:not(.mob-cta) { font-size: 17px; }
+  .mob-nav > a:not(.mob-cta) { font-size: 14px; }
 }
 
 /* ══════════════════════════════════════════════════
