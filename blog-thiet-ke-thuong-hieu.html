@@ -7,16 +7,16 @@
 <meta name="description" content="Vì sao thiết kế 'đẹp ở Việt Nam' chưa chắc bán được ở Mỹ? Nguyên tắc màu sắc, typography, xu hướng cá nhân hóa và văn hóa niche giúp sản phẩm POD chinh phục khách hàng phương Tây.">
 <meta name="keywords" content="thiết kế sản phẩm POD, thị hiếu phương Tây, design bán hàng Mỹ, typography, niche design, thiết kế thương hiệu, Ethan Ecom">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Thiết kế chuẩn thị hiếu phương Tây — Góc nhìn thực chiến">
+<meta property="og:title" content="Thiết kế chuẩn thị hiếu phương Tây: Góc nhìn thực chiến">
 <meta property="og:description" content="Nguyên tắc màu sắc, typography và văn hóa niche giúp sản phẩm POD Việt chinh phục khách hàng Mỹ.">
-<meta property="og:image" content="assets/images/blog/design-color-palette.jpg">
+<meta property="og:image" content="assets/images/blog/11-thiet-ke-thuong-hieu/design-color-palette.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Thiết kế chuẩn thị hiếu phương Tây — Góc nhìn thực chiến",
   "description": "Nguyên tắc màu sắc, typography và văn hóa niche giúp sản phẩm POD Việt chinh phục khách hàng Mỹ.",
-  "image": "assets/images/blog/design-color-palette.jpg",
+  "image": "assets/images/blog/11-thiet-ke-thuong-hieu/design-color-palette.jpg",
   "datePublished": "2026-04-24",
   "inLanguage": "vi",
   "author": { "@type": "Organization", "name": "Ethan Ecom" },
@@ -26,7 +26,23 @@
 <link rel="stylesheet" href="assets/css/shared.css?v=housef02">
 <style>
 /* ── ARTICLE LAYOUT (dùng chung các trang bài viết) ── */
+html{scroll-behavior:smooth}
+/* clip thay cho hidden: vẫn chặn tràn ngang nhưng không phá position:sticky của mục lục */
+body{overflow-x:clip}
 .article-wrap{max-width:860px;margin:0 auto}
+.article-main{min-width:0}
+/* ── MỤC LỤC (table of contents sidebar) ── */
+.toc{display:none}
+.toc-title{font-family:var(--font-text);font-size:var(--fs-small);font-weight:var(--fw-semibold);letter-spacing:.16em;text-transform:uppercase;color:var(--muted,#5A6B82);margin:0 0 14px;padding-left:17px}
+.toc-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.toc-list a{display:block;padding:9px 17px;font-family:var(--font-text);font-size:var(--fs-base);line-height:1.45;color:var(--muted,#5A6B82);text-decoration:none;border-left:3px solid transparent;transition:color .2s,background .2s,border-color .2s}
+.toc-list a:hover{color:var(--navy);background:var(--surface,#EAF3FB)}
+.toc-list a.active{color:var(--blue);font-weight:var(--fw-semibold);background:var(--surface,#EAF3FB);border-left-color:var(--blue)}
+@media(min-width:1100px){
+  .article-wrap{max-width:1180px;display:grid;grid-template-columns:236px minmax(0,860px);gap:56px;justify-content:center}
+  .article-main{max-width:860px}
+  .toc{display:block;position:sticky;top:96px;max-height:calc(100vh - 120px);overflow-y:auto}
+}
 .article-meta{display:flex;align-items:center;gap:8px 22px;flex-wrap:wrap;font-family:var(--font-text);font-size:var(--fs-base);color:var(--muted,#5A6B82);margin-bottom:28px}
 .article-meta .am-item{display:inline-flex;align-items:center;gap:7px}
 .article-meta svg{width:15px;height:15px;stroke:var(--blue)}
@@ -36,7 +52,7 @@
 .article-cover--crop{aspect-ratio:16/9}
 .article-cover--crop img{height:100%;object-fit:cover}
 .article-body p{font-size:var(--fs-md);color:var(--text);line-height:1.85;margin-bottom:20px}
-.article-body h2{font-family:var(--font-heading);font-size:var(--fs-h2);font-weight:var(--fw-medium);color:var(--navy);line-height:1.3;margin:48px 0 18px;text-transform:uppercase;letter-spacing:.03em}
+.article-body h2{font-family:var(--font-heading);font-size:var(--fs-h2);font-weight:var(--fw-medium);color:var(--navy);line-height:1.3;margin:48px 0 18px;text-transform:uppercase;letter-spacing:.03em;scroll-margin-top:96px}
 .article-body h2 span{color:var(--blue)}
 .article-body h3{font-family:var(--font-heading);font-size:var(--fs-h4);font-weight:var(--fw-medium);color:var(--navy);margin:30px 0 12px}
 .article-lead{font-family:var(--font-heading);font-size:var(--fs-h5);color:var(--navy);line-height:1.7;margin-bottom:24px}
@@ -104,15 +120,15 @@
   <div class="page-hero-orb page-hero-orb-2"></div>
   <div class="container page-hero-inner">
     <nav class="breadcrumb">
-      <a href="index.html">Trang chủ</a>
+      <a href="/">Trang chủ</a>
       <span class="breadcrumb-sep">/</span>
-      <a href="blog.html">Câu chuyện</a>
+      <a href="cau-chuyen">Câu chuyện</a>
       <span class="breadcrumb-sep">/</span>
       <span>Thiết kế thị hiếu phương Tây</span>
     </nav>
-    <div class="page-hero-badge">🎨 Design — Bán hàng thị trường Mỹ</div>
-    <h1 class="page-hero-title">Thiết kế chuẩn <em>thị hiếu phương Tây</em> — Góc nhìn thực chiến</h1>
-    <p class="page-hero-sub">Một thiết kế bán được ở thị trường Mỹ không cần cầu kỳ hơn — nó cần đúng văn hóa hơn. Đây là những nguyên tắc đội ngũ design Ethan Ecom áp dụng mỗi ngày.</p>
+    <div class="page-hero-badge">🎨 Design · Bán hàng thị trường Mỹ</div>
+    <h1 class="page-hero-title">Thiết kế chuẩn <em>thị hiếu phương Tây</em>: Góc nhìn thực chiến</h1>
+    <p class="page-hero-sub">Một thiết kế bán được ở thị trường Mỹ không cần cầu kỳ hơn, nó cần đúng văn hóa hơn. Đây là những nguyên tắc đội ngũ design Ethan Ecom áp dụng mỗi ngày.</p>
   </div>
 </section>
 
@@ -122,6 +138,22 @@
     <div class="container">
       <div class="article-wrap">
 
+        <aside class="toc" aria-label="Mục lục bài viết">
+          <p class="toc-title">Mục lục</p>
+          <ul class="toc-list">
+            <li><a href="#sec-1">1. Khác biệt thẩm mỹ Đông – Tây: hiểu trước khi vẽ</a></li>
+            <li><a href="#sec-2">2. Khách Mỹ mua "câu chuyện của họ", không mua hình đẹp</a></li>
+            <li><a href="#sec-3">3. Màu sắc: tiết chế là cao cấp</a></li>
+            <li><a href="#sec-4">4. Typography là 80% thiết kế POD</a></li>
+            <li><a href="#sec-5">5. Đào sâu niche thay vì chạy theo trend đại chúng</a></li>
+            <li><a href="#sec-6">6. Test nhanh, giữ lại mẫu thắng</a></li>
+            <li><a href="#sec-7">7. Bản quyền &amp; trademark: cái bẫy seller Việt hay dính nhất</a></li>
+            <li><a href="#sec-8">8. Quy trình designer × seller tại Ethan Ecom</a></li>
+            <li><a href="#sec-9">9. Câu hỏi thường gặp</a></li>
+          </ul>
+        </aside>
+
+        <div class="article-main">
         <div class="article-meta reveal">
           <span class="am-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -135,47 +167,47 @@
         </div>
 
         <figure class="article-cover article-cover--crop reveal">
-          <img src="assets/images/blog/design-color-palette.jpg" width="1600" height="2000" alt="Bảng phối màu và bản in thử trên bàn làm việc của designer" loading="eager">
+          <img src="assets/images/blog/11-thiet-ke-thuong-hieu/design-color-palette.jpg" width="1600" height="2000" alt="Bảng phối màu và bản in thử trên bàn làm việc của designer" loading="eager">
         </figure>
 
         <div class="article-body">
           <p class="article-lead reveal">Sai lầm phổ biến nhất của designer Việt khi làm sản phẩm cho thị trường Mỹ: mang chuẩn thẩm mỹ trong nước áp lên khách hàng ngoại quốc. Kết quả là những thiết kế "đẹp mà không ai mua". Sau hàng nghìn mẫu POD được đưa ra thị trường, đây là những nguyên tắc thiết kế chuẩn thị hiếu phương Tây mà chúng mình rút ra từ thực chiến.</p>
 
-          <p class="reveal">Bài viết này không dạy bạn dùng phần mềm — nó dạy bạn <strong>nghĩ như người mua Mỹ</strong>. Vì trong Print-on-Demand, một thiết kế kỹ thuật trung bình nhưng đúng insight luôn thắng một thiết kế kỹ thuật điêu luyện nhưng lệch thị hiếu. Đó là bài học đắt giá nhất mà đội Design của Ethan Ecom muốn chia sẻ với bạn.</p>
+          <p class="reveal">Bài viết này không dạy bạn dùng phần mềm, nó dạy bạn <strong>nghĩ như người mua Mỹ</strong>. Vì trong Print-on-Demand, một thiết kế kỹ thuật trung bình nhưng đúng insight luôn thắng một thiết kế kỹ thuật điêu luyện nhưng lệch thị hiếu. Đó là bài học đắt giá nhất mà đội Design của Ethan Ecom muốn chia sẻ với bạn.</p>
 
-          <h2 class="reveal"><span>01.</span> Khác biệt thẩm mỹ Đông – Tây: hiểu trước khi vẽ</h2>
-          <p class="reveal">Thẩm mỹ đại chúng Việt Nam chuộng sự <em>đầy đặn</em>: màu rực, chi tiết dày, chữ uốn lượn, hiệu ứng đổ bóng lấp lánh. Thẩm mỹ tiêu dùng Mỹ — nhất là nhóm khách mua quà tặng và đồ trang trí — lại chuộng sự <em>tiết chế</em>: khoảng trống rộng rãi, ít màu, thông điệp rõ ràng trong một giây đầu tiên. Hai hệ giá trị này gần như ngược nhau, và designer mới thường vẽ theo bản năng cũ mà không nhận ra.</p>
-          <p class="reveal">Ví dụ cụ thể: một mẫu áo Giáng sinh kiểu Việt thường gom đủ ông già Noel, tuần lộc, cây thông, hộp quà và tuyết rơi vào một khung hình. Trong khi mẫu bán chạy trên thị trường Mỹ nhiều năm liền chỉ là dòng chữ "Merry &amp; Bright" bằng font serif trên nền đỏ đô — không hình minh họa nào cả. Người Mỹ không mua "bức tranh Giáng sinh"; họ mua <strong>cảm giác lễ hội được nói ra một cách thanh lịch</strong>.</p>
+          <h2 id="sec-1" class="reveal"><span>01.</span> Khác biệt thẩm mỹ Đông – Tây: hiểu trước khi vẽ</h2>
+          <p class="reveal">Thẩm mỹ đại chúng Việt Nam chuộng sự <em>đầy đặn</em>: màu rực, chi tiết dày, chữ uốn lượn, hiệu ứng đổ bóng lấp lánh. Thẩm mỹ tiêu dùng Mỹ, nhất là nhóm khách mua quà tặng và đồ trang trí, lại chuộng sự <em>tiết chế</em>: khoảng trống rộng rãi, ít màu, thông điệp rõ ràng trong một giây đầu tiên. Hai hệ giá trị này gần như ngược nhau, và designer mới thường vẽ theo bản năng cũ mà không nhận ra.</p>
+          <p class="reveal">Ví dụ cụ thể: một mẫu áo Giáng sinh kiểu Việt thường gom đủ ông già Noel, tuần lộc, cây thông, hộp quà và tuyết rơi vào một khung hình. Trong khi mẫu bán chạy trên thị trường Mỹ nhiều năm liền chỉ là dòng chữ "Merry &amp; Bright" bằng font serif trên nền đỏ đô, không hình minh họa nào cả. Người Mỹ không mua "bức tranh Giáng sinh"; họ mua <strong>cảm giác lễ hội được nói ra một cách thanh lịch</strong>.</p>
           <ul class="reveal">
             <li><strong>Việt Nam:</strong> càng nhiều chi tiết càng "có tâm"; màu tươi thể hiện sự vui vẻ, sung túc.</li>
             <li><strong>Mỹ:</strong> càng ít chi tiết càng cao cấp; khoảng trống là một phần của thiết kế, không phải chỗ trống cần lấp.</li>
             <li><strong>Hệ quả cho seller:</strong> trước khi đăng bán, hãy tự hỏi "mẫu này giống sản phẩm đang bán chạy ở Target/Etsy, hay giống áo nhóm ở chợ Việt?"</li>
           </ul>
 
-          <h2 class="reveal"><span>02.</span> Khách Mỹ mua "câu chuyện của họ", không mua hình đẹp</h2>
-          <p class="reveal">Người mua POD phương Tây tìm sản phẩm nói thay điều họ muốn nói: về gia đình, thú cưng, nghề nghiệp, sở thích. Một chiếc áo thêu chữ "Dog Dad" đơn giản bán tốt hơn một bức tranh chó vẽ tay cầu kỳ — vì nó là <em>danh tính</em>, không phải trang trí. Trước khi mở phần mềm thiết kế, hãy trả lời: <strong>ai mặc sản phẩm này, và họ muốn người khác đọc được gì về họ?</strong></p>
-          <p class="reveal">Cặp ví dụ thắng – thua mà chúng mình hay dùng khi đào tạo designer mới: mẫu <em>thua</em> là bức chân dung y tá vẽ chi tiết theo phong cách anime — đẹp, kỳ công, nhưng không y tá Mỹ nào thấy mình trong đó. Mẫu <em>thắng</em> là dòng chữ "Nurse: I can't fix stupid, but I can sedate it" đặt trên nền trơn — hài hước, đúng chất tự trào của nghề, và người mặc lập tức trở thành người kể chuyện. Thiết kế thắng vì nó trao cho khách một <strong>vai diễn xã hội</strong>, không phải một hình minh họa.</p>
+          <h2 id="sec-2" class="reveal"><span>02.</span> Khách Mỹ mua "câu chuyện của họ", không mua hình đẹp</h2>
+          <p class="reveal">Người mua POD phương Tây tìm sản phẩm nói thay điều họ muốn nói: về gia đình, thú cưng, nghề nghiệp, sở thích. Một chiếc áo thêu chữ "Dog Dad" đơn giản bán tốt hơn một bức tranh chó vẽ tay cầu kỳ, vì nó là <em>danh tính</em>, không phải trang trí. Trước khi mở phần mềm thiết kế, hãy trả lời: <strong>ai mặc sản phẩm này, và họ muốn người khác đọc được gì về họ?</strong></p>
+          <p class="reveal">Cặp ví dụ thắng – thua mà chúng mình hay dùng khi đào tạo designer mới: mẫu <em>thua</em> là bức chân dung y tá vẽ chi tiết theo phong cách anime, đẹp, kỳ công, nhưng không y tá Mỹ nào thấy mình trong đó. Mẫu <em>thắng</em> là dòng chữ "Nurse: I can't fix stupid, but I can sedate it" đặt trên nền trơn, hài hước, đúng chất tự trào của nghề, và người mặc lập tức trở thành người kể chuyện. Thiết kế thắng vì nó trao cho khách một <strong>vai diễn xã hội</strong>, không phải một hình minh họa.</p>
 
-          <h2 class="reveal"><span>03.</span> Màu sắc: tiết chế là cao cấp</h2>
+          <h2 id="sec-3" class="reveal"><span>03.</span> Màu sắc: tiết chế là cao cấp</h2>
           <ul class="reveal">
             <li>Bảng màu <strong>đất, pastel, trung tính</strong> (sage, terracotta, cream, navy) thắng thế trong nhóm quà tặng và trang trí nhà nhiều năm liên tiếp.</li>
-            <li>Mỗi thiết kế nên kỷ luật trong <strong>2–3 màu</strong>; với sản phẩm thêu, ít màu còn đồng nghĩa chi phí chỉ thấp hơn và thành phẩm sắc nét hơn — bạn có thể đọc thêm ở bài <a href="blog-theu-vs-in.html">thêu vi tính hay in áo</a>.</li>
-            <li>Màu neon, gradient rực rỡ chỉ hợp một số niche trẻ (gaming, rave) — đừng dùng làm mặc định cho mọi sản phẩm.</li>
+            <li>Mỗi thiết kế nên kỷ luật trong <strong>2–3 màu</strong>; với sản phẩm thêu, ít màu còn đồng nghĩa chi phí chỉ thấp hơn và thành phẩm sắc nét hơn, bạn có thể đọc thêm ở bài <a href="blog-theu-vs-in">thêu vi tính hay in áo</a>.</li>
+            <li>Màu neon, gradient rực rỡ chỉ hợp một số niche trẻ (gaming, rave), đừng dùng làm mặc định cho mọi sản phẩm.</li>
           </ul>
-          <p class="reveal">Ví dụ thắng – thua về màu: cùng một câu chữ "Mama Bear", phiên bản chữ nâu đất trên áo màu cream đều đặn nằm trong nhóm bán chạy của niche mẹ và bé; phiên bản chữ bảy màu gradient trên áo đen gần như không có chuyển đổi dù chạy cùng ngân sách quảng cáo. Người mua nhóm này muốn món đồ <em>hòa vào tủ quần áo hằng ngày</em> của họ — và tủ đồ người Mỹ trưởng thành phần lớn là màu trung tính.</p>
+          <p class="reveal">Ví dụ thắng – thua về màu: cùng một câu chữ "Mama Bear", phiên bản chữ nâu đất trên áo màu cream đều đặn nằm trong nhóm bán chạy của niche mẹ và bé; phiên bản chữ bảy màu gradient trên áo đen gần như không có chuyển đổi dù chạy cùng ngân sách quảng cáo. Người mua nhóm này muốn món đồ <em>hòa vào tủ quần áo hằng ngày</em> của họ, và tủ đồ người Mỹ trưởng thành phần lớn là màu trung tính.</p>
 
           <div class="agallery agallery--2 reveal">
-            <figure><img src="assets/images/blog/design-fashion-neutral.jpg" alt="Trang phục tông màu trung tính được ưa chuộng tại thị trường phương Tây" loading="lazy"></figure>
-            <figure><img src="assets/images/blog/pod-apparel-rack.jpg" alt="Kệ trưng bày sản phẩm may mặc phối màu theo thị hiếu khách hàng Mỹ" loading="lazy"></figure>
+            <figure><img src="assets/images/blog/11-thiet-ke-thuong-hieu/design-fashion-neutral.jpg" alt="Trang phục tông màu trung tính được ưa chuộng tại thị trường phương Tây" loading="lazy"></figure>
+            <figure><img src="assets/images/blog/11-thiet-ke-thuong-hieu/pod-apparel-rack.jpg" alt="Kệ trưng bày sản phẩm may mặc phối màu theo thị hiếu khách hàng Mỹ" loading="lazy"></figure>
           </div>
 
-          <h2 class="reveal"><span>04.</span> Typography là 80% thiết kế POD</h2>
-          <p class="reveal">Phần lớn sản phẩm POD bán chạy là <strong>text-based</strong>. Ba nguyên tắc: chọn font có ngữ cảnh văn hóa đúng (serif cổ điển cho vintage, script mềm cho quà tặng mẹ, sans đậm cho humor); tối đa 2 font trong một thiết kế; và luôn kiểm tra khả năng đọc ở kích thước thật — thiết kế nhìn tốt trên màn hình 27 inch có thể thành mờ nhòe trên túi áo thêu 10cm.</p>
-          <p class="reveal">Ví dụ thắng – thua về font: mẫu quà cưới dùng font script quá bay bướm khiến tên cô dâu chú rể gần như không đọc được khi thêu nhỏ — khách nhận hàng thất vọng, đánh giá thấp. Mẫu thắng dùng script vừa phải cho tên riêng, kết hợp serif mảnh cho ngày cưới: sang, dễ đọc, và xưởng thêu chạy chỉ mượt hơn hẳn. Kinh nghiệm của chúng mình: <strong>in mẫu ra giấy đúng kích thước thật</strong>, dán lên áo, lùi lại hai mét — nếu vẫn đọc rõ trong một giây, font đó đạt.</p>
+          <h2 id="sec-4" class="reveal"><span>04.</span> Typography là 80% thiết kế POD</h2>
+          <p class="reveal">Phần lớn sản phẩm POD bán chạy là <strong>text-based</strong>. Ba nguyên tắc: chọn font có ngữ cảnh văn hóa đúng (serif cổ điển cho vintage, script mềm cho quà tặng mẹ, sans đậm cho humor); tối đa 2 font trong một thiết kế; và luôn kiểm tra khả năng đọc ở kích thước thật, thiết kế nhìn tốt trên màn hình 27 inch có thể thành mờ nhòe trên túi áo thêu 10cm.</p>
+          <p class="reveal">Ví dụ thắng – thua về font: mẫu quà cưới dùng font script quá bay bướm khiến tên cô dâu chú rể gần như không đọc được khi thêu nhỏ, khách nhận hàng thất vọng, đánh giá thấp. Mẫu thắng dùng script vừa phải cho tên riêng, kết hợp serif mảnh cho ngày cưới: sang, dễ đọc, và xưởng thêu chạy chỉ mượt hơn hẳn. Kinh nghiệm của chúng mình: <strong>in mẫu ra giấy đúng kích thước thật</strong>, dán lên áo, lùi lại hai mét, nếu vẫn đọc rõ trong một giây, font đó đạt.</p>
 
-          <h2 class="reveal"><span>05.</span> Đào sâu niche thay vì chạy theo trend đại chúng</h2>
-          <p class="reveal">Trend đại chúng cạnh tranh khốc liệt và chết nhanh. Niche văn hóa — nurse, teacher, camping, fishing, cat mom — sống bền qua năm tháng và có cộng đồng sẵn sàng trả giá cao cho sản phẩm "hiểu mình". Cách nghiên cứu nhanh: đọc comment trong các group Facebook và subreddit của niche, ghi lại <em>chính xác cụm từ họ dùng</em> — đưa nguyên văn vào thiết kế luôn hiệu quả hơn lời bạn tự nghĩ ra. Nếu muốn làm bài bản hơn, chúng mình đã viết riêng một <a href="blog-nghien-cuu-niche-pod.html">quy trình 5 bước nghiên cứu niche POD</a> đáng để bạn đọc trước khi vẽ mẫu đầu tiên.</p>
-          <p class="reveal">Dưới đây là bảng ghép nhanh giữa các niche phổ biến và phong cách thiết kế thường "ăn" nhất — đúc kết từ những mẫu chúng mình quan sát bán tốt trên các sàn:</p>
+          <h2 id="sec-5" class="reveal"><span>05.</span> Đào sâu niche thay vì chạy theo trend đại chúng</h2>
+          <p class="reveal">Trend đại chúng cạnh tranh khốc liệt và chết nhanh. Niche văn hóa, nurse, teacher, camping, fishing, cat mom, sống bền qua năm tháng và có cộng đồng sẵn sàng trả giá cao cho sản phẩm "hiểu mình". Cách nghiên cứu nhanh: đọc comment trong các group Facebook và subreddit của niche, ghi lại <em>chính xác cụm từ họ dùng</em>, đưa nguyên văn vào thiết kế luôn hiệu quả hơn lời bạn tự nghĩ ra. Nếu muốn làm bài bản hơn, chúng mình đã viết riêng một <a href="blog-nghien-cuu-niche-pod">quy trình 5 bước nghiên cứu niche POD</a> đáng để bạn đọc trước khi vẽ mẫu đầu tiên.</p>
+          <p class="reveal">Dưới đây là bảng ghép nhanh giữa các niche phổ biến và phong cách thiết kế thường "ăn" nhất, đúc kết từ những mẫu chúng mình quan sát bán tốt trên các sàn:</p>
 
           <div class="article-table reveal">
             <table>
@@ -191,50 +223,50 @@
             </table>
           </div>
 
-          <h2 class="reveal"><span>06.</span> Test nhanh, giữ lại mẫu thắng</h2>
+          <h2 id="sec-6" class="reveal"><span>06.</span> Test nhanh, giữ lại mẫu thắng</h2>
           <p class="reveal">Không ai đoán trúng thị hiếu 100%. Quy trình của chúng mình: mỗi concept ra 5–10 biến thể → đăng bán đồng loạt → sau 2 tuần giữ lại mẫu có chuyển đổi, tắt mẫu yếu → nhân bản mẫu thắng sang sản phẩm khác (áo → mũ → tote). Thiết kế cho POD là trò chơi xác suất có kỷ luật, không phải cuộc thi sáng tác.</p>
-          <p class="reveal">Điểm nhiều người bỏ qua: khi một mẫu thắng, đừng chỉ nhân bản sản phẩm — hãy <strong>phân tích vì sao nó thắng</strong>. Là câu chữ, bố cục, màu, hay đúng dịp mùa vụ? Ghi lại thành "công thức" nội bộ để những mẫu sau không bắt đầu từ con số không. Sau vài chu kỳ test, đội thiết kế sẽ có một thư viện công thức riêng — tài sản lâu dài thật sự.</p>
+          <p class="reveal">Điểm nhiều người bỏ qua: khi một mẫu thắng, đừng chỉ nhân bản sản phẩm, hãy <strong>phân tích vì sao nó thắng</strong>. Là câu chữ, bố cục, màu, hay đúng dịp mùa vụ? Ghi lại thành "công thức" nội bộ để những mẫu sau không bắt đầu từ con số không. Sau vài chu kỳ test, đội thiết kế sẽ có một thư viện công thức riêng, tài sản lâu dài thật sự.</p>
 
-          <h2 class="reveal"><span>07.</span> Bản quyền &amp; trademark: cái bẫy seller Việt hay dính nhất</h2>
-          <p class="reveal">Thiết kế đẹp mấy cũng vô nghĩa nếu khiến shop bị khóa. Vi phạm sở hữu trí tuệ là lý do hàng đầu khiến tài khoản seller Việt "bay màu" vĩnh viễn trên các sàn quốc tế — và phần lớn vi phạm đến từ sự chủ quan chứ không phải cố ý.</p>
+          <h2 id="sec-7" class="reveal"><span>07.</span> Bản quyền &amp; trademark: cái bẫy seller Việt hay dính nhất</h2>
+          <p class="reveal">Thiết kế đẹp mấy cũng vô nghĩa nếu khiến shop bị khóa. Vi phạm sở hữu trí tuệ là lý do hàng đầu khiến tài khoản seller Việt "bay màu" vĩnh viễn trên các sàn quốc tế, và phần lớn vi phạm đến từ sự chủ quan chứ không phải cố ý.</p>
           <ul class="reveal">
-            <li><strong>Nhân vật và thương hiệu:</strong> chuột hoạt hình nổi tiếng, logo đội thể thao, tên ban nhạc — tuyệt đối không dùng, kể cả "vẽ lại theo phong cách khác".</li>
+            <li><strong>Nhân vật và thương hiệu:</strong> chuột hoạt hình nổi tiếng, logo đội thể thao, tên ban nhạc, tuyệt đối không dùng, kể cả "vẽ lại theo phong cách khác".</li>
             <li><strong>Câu nói có trademark:</strong> nhiều cụm từ tưởng chung chung ("Let's Do This", tên phong trào, khẩu hiệu viral) đã được đăng ký nhãn hiệu. Tra miễn phí trên hệ thống USPTO trước khi dùng bất kỳ câu chữ nào làm chủ đạo.</li>
             <li><strong>Font và hình stock:</strong> font miễn phí cho mục đích cá nhân không đồng nghĩa miễn phí thương mại. Luôn đọc license; ưu tiên font có giấy phép thương mại rõ ràng.</li>
             <li><strong>Nguyên tắc an toàn của chúng mình:</strong> nghi ngờ thì bỏ. Một ý tưởng thay thế chỉ mất một giờ; một lần bị khóa shop mất cả năm gây dựng.</li>
           </ul>
 
-          <h2 class="reveal"><span>08.</span> Quy trình designer × seller tại Ethan Ecom</h2>
-          <p class="reveal">Tại Ethan Ecom, designer không ngồi vẽ một mình rồi "giao file". Chúng mình vận hành một vòng lặp khép kín giữa đội thiết kế, đội bán hàng và xưởng sản xuất in-house — và chính vòng lặp này giúp các Sparrows ra mẫu nhanh mà vẫn đúng thị hiếu:</p>
+          <h2 id="sec-8" class="reveal"><span>08.</span> Quy trình designer × seller tại Ethan Ecom</h2>
+          <p class="reveal">Tại Ethan Ecom, designer không ngồi vẽ một mình rồi "giao file". Chúng mình vận hành một vòng lặp khép kín giữa đội thiết kế, đội bán hàng và xưởng sản xuất in-house, và chính vòng lặp này giúp các Sparrows ra mẫu nhanh mà vẫn đúng thị hiếu:</p>
           <ol class="reveal">
-            <li><strong>Brief từ seller:</strong> niche, dịp bán, chân dung người mua, cụm từ khóa khách đang tìm — không có brief, không vẽ.</li>
+            <li><strong>Brief từ seller:</strong> niche, dịp bán, chân dung người mua, cụm từ khóa khách đang tìm, không có brief, không vẽ.</li>
             <li><strong>Moodboard 30 phút:</strong> designer gom 10–15 mẫu tham chiếu đang bán tốt để thống nhất "vùng thẩm mỹ" trước khi phác thảo.</li>
             <li><strong>Phác thảo &amp; duyệt chéo:</strong> 3–5 hướng nhanh, seller chọn dựa trên dữ liệu thị trường chứ không dựa trên cảm tính "thấy đẹp".</li>
-            <li><strong>Kiểm tra sản xuất:</strong> xưởng thêu và in xác nhận mẫu chạy được ở kích thước thật, số màu chỉ hợp lý — bước này chặn được rất nhiều thiết kế "đẹp trên màn hình, hỏng trên vải".</li>
+            <li><strong>Kiểm tra sản xuất:</strong> xưởng thêu và in xác nhận mẫu chạy được ở kích thước thật, số màu chỉ hợp lý, bước này chặn được rất nhiều thiết kế "đẹp trên màn hình, hỏng trên vải".</li>
             <li><strong>Chạy mẫu thật &amp; chụp ảnh:</strong> sản phẩm mẫu được sản xuất ngay tại xưởng, lên ảnh listing trong ngày.</li>
             <li><strong>Đọc số liệu sau 2 tuần:</strong> mẫu thắng quay lại bước 1 để nhân bản; mẫu thua được mổ xẻ để rút công thức.</li>
           </ol>
-          <p class="reveal">Lợi thế tự chủ sản xuất nằm ở chỗ này: khoảng cách từ ý tưởng đến sản phẩm cầm được trên tay chỉ tính bằng ngày. Designer nhìn thấy thành phẩm thêu thật, sờ được chất vải thật — và mỗi vòng lặp như vậy làm tay nghề "chuẩn thị hiếu" lên nhanh hơn bất kỳ khóa học nào.</p>
+          <p class="reveal">Lợi thế tự chủ sản xuất nằm ở chỗ này: khoảng cách từ ý tưởng đến sản phẩm cầm được trên tay chỉ tính bằng ngày. Designer nhìn thấy thành phẩm thêu thật, sờ được chất vải thật, và mỗi vòng lặp như vậy làm tay nghề "chuẩn thị hiếu" lên nhanh hơn bất kỳ khóa học nào.</p>
 
           <div class="article-quote reveal">
-            <p>"Thiết kế tốt cho thị trường Mỹ không phải thiết kế mình thấy đẹp — mà là thiết kế khiến một người xa lạ thấy chính họ trong đó."</p>
+            <p>"Thiết kế tốt cho thị trường Mỹ không phải thiết kế mình thấy đẹp, mà là thiết kế khiến một người xa lạ thấy chính họ trong đó."</p>
             <cite>— Đội ngũ Design, Ethan Ecom</cite>
           </div>
 
-          <h2 class="reveal">Câu hỏi thường gặp</h2>
+          <h2 id="sec-9" class="reveal">Câu hỏi thường gặp</h2>
           <h3 class="reveal">Không giỏi vẽ tay có làm designer POD được không?</h3>
-          <p class="reveal">Được. Phần lớn sản phẩm POD bán chạy là text-based — thứ quyết định là hiểu thị hiếu, chọn font, phối màu và bố cục, không phải kỹ năng minh họa. Kỹ năng vẽ là điểm cộng, nhưng tư duy thị trường mới là điểm chính.</p>
+          <p class="reveal">Được. Phần lớn sản phẩm POD bán chạy là text-based, thứ quyết định là hiểu thị hiếu, chọn font, phối màu và bố cục, không phải kỹ năng minh họa. Kỹ năng vẽ là điểm cộng, nhưng tư duy thị trường mới là điểm chính.</p>
           <h3 class="reveal">Làm sao biết một câu chữ có bị trademark hay không?</h3>
-          <p class="reveal">Tra cụm từ đó trên cơ sở dữ liệu USPTO (công cụ tìm kiếm nhãn hiệu của Mỹ) trước khi dùng làm yếu tố chủ đạo. Nếu cụm từ đã được đăng ký cho nhóm hàng may mặc hoặc quà tặng, hãy bỏ và nghĩ hướng khác — đừng thử vận may với tài khoản của mình.</p>
+          <p class="reveal">Tra cụm từ đó trên cơ sở dữ liệu USPTO (công cụ tìm kiếm nhãn hiệu của Mỹ) trước khi dùng làm yếu tố chủ đạo. Nếu cụm từ đã được đăng ký cho nhóm hàng may mặc hoặc quà tặng, hãy bỏ và nghĩ hướng khác, đừng thử vận may với tài khoản của mình.</p>
           <h3 class="reveal">Một thiết kế nên ra bao nhiêu biến thể màu?</h3>
           <p class="reveal">Kinh nghiệm phổ biến là 3–5 biến thể trên nền màu áo trung tính (đen, trắng, cream, navy, xám). Nhiều hơn sẽ loãng dữ liệu test; ít hơn thì khó biết màu nào thật sự có chuyển đổi. Sau 2 tuần, giữ lại 1–2 màu thắng và tắt phần còn lại.</p>
           <h3 class="reveal">Designer mới nên bắt đầu học từ đâu?</h3>
-          <p class="reveal">Bắt đầu bằng việc <em>đọc thị trường</em> trước khi học công cụ: mỗi ngày dành 30 phút xem bestseller trong một niche, tự trả lời "vì sao mẫu này bán được". Song song, nắm mô hình kinh doanh qua bài <a href="blog-pod-la-gi.html">Print-on-Demand là gì</a> để hiểu thiết kế của mình nằm ở đâu trong chuỗi giá trị.</p>
+          <p class="reveal">Bắt đầu bằng việc <em>đọc thị trường</em> trước khi học công cụ: mỗi ngày dành 30 phút xem bestseller trong một niche, tự trả lời "vì sao mẫu này bán được". Song song, nắm mô hình kinh doanh qua bài <a href="blog-pod-la-gi">Print-on-Demand là gì</a> để hiểu thiết kế của mình nằm ở đâu trong chuỗi giá trị.</p>
 
           <div class="article-cta reveal">
             <h3>Muốn trở thành Sparrow của đội Design?</h3>
-            <p>Ethan Ecom luôn tìm kiếm designer yêu thị trường quốc tế — được đào tạo thực chiến ngay tại xưởng sản xuất in-house ở Đồng Nai. Gửi portfolio về hr@ethanecom.com.</p>
-            <a href="careers.html" class="btn btn--yellow">Xem vị trí đang tuyển →</a>
+            <p>Ethan Ecom luôn tìm kiếm designer yêu thị trường quốc tế, được đào tạo thực chiến ngay tại xưởng sản xuất in-house ở Đồng Nai. Gửi portfolio về hr@ethanecom.com.</p>
+            <a href="tuyen-dung" class="btn btn--yellow">Xem vị trí đang tuyển →</a>
           </div>
 
           <div class="tag-row reveal">
@@ -243,6 +275,7 @@
             <span class="tag-chip">#Typography</span>
             <span class="tag-chip">#EthanEcom</span>
           </div>
+        </div>
         </div>
 
       </div>
@@ -257,23 +290,23 @@
         <h2 class="st">Bài viết liên quan</h2>
       </div>
       <div class="related-grid">
-        <a href="blog-nghien-cuu-niche-pod.html" class="rel-card reveal d1">
-          <div class="rel-thumb"><img src="assets/images/blog/niche-research-desk.jpg" alt="Cách nghiên cứu niche POD có lợi nhuận: Quy trình 5 bước" loading="lazy"></div>
+        <a href="blog-nghien-cuu-niche-pod" class="rel-card reveal d1">
+          <div class="rel-thumb"><img src="assets/images/blog/11-thiet-ke-thuong-hieu/niche-research-desk.jpg" alt="Cách nghiên cứu niche POD có lợi nhuận: Quy trình 5 bước" loading="lazy"></div>
           <div class="rel-body">
             <div class="rel-tag">E-commerce</div>
             <h4>Cách nghiên cứu niche POD có lợi nhuận: Quy trình 5 bước</h4>
             <span>18 Tháng 4, 2026 · 10 phút đọc</span>
           </div>
         </a>
-        <a href="blog-pod-la-gi.html" class="rel-card reveal d2">
-          <div class="rel-thumb"><img src="assets/images/blog/pod-tshirt-mockup.jpg" alt="Print-on-Demand là gì? Toàn cảnh mô hình POD 2026" loading="lazy"></div>
+        <a href="blog-pod-la-gi" class="rel-card reveal d2">
+          <div class="rel-thumb"><img src="assets/images/blog/11-thiet-ke-thuong-hieu/pod-tshirt-mockup.jpg" alt="Print-on-Demand là gì? Toàn cảnh mô hình POD 2026" loading="lazy"></div>
           <div class="rel-body">
             <div class="rel-tag">E-commerce</div>
             <h4>Print-on-Demand là gì? Toàn cảnh mô hình POD 2026</h4>
             <span>26 Tháng 3, 2026 · 11 phút đọc</span>
           </div>
         </a>
-        <a href="blog-theu-vs-in.html" class="rel-card reveal d3">
+        <a href="blog-theu-vs-in" class="rel-card reveal d3">
           <div class="rel-thumb"><img src="assets/images/product/maytheu.jpg" alt="Thêu vi tính hay in áo? Chọn đúng công nghệ cho POD" loading="lazy"></div>
           <div class="rel-body">
             <div class="rel-tag">Sản xuất</div>
@@ -290,11 +323,43 @@
 <div id="site-footer"></div>
 
 <!-- Shared JS (must be last) -->
-<script src="assets/js/shared.js?v=housef02"></script>
+<script src="assets/js/shared.js?v=housef05"></script>
 <script src="assets/js/page-animations.js"></script>
 
 <!-- Contact popup + dock 2 nút gim (Ứng tuyển ngay / Liên hệ ngay) -->
 <div id="contact-popup-root"></div>
-<script src="assets/js/contact-popup.js?v=20260718a"></script>
+<script src="assets/js/contact-popup.js?v=20260722y"></script>
+
+<!-- Scroll-spy: tự làm nổi mục lục theo section đang đọc -->
+<script>
+(function(){
+  var links = [].slice.call(document.querySelectorAll('.toc-list a'));
+  if(!links.length) return;
+  var targets = links.map(function(a){
+    return { link:a, el:document.getElementById(a.getAttribute('href').slice(1)) };
+  }).filter(function(t){ return t.el; });
+  if(!targets.length) return;
+  // offsetTop bỏ qua transform (class .reveal dùng translateY) → đo vị trí ổn định
+  function absTop(el){ var y=0; while(el){ y+=el.offsetTop; el=el.offsetParent; } return y; }
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var pos = window.scrollY + 140;
+    var current = targets[0].link;
+    for(var i=0;i<targets.length;i++){
+      if(absTop(targets[i].el) <= pos) current = targets[i].link;
+    }
+    if(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4){
+      current = targets[targets.length-1].link;
+    }
+    links.forEach(function(l){ l.classList.toggle('active', l===current); });
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(update); ticking = true; }
+  }, {passive:true});
+  window.addEventListener('resize', update, {passive:true});
+  update();
+})();
+</script>
 </body>
 </html>

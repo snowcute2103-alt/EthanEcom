@@ -42,12 +42,12 @@ Ethan Ecom là công ty chuyên cung cấp giải pháp thương mại điện t
 
 ```
 index.html      → Trang chủ
-about.html      → Về chúng tôi
-services.html   → Dịch vụ
-portfolio.html  → Portfolio
-careers.html    → Tuyển dụng
-blog.html       → Stories / Blog
-contact.html    → Liên hệ
+gioi-thieu.html      → Về chúng tôi
+dich-vu.html   → Dịch vụ
+tam-nhin.html     → Tầm nhìn
+tuyen-dung.html    → Tuyển dụng
+cau-chuyen.html       → Stories / Blog
+lien-he.html    → Liên hệ
 ```
 
 ---
@@ -63,12 +63,12 @@ ethan/
 │   │   └── shared.js         # Header/Footer inject + all interactions
 │   └── images/               # Ảnh theo section
 ├── index.html
-├── about.html
-├── services.html
-├── portfolio.html
-├── careers.html
-├── blog.html
-└── contact.html
+├── gioi-thieu.html
+├── dich-vu.html
+├── tam-nhin.html
+├── tuyen-dung.html
+├── cau-chuyen.html
+└── lien-he.html
 ```
 
 ---

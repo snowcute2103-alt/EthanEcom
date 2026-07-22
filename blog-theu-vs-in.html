@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thêu vi tính hay in áo? Chọn đúng công nghệ cho sản phẩm POD | Ethan Ecom</title>
-<meta name="description" content="So sánh thêu vi tính (embroidery) và in DTG/DTF cho sản phẩm POD: độ bền, cảm giác cao cấp, chi phí, tốc độ sản xuất — và cách Ethan Ecom kết hợp cả hai công nghệ trong xưởng in-house.">
+<meta name="description" content="So sánh thêu vi tính (embroidery) và in DTG/DTF cho sản phẩm POD: độ bền, cảm giác cao cấp, chi phí, tốc độ sản xuất, và cách Ethan Ecom kết hợp cả hai công nghệ trong xưởng in-house.">
 <meta name="keywords" content="thêu vi tính, in DTG, in DTF, thêu hay in, công nghệ POD, sản xuất áo thêu, xưởng in-house, Ethan Ecom">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Thêu vi tính hay in áo? Chọn đúng công nghệ cho sản phẩm POD">
-<meta property="og:description" content="Độ bền, cảm giác cao cấp, chi phí, tốc độ — bảng so sánh thêu vi tính và in DTG/DTF từ xưởng in-house Ethan Ecom.">
+<meta property="og:description" content="Độ bền, cảm giác cao cấp, chi phí, tốc độ, bảng so sánh thêu vi tính và in DTG/DTF từ xưởng in-house Ethan Ecom.">
 <meta property="og:image" content="assets/images/product/maytheu.jpg">
 <script type="application/ld+json">
 {
@@ -26,7 +26,23 @@
 <link rel="stylesheet" href="assets/css/shared.css?v=housef02">
 <style>
 /* ── ARTICLE LAYOUT (dùng chung các trang bài viết) ── */
+html{scroll-behavior:smooth}
+/* clip thay cho hidden: vẫn chặn tràn ngang nhưng không phá position:sticky của mục lục */
+body{overflow-x:clip}
 .article-wrap{max-width:860px;margin:0 auto}
+.article-main{min-width:0}
+/* ── MỤC LỤC (table of contents sidebar) ── */
+.toc{display:none}
+.toc-title{font-family:var(--font-text);font-size:var(--fs-small);font-weight:var(--fw-semibold);letter-spacing:.16em;text-transform:uppercase;color:var(--muted,#5A6B82);margin:0 0 14px;padding-left:17px}
+.toc-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.toc-list a{display:block;padding:9px 17px;font-family:var(--font-text);font-size:var(--fs-base);line-height:1.45;color:var(--muted,#5A6B82);text-decoration:none;border-left:3px solid transparent;transition:color .2s,background .2s,border-color .2s}
+.toc-list a:hover{color:var(--navy);background:var(--surface,#EAF3FB)}
+.toc-list a.active{color:var(--blue);font-weight:var(--fw-semibold);background:var(--surface,#EAF3FB);border-left-color:var(--blue)}
+@media(min-width:1100px){
+  .article-wrap{max-width:1180px;display:grid;grid-template-columns:236px minmax(0,860px);gap:56px;justify-content:center}
+  .article-main{max-width:860px}
+  .toc{display:block;position:sticky;top:96px;max-height:calc(100vh - 120px);overflow-y:auto}
+}
 .article-meta{display:flex;align-items:center;gap:8px 22px;flex-wrap:wrap;font-family:var(--font-text);font-size:var(--fs-base);color:var(--muted,#5A6B82);margin-bottom:28px}
 .article-meta .am-item{display:inline-flex;align-items:center;gap:7px}
 .article-meta svg{width:15px;height:15px;stroke:var(--blue)}
@@ -36,7 +52,7 @@
 .article-cover--crop{aspect-ratio:16/9}
 .article-cover--crop img{height:100%;object-fit:cover}
 .article-body p{font-size:var(--fs-md);color:var(--text);line-height:1.85;margin-bottom:20px}
-.article-body h2{font-family:var(--font-heading);font-size:var(--fs-h2);font-weight:var(--fw-medium);color:var(--navy);line-height:1.3;margin:48px 0 18px;text-transform:uppercase;letter-spacing:.03em}
+.article-body h2{font-family:var(--font-heading);font-size:var(--fs-h2);font-weight:var(--fw-medium);color:var(--navy);line-height:1.3;margin:48px 0 18px;text-transform:uppercase;letter-spacing:.03em;scroll-margin-top:96px}
 .article-body h2 span{color:var(--blue)}
 .article-body h3{font-family:var(--font-heading);font-size:var(--fs-h4);font-weight:var(--fw-medium);color:var(--navy);margin:30px 0 12px}
 .article-lead{font-family:var(--font-heading);font-size:var(--fs-h5);color:var(--navy);line-height:1.7;margin-bottom:24px}
@@ -104,13 +120,13 @@
   <div class="page-hero-orb page-hero-orb-2"></div>
   <div class="container page-hero-inner">
     <nav class="breadcrumb">
-      <a href="index.html">Trang chủ</a>
+      <a href="/">Trang chủ</a>
       <span class="breadcrumb-sep">/</span>
-      <a href="blog.html">Câu chuyện</a>
+      <a href="cau-chuyen">Câu chuyện</a>
       <span class="breadcrumb-sep">/</span>
       <span>Thêu vi tính hay in áo</span>
     </nav>
-    <div class="page-hero-badge">🏭 Sản xuất — Câu chuyện từ xưởng</div>
+    <div class="page-hero-badge">🏭 Sản xuất · Câu chuyện từ xưởng</div>
     <h1 class="page-hero-title">Thêu vi tính hay in áo? <em>Chọn đúng công nghệ cho POD</em></h1>
     <p class="page-hero-sub">Cùng một thiết kế, chọn sai công nghệ thể hiện là mất khách. Bài viết từ chính xưởng sản xuất in-house của Ethan Ecom.</p>
   </div>
@@ -122,6 +138,21 @@
     <div class="container">
       <div class="article-wrap">
 
+        <aside class="toc" aria-label="Mục lục bài viết">
+          <p class="toc-title">Mục lục</p>
+          <ul class="toc-list">
+            <li><a href="#sec-1">1. Hai công nghệ, hai "chất" khác nhau</a></li>
+            <li><a href="#sec-2">2. Thêu vi tính hoạt động thế nào?</a></li>
+            <li><a href="#sec-3">3. In DTG và in DTF khác nhau gì?</a></li>
+            <li><a href="#sec-4">4. Chi phí sản xuất và giá bán: bài toán biên lợi nhuận</a></li>
+            <li><a href="#sec-5">5. Khi nào chọn thêu?</a></li>
+            <li><a href="#sec-6">6. Khi nào chọn in?</a></li>
+            <li><a href="#sec-7">7. Chiến lược của Ethan Ecom: test bằng in, scale bằng thêu</a></li>
+            <li><a href="#sec-8">8. Câu hỏi thường gặp về độ bền và giặt ủi</a></li>
+          </ul>
+        </aside>
+
+        <div class="article-main">
         <div class="article-meta reveal">
           <span class="am-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -139,18 +170,18 @@
         </figure>
 
         <div class="article-body">
-          <p class="article-lead reveal">Khách hàng Mỹ cầm chiếc áo lên và cảm nhận trong 3 giây: hàng chợ hay hàng đáng tiền. Phần lớn cảm nhận đó đến từ <strong>công nghệ thể hiện thiết kế</strong> — thêu vi tính hay in áo. Là đơn vị vận hành đồng thời cả máy thêu vi tính lẫn hệ thống in tại xưởng, chúng mình chia sẻ cách chọn đúng công nghệ cho từng loại sản phẩm POD.</p>
-          <p class="reveal">Trong mô hình <a href="blog-pod-la-gi.html">Print-on-Demand</a>, quyết định "thêu hay in" không phải chuyện kỹ thuật thuần túy — nó quyết định phân khúc giá, tệp khách hàng và cả chiến lược thương hiệu của bạn. Bài viết này đi từ nguyên lý hoạt động của từng công nghệ đến bài toán chi phí, kèm khung quyết định mà chúng mình dùng hằng ngày tại xưởng.</p>
+          <p class="article-lead reveal">Khách hàng Mỹ cầm chiếc áo lên và cảm nhận trong 3 giây: hàng chợ hay hàng đáng tiền. Phần lớn cảm nhận đó đến từ <strong>công nghệ thể hiện thiết kế</strong>, thêu vi tính hay in áo. Là đơn vị vận hành đồng thời cả máy thêu vi tính lẫn hệ thống in tại xưởng, chúng mình chia sẻ cách chọn đúng công nghệ cho từng loại sản phẩm POD.</p>
+          <p class="reveal">Trong mô hình <a href="blog-pod-la-gi">Print-on-Demand</a>, quyết định "thêu hay in" không phải chuyện kỹ thuật thuần túy, nó quyết định phân khúc giá, tệp khách hàng và cả chiến lược thương hiệu của bạn. Bài viết này đi từ nguyên lý hoạt động của từng công nghệ đến bài toán chi phí, kèm khung quyết định mà chúng mình dùng hằng ngày tại xưởng.</p>
 
-          <h2 class="reveal"><span>01.</span> Hai công nghệ, hai "chất" khác nhau</h2>
-          <p class="reveal"><strong>Thêu vi tính (embroidery)</strong> dùng máy thêu công nghiệp chạy theo file digitize — từng mũi kim tạo thành thiết kế nổi trên bề mặt vải, mang cảm giác thủ công cao cấp. <strong>In DTG/DTF</strong> phun trực tiếp hoặc ép chuyển nhiệt mực lên vải — tái hiện được hình ảnh phức tạp, nhiều màu, chuyển sắc mượt.</p>
+          <h2 id="sec-1" class="reveal"><span>01.</span> Hai công nghệ, hai "chất" khác nhau</h2>
+          <p class="reveal"><strong>Thêu vi tính (embroidery)</strong> dùng máy thêu công nghiệp chạy theo file digitize, từng mũi kim tạo thành thiết kế nổi trên bề mặt vải, mang cảm giác thủ công cao cấp. <strong>In DTG/DTF</strong> phun trực tiếp hoặc ép chuyển nhiệt mực lên vải, tái hiện được hình ảnh phức tạp, nhiều màu, chuyển sắc mượt.</p>
           <div class="article-table reveal">
             <table>
               <thead><tr><th>Tiêu chí</th><th>Thêu vi tính</th><th>In DTG/DTF</th></tr></thead>
               <tbody>
                 <tr><td>Cảm nhận</td><td>Nổi khối, sang trọng, "premium"</td><td>Phẳng, sắc nét, hiện đại</td></tr>
-                <tr><td>Độ bền</td><td>Rất cao — bền hơn tuổi thọ chiếc áo</td><td>Tốt nếu in chuẩn, phai dần theo số lần giặt</td></tr>
-                <tr><td>Chi tiết &amp; màu</td><td>Giới hạn màu chỉ, hợp thiết kế tối giản</td><td>Không giới hạn — ảnh chụp, gradient đều được</td></tr>
+                <tr><td>Độ bền</td><td>Rất cao, bền hơn tuổi thọ chiếc áo</td><td>Tốt nếu in chuẩn, phai dần theo số lần giặt</td></tr>
+                <tr><td>Chi tiết &amp; màu</td><td>Giới hạn màu chỉ, hợp thiết kế tối giản</td><td>Không giới hạn, ảnh chụp, gradient đều được</td></tr>
                 <tr><td>Giá bán được</td><td>Cao hơn 30–50%</td><td>Tầm trung, cạnh tranh bằng thiết kế</td></tr>
                 <tr><td>Sản phẩm hợp</td><td>Sweatshirt, hoodie, mũ, polo, quà kỷ niệm</td><td>T-shirt graphic, poster, canvas, mẫu test trend</td></tr>
               </tbody>
@@ -159,69 +190,69 @@
 
           <p class="reveal">Bảng trên là bản đồ nhanh, nhưng để chọn đúng cho từng sản phẩm cụ thể, bạn cần hiểu <em>vì sao</em> mỗi công nghệ có những đặc tính đó. Hãy đi sâu vào nguyên lý hoạt động của từng loại.</p>
 
-          <h2 class="reveal"><span>02.</span> Thêu vi tính hoạt động thế nào?</h2>
+          <h2 id="sec-2" class="reveal"><span>02.</span> Thêu vi tính hoạt động thế nào?</h2>
           <h3 class="reveal">Máy thêu chỉ hiểu file digitize</h3>
-          <p class="reveal">Máy thêu vi tính không "nhìn" được hình ảnh. Nó chỉ đọc được <strong>file digitize</strong> — bản đồ lệnh mô tả từng mũi kim: đâm xuống ở đâu, đi theo hướng nào, mật độ chỉ bao nhiêu. Công đoạn chuyển thiết kế thành file lệnh này gọi là <a href="blog-digitizing-la-gi.html">digitizing — nghề "điêu khắc số"</a>, và theo kinh nghiệm của chúng mình, nó quyết định tới 70% chất lượng thành phẩm. Cùng một máy, cùng một cuộn chỉ, file digitize tốt và tồi cho ra hai chiếc áo khác hẳn nhau.</p>
+          <p class="reveal">Máy thêu vi tính không "nhìn" được hình ảnh. Nó chỉ đọc được <strong>file digitize</strong>, bản đồ lệnh mô tả từng mũi kim: đâm xuống ở đâu, đi theo hướng nào, mật độ chỉ bao nhiêu. Công đoạn chuyển thiết kế thành file lệnh này gọi là <a href="blog-digitizing-la-gi">digitizing, nghề "điêu khắc số"</a>, và theo kinh nghiệm của chúng mình, nó quyết định tới 70% chất lượng thành phẩm. Cùng một máy, cùng một cuộn chỉ, file digitize tốt và tồi cho ra hai chiếc áo khác hẳn nhau.</p>
           <h3 class="reveal">Ba loại mũi thêu cơ bản</h3>
           <ul class="reveal">
-            <li><strong>Mũi satin:</strong> dải chỉ bóng vắt qua lại, tạo độ nổi đẹp nhất — dùng cho chữ, viền, chi tiết hẹp.</li>
-            <li><strong>Mũi fill (tatami):</strong> lấp kín mảng lớn bằng các hàng chỉ đan xen — dùng cho nền và khối màu rộng.</li>
-            <li><strong>Mũi running:</strong> đường chỉ đơn mảnh — dùng cho nét vẽ, chi tiết tinh tế, hiệu ứng phác thảo.</li>
+            <li><strong>Mũi satin:</strong> dải chỉ bóng vắt qua lại, tạo độ nổi đẹp nhất, dùng cho chữ, viền, chi tiết hẹp.</li>
+            <li><strong>Mũi fill (tatami):</strong> lấp kín mảng lớn bằng các hàng chỉ đan xen, dùng cho nền và khối màu rộng.</li>
+            <li><strong>Mũi running:</strong> đường chỉ đơn mảnh, dùng cho nét vẽ, chi tiết tinh tế, hiệu ứng phác thảo.</li>
           </ul>
           <p class="reveal">Một thiết kế thêu đẹp là bản phối của cả ba loại mũi, cộng với hướng thêu và lớp lót underlay được tính toán theo từng chất vải. Đó là lý do đồ thêu khó sao chép: đối thủ thấy được thiết kế nhưng không thấy được file lệnh đằng sau.</p>
 
-          <h2 class="reveal"><span>03.</span> In DTG và in DTF khác nhau gì?</h2>
-          <h3 class="reveal">In DTG — phun mực trực tiếp lên vải</h3>
+          <h2 id="sec-3" class="reveal"><span>03.</span> In DTG và in DTF khác nhau gì?</h2>
+          <h3 class="reveal">In DTG: phun mực trực tiếp lên vải</h3>
           <p class="reveal"><strong>DTG (Direct-to-Garment)</strong> hoạt động như máy in phun khổ lớn: áo được trải phẳng, đầu phun bắn mực trực tiếp lên bề mặt vải, sau đó sấy nhiệt để mực bám. Ưu điểm là hình in "ngấm" vào vải, mềm tay, thoáng, tái hiện chi tiết ảnh chụp rất tốt trên vải cotton. Hạn chế: kén vải (cotton cho kết quả đẹp nhất), cần xử lý pre-treatment với áo tối màu, và chi phí mỗi bản in cao hơn khi hình lớn nhiều mực.</p>
-          <h3 class="reveal">In DTF — in lên film rồi ép nhiệt</h3>
-          <p class="reveal"><strong>DTF (Direct-to-Film)</strong> in thiết kế lên tấm film chuyên dụng, phủ keo bột, rồi ép nhiệt chuyển hình sang vải. Ưu điểm lớn nhất là <em>in được lên gần như mọi chất liệu</em> — cotton, polyester, vải pha, canvas — với màu sắc rực và độ bám tốt. Đổi lại, lớp hình có cảm giác "màng" hơi dày hơn DTG. Tại xưởng, chúng mình dùng cả hai: DTG cho áo cotton cần tay mềm, DTF cho đơn đa chất liệu và chi tiết màu neon rực.</p>
+          <h3 class="reveal">In DTF: in lên film rồi ép nhiệt</h3>
+          <p class="reveal"><strong>DTF (Direct-to-Film)</strong> in thiết kế lên tấm film chuyên dụng, phủ keo bột, rồi ép nhiệt chuyển hình sang vải. Ưu điểm lớn nhất là <em>in được lên gần như mọi chất liệu</em>, cotton, polyester, vải pha, canvas, với màu sắc rực và độ bám tốt. Đổi lại, lớp hình có cảm giác "màng" hơi dày hơn DTG. Tại xưởng, chúng mình dùng cả hai: DTG cho áo cotton cần tay mềm, DTF cho đơn đa chất liệu và chi tiết màu neon rực.</p>
 
           <figure class="article-figure reveal">
             <img src="assets/images/product/ingiay.jpg" width="2582" height="1664" alt="Hệ thống máy in vận hành song song với dàn máy thêu tại xưởng Ethan Ecom" loading="lazy">
-            <figcaption>Tại xưởng Ethan Ecom, dàn máy in vận hành song song với máy thêu — mỗi đơn hàng được đưa về đúng công nghệ phù hợp.</figcaption>
+            <figcaption>Tại xưởng Ethan Ecom, dàn máy in vận hành song song với máy thêu, mỗi đơn hàng được đưa về đúng công nghệ phù hợp.</figcaption>
           </figure>
 
-          <h2 class="reveal"><span>04.</span> Chi phí sản xuất và giá bán: bài toán biên lợi nhuận</h2>
-          <p class="reveal">Xét trên mỗi sản phẩm, thêu thường có <strong>chi phí sản xuất cao hơn in</strong>: thời gian máy chạy lâu hơn (một thiết kế ngực áo mất nhiều phút thêu so với chưa đầy một phút in), tốn chỉ, và cần công đoạn digitize ban đầu. In có chi phí khởi tạo gần bằng không — có file thiết kế là in được ngay.</p>
-          <p class="reveal">Nhưng bài toán kinh doanh không dừng ở giá vốn. Sản phẩm thêu bán được giá cao hơn 30–50% và ít bị so sánh giá trực tiếp, nên <strong>biên lợi nhuận tuyệt đối trên mỗi đơn thường dày hơn</strong>. Ngược lại, in thắng ở vòng quay: chi phí thử nghiệm thấp cho phép tung hàng chục mẫu mỗi tuần để dò thị hiếu. Thêu là cỗ máy lợi nhuận, in là cỗ máy dữ liệu — hiểu đúng vai trò của từng công nghệ, bạn sẽ không bao giờ hỏi "cái nào tốt hơn" nữa.</p>
-          <p class="reveal">Một lưu ý thực chiến: chi phí digitize chỉ tốn <em>một lần cho mỗi thiết kế</em>. Thiết kế thêu càng bán được nhiều đơn, chi phí đó càng được chia nhỏ — vì vậy thêu đặc biệt hợp với các mẫu evergreen bán quanh năm thay vì trend vài tuần.</p>
+          <h2 id="sec-4" class="reveal"><span>04.</span> Chi phí sản xuất và giá bán: bài toán biên lợi nhuận</h2>
+          <p class="reveal">Xét trên mỗi sản phẩm, thêu thường có <strong>chi phí sản xuất cao hơn in</strong>: thời gian máy chạy lâu hơn (một thiết kế ngực áo mất nhiều phút thêu so với chưa đầy một phút in), tốn chỉ, và cần công đoạn digitize ban đầu. In có chi phí khởi tạo gần bằng không, có file thiết kế là in được ngay.</p>
+          <p class="reveal">Nhưng bài toán kinh doanh không dừng ở giá vốn. Sản phẩm thêu bán được giá cao hơn 30–50% và ít bị so sánh giá trực tiếp, nên <strong>biên lợi nhuận tuyệt đối trên mỗi đơn thường dày hơn</strong>. Ngược lại, in thắng ở vòng quay: chi phí thử nghiệm thấp cho phép tung hàng chục mẫu mỗi tuần để dò thị hiếu. Thêu là cỗ máy lợi nhuận, in là cỗ máy dữ liệu, hiểu đúng vai trò của từng công nghệ, bạn sẽ không bao giờ hỏi "cái nào tốt hơn" nữa.</p>
+          <p class="reveal">Một lưu ý thực chiến: chi phí digitize chỉ tốn <em>một lần cho mỗi thiết kế</em>. Thiết kế thêu càng bán được nhiều đơn, chi phí đó càng được chia nhỏ, vì vậy thêu đặc biệt hợp với các mẫu evergreen bán quanh năm thay vì trend vài tuần.</p>
 
-          <h2 class="reveal"><span>05.</span> Khi nào chọn thêu?</h2>
+          <h2 id="sec-5" class="reveal"><span>05.</span> Khi nào chọn thêu?</h2>
           <ul class="reveal">
-            <li>Sản phẩm <strong>quà tặng cá nhân hóa</strong> — tên, chân dung thú cưng tối giản, chữ lồng (monogram): độ nổi của chỉ thêu tự nó đã là "chất quà".</li>
+            <li>Sản phẩm <strong>quà tặng cá nhân hóa</strong>, tên, chân dung thú cưng tối giản, chữ lồng (monogram): độ nổi của chỉ thêu tự nó đã là "chất quà".</li>
             <li>Niche khách sẵn sàng <strong>trả giá cao</strong> cho cảm giác bền vững, ít thời trang nhanh.</li>
-            <li>Thiết kế <strong>ít màu, đường nét rõ</strong> — đúng sở trường của kim chỉ.</li>
+            <li>Thiết kế <strong>ít màu, đường nét rõ</strong>, đúng sở trường của kim chỉ.</li>
           </ul>
-          <p class="reveal">Ví dụ niche cụ thể mà thêu gần như luôn thắng: sweatshirt thêu tên thú cưng cho hội "pet parents" Mỹ, mũ golf thêu chữ lồng, áo polo đồng phục doanh nghiệp nhỏ, hoodie kỷ niệm ngày cưới với tọa độ và ngày tháng. Điểm chung: khách mua vì <em>ý nghĩa</em>, không mua vì giá — và độ bền của chỉ thêu khiến món quà giữ giá trị theo năm tháng.</p>
-          <p class="reveal">Chất lượng thêu phụ thuộc phần lớn vào công đoạn <strong>digitizing</strong> — cùng một máy, file digitize tốt và tồi cho ra hai thành phẩm khác hẳn nhau. Đây chính là nghề mà <a href="blog-academy-digital-emb.html">Ethan Ecom Academy đào tạo miễn phí</a> để xây đội ngũ kế cận cho xưởng.</p>
+          <p class="reveal">Ví dụ niche cụ thể mà thêu gần như luôn thắng: sweatshirt thêu tên thú cưng cho hội "pet parents" Mỹ, mũ golf thêu chữ lồng, áo polo đồng phục doanh nghiệp nhỏ, hoodie kỷ niệm ngày cưới với tọa độ và ngày tháng. Điểm chung: khách mua vì <em>ý nghĩa</em>, không mua vì giá, và độ bền của chỉ thêu khiến món quà giữ giá trị theo năm tháng.</p>
+          <p class="reveal">Chất lượng thêu phụ thuộc phần lớn vào công đoạn <strong>digitizing</strong>, cùng một máy, file digitize tốt và tồi cho ra hai thành phẩm khác hẳn nhau. Đây chính là nghề mà <a href="blog-academy-digital-emb">Ethan Ecom Academy đào tạo miễn phí</a> để xây đội ngũ kế cận cho xưởng.</p>
 
-          <h2 class="reveal"><span>06.</span> Khi nào chọn in?</h2>
+          <h2 id="sec-6" class="reveal"><span>06.</span> Khi nào chọn in?</h2>
           <ul class="reveal">
-            <li>Thiết kế <strong>nhiều màu, chi tiết ảnh</strong> — chân dung theo phong cách vẽ, minh họa phức tạp, gradient chuyển sắc.</li>
+            <li>Thiết kế <strong>nhiều màu, chi tiết ảnh</strong>, chân dung theo phong cách vẽ, minh họa phức tạp, gradient chuyển sắc.</li>
             <li><strong>Test trend nhanh:</strong> chi phí khởi tạo thấp, ra mẫu trong ngày, thắng thì scale, thua thì bỏ không tiếc.</li>
             <li>Phân khúc giá <strong>cạnh tranh</strong> nơi tốc độ và giá quyết định đơn hàng.</li>
           </ul>
-          <p class="reveal">Ví dụ niche hợp in: t-shirt graphic bám meme và pop culture, áo nhóm sự kiện cần gấp số lượng lớn, poster và canvas trang trí với minh họa nhiều lớp màu, áo chân dung gia đình vẽ theo phong cách hoạt hình. Điểm chung: thiết kế phức tạp về màu, vòng đời sản phẩm ngắn hoặc nhu cầu tốc độ cao — những thứ kim chỉ không đua được với đầu phun mực.</p>
-          <p class="reveal">Một mẹo nhỏ từ xưởng: nếu thiết kế của bạn có <strong>chữ nhỏ hơn khoảng 5mm hoặc chi tiết mảnh như sợi tóc</strong>, hãy chọn in ngay từ đầu — kim chỉ có giới hạn vật lý mà không digitizer nào vượt qua được, còn đầu phun mực thì tái hiện dễ dàng.</p>
+          <p class="reveal">Ví dụ niche hợp in: t-shirt graphic bám meme và pop culture, áo nhóm sự kiện cần gấp số lượng lớn, poster và canvas trang trí với minh họa nhiều lớp màu, áo chân dung gia đình vẽ theo phong cách hoạt hình. Điểm chung: thiết kế phức tạp về màu, vòng đời sản phẩm ngắn hoặc nhu cầu tốc độ cao, những thứ kim chỉ không đua được với đầu phun mực.</p>
+          <p class="reveal">Một mẹo nhỏ từ xưởng: nếu thiết kế của bạn có <strong>chữ nhỏ hơn khoảng 5mm hoặc chi tiết mảnh như sợi tóc</strong>, hãy chọn in ngay từ đầu, kim chỉ có giới hạn vật lý mà không digitizer nào vượt qua được, còn đầu phun mực thì tái hiện dễ dàng.</p>
 
-          <h2 class="reveal"><span>07.</span> Chiến lược của Ethan Ecom: test bằng in, scale bằng thêu</h2>
-          <p class="reveal">Câu trả lời tốt nhất thường không phải "thêu <em>hay</em> in" mà là "thêu <em>và</em> in". Quy trình chúng mình vận hành: dùng in để test thiết kế mới với chi phí thấp — tung nhiều mẫu, đo lường phản ứng thật của thị trường bằng đơn hàng thay vì phỏng đoán. Thiết kế nào chứng minh được sức bán sẽ được digitize và nâng cấp thành <strong>phiên bản thêu giá cao hơn</strong> cho nhóm khách quà tặng, thường kèm tùy chọn cá nhân hóa để đẩy giá trị đơn lên nữa.</p>
-          <p class="reveal">Cách làm này biến in thành bộ lọc dữ liệu và thêu thành cỗ máy biên lợi nhuận — mỗi đồng chi phí digitize chỉ rót vào những thiết kế đã được thị trường bảo chứng. Vận hành cả hai công nghệ dưới một mái xưởng cho phép chuyển đổi này diễn ra trong vài ngày thay vì vài tuần — lợi thế cạnh tranh mà mô hình fulfillment thuê ngoài không thể sao chép, và cũng là lý do chúng mình kiên định với con đường tự chủ sản xuất in-house.</p>
+          <h2 id="sec-7" class="reveal"><span>07.</span> Chiến lược của Ethan Ecom: test bằng in, scale bằng thêu</h2>
+          <p class="reveal">Câu trả lời tốt nhất thường không phải "thêu <em>hay</em> in" mà là "thêu <em>và</em> in". Quy trình chúng mình vận hành: dùng in để test thiết kế mới với chi phí thấp, tung nhiều mẫu, đo lường phản ứng thật của thị trường bằng đơn hàng thay vì phỏng đoán. Thiết kế nào chứng minh được sức bán sẽ được digitize và nâng cấp thành <strong>phiên bản thêu giá cao hơn</strong> cho nhóm khách quà tặng, thường kèm tùy chọn cá nhân hóa để đẩy giá trị đơn lên nữa.</p>
+          <p class="reveal">Cách làm này biến in thành bộ lọc dữ liệu và thêu thành cỗ máy biên lợi nhuận, mỗi đồng chi phí digitize chỉ rót vào những thiết kế đã được thị trường bảo chứng. Vận hành cả hai công nghệ dưới một mái xưởng cho phép chuyển đổi này diễn ra trong vài ngày thay vì vài tuần, lợi thế cạnh tranh mà mô hình fulfillment thuê ngoài không thể sao chép, và cũng là lý do chúng mình kiên định với con đường tự chủ sản xuất in-house.</p>
 
           <div class="article-quote reveal">
-            <p>"Công nghệ không tạo ra sản phẩm tốt — sự am hiểu sản phẩm để chọn đúng công nghệ mới tạo ra sản phẩm tốt."</p>
+            <p>"Công nghệ không tạo ra sản phẩm tốt, sự am hiểu sản phẩm để chọn đúng công nghệ mới tạo ra sản phẩm tốt."</p>
             <cite>— Đội ngũ Sản xuất, Ethan Ecom</cite>
           </div>
 
-          <h2 class="reveal">Câu hỏi thường gặp về độ bền và giặt ủi</h2>
+          <h2 id="sec-8" class="reveal">Câu hỏi thường gặp về độ bền và giặt ủi</h2>
           <h3 class="reveal">Áo thêu giặt máy có bị hỏng không?</h3>
-          <p class="reveal">Không, nếu file digitize chuẩn và chỉ thêu chất lượng. Hình thêu thường bền hơn chính chiếc áo — áo có thể bạc màu, giãn vải nhưng chỉ thêu vẫn giữ nguyên khối. Chỉ cần lộn trái áo khi giặt và tránh sấy nhiệt quá cao để giữ form đẹp nhất.</p>
+          <p class="reveal">Không, nếu file digitize chuẩn và chỉ thêu chất lượng. Hình thêu thường bền hơn chính chiếc áo, áo có thể bạc màu, giãn vải nhưng chỉ thêu vẫn giữ nguyên khối. Chỉ cần lộn trái áo khi giặt và tránh sấy nhiệt quá cao để giữ form đẹp nhất.</p>
           <h3 class="reveal">Hình in DTG/DTF bền được bao nhiêu lần giặt?</h3>
           <p class="reveal">Với quy trình in và sấy chuẩn, hình in DTG phổ biến giữ màu tốt qua vài chục lần giặt trước khi phai nhẹ tự nhiên; DTF thường bám bền hơn nhờ lớp keo chuyển. Khuyến nghị chung cho khách: giặt nước lạnh, lộn trái, hạn chế sấy nóng và không ủi trực tiếp lên hình in.</p>
           <h3 class="reveal">Vì sao có áo thêu bị nhăn rúm vải quanh hình?</h3>
-          <p class="reveal">Đó là lỗi digitize: mật độ chỉ quá dày hoặc thiếu bù co kéo (pull compensation) khiến chỉ kéo rúm vải khi thêu. Đây là ví dụ điển hình cho việc chất lượng thêu nằm ở file lệnh chứ không nằm ở máy — bạn có thể đọc thêm trong bài <a href="blog-digitizing-la-gi.html">digitizing là gì</a> của chúng mình.</p>
+          <p class="reveal">Đó là lỗi digitize: mật độ chỉ quá dày hoặc thiếu bù co kéo (pull compensation) khiến chỉ kéo rúm vải khi thêu. Đây là ví dụ điển hình cho việc chất lượng thêu nằm ở file lệnh chứ không nằm ở máy, bạn có thể đọc thêm trong bài <a href="blog-digitizing-la-gi">digitizing là gì</a> của chúng mình.</p>
           <h3 class="reveal">Mới bắt đầu POD nên chọn công nghệ nào trước?</h3>
-          <p class="reveal">Bắt đầu bằng in để học thị trường với chi phí thấp, sau đó nâng cấp các mẫu bán chạy lên thêu để tăng biên lợi nhuận — đúng lộ trình test-bằng-in, scale-bằng-thêu ở trên. Nếu bạn chưa rõ bức tranh tổng thể của mô hình, hãy đọc bài <a href="blog-pod-la-gi.html">toàn cảnh Print-on-Demand 2026</a> trước khi chọn niche.</p>
+          <p class="reveal">Bắt đầu bằng in để học thị trường với chi phí thấp, sau đó nâng cấp các mẫu bán chạy lên thêu để tăng biên lợi nhuận, đúng lộ trình test-bằng-in, scale-bằng-thêu ở trên. Nếu bạn chưa rõ bức tranh tổng thể của mô hình, hãy đọc bài <a href="blog-pod-la-gi">toàn cảnh Print-on-Demand 2026</a> trước khi chọn niche.</p>
 
           <div class="tag-row reveal">
             <span class="tag-chip">#TheuViTinh</span>
@@ -229,6 +260,7 @@
             <span class="tag-chip">#XuongInHouse</span>
             <span class="tag-chip">#EthanEcom</span>
           </div>
+        </div>
         </div>
 
       </div>
@@ -243,27 +275,27 @@
         <h2 class="st">Bài viết liên quan</h2>
       </div>
       <div class="related-grid">
-        <a href="blog-pod-la-gi.html" class="rel-card reveal d1">
-          <div class="rel-thumb"><img src="assets/images/blog/pod-tshirt-mockup.jpg" alt="Print-on-Demand là gì? Toàn cảnh mô hình POD 2026" loading="lazy"></div>
+        <a href="blog-pod-la-gi" class="rel-card reveal d1">
+          <div class="rel-thumb"><img src="assets/images/blog/16-theu-vs-in/pod-tshirt-mockup.jpg" alt="Print-on-Demand là gì? Toàn cảnh mô hình POD 2026" loading="lazy"></div>
           <div class="rel-body">
             <div class="rel-tag">E-commerce</div>
             <h4>Print-on-Demand là gì? Toàn cảnh mô hình POD 2026</h4>
             <span>26 Tháng 3, 2026 · 11 phút đọc</span>
           </div>
         </a>
-        <a href="blog-digitizing-la-gi.html" class="rel-card reveal d2">
-          <div class="rel-thumb"><img src="assets/images/blog/academy-02.jpg" alt="Digitizing là gì? Nghề "điêu khắc số" đằng sau sản phẩm thêu" loading="lazy"></div>
+        <a href="blog-digitizing-la-gi" class="rel-card reveal d2">
+          <div class="rel-thumb"><img src="assets/images/blog/16-theu-vs-in/academy-02.jpg" alt="Digitizing là gì? Nghề "điêu khắc số" đằng sau sản phẩm thêu" loading="lazy"></div>
           <div class="rel-body">
             <div class="rel-tag">Sản xuất</div>
             <h4>Digitizing là gì? Nghề "điêu khắc số" đằng sau sản phẩm thêu</h4>
             <span>20 Tháng 3, 2026 · 10 phút đọc</span>
           </div>
         </a>
-        <a href="blog-thiet-ke-thuong-hieu.html" class="rel-card reveal d3">
-          <div class="rel-thumb"><img src="assets/images/blog/design-color-palette.jpg" alt="Thiết kế chuẩn thị hiếu phương Tây — Góc nhìn thực chiến" loading="lazy"></div>
+        <a href="blog-thiet-ke-thuong-hieu" class="rel-card reveal d3">
+          <div class="rel-thumb"><img src="assets/images/blog/16-theu-vs-in/design-color-palette.jpg" alt="Thiết kế chuẩn thị hiếu phương Tây, Góc nhìn thực chiến" loading="lazy"></div>
           <div class="rel-body">
             <div class="rel-tag">Design</div>
-            <h4>Thiết kế chuẩn thị hiếu phương Tây — Góc nhìn thực chiến</h4>
+            <h4>Thiết kế chuẩn thị hiếu phương Tây: Góc nhìn thực chiến</h4>
             <span>24 Tháng 4, 2026 · 10 phút đọc</span>
           </div>
         </a>
@@ -276,11 +308,43 @@
 <div id="site-footer"></div>
 
 <!-- Shared JS (must be last) -->
-<script src="assets/js/shared.js?v=housef02"></script>
+<script src="assets/js/shared.js?v=housef05"></script>
 <script src="assets/js/page-animations.js"></script>
 
 <!-- Contact popup + dock 2 nút gim (Ứng tuyển ngay / Liên hệ ngay) -->
 <div id="contact-popup-root"></div>
-<script src="assets/js/contact-popup.js?v=20260718a"></script>
+<script src="assets/js/contact-popup.js?v=20260722y"></script>
+
+<!-- Scroll-spy: tự làm nổi mục lục theo section đang đọc -->
+<script>
+(function(){
+  var links = [].slice.call(document.querySelectorAll('.toc-list a'));
+  if(!links.length) return;
+  var targets = links.map(function(a){
+    return { link:a, el:document.getElementById(a.getAttribute('href').slice(1)) };
+  }).filter(function(t){ return t.el; });
+  if(!targets.length) return;
+  // offsetTop bỏ qua transform (class .reveal dùng translateY) → đo vị trí ổn định
+  function absTop(el){ var y=0; while(el){ y+=el.offsetTop; el=el.offsetParent; } return y; }
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var pos = window.scrollY + 140;
+    var current = targets[0].link;
+    for(var i=0;i<targets.length;i++){
+      if(absTop(targets[i].el) <= pos) current = targets[i].link;
+    }
+    if(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4){
+      current = targets[targets.length-1].link;
+    }
+    links.forEach(function(l){ l.classList.toggle('active', l===current); });
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(update); ticking = true; }
+  }, {passive:true});
+  window.addEventListener('resize', update, {passive:true});
+  update();
+})();
+</script>
 </body>
 </html>

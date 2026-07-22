@@ -30,11 +30,7 @@
 - 4 core values dạng icon list: Tâm Huyết / Trách Nhiệm / Thấu Hiểu / Minh Bạch
 - Button: "Về chúng tôi" → `/about`
 
-### 6. Latest Works — Portfolio *(animation: stagger scaleIn cho grid items)*
-- Tiêu đề: "Công trình nổi bật"
-- Filter tabs: Tất cả / Branding / Web Design / E-commerce / Media
-- Grid bento 5–6 ảnh dự án thực tế; hover: overlay xanh + tên dự án + icon link
-- Button: "Xem tất cả dự án" → `/portfolio`
+### 6. ~~Latest Works — Portfolio~~ *(ĐÃ BỎ — công ty không có portfolio; trang `/portfolio` đã thay bằng `/vision` (Tầm nhìn). Không build lại section này.)*
 
 ### 7. Team — Đồng lòng *(animation: stagger fadeInUp avatar cards)*
 - Nền xanh navy hoặc gradient

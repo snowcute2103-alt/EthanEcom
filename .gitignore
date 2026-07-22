@@ -42,6 +42,10 @@ screenshots/
 !assets/images/**/*.jpg
 !assets/images/**/*.png
 
+# Source-only originals not used by the site (browsers can't render HEIC)
+*.HEIC
+*.heic
+
 # Logs
 *.log
 logs/

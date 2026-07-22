@@ -8,15 +8,15 @@
 <meta name="keywords" content="SEO Amazon, tối ưu listing Amazon, từ khóa Amazon, backend keywords, A+ Content, tăng thứ hạng Amazon, Ethan Ecom">
 <meta property="og:type" content="article">
 <meta property="og:title" content="5 chiến lược SEO Amazon giúp listing lên top trong 30 ngày">
-<meta property="og:description" content="Từ nghiên cứu từ khóa đến vòng lặp review — 5 chiến lược SEO Amazon đúc kết từ vận hành gian hàng thực tế.">
-<meta property="og:image" content="assets/images/blog/amazon-seo-analytics.jpg">
+<meta property="og:description" content="Từ nghiên cứu từ khóa đến vòng lặp review, 5 chiến lược SEO Amazon đúc kết từ vận hành gian hàng thực tế.">
+<meta property="og:image" content="assets/images/blog/08-amazon-seo/amazon-seo-analytics.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "5 chiến lược SEO Amazon giúp listing lên top trong 30 ngày",
   "description": "Từ nghiên cứu từ khóa đến vòng lặp review — 5 chiến lược SEO Amazon đúc kết từ vận hành gian hàng thực tế.",
-  "image": "assets/images/blog/amazon-seo-analytics.jpg",
+  "image": "assets/images/blog/08-amazon-seo/amazon-seo-analytics.jpg",
   "datePublished": "2026-05-28",
   "inLanguage": "vi",
   "author": { "@type": "Organization", "name": "Ethan Ecom" },
@@ -26,7 +26,23 @@
 <link rel="stylesheet" href="assets/css/shared.css?v=housef02">
 <style>
 /* ── ARTICLE LAYOUT (dùng chung các trang bài viết) ── */
+html{scroll-behavior:smooth}
+/* clip thay cho hidden: vẫn chặn tràn ngang nhưng không phá position:sticky của mục lục */
+body{overflow-x:clip}
 .article-wrap{max-width:860px;margin:0 auto}
+.article-main{min-width:0}
+/* ── MỤC LỤC (table of contents sidebar) ── */
+.toc{display:none}
+.toc-title{font-family:var(--font-text);font-size:var(--fs-small);font-weight:var(--fw-semibold);letter-spacing:.16em;text-transform:uppercase;color:var(--muted,#5A6B82);margin:0 0 14px;padding-left:17px}
+.toc-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.toc-list a{display:block;padding:9px 17px;font-family:var(--font-text);font-size:var(--fs-base);line-height:1.45;color:var(--muted,#5A6B82);text-decoration:none;border-left:3px solid transparent;transition:color .2s,background .2s,border-color .2s}
+.toc-list a:hover{color:var(--navy);background:var(--surface,#EAF3FB)}
+.toc-list a.active{color:var(--blue);font-weight:var(--fw-semibold);background:var(--surface,#EAF3FB);border-left-color:var(--blue)}
+@media(min-width:1100px){
+  .article-wrap{max-width:1180px;display:grid;grid-template-columns:236px minmax(0,860px);gap:56px;justify-content:center}
+  .article-main{max-width:860px}
+  .toc{display:block;position:sticky;top:96px;max-height:calc(100vh - 120px);overflow-y:auto}
+}
 .article-meta{display:flex;align-items:center;gap:8px 22px;flex-wrap:wrap;font-family:var(--font-text);font-size:var(--fs-base);color:var(--muted,#5A6B82);margin-bottom:28px}
 .article-meta .am-item{display:inline-flex;align-items:center;gap:7px}
 .article-meta svg{width:15px;height:15px;stroke:var(--blue)}
@@ -36,7 +52,7 @@
 .article-cover--crop{aspect-ratio:16/9}
 .article-cover--crop img{height:100%;object-fit:cover}
 .article-body p{font-size:var(--fs-md);color:var(--text);line-height:1.85;margin-bottom:20px}
-.article-body h2{font-family:var(--font-heading);font-size:var(--fs-h2);font-weight:var(--fw-medium);color:var(--navy);line-height:1.3;margin:48px 0 18px;text-transform:uppercase;letter-spacing:.03em}
+.article-body h2{font-family:var(--font-heading);font-size:var(--fs-h2);font-weight:var(--fw-medium);color:var(--navy);line-height:1.3;margin:48px 0 18px;text-transform:uppercase;letter-spacing:.03em;scroll-margin-top:96px}
 .article-body h2 span{color:var(--blue)}
 .article-body h3{font-family:var(--font-heading);font-size:var(--fs-h4);font-weight:var(--fw-medium);color:var(--navy);margin:30px 0 12px}
 .article-lead{font-family:var(--font-heading);font-size:var(--fs-h5);color:var(--navy);line-height:1.7;margin-bottom:24px}
@@ -104,13 +120,13 @@
   <div class="page-hero-orb page-hero-orb-2"></div>
   <div class="container page-hero-inner">
     <nav class="breadcrumb">
-      <a href="index.html">Trang chủ</a>
+      <a href="/">Trang chủ</a>
       <span class="breadcrumb-sep">/</span>
-      <a href="blog.html">Câu chuyện</a>
+      <a href="cau-chuyen">Câu chuyện</a>
       <span class="breadcrumb-sep">/</span>
       <span>SEO Amazon</span>
     </nav>
-    <div class="page-hero-badge">📈 E-commerce — Amazon SEO</div>
+    <div class="page-hero-badge">📈 E-commerce · Amazon SEO</div>
     <h1 class="page-hero-title">5 chiến lược SEO Amazon giúp <em>listing lên top trong 30 ngày</em></h1>
     <p class="page-hero-sub">Thuật toán A9 chỉ quan tâm một điều: listing của bạn có tạo ra giao dịch không. 5 chiến lược dưới đây xoay quanh đúng câu hỏi đó.</p>
   </div>
@@ -122,6 +138,21 @@
     <div class="container">
       <div class="article-wrap">
 
+        <aside class="toc" aria-label="Mục lục bài viết">
+          <p class="toc-title">Mục lục</p>
+          <ul class="toc-list">
+            <li><a href="#sec-1">1. Thuật toán A9/COSMO hoạt động thế nào?</a></li>
+            <li><a href="#sec-2">2. Nghiên cứu từ khóa theo ý định mua</a></li>
+            <li><a href="#sec-3">3. Title – Bullet – A+ theo thứ tự ưu tiên</a></li>
+            <li><a href="#sec-4">4. Backend keywords: 249 bytes vàng</a></li>
+            <li><a href="#sec-5">5. Hình ảnh quyết định CTR</a></li>
+            <li><a href="#sec-6">6. Vòng lặp review</a></li>
+            <li><a href="#sec-7">7. Checklist SEO Amazon 30 ngày</a></li>
+            <li><a href="#sec-8">8. Câu hỏi thường gặp</a></li>
+          </ul>
+        </aside>
+
+        <div class="article-main">
         <div class="article-meta reveal">
           <span class="am-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -135,83 +166,83 @@
         </div>
 
         <figure class="article-cover reveal">
-          <img src="assets/images/blog/amazon-seo-analytics.jpg" width="1600" height="1140" alt="Màn hình laptop hiển thị dashboard số liệu theo dõi thứ hạng từ khóa Amazon" loading="eager">
+          <img src="assets/images/blog/08-amazon-seo/amazon-seo-analytics.jpg" width="1600" height="1140" alt="Màn hình laptop hiển thị dashboard số liệu theo dõi thứ hạng từ khóa Amazon" loading="eager">
         </figure>
 
         <div class="article-body">
-          <p class="article-lead reveal">SEO Amazon khác hẳn SEO Google: thuật toán không xếp hạng trang "hay nhất", nó xếp hạng listing <em>bán được nhiều nhất</em>. Mọi tối ưu vì thế phải trả lời đúng một câu hỏi: "Điều này có giúp nhiều người nhấp vào và mua hơn không?" — 5 chiến lược SEO Amazon dưới đây, đúc kết từ vận hành gian hàng thực tế của đội ngũ Ethan Ecom, xoay quanh đúng câu hỏi đó.</p>
-          <p class="reveal">Bài viết này đi sâu vào phần tối ưu listing — mảnh ghép "nền móng" trong lộ trình tổng thể mà chúng mình đã vẽ ở bài <a href="blog-amazon-top-seller.html">Chiến lược Amazon 2026: Từ 0 đến Top Seller trong 90 ngày</a>. Nhưng trước khi vào 5 chiến lược, hãy hiểu người chấm điểm bạn là ai.</p>
+          <p class="article-lead reveal">SEO Amazon khác hẳn SEO Google: thuật toán không xếp hạng trang "hay nhất", nó xếp hạng listing <em>bán được nhiều nhất</em>. Mọi tối ưu vì thế phải trả lời đúng một câu hỏi: "Điều này có giúp nhiều người nhấp vào và mua hơn không?", 5 chiến lược SEO Amazon dưới đây, đúc kết từ vận hành gian hàng thực tế của đội ngũ Ethan Ecom, xoay quanh đúng câu hỏi đó.</p>
+          <p class="reveal">Bài viết này đi sâu vào phần tối ưu listing, mảnh ghép "nền móng" trong lộ trình tổng thể mà chúng mình đã vẽ ở bài <a href="blog-amazon-top-seller">Chiến lược Amazon 2026: Từ 0 đến Top Seller trong 90 ngày</a>. Nhưng trước khi vào 5 chiến lược, hãy hiểu người chấm điểm bạn là ai.</p>
 
-          <h2 class="reveal">Thuật toán A9/COSMO hoạt động thế nào?</h2>
-          <p class="reveal">Thuật toán tìm kiếm của Amazon (quen gọi là A9) chấm điểm listing theo hai trục nhân với nhau: <strong>relevance</strong> — listing có chứa đúng từ khóa người mua gõ không, và <strong>performance</strong> — khi được hiển thị, listing có tạo ra nhấp chuột (CTR), chuyển đổi (CVR) và doanh số không. Thiếu một trong hai, điểm bằng không: đúng từ khóa mà không ai mua thì rớt hạng, bán tốt nhưng thiếu từ khóa thì không được hiển thị để mà bán.</p>
-          <p class="reveal">Từ 2024, Amazon bổ sung lớp hiểu ngữ nghĩa mới thường được gọi là <strong>COSMO</strong>: thay vì chỉ khớp chuỗi ký tự, hệ thống suy luận <em>ý định</em> đằng sau truy vấn. Người gõ "quà cho bố thích câu cá" có thể được gợi ý chiếc mũ thêu hình cá — dù listing không chứa nguyên văn cụm đó. Hệ quả thực tế: viết listing cho <em>người mua thật</em> với ngữ cảnh sử dụng rõ ràng (tặng ai, dịp gì, dùng ở đâu) ngày càng thắng lối nhồi từ khóa cơ học.</p>
+          <h2 id="sec-1" class="reveal">Thuật toán A9/COSMO hoạt động thế nào?</h2>
+          <p class="reveal">Thuật toán tìm kiếm của Amazon (quen gọi là A9) chấm điểm listing theo hai trục nhân với nhau: <strong>relevance</strong>, listing có chứa đúng từ khóa người mua gõ không, và <strong>performance</strong>, khi được hiển thị, listing có tạo ra nhấp chuột (CTR), chuyển đổi (CVR) và doanh số không. Thiếu một trong hai, điểm bằng không: đúng từ khóa mà không ai mua thì rớt hạng, bán tốt nhưng thiếu từ khóa thì không được hiển thị để mà bán.</p>
+          <p class="reveal">Từ 2024, Amazon bổ sung lớp hiểu ngữ nghĩa mới thường được gọi là <strong>COSMO</strong>: thay vì chỉ khớp chuỗi ký tự, hệ thống suy luận <em>ý định</em> đằng sau truy vấn. Người gõ "quà cho bố thích câu cá" có thể được gợi ý chiếc mũ thêu hình cá, dù listing không chứa nguyên văn cụm đó. Hệ quả thực tế: viết listing cho <em>người mua thật</em> với ngữ cảnh sử dụng rõ ràng (tặng ai, dịp gì, dùng ở đâu) ngày càng thắng lối nhồi từ khóa cơ học.</p>
           <p class="reveal">Nắm nguyên lý đó rồi, 5 chiến lược bên dưới chỉ là cách triển khai có kỷ luật.</p>
 
-          <h2 class="reveal"><span>01.</span> Nghiên cứu từ khóa theo ý định mua</h2>
+          <h2 id="sec-2" class="reveal"><span>01.</span> Nghiên cứu từ khóa theo ý định mua</h2>
           <p class="reveal">Sai lầm phổ biến nhất là nhặt từ khóa theo volume: từ càng nhiều lượt tìm càng tốt. Nhưng volume cao thường đi kèm cạnh tranh cao và ý định mơ hồ. Cách làm của chúng mình là phân loại toàn bộ từ khóa theo <strong>ý định mua</strong> trước, rồi mới xét volume:</p>
           <ul class="reveal">
-            <li><strong>Từ khóa chính:</strong> mô tả đúng bản chất sản phẩm ("embroidered dad hat") — bắt buộc có trong title, là trục xương sống của listing.</li>
-            <li><strong>Từ khóa dịp:</strong> gắn với thời điểm mua ("gift for dad", "christmas gift", "fathers day") — chuyển đổi bùng nổ theo mùa, cần chuẩn bị trước cao điểm 6–8 tuần.</li>
-            <li><strong>Từ khóa niche:</strong> gắn với cộng đồng ("dog mom", "fishing lover", "nurse gift") — volume thấp nhưng chuyển đổi thường cao nhất vì người tìm đã sẵn sàng mua và cạnh tranh mỏng.</li>
-            <li><strong>Từ khóa long-tail:</strong> cụm dài 4–6 từ ghép các lớp trên — từng cụm nhỏ bé, nhưng cộng dồn lại có thể chiếm phần lớn đơn hàng của sản phẩm cá nhân hóa.</li>
+            <li><strong>Từ khóa chính:</strong> mô tả đúng bản chất sản phẩm ("embroidered dad hat"), bắt buộc có trong title, là trục xương sống của listing.</li>
+            <li><strong>Từ khóa dịp:</strong> gắn với thời điểm mua ("gift for dad", "christmas gift", "fathers day"), chuyển đổi bùng nổ theo mùa, cần chuẩn bị trước cao điểm 6–8 tuần.</li>
+            <li><strong>Từ khóa niche:</strong> gắn với cộng đồng ("dog mom", "fishing lover", "nurse gift"), volume thấp nhưng chuyển đổi thường cao nhất vì người tìm đã sẵn sàng mua và cạnh tranh mỏng.</li>
+            <li><strong>Từ khóa long-tail:</strong> cụm dài 4–6 từ ghép các lớp trên, từng cụm nhỏ bé, nhưng cộng dồn lại có thể chiếm phần lớn đơn hàng của sản phẩm cá nhân hóa.</li>
           </ul>
-          <p class="reveal">Quy trình thực hiện: kéo danh sách 30–50 từ từ công cụ nghiên cứu và search term report của đối thủ, gắn nhãn từng từ theo 4 nhóm trên, rồi chốt <strong>5–10 từ chủ lực</strong> — ưu tiên từ có ý định rõ và độ cạnh tranh vừa sức. Đây chính là danh sách bạn sẽ dùng cho cả listing lẫn chiến dịch quảng cáo trong bài <a href="blog-amazon-ppc.html">Amazon PPC 2026</a>.</p>
-          <p class="reveal">Với sản phẩm POD/thêu, kinh nghiệm của chúng mình cho thấy nhóm niche là mỏ vàng: một chiếc áo thêu cho "cat dad" không cạnh tranh với hàng triệu chiếc áo generic — nó chỉ cạnh tranh trong thế giới nhỏ của những người nuôi mèo, nơi listing chỉn chu dễ dàng nổi bật.</p>
+          <p class="reveal">Quy trình thực hiện: kéo danh sách 30–50 từ từ công cụ nghiên cứu và search term report của đối thủ, gắn nhãn từng từ theo 4 nhóm trên, rồi chốt <strong>5–10 từ chủ lực</strong>, ưu tiên từ có ý định rõ và độ cạnh tranh vừa sức. Đây chính là danh sách bạn sẽ dùng cho cả listing lẫn chiến dịch quảng cáo trong bài <a href="blog-amazon-ppc">Amazon PPC 2026</a>.</p>
+          <p class="reveal">Với sản phẩm POD/thêu, kinh nghiệm của chúng mình cho thấy nhóm niche là mỏ vàng: một chiếc áo thêu cho "cat dad" không cạnh tranh với hàng triệu chiếc áo generic, nó chỉ cạnh tranh trong thế giới nhỏ của những người nuôi mèo, nơi listing chỉn chu dễ dàng nổi bật.</p>
 
-          <h2 class="reveal"><span>02.</span> Title – Bullet – A+ theo thứ tự ưu tiên</h2>
+          <h2 id="sec-3" class="reveal"><span>02.</span> Title – Bullet – A+ theo thứ tự ưu tiên</h2>
           <h3 class="reveal">Title: 80 ký tự đầu quyết định tất cả</h3>
           <p class="reveal">Title là nơi thuật toán đọc kỹ nhất và người mua nhìn đầu tiên. Công thức chúng mình dùng: <strong>[Từ khóa chính] + [đặc tính quyết định mua: chất liệu, kích thước] + [dịp/đối tượng] + [điểm khác biệt]</strong>. Ví dụ khung: "Embroidered Dad Hat – Adjustable Cotton Baseball Cap, Custom Fishing Gift for Father's Day". Từ khóa chính đứng đầu, vì trên mobile chỉ khoảng 80 ký tự đầu được hiển thị.</p>
           <p class="reveal">Ba điều cấm: không nhồi lặp từ khóa (Amazon phạt title spam), không viết hoa toàn bộ, không hứa hẹn kiểu "best seller" hay "#1". Title tốt đọc lên phải giống một câu mô tả tự nhiên, không giống một chuỗi tag.</p>
           <h3 class="reveal">Bullets: viết cho người lướt, không phải người đọc</h3>
           <ul class="reveal">
             <li><strong>Mỗi dòng một lợi ích duy nhất,</strong> mở đầu bằng CỤM IN HOA tóm tắt để người lướt nắm ý trong một giây.</li>
-            <li><strong>Dịch đặc tính thành lợi ích:</strong> đừng viết "thêu 6.000 mũi" — hãy viết "HỌA TIẾT THÊU SẮC NÉT: bền màu qua hàng chục lần giặt, không bong tróc như hình in".</li>
-            <li><strong>Dòng cuối xử lý nỗi lo lớn nhất:</strong> chính sách đổi trả, hướng dẫn chọn size, cam kết chất lượng — chặn lý do khiến khách rời đi.</li>
+            <li><strong>Dịch đặc tính thành lợi ích:</strong> đừng viết "thêu 6.000 mũi", hãy viết "HỌA TIẾT THÊU SẮC NÉT: bền màu qua hàng chục lần giặt, không bong tróc như hình in".</li>
+            <li><strong>Dòng cuối xử lý nỗi lo lớn nhất:</strong> chính sách đổi trả, hướng dẫn chọn size, cam kết chất lượng, chặn lý do khiến khách rời đi.</li>
           </ul>
           <h3 class="reveal">A+ Content: vũ khí chuyển đổi</h3>
-          <p class="reveal">A+ không được tính điểm từ khóa trực tiếp, nhưng làm tăng tỷ lệ chuyển đổi — mà chuyển đổi lại là tín hiệu xếp hạng mạnh nhất. Dùng A+ để kể câu chuyện sản phẩm bằng hình ảnh, bảng so sánh các biến thể, và trả lời trước những câu hỏi khách hay ngần ngại. Lưu ý: phần alt-text của ảnh A+ có được lập chỉ mục — đừng bỏ trống.</p>
+          <p class="reveal">A+ không được tính điểm từ khóa trực tiếp, nhưng làm tăng tỷ lệ chuyển đổi, mà chuyển đổi lại là tín hiệu xếp hạng mạnh nhất. Dùng A+ để kể câu chuyện sản phẩm bằng hình ảnh, bảng so sánh các biến thể, và trả lời trước những câu hỏi khách hay ngần ngại. Lưu ý: phần alt-text của ảnh A+ có được lập chỉ mục, đừng bỏ trống.</p>
 
           <figure class="article-figure reveal">
-            <img src="assets/images/blog/amazon-seo-listing.jpg" width="1600" height="1065" alt="Duyệt và đối chiếu các listing đối thủ trên Amazon để tối ưu nội dung" loading="lazy">
-            <figcaption>Trước khi viết listing, hãy đọc 10 listing top đầu — và tìm điều họ chưa nói.</figcaption>
+            <img src="assets/images/blog/08-amazon-seo/amazon-seo-listing.jpg" width="1600" height="1065" alt="Duyệt và đối chiếu các listing đối thủ trên Amazon để tối ưu nội dung" loading="lazy">
+            <figcaption>Trước khi viết listing, hãy đọc 10 listing top đầu, và tìm điều họ chưa nói.</figcaption>
           </figure>
 
-          <h2 class="reveal"><span>03.</span> Backend keywords — 249 bytes vàng</h2>
-          <p class="reveal">Search Terms phía backend là 249 bytes không hiển thị với người mua nhưng được thuật toán lập chỉ mục đầy đủ — nơi hoàn hảo cho những từ khóa "không tiện" đưa lên mặt tiền: từ đồng nghĩa ("cap" khi title đã dùng "hat"), lỗi chính tả phổ biến, từ lóng của niche, và biến thể cách viết ("tshirt", "t-shirt", "tee").</p>
+          <h2 id="sec-4" class="reveal"><span>03.</span> Backend keywords: 249 bytes vàng</h2>
+          <p class="reveal">Search Terms phía backend là 249 bytes không hiển thị với người mua nhưng được thuật toán lập chỉ mục đầy đủ, nơi hoàn hảo cho những từ khóa "không tiện" đưa lên mặt tiền: từ đồng nghĩa ("cap" khi title đã dùng "hat"), lỗi chính tả phổ biến, từ lóng của niche, và biến thể cách viết ("tshirt", "t-shirt", "tee").</p>
           <p class="reveal">Quy tắc để không lãng phí một byte nào:</p>
           <ul class="reveal">
-            <li><strong>Không lặp lại</strong> bất kỳ từ nào đã có trong title và bullets — lặp không cộng thêm điểm, chỉ tốn chỗ.</li>
-            <li><strong>Ngăn cách bằng dấu cách,</strong> không dùng dấu phẩy hay chấm phẩy — dấu câu cũng ăn vào 249 bytes.</li>
+            <li><strong>Không lặp lại</strong> bất kỳ từ nào đã có trong title và bullets, lặp không cộng thêm điểm, chỉ tốn chỗ.</li>
+            <li><strong>Ngăn cách bằng dấu cách,</strong> không dùng dấu phẩy hay chấm phẩy, dấu câu cũng ăn vào 249 bytes.</li>
             <li><strong>Không số nhiều trùng lặp:</strong> Amazon tự hiểu "hat" và "hats", chọn một là đủ.</li>
-            <li><strong>Không tên thương hiệu đối thủ,</strong> không từ khóa gây hiểu lầm — vi phạm chính sách và có thể bị đình chỉ listing.</li>
+            <li><strong>Không tên thương hiệu đối thủ,</strong> không từ khóa gây hiểu lầm, vi phạm chính sách và có thể bị đình chỉ listing.</li>
             <li><strong>Kiểm tra lập chỉ mục sau 48 giờ:</strong> tìm "ASIN + từ khóa" trên thanh tìm kiếm; nếu listing không hiện, từ đó chưa được index và cần xem lại.</li>
           </ul>
 
-          <h2 class="reveal"><span>04.</span> Hình ảnh quyết định CTR</h2>
-          <p class="reveal">Thứ hạng cao mà không ai nhấp thì cũng vô nghĩa — và CTR thấp sẽ kéo thứ hạng xuống lại. Ảnh chính là "tấm vé" duy nhất bạn có trên trang kết quả tìm kiếm: sản phẩm cần chiếm ≥ 85% khung hình, sắc nét trên nền trắng, và khác biệt nhận ra được ngay ở kích thước thumbnail.</p>
+          <h2 id="sec-5" class="reveal"><span>04.</span> Hình ảnh quyết định CTR</h2>
+          <p class="reveal">Thứ hạng cao mà không ai nhấp thì cũng vô nghĩa, và CTR thấp sẽ kéo thứ hạng xuống lại. Ảnh chính là "tấm vé" duy nhất bạn có trên trang kết quả tìm kiếm: sản phẩm cần chiếm ≥ 85% khung hình, sắc nét trên nền trắng, và khác biệt nhận ra được ngay ở kích thước thumbnail.</p>
           <p class="reveal">Bộ 7 ảnh chuẩn mà chúng mình áp dụng cho mọi listing:</p>
           <ol class="reveal">
             <li><strong>Ảnh chính:</strong> nền trắng, sản phẩm chiếm trọn khung, đúng quy định Amazon.</li>
             <li><strong>Ảnh kích thước:</strong> số đo cụ thể đặt cạnh vật quen thuộc để khách hình dung đúng.</li>
-            <li><strong>Ảnh lifestyle:</strong> sản phẩm trong bối cảnh sử dụng thật — người thật, cảm xúc thật.</li>
+            <li><strong>Ảnh lifestyle:</strong> sản phẩm trong bối cảnh sử dụng thật, người thật, cảm xúc thật.</li>
             <li><strong>Ảnh cận chất liệu:</strong> với hàng thêu, ảnh cận đường kim chính là thứ thuyết phục khách trả giá cao hơn hàng in đại trà.</li>
             <li><strong>Ảnh so sánh hoặc infographic:</strong> tóm tắt 3–4 điểm bán hàng chính bằng đồ họa.</li>
-            <li><strong>Ảnh quà tặng/cách dùng:</strong> gợi ý dịp tặng — cực mạnh với từ khóa nhóm dịp.</li>
+            <li><strong>Ảnh quà tặng/cách dùng:</strong> gợi ý dịp tặng, cực mạnh với từ khóa nhóm dịp.</li>
             <li><strong>Video hoặc ảnh 360°:</strong> tăng thời gian dừng trên trang, tín hiệu tốt cho cả chuyển đổi lẫn xếp hạng.</li>
           </ol>
           <p class="reveal">Mẹo kiểm chứng: thu nhỏ ảnh chính về cỡ con tem rồi đặt cạnh 5 đối thủ đầu trang. Nếu mắt bạn không dừng ở ảnh của mình trước, khách hàng cũng vậy.</p>
 
-          <h2 class="reveal"><span>05.</span> Vòng lặp review</h2>
-          <p class="reveal">Review vừa là tín hiệu xếp hạng, vừa là công cụ chuyển đổi — hai vai trò cộng hưởng thành một vòng lặp: nhiều review tốt → CTR và CVR tăng → thứ hạng tăng → nhiều đơn hơn → nhiều review hơn. Việc của bạn là khởi động và bảo vệ vòng lặp đó:</p>
+          <h2 id="sec-6" class="reveal"><span>05.</span> Vòng lặp review</h2>
+          <p class="reveal">Review vừa là tín hiệu xếp hạng, vừa là công cụ chuyển đổi, hai vai trò cộng hưởng thành một vòng lặp: nhiều review tốt → CTR và CVR tăng → thứ hạng tăng → nhiều đơn hơn → nhiều review hơn. Việc của bạn là khởi động và bảo vệ vòng lặp đó:</p>
           <ul class="reveal">
             <li><strong>Kích hoạt Amazon Vine</strong> ngay khi đủ điều kiện để có những review đầu tiên chất lượng và hợp lệ.</li>
-            <li><strong>Request a Review đúng thời điểm:</strong> bấm khi khách vừa nhận hàng thành công vài ngày — lúc trải nghiệm còn tươi mới.</li>
+            <li><strong>Request a Review đúng thời điểm:</strong> bấm khi khách vừa nhận hàng thành công vài ngày, lúc trải nghiệm còn tươi mới.</li>
             <li><strong>Insert card đúng chính sách:</strong> cảm ơn và mời đánh giá trung thực; tuyệt đối không đổi quà lấy review 5★.</li>
-            <li><strong>Lịch xử lý review xấu:</strong> mỗi review 1–3★ là một "ticket" phải phản hồi trong 24 giờ — xin lỗi, đưa giải pháp, xử lý tận gốc lỗi sản phẩm nếu có. Một phản hồi chuyên nghiệp dưới review xấu đôi khi thuyết phục khách mới hơn cả một review 5★.</li>
+            <li><strong>Lịch xử lý review xấu:</strong> mỗi review 1–3★ là một "ticket" phải phản hồi trong 24 giờ, xin lỗi, đưa giải pháp, xử lý tận gốc lỗi sản phẩm nếu có. Một phản hồi chuyên nghiệp dưới review xấu đôi khi thuyết phục khách mới hơn cả một review 5★.</li>
           </ul>
 
-          <h2 class="reveal">Checklist SEO Amazon 30 ngày</h2>
-          <p class="reveal">Gom cả 5 chiến lược thành lịch làm việc 4 tuần — mỗi tuần một trọng tâm, không ôm đồm:</p>
+          <h2 id="sec-7" class="reveal">Checklist SEO Amazon 30 ngày</h2>
+          <p class="reveal">Gom cả 5 chiến lược thành lịch làm việc 4 tuần, mỗi tuần một trọng tâm, không ôm đồm:</p>
           <div class="article-table reveal">
             <table>
               <thead><tr><th>Tuần</th><th>Trọng tâm</th><th>Việc cần xong</th></tr></thead>
@@ -223,22 +254,22 @@
               </tbody>
             </table>
           </div>
-          <p class="reveal">Sau 30 ngày, đừng dừng lại: SEO Amazon là vòng lặp liên tục. Mỗi tháng một lần, quay lại tuần 1 với dữ liệu mới — search term nào đang mang đơn về, đối thủ nào vừa đổi chiến thuật — và tối ưu tiếp. Listing đứng yên là listing đang tụt hạng.</p>
+          <p class="reveal">Sau 30 ngày, đừng dừng lại: SEO Amazon là vòng lặp liên tục. Mỗi tháng một lần, quay lại tuần 1 với dữ liệu mới, search term nào đang mang đơn về, đối thủ nào vừa đổi chiến thuật, và tối ưu tiếp. Listing đứng yên là listing đang tụt hạng.</p>
 
           <div class="article-quote reveal">
-            <p>"30 ngày lên top không bắt đầu từ mẹo — nó bắt đầu từ một listing mà khách hàng thấy đúng thứ họ tìm."</p>
+            <p>"30 ngày lên top không bắt đầu từ mẹo, nó bắt đầu từ một listing mà khách hàng thấy đúng thứ họ tìm."</p>
             <cite>— Đội ngũ E-commerce, Ethan Ecom</cite>
           </div>
 
-          <h2 class="reveal">Câu hỏi thường gặp</h2>
+          <h2 id="sec-8" class="reveal">Câu hỏi thường gặp</h2>
           <h3 class="reveal">Bao lâu thì thấy kết quả sau khi tối ưu listing?</h3>
-          <p class="reveal">Việc lập chỉ mục từ khóa mới thường diễn ra trong 24–72 giờ, nhưng thứ hạng cần dữ liệu giao dịch để dịch chuyển — phổ biến là 2–4 tuần với niche cạnh tranh vừa. Nếu sau 30 ngày không có chuyển biến nào, vấn đề thường nằm ở CTR (ảnh chính, giá) chứ không phải từ khóa.</p>
+          <p class="reveal">Việc lập chỉ mục từ khóa mới thường diễn ra trong 24–72 giờ, nhưng thứ hạng cần dữ liệu giao dịch để dịch chuyển, phổ biến là 2–4 tuần với niche cạnh tranh vừa. Nếu sau 30 ngày không có chuyển biến nào, vấn đề thường nằm ở CTR (ảnh chính, giá) chứ không phải từ khóa.</p>
           <h3 class="reveal">Có nên sửa listing đang bán tốt không?</h3>
-          <p class="reveal">Có, nhưng theo nguyên tắc "mỗi lần một biến số": chỉ đổi một yếu tố (ảnh chính, title, hoặc giá), đo trong 1–2 tuần rồi mới đổi tiếp. Sửa nhiều thứ cùng lúc khiến bạn không biết điều gì tạo ra thay đổi — và không quay lại được phiên bản tốt nhất.</p>
+          <p class="reveal">Có, nhưng theo nguyên tắc "mỗi lần một biến số": chỉ đổi một yếu tố (ảnh chính, title, hoặc giá), đo trong 1–2 tuần rồi mới đổi tiếp. Sửa nhiều thứ cùng lúc khiến bạn không biết điều gì tạo ra thay đổi, và không quay lại được phiên bản tốt nhất.</p>
           <h3 class="reveal">SEO Amazon có thay thế được quảng cáo PPC không?</h3>
-          <p class="reveal">Không — chúng là hai chân của cùng một cơ thể. SEO tạo nền chuyển đổi tốt, PPC bơm traffic để nền đó tích lũy dữ liệu bán hàng và leo hạng; listing SEO tốt còn giúp giảm chi phí quảng cáo vì điểm relevance cao hơn. Cách phối hợp cụ thể chúng mình viết trong bài Amazon PPC 2026.</p>
+          <p class="reveal">Không, chúng là hai chân của cùng một cơ thể. SEO tạo nền chuyển đổi tốt, PPC bơm traffic để nền đó tích lũy dữ liệu bán hàng và leo hạng; listing SEO tốt còn giúp giảm chi phí quảng cáo vì điểm relevance cao hơn. Cách phối hợp cụ thể chúng mình viết trong bài Amazon PPC 2026.</p>
           <h3 class="reveal">Từ khóa tiếng Việt có dùng được cho Amazon US không?</h3>
-          <p class="reveal">Không. Toàn bộ nghiên cứu từ khóa phải bằng tiếng Anh theo cách người mua Mỹ thực sự gõ — kể cả tiếng lóng và lỗi chính tả của họ. Đây là lý do đội listing của chúng mình luôn bắt đầu từ search term report thật thay vì dịch từ khóa từ tiếng Việt sang.</p>
+          <p class="reveal">Không. Toàn bộ nghiên cứu từ khóa phải bằng tiếng Anh theo cách người mua Mỹ thực sự gõ, kể cả tiếng lóng và lỗi chính tả của họ. Đây là lý do đội listing của chúng mình luôn bắt đầu từ search term report thật thay vì dịch từ khóa từ tiếng Việt sang.</p>
 
           <div class="tag-row reveal">
             <span class="tag-chip">#AmazonSEO</span>
@@ -246,6 +277,7 @@
             <span class="tag-chip">#BackendKeywords</span>
             <span class="tag-chip">#EthanEcom</span>
           </div>
+        </div>
         </div>
 
       </div>
@@ -260,24 +292,24 @@
         <h2 class="st">Bài viết liên quan</h2>
       </div>
       <div class="related-grid">
-        <a href="blog-amazon-top-seller.html" class="rel-card reveal d1">
-          <div class="rel-thumb"><img src="assets/images/blog/amazon-fba-warehouse.jpg" alt="Chiến lược Amazon 2026: Từ 0 đến Top Seller trong 90 ngày" loading="lazy"></div>
+        <a href="blog-amazon-top-seller" class="rel-card reveal d1">
+          <div class="rel-thumb"><img src="assets/images/blog/08-amazon-seo/amazon-fba-warehouse.jpg" alt="Chiến lược Amazon 2026: Từ 0 đến Top Seller trong 90 ngày" loading="lazy"></div>
           <div class="rel-body">
             <div class="rel-tag">E-commerce</div>
             <h4>Chiến lược Amazon 2026: Từ 0 đến Top Seller trong 90 ngày</h4>
             <span>15 Tháng 6, 2026 · 12 phút đọc</span>
           </div>
         </a>
-        <a href="blog-amazon-ppc.html" class="rel-card reveal d2">
-          <div class="rel-thumb"><img src="assets/images/blog/ppc-dashboard.jpg" alt="Amazon PPC 2026: Tối ưu quảng cáo để ROI tăng gấp 3" loading="lazy"></div>
+        <a href="blog-amazon-ppc" class="rel-card reveal d2">
+          <div class="rel-thumb"><img src="assets/images/blog/08-amazon-seo/ppc-dashboard.jpg" alt="Amazon PPC 2026: Tối ưu quảng cáo để ROI tăng gấp 3" loading="lazy"></div>
           <div class="rel-body">
             <div class="rel-tag">Digital Marketing</div>
             <h4>Amazon PPC 2026: Tối ưu quảng cáo để ROI tăng gấp 3</h4>
             <span>05 Tháng 6, 2026 · 11 phút đọc</span>
           </div>
         </a>
-        <a href="blog-etsy-guide.html" class="rel-card reveal d3">
-          <div class="rel-thumb"><img src="assets/images/blog/etsy-seller-shop.jpg" alt="Mở gian hàng Etsy 2026 từ A–Z cho người Việt" loading="lazy"></div>
+        <a href="blog-etsy-guide" class="rel-card reveal d3">
+          <div class="rel-thumb"><img src="assets/images/blog/08-amazon-seo/etsy-seller-shop.jpg" alt="Mở gian hàng Etsy 2026 từ A–Z cho người Việt" loading="lazy"></div>
           <div class="rel-body">
             <div class="rel-tag">E-commerce</div>
             <h4>Mở gian hàng Etsy 2026 từ A–Z cho người Việt</h4>
@@ -293,11 +325,43 @@
 <div id="site-footer"></div>
 
 <!-- Shared JS (must be last) -->
-<script src="assets/js/shared.js?v=housef02"></script>
+<script src="assets/js/shared.js?v=housef05"></script>
 <script src="assets/js/page-animations.js"></script>
 
 <!-- Contact popup + dock 2 nút gim (Ứng tuyển ngay / Liên hệ ngay) -->
 <div id="contact-popup-root"></div>
-<script src="assets/js/contact-popup.js?v=20260718a"></script>
+<script src="assets/js/contact-popup.js?v=20260722y"></script>
+
+<!-- Scroll-spy: tự làm nổi mục lục theo section đang đọc -->
+<script>
+(function(){
+  var links = [].slice.call(document.querySelectorAll('.toc-list a'));
+  if(!links.length) return;
+  var targets = links.map(function(a){
+    return { link:a, el:document.getElementById(a.getAttribute('href').slice(1)) };
+  }).filter(function(t){ return t.el; });
+  if(!targets.length) return;
+  // offsetTop bỏ qua transform (class .reveal dùng translateY) → đo vị trí ổn định
+  function absTop(el){ var y=0; while(el){ y+=el.offsetTop; el=el.offsetParent; } return y; }
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var pos = window.scrollY + 140;
+    var current = targets[0].link;
+    for(var i=0;i<targets.length;i++){
+      if(absTop(targets[i].el) <= pos) current = targets[i].link;
+    }
+    if(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4){
+      current = targets[targets.length-1].link;
+    }
+    links.forEach(function(l){ l.classList.toggle('active', l===current); });
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(update); ticking = true; }
+  }, {passive:true});
+  window.addEventListener('resize', update, {passive:true});
+  update();
+})();
+</script>
 </body>
 </html>

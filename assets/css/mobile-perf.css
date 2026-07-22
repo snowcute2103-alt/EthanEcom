@@ -24,21 +24,17 @@
     animation-duration: 0.25s !important;
   }
 
-  /* ── 1. KILL will-change on everything ── */
-  *,
-  *::before,
-  *::after {
-    will-change: auto !important;
-  }
+  /* ── 1+2. ĐÃ GỠ 2 rule blanket (will-change:auto và ép mọi animation 400ms /
+     transition 200ms). Lý do: ép duration làm mây trôi 60–110s bị nén còn 0.4s
+     (bay loạn), mọi loop ambient (deco breath/sway, gradient chảy) rung giật,
+     còn kill will-change đẩy các phần tử ĐANG chuyển động khỏi GPU layer →
+     repaint từng frame. Thay bằng tắt hẳn các loop decor nền bên dưới. ── */
 
-  /* ── 2. SIMPLIFY all transitions to max 200ms ── */
-  *,
-  *::before,
-  *::after {
-    transition-duration: 200ms !important;
-    transition-delay: 0s !important;
-    animation-duration: 400ms !important;
-    animation-delay: 0s !important;
+  /* Decor nền đứng yên trên mobile — không breath/sway/float nữa */
+  .bg-deco .deco-blob,
+  .bg-deco .deco-ring,
+  .bg-deco .p-dot {
+    animation: none !important;
   }
 
   /* ── 3. DISABLE backdrop-filter (very expensive on mobile GPU) ── */

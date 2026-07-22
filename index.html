@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ethan Ecom — TMĐT xuyên biên giới, tự chủ sản xuất tại Đồng Nai</title>
-<meta name="description" content="Ethan Ecom — nơi khơi nguồn sáng tạo và hỗ trợ sự phát triển cá nhân. Doanh nghiệp TMĐT xuyên biên giới, tự chủ sản xuất POD/thêu/in, bán đa sàn TikTok Shop US, Etsy, Amazon. Đồng lòng đồng sức, bứt phá gặt thành công.">
+<title>Ethan Ecom: TMĐT xuyên biên giới, tự chủ sản xuất tại Đồng Nai</title>
+<meta name="description" content="Ethan Ecom, nơi khơi nguồn sáng tạo và hỗ trợ sự phát triển cá nhân. Doanh nghiệp TMĐT xuyên biên giới, tự chủ sản xuất POD/thêu/in, bán đa sàn TikTok Shop US, Etsy, Amazon. Đồng lòng đồng sức, bứt phá gặt thành công.">
 <link rel="stylesheet" href="assets/css/shared.css?v=housef02">
 <style>
 /* ── PAGE-SPECIFIC STYLES ── */
@@ -2148,78 +2148,6 @@
   .cprem-headline{font-size:var(--fs-h2)}
 }
 
-/* ── MARQUEE PLATFORMS ── */
-/* ── THROWABLE PLATFORMS ── */
-/* Scene pills — nằm cuối section .recruit, full-bleed ngang, sàn cách mép dưới section 48px */
-.recruit .throwable-scene{
-  width: auto; /* width:100% + margin âm sẽ không stretch full-bleed */
-  margin: 40px calc(var(--space-md) * -1) calc(48px - var(--space-section));
-}
-.throwable-scene{
-  position:relative;
-  width:100%;
-  height:180px;
-  overflow:visible;
-  cursor:default;
-  pointer-events:auto;
-  background:transparent;
-  clip-path:inset(-9999px -9999px 0 -9999px);
-}
-@media(max-width:768px){.throwable-scene{height:240px}}
-/* Mỗi tag */
-.t-el{
-  position:absolute;
-  top:0;left:0;
-  pointer-events:auto;
-  user-select:none;
-  touch-action:none;
-  will-change:transform;
-  cursor:grab;
-}
-.t-el:active,.t-el.is-grabbed{cursor:grabbing}
-/* Inner pill */
-.t-inner{
-  display:flex;align-items:center;justify-content:center;gap:7px;
-  padding:0 20px;
-  border-radius:0;white-space:nowrap;
-  font-family:var(--font-lead);font-size:var(--fs-small);font-weight:var(--fw-semibold);
-  pointer-events:none;
-  user-select:none;
-  box-sizing:border-box;
-  width:100%;height:100%;
-}
-.t-el{cursor:grab;display:inline-block;}
-.t-el.is-grabbed{cursor:grabbing}
-.t-el.is-grabbed .t-inner{box-shadow:0 14px 36px rgba(0,0,0,.22)!important}
-.t-inner .ti{font-size:var(--fs-base);line-height:1;flex-shrink:0}
-/* Colour variants */
-.t-inner.p-default{background:#eef0f8;color:#374151;border:1.5px solid #e0e3f0;box-shadow:0 3px 10px rgba(0,0,0,.08)}
-.t-inner.p-blue   {background:#dbeafe;color:#1d4ed8;border:1.5px solid #bfdbfe;box-shadow:0 3px 10px rgba(43,143,255,.15)}
-.t-inner.p-violet {background:linear-gradient(135deg,#1668C9,#1668C9);color:#fff;border:none;box-shadow:0 4px 16px rgba(22,104,201,.38)}
-.t-inner.p-cyan   {background:linear-gradient(135deg,#1E7FE0,#1E7FE0);color:#fff;border:none;box-shadow:0 4px 16px rgba(30,127,224,.38)}
-.t-inner.p-amber  {background:linear-gradient(135deg,#f59e0b,#f97316);color:#fff;border:none;box-shadow:0 4px 16px rgba(245,158,11,.38)}
-.t-inner.p-green  {background:#d1fae5;color:#065f46;border:1.5px solid #a7f3d0;box-shadow:0 3px 10px rgba(16,185,129,.15)}
-.t-inner.p-pink   {background:#fce7f3;color:#be185d;border:1.5px solid #fbcfe8;box-shadow:0 3px 10px rgba(236,72,153,.15)}
-.t-inner.p-purple {background:#ede9fe;color:#6d28d9;border:1.5px solid #ddd6fe;box-shadow:0 3px 10px rgba(22,104,201,.15)}
-.t-inner.p-dark   {background:#0f172a;color:#e2e8f0;border:1.5px solid #1e293b;box-shadow:0 4px 16px rgba(0,0,0,.25)}
-.t-inner.p-orange {background:#fff7ed;color:#c2410c;border:1.5px solid #fed7aa;box-shadow:0 3px 10px rgba(249,115,22,.15)}
-.t-inner.p-teal   {background:#cffafe;color:#0e7490;border:1.5px solid #a5f3fc;box-shadow:0 3px 10px rgba(30,127,224,.15)}
-.t-inner.p-yellow {background:#fefce8;color:#a16207;border:1.5px solid #fde68a;box-shadow:0 3px 10px rgba(234,179,8,.15)}
-/* Job tag variants */
-.t-inner.p-indigo {background:#4AA0FF;color:#fff;border:none;box-shadow:0 4px 18px rgba(74,160,255,.45);letter-spacing:.3px}
-.t-inner.p-cyan2  {background:#2B8FFF;color:#083344;border:none;box-shadow:0 4px 18px rgba(43,143,255,.4);letter-spacing:.3px}
-.t-inner.p-dark2  {background:#0f172a;color:#e2e8f0;border:1.5px solid #1e3a5f;box-shadow:0 4px 16px rgba(0,0,0,.35);letter-spacing:.3px}
-.t-inner.p-black  {background:#111827;color:#4AA0FF;border:1.5px solid #4AA0FF;box-shadow:0 4px 16px rgba(74,160,255,.25);letter-spacing:.3px}
-.platforms-footer{
-  padding:16px 24px 44px;text-align:center;
-  position:relative;z-index:2;pointer-events:none;
-}
-.platforms-footer p{font-size:var(--fs-base);color:#4a5568;font-family:var(--font-lead);margin:0}
-@media(max-width:640px){
-  .t-inner{height:34px;font-size:var(--fs-caption);padding:0 12px;gap:5px}
-  .t-inner .ti{font-size:var(--fs-caption)}
-}
-
 /* ── 15. PARTNER TRACK — glow on hover item ── */
 .partner-item{position:relative;transition:color .3s,text-shadow .3s}
 .partner-item:hover{color:rgba(43,143,255,.9) !important;text-shadow:0 0 20px rgba(43,143,255,.4),0 0 40px rgba(43,143,255,.2)}
@@ -2545,7 +2473,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
 </section>
 
 
-<!-- BRAND STORY — Section 2 · Ethan là ai -->
+<!-- VĂN HOÁ — Section 2 · Con người là tài sản lớn nhất -->
 <section class="bstory reveal" data-flow="#FDFEFE">
   <div class="bg-deco" aria-hidden="true">
     <span class="deco-ring" style="width:280px;height:280px;bottom:-120px;right:-100px"></span>
@@ -2555,29 +2483,29 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
     <!-- LEFT: heading + label + intro + image -->
     <div class="bs2-left">
       <div class="bs2-head">
-        <h2 class="bs2-title">Câu chuyện về</h2>
-        <span class="bs2-label">Công Ty Phát Triển Công Nghệ Ethan</span>
-        <p class="bs2-intro">Khởi đầu 2017 với tên "<span class="eagle-hover">Eagle<span class="eagle-pop" aria-hidden="true"><video src="assets/images/hero/Intro%20-%20E-Than.mov" muted loop playsinline preload="none"></video></span></span>" — tinh thần đại bàng mạnh mẽ, bản lĩnh, kiên cường. Ethan Ecom hôm nay là đội ngũ đủ chắc, đủ lì, đủ đồng lòng, tự chủ sản xuất và chinh phục thị trường quốc tế.</p>
+        <h2 class="bs2-title">Con người là tài sản lớn nhất</h2>
+        <span class="bs2-label">Văn hoá công ty</span>
+        <p class="bs2-intro">Ethan tin rằng con người là tài sản lớn nhất của công ty. Chúng tôi không ngừng đào tạo và tạo điều kiện để từng cá nhân phát triển cùng sự lớn lên của tổ chức — <strong>cơ hội thăng tiến luôn mở với tất cả mọi người</strong>.</p>
       </div>
-      <div class="bs2-img"><img src="assets/images/hero/thuonghieu.jpg" alt="Câu chuyện thương hiệu Ethan Ecom" loading="lazy"></div>
+      <div class="bs2-img"><img src="assets/images/vanhoa.jpg" alt="Đội ngũ Ethan Ecom cùng làm việc — con người là tài sản lớn nhất" loading="lazy"></div>
     </div>
 
     <!-- RIGHT: 2×2 number grid -->
     <div class="bs2-grid">
       <div class="bs2-cell">
-        <p class="bs2-cell-text">Năm hành trình từ đội "<span class="eagle-hover">Eagle<span class="eagle-pop" aria-hidden="true"><video src="assets/images/hero/Intro%20-%20E-Than.mov" muted loop playsinline preload="none"></video></span></span>" 2017 đến Ethan Ecom hôm nay.</p>
-        <span class="bs2-num" data-count="9" data-suffix="+">9+</span>
-      </div>
-      <div class="bs2-cell">
-        <p class="bs2-cell-text">Sàn TMĐT quốc tế: TikTok Shop US, Etsy, Amazon, eBay, Shopify.</p>
-        <span class="bs2-num" data-count="5" data-suffix="+">5+</span>
-      </div>
-      <div class="bs2-cell">
-        <p class="bs2-cell-text">Con người đồng lòng tạo nên sức mạnh nội tại của Ethan.</p>
+        <p class="bs2-cell-text">Thành viên đồng lòng, mỗi con người là một mảnh ghép làm nên Ethan.</p>
         <span class="bs2-num" data-count="88" data-suffix="+">88+</span>
       </div>
+      <div class="bs2-cell">
+        <p class="bs2-cell-text">Giá trị cốt lõi định hình người Ethan: Đồng lòng · Tử tế · Trách nhiệm · Cải tiến · Bền bỉ.</p>
+        <span class="bs2-num" data-count="5">5</span>
+      </div>
+      <div class="bs2-cell">
+        <p class="bs2-cell-text">Năm bền bỉ cùng nhau xây dựng văn hoá đội nhóm, từ 2017.</p>
+        <span class="bs2-num" data-count="9" data-suffix="+">9+</span>
+      </div>
       <div class="bs2-cell bs2-cell--dark">
-        <p class="bs2-cell-text">Tự chủ sản xuất in-house: POD, thêu, in giấy &amp; nhựa 3D.</p>
+        <p class="bs2-cell-text">Quản lý cấp cao đi lên từ vị trí đầu tiên, cơ hội mở cho tất cả.</p>
         <span class="bs2-num">100%</span>
       </div>
     </div>
@@ -2585,7 +2513,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
   </div>
 </section>
 <script>
-/* Count-up cho các số thống kê bs2 (9+, 5+, 88+) khi cuộn tới */
+/* Count-up cho các số thống kê bs2 (88+, 5, 9+) khi cuộn tới */
 (function(){
   var nums = document.querySelectorAll('.bs2-num[data-count]');
   if (!nums.length) return;
@@ -2805,9 +2733,10 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
 .bg-deco .p-ring{border:1.5px solid rgba(30,127,224,.35)}
 .flow-dark .bg-deco .p-soft{background:radial-gradient(circle,rgba(140,195,255,.55),rgba(140,195,255,0) 70%)}
 .flow-dark .bg-deco .p-ring{border-color:rgba(122,180,255,.4)}
-/* Blob lụa viền sáng (hiệu ứng nuta.io) — khối organic neo mép section, thở chậm */
+/* Blob lụa viền sáng (hiệu ứng nuta.io) — khối organic neo mép section, thở chậm.
+   Hình TRÒN theo yêu cầu — ngoại lệ 50% của quy tắc góc vuông, không đổi về 0. */
 .bg-deco .deco-blob{position:absolute;width:620px;height:620px;
-  border-radius:0;
+  border-radius:50%;
   border:1.5px solid rgba(30,127,224,.20);
   background:linear-gradient(135deg,rgba(43,143,255,.09),rgba(43,143,255,.04) 55%,rgba(43,143,255,0) 80%);
   will-change:transform}
@@ -2877,9 +2806,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
         <div class="member m-founder">
           <div class="bubble">
             <div class="ph">Duy</div>
-            <img src="assets/images/about/ceo.jpg" alt="Nguyễn Đình Duy — Founder" onerror="this.style.display='none'">
-            <video src="assets/images/about/video-founder.mp4" muted loop playsinline preload="metadata" aria-hidden="true"></video>
-            <div class="speaker" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></div>
+            <img src="assets/images/about/ceo.jpg" alt="Nguyễn Đình Duy, Founder" onerror="this.style.display='none'">
           </div>
           <div class="tag"><b>Duy Nguyễn</b><span>Founder</span></div>
         </div>
@@ -2888,9 +2815,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
         <div class="member m-ceo">
           <div class="bubble">
             <div class="ph">CEO</div>
-            <img src="assets/images/about/coo.jpg" alt="Đoàn Thị Minh Nguyệt — CEO" onerror="this.style.display='none'">
-            <video src="assets/images/about/video-ceo.mp4" data-start="0.2" muted loop playsinline preload="metadata" aria-hidden="true"></video>
-            <div class="speaker" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></div>
+            <img src="assets/images/about/coo.jpg" alt="Đoàn Thị Minh Nguyệt, CEO" onerror="this.style.display='none'">
           </div>
           <div class="tag"><b>Minh Nguyệt</b><span>CEO</span></div>
         </div>
@@ -2943,19 +2868,19 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
         <div class="panel-card" data-for="founder">
           <div class="p-name">Nguyễn Đình Duy</div>
           <div class="p-role">Founder</div>
-          <p class="p-quote">Chúng tôi không bán sản phẩm — chúng tôi xây niềm tin với từng khách hàng quốc tế.</p>
+          <p class="p-quote">Chúng tôi không bán sản phẩm, chúng tôi xây niềm tin với từng khách hàng quốc tế.</p>
         </div>
 
         <div class="panel-card" data-for="ceo">
           <div class="p-name">Đoàn Thị Minh Nguyệt</div>
           <div class="p-role">CEO</div>
-          <p class="p-quote">Tất cả mọi người, một nhịp đập — đó là sức mạnh lớn nhất của chúng tôi.</p>
+          <p class="p-quote">Tất cả mọi người, một nhịp đập, đó là sức mạnh lớn nhất của chúng tôi.</p>
         </div>
 
         <div class="panel-card" data-for="sale">
           <div class="p-name">Kinh Doanh</div>
-          <div class="p-role">6 đội KD — nguồn thu chính</div>
-          <p class="p-quote">Mỗi đơn hàng là một lời hứa — và chúng tôi giữ lời.</p>
+          <div class="p-role">6 đội KD, nguồn thu chính</div>
+          <p class="p-quote">Mỗi đơn hàng là một lời hứa, và chúng tôi giữ lời.</p>
         </div>
 
         <div class="panel-card" data-for="design">
@@ -2966,13 +2891,13 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
 
         <div class="panel-card" data-for="product">
           <div class="p-name">Sản Xuất</div>
-          <div class="p-role">CPO · Trần Vũ Quốc Bảo — Thêu · In giấy · Nhựa 3D</div>
-          <p class="p-quote">Chất lượng không phải khẩu hiệu — đó là tiêu chuẩn mỗi ngày.</p>
+          <div class="p-role">CPO · Trần Vũ Quốc Bảo · Thêu · In giấy · Nhựa 3D</div>
+          <p class="p-quote">Chất lượng không phải khẩu hiệu, đó là tiêu chuẩn mỗi ngày.</p>
         </div>
 
         <div class="panel-card" data-for="it">
           <div class="p-name">Khối Hỗ Trợ</div>
-          <div class="p-role">Hệ thống &amp; Tự động hoá — Vận hành · Tồn kho · Đa sàn</div>
+          <div class="p-role">Hệ thống &amp; Tự động hoá · Vận hành · Tồn kho · Đa sàn</div>
           <p class="p-quote">Công nghệ tốt là công nghệ khiến cả đội chạy nhanh hơn.</p>
         </div>
 
@@ -3248,7 +3173,7 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
     <header class="wce-header reveal">
       <p class="wce-eyebrow">Vì sao chọn Ethan</p>
       <h2 class="wce-title">Thế mạnh làm nên<br>một đội ngũ POD tự chủ</h2>
-      <p class="wce-lead">Chúng tôi không thuê ngoài từng mảnh — thiết kế, marketing và sản xuất đều nằm trong một mái nhà, đó là lý do Ethan làm chủ được tốc độ và chất lượng.</p>
+      <p class="wce-lead">Chúng tôi không thuê ngoài từng mảnh, thiết kế, marketing và sản xuất đều nằm trong một mái nhà, đó là lý do Ethan làm chủ được tốc độ và chất lượng.</p>
     </header>
 
     <div class="wce-slider reveal" id="wceSlider" aria-roledescription="carousel" aria-label="Ba thế mạnh của Ethan">
@@ -3538,7 +3463,7 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
       <span class="trot-prefix">Làm việc ở Ethan Ecom</span>
       <span class="trot-pill"><span class="trot-stage" id="trotStage"></span></span>
     </div>
-    <p class="ecult-lead">Văn phòng và xưởng có nhịp làm việc riêng — nhưng chung một tinh thần: tự chủ với phần việc của mình, sẵn lòng hỗ trợ trước cả khi được nhờ. Mùa đơn bùng nổ hay giai đoạn khó khăn là lúc sự gắn kết giữa các team hiện rõ nhất. Không khí thoải mái, không gò bó — nhưng luôn đi cùng sự chủ động và trách nhiệm.</p>
+    <p class="ecult-lead">Văn phòng và xưởng có nhịp làm việc riêng, nhưng chung một tinh thần: tự chủ với phần việc của mình, sẵn lòng hỗ trợ trước cả khi được nhờ. Mùa đơn bùng nổ hay giai đoạn khó khăn là lúc sự gắn kết giữa các team hiện rõ nhất. Không khí thoải mái, không gò bó, nhưng luôn đi cùng sự chủ động và trách nhiệm.</p>
     <button class="ecult-link" id="vidWrap" type="button" aria-label="Xem video văn hoá Ethan Ecom">Xem video văn hoá <span class="arrow" aria-hidden="true">&darr;</span></button>
   </div>
 </section>
@@ -3667,7 +3592,7 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
           <h3 class="vcard-title">Trách nhiệm</h3>
           <p class="vcard-desc">Cam kết với công việc và người đi cùng mình.</p>
           <div class="vcard-media">
-            <img src="assets/images/about/duty.jpg" alt="Buổi chụp sản phẩm tại studio Ethan" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80'">
+            <img src="assets/images/about/trachnhiem.jpg" alt="Buổi chụp sản phẩm tại studio Ethan" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80'">
           </div>
         </article>
 
@@ -3680,7 +3605,7 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
           <h3 class="vcard-title">Cải tiến</h3>
           <p class="vcard-desc">Chủ động đổi mới, xem AI là công cụ mỗi ngày.</p>
           <div class="vcard-media">
-            <img src="assets/images/about/passion.jpg" alt="Designer Ethan ứng dụng AI trong công việc sáng tạo" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1639322537228-f710d846310a?w=800&q=80'">
+            <img src="assets/images/about/caitien.jpg" alt="Designer Ethan ứng dụng AI trong công việc sáng tạo" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1639322537228-f710d846310a?w=800&q=80'">
           </div>
         </article>
 
@@ -3689,7 +3614,7 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
           <h3 class="vcard-title">Bền bỉ</h3>
           <p class="vcard-desc">Đủ chắc, đủ lì để vượt sóng gió.</p>
           <div class="vcard-media">
-            <img src="assets/images/about/team-work.jpg" alt="Đội ngũ Ethan cùng nhau xem lại kết quả công việc" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1527525443983-6e60c75fff46?w=800&q=80'">
+            <img src="assets/images/about/benbi.jpg" alt="Đội ngũ Ethan cùng nhau xem lại kết quả công việc" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1527525443983-6e60c75fff46?w=800&q=80'">
           </div>
         </article>
 
@@ -3714,74 +3639,57 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
 
 <!-- TESTIMONIALS -->
 <style>
-.tsl-section{background:#ffffff;width:100%;position:relative;overflow:hidden}
-.tsl-container{width:100%;max-width:1400px;margin:0 auto;padding:64px 24px}
-
-@keyframes tslUpIn{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
-@keyframes tslDownIn{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}
-@keyframes tslLeftIn{from{transform:translateX(50px);opacity:0}to{transform:translateX(0);opacity:1}}
-@keyframes tslRightIn{from{transform:translateX(-50px);opacity:0}to{transform:translateX(0);opacity:1}}
+/* ── KHÁCH HÀNG NÓI GÌ — tường đánh giá thật (review wall) ── */
+.rvw-section{background:#ffffff;width:100%;position:relative;overflow:hidden}
+.rvw-container{width:100%;max-width:1400px;margin:0 auto;padding:64px 24px}
 
 /* Header */
-.tsl-kicker{font-family:var(--font-heading);font-weight:var(--fw-medium);font-size:15px;line-height:1.3;letter-spacing:.06em;text-transform:uppercase;color:#16305C;margin:0}
-.tsl-heading{font-family:var(--font-heading);font-weight:var(--fw-regular);font-size:25px;line-height:1.3;text-transform:uppercase;color:#16305C;margin:20px 0 0}
-.tsl-heading em{font-style:normal;color:#16305C}
-.tsl-sub{font-family:var(--font-text);font-size:15px;line-height:1.5;color:#16305C;max-width:640px;margin:12px 0 0}
+.rvw-kicker{font-family:var(--font-heading);font-weight:var(--fw-medium);font-size:15px;line-height:1.3;letter-spacing:.06em;text-transform:uppercase;color:#16305C;margin:0}
+.rvw-heading{font-family:var(--font-heading);font-weight:var(--fw-regular);font-size:25px;line-height:1.3;text-transform:uppercase;color:#16305C;margin:20px 0 0}
+.rvw-heading em{font-style:normal;color:#16305C}
+.rvw-sub{font-family:var(--font-text);font-size:15px;line-height:1.5;color:#3E5A78;max-width:660px;margin:12px 0 0}
 
-/* Slider layout */
-.tsl-slider{display:grid;grid-template-columns:1fr;gap:32px;margin-top:40px;color:#142E4A}
-.tsl-col-left{display:flex;flex-direction:column;justify-content:space-between;order:2}
-.tsl-col-image{position:relative;height:400px;order:1;border-radius:0;overflow:hidden;background:#ffffff}
-.tsl-col-right{display:flex;flex-direction:column;justify-content:space-between;order:3}
+/* Rating tổng hợp */
+.rvw-agg{display:flex;align-items:center;gap:12px;margin-top:26px;flex-wrap:wrap}
+.rvw-agg-score{font-family:var(--font-heading);font-weight:var(--fw-medium);font-size:30px;line-height:1;color:#16305C}
+.rvw-agg-count{font-family:var(--font-text);font-size:14px;color:#5A6B82}
 
-.tsl-meta{display:flex;justify-content:space-between;gap:16px;align-items:center}
-.tsl-pagination{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;color:#3E5A78;letter-spacing:.04em}
-.tsl-vertical{display:none}
+/* Ngôi sao vàng */
+.rvw-stars{color:#F4B41A;letter-spacing:2px;font-size:16px;line-height:1;white-space:nowrap}
 
-.tsl-thumbs{display:flex;gap:8px;margin-top:32px}
-.tsl-thumb{width:64px;height:80px;border:none;padding:0;border-radius:0;overflow:hidden;opacity:.75;cursor:pointer;transition:opacity .3s,transform .3s;background:#142E4A}
-.tsl-thumb:hover,.tsl-thumb:focus-visible{opacity:1;transform:translateY(-2px)}
-.tsl-thumb:focus-visible{outline:2px solid #B49F73;outline-offset:2px}
-.tsl-thumb svg{width:100%;height:100%;display:block}
-.tsl-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+/* Tường review — masonry bằng CSS columns */
+.rvw-wall{margin-top:40px;column-gap:24px;columns:1}
+.rvw-card{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 24px;padding:24px 26px 22px;background:#ffffff;border:1px solid #E3EAF2;box-shadow:0 10px 30px rgba(13,32,54,.06);opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+.rvw-card.is-in{opacity:1;transform:none}
 
-.tsl-main-img{position:absolute;inset:0;width:100%;height:100%;border-radius:0;overflow:hidden}
-.tsl-main-img svg{width:100%;height:100%;display:block}
-.tsl-main-img img{width:100%;height:100%;object-fit:contain;display:block}
+.rvw-title{font-family:var(--font-text);font-weight:700;font-size:13px;letter-spacing:.02em;color:#8494A8;margin:0 0 12px}
+.rvw-head{display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap}
+.rvw-id{display:flex;align-items:center;gap:10px;min-width:0}
+.rvw-vline{width:1px;height:15px;background:#D3DCE7;flex:none}
+.rvw-user{font-family:var(--font-text);font-weight:600;font-size:15px;color:#274E76;white-space:nowrap}
+.rvw-date{font-family:var(--font-text);font-size:13px;color:#8494A8;white-space:nowrap;flex:none;margin-left:auto}
+.rvw-text{font-family:var(--font-text);font-size:16px;line-height:1.55;color:#1A2433;margin:14px 0 0}
+.rvw-foot{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-family:var(--font-text);font-size:12.5px;color:#3E8E5A}
+.rvw-foot svg{width:15px;height:15px;flex:none}
 
-.tsl-text-wrap{padding-top:16px;min-height:200px;overflow:hidden}
-.tsl-affiliation{font-family:var(--font-text);font-weight:500;font-size:15px;line-height:1.5;color:#3E5A78;margin:0}
-.tsl-name{font-family:var(--font-heading);font-weight:var(--fw-medium);font-size:20px;color:#274E76;margin:4px 0 0}
-.tsl-quote{font-family:var(--font-heading);font-weight:var(--fw-regular);font-size:24px;line-height:1.3;color:#1A1A1A;margin:24px 0 0}
-
-.tsl-nav{display:flex;gap:8px;margin-top:32px}
-.tsl-btn-prev,.tsl-btn-next{width:48px;height:48px;border-radius:0;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,border-color .2s}
-.tsl-btn-prev{background:transparent;border:1px solid rgba(20,46,74,.3);color:#142E4A}
-.tsl-btn-prev:hover{background:#DCE6F0}
-.tsl-btn-next{background:#142E4A;border:none;color:#ffffff}
-.tsl-btn-next:hover{background:#0D2036}
+/* Tablet ≥640px */
+@media(min-width:640px){.rvw-wall{columns:2}}
 
 /* Desktop ≥768px */
 @media(min-width:768px){
-  .tsl-container{padding:80px 48px}
-  .tsl-kicker{font-size:20px}
-  .tsl-heading{font-size:50px}
-  .tsl-sub{font-size:18px}
-  .tsl-slider{grid-template-columns:2.5fr 5.6fr 5fr;gap:32px;margin-top:62px}
-  .tsl-col-left{order:1}
-  .tsl-col-image{order:2;height:610px;min-height:610px}
-  .tsl-col-right{order:3;padding-left:32px}
-  .tsl-meta{flex-direction:column;justify-content:flex-start;align-items:flex-start}
-  .tsl-vertical{display:block;font-family:var(--font-heading);font-weight:var(--fw-medium);font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:#B49F73;writing-mode:vertical-rl;transform:rotate(180deg);margin:16px 0 0}
-  .tsl-thumbs{margin-top:0}
-  .tsl-thumb{width:60px;height:72px}
-  .tsl-text-wrap{padding-top:64px}
-  .tsl-quote{font-size:30px}
-  .tsl-nav{margin-top:0}
+  .rvw-container{padding:80px 48px}
+  .rvw-kicker{font-size:20px}
+  .rvw-heading{font-size:50px}
+  .rvw-sub{font-size:18px}
+  .rvw-agg-score{font-size:36px}
+  .rvw-stars{font-size:18px}
 }
 
+/* Wide ≥1024px */
+@media(min-width:1024px){.rvw-wall{columns:3}}
+
 @media(prefers-reduced-motion:reduce){
-  .tsl-section .tsl-main-img,.tsl-section [data-textwrap]{animation:none !important}
+  .rvw-card{opacity:1;transform:none;transition:none}
 }
 </style>
 
@@ -4311,111 +4219,109 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
 })();
 </script>
 
-<section class="tsl-section" id="tslSection" data-flow="#FDFEFE">
-  <div class="bg-deco" aria-hidden="true">
-  </div>
-  <div class="tsl-container">
+<section class="rvw-section" id="tslSection" data-flow="#FDFEFE">
+  <div class="rvw-container">
 
-    <p class="tsl-kicker">Khách hàng nói gì</p>
-    <h2 class="tsl-heading">From Our <em>Customers</em></h2>
-    <p class="tsl-sub">Khách hàng quốc tế trên TikTok Shop US, Etsy và Amazon — rating trung bình 4–5 sao.</p>
+    <p class="rvw-kicker">Khách hàng nói gì</p>
+    <h2 class="rvw-heading">From Our <em>Customers</em></h2>
+    <p class="rvw-sub">Đánh giá thật từ khách hàng quốc tế trên TikTok Shop US, Etsy &amp; Amazon — giữ nguyên, không chỉnh sửa.</p>
 
-    <div class="tsl-slider">
-
-      <!-- Left: pagination + vertical label + thumbnails -->
-      <div class="tsl-col-left">
-        <div class="tsl-meta">
-          <span class="tsl-pagination" data-pagination>01 / 04</span>
-        </div>
-        <div class="tsl-thumbs" data-thumbs></div>
-      </div>
-
-      <!-- Middle: main image -->
-      <div class="tsl-col-image">
-        <div class="tsl-main-img" data-main></div>
-      </div>
-
-      <!-- Right: text + nav -->
-      <div class="tsl-col-right">
-        <div class="tsl-text-wrap">
-          <div data-textwrap>
-            <p class="tsl-affiliation" data-affiliation></p>
-            <h3 class="tsl-name" data-name></h3>
-            <blockquote class="tsl-quote" data-quote></blockquote>
-          </div>
-        </div>
-        <div class="tsl-nav">
-          <button class="tsl-btn-prev" data-prev aria-label="Đánh giá trước">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-          </button>
-          <button class="tsl-btn-next" data-next aria-label="Đánh giá tiếp theo">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </button>
-        </div>
-      </div>
-
+    <div class="rvw-agg">
+      <span class="rvw-stars" aria-hidden="true">★★★★★</span>
+      <span class="rvw-agg-score">5.0</span>
+      <span class="rvw-agg-count">trên 5 · 5 đánh giá thật, không chỉnh sửa</span>
     </div>
+
+    <div class="rvw-wall">
+      <article class="rvw-card" data-i="0">
+        <p class="rvw-title">Review details</p>
+        <div class="rvw-head">
+          <div class="rvw-id">
+            <span class="rvw-stars" aria-label="5 trên 5 sao">★★★★★</span>
+            <span class="rvw-vline" aria-hidden="true"></span>
+            <span class="rvw-user">c_665189</span>
+          </div>
+          <span class="rvw-date">June 12, 2026</span>
+        </div>
+        <p class="rvw-text">So cute and just as described. In love with this and looks great in my daughter room.</p>
+        <span class="rvw-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Đơn hàng đã xác thực</span>
+      </article>
+      <article class="rvw-card" data-i="1">
+        <p class="rvw-title">Review details</p>
+        <div class="rvw-head">
+          <div class="rvw-id">
+            <span class="rvw-stars" aria-label="5 trên 5 sao">★★★★★</span>
+            <span class="rvw-vline" aria-hidden="true"></span>
+            <span class="rvw-user">James Mowery</span>
+          </div>
+          <span class="rvw-date">May 10, 2026</span>
+        </div>
+        <p class="rvw-text">Came before expected delivery date and as advertised.</p>
+        <span class="rvw-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Đơn hàng đã xác thực</span>
+      </article>
+      <article class="rvw-card" data-i="2">
+        <p class="rvw-title">Review details</p>
+        <div class="rvw-head">
+          <div class="rvw-id">
+            <span class="rvw-stars" aria-label="5 trên 5 sao">★★★★★</span>
+            <span class="rvw-vline" aria-hidden="true"></span>
+            <span class="rvw-user">AlucardsKnob</span>
+          </div>
+          <span class="rvw-date">June 6, 2026</span>
+        </div>
+        <p class="rvw-text">First item i have bought on the tiktok shop and I wasn&#39;t disappointed. I&#39;m genuinely happy with what I got and how fast it came. I&#39;d buy more anytime.</p>
+        <span class="rvw-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Đơn hàng đã xác thực</span>
+      </article>
+      <article class="rvw-card" data-i="3">
+        <p class="rvw-title">Review details</p>
+        <div class="rvw-head">
+          <div class="rvw-id">
+            <span class="rvw-stars" aria-label="5 trên 5 sao">★★★★★</span>
+            <span class="rvw-vline" aria-hidden="true"></span>
+            <span class="rvw-user">1976sammyj</span>
+          </div>
+          <span class="rvw-date">June 18, 2026</span>
+        </div>
+        <p class="rvw-text">Very cute and a perfect horror addition to my kitchen.</p>
+        <span class="rvw-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Đơn hàng đã xác thực</span>
+      </article>
+      <article class="rvw-card" data-i="4">
+        <p class="rvw-title">Review details</p>
+        <div class="rvw-head">
+          <div class="rvw-id">
+            <span class="rvw-stars" aria-label="5 trên 5 sao">★★★★★</span>
+            <span class="rvw-vline" aria-hidden="true"></span>
+            <span class="rvw-user">SlashFest</span>
+          </div>
+          <span class="rvw-date">May 22, 2026</span>
+        </div>
+        <p class="rvw-text">Love it! It was exactly what I expected and the wife loved it.</p>
+        <span class="rvw-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Đơn hàng đã xác thực</span>
+      </article>
+    </div>
+
   </div>
 </section>
 <script>
 (function(){
   var sec = document.getElementById('tslSection');
   if(!sec) return;
-
-  /* fit: 'cover' cho ảnh khách hàng (crop đầy khung) · 'contain' cho huy hiệu 5 sao */
-  var reviews = [
-    {name:'Rachel A.', aff:'Cancer Awareness Collection · Etsy US', quote:"As someone caring for my mom through cancer treatment, this design meant so much. Thank you for making something that reminds us we're not alone.", img:'assets/images/hero/khachhang.jpg', fit:'cover'},
-    {name:'Sarah J.', aff:'Embroidered Cap · Etsy US', quote:'The embroidery on my hat is beautiful — clean stitching and rich colors. You can tell real care went into making it. Absolutely love it.', img:'assets/images/hero/khachhang1.jpg', fit:'cover'},
-    {name:'Mike T.', aff:'Custom Apparel · TikTok Shop US', quote:'Ordered a custom tee and it shipped faster than expected. The print quality is excellent and the fabric feels premium. Will definitely order again!', img:'assets/images/hero/khachhang2.jpg', fit:'cover'},
-    {name:'Emily W.', aff:'Mug & Poster · Amazon US', quote:'My mug and poster arrived well-packaged and exactly as pictured. Great quality for the price and lovely designs. Highly recommend this shop!', img:'assets/images/hero/khachhang3.jpg', fit:'cover'},
-    {name:'David M.', aff:'Print-on-Demand Hoodie · TikTok Shop US', quote:"The hoodie exceeded my expectations — soft fabric and a vibrant print that hasn't faded after several washes. Smooth ordering and quick delivery. Five stars!", img:'assets/images/hero/khachhang4.jpg', fit:'cover'},
-    {name:'Linda K.', aff:'Personalized Gift · Etsy US', quote:'I ordered a personalized gift for my sister and she was thrilled. The craftsmanship is top-notch and the seller was incredibly responsive. Highly recommend!', img:'assets/images/hero/khachhang5.jpg', fit:'cover'}
-  ];
-
-  var main = sec.querySelector('[data-main]'),
-      thumbs = sec.querySelector('[data-thumbs]'),
-      pag = sec.querySelector('[data-pagination]'),
-      affEl = sec.querySelector('[data-affiliation]'),
-      nameEl = sec.querySelector('[data-name]'),
-      quoteEl = sec.querySelector('[data-quote]'),
-      textInner = sec.querySelector('[data-textwrap]');
-  var current = 0;
-  var EASE = 'cubic-bezier(.4,0,.2,1)';
-
-  function pad(n){ return (n<10?'0':'')+n; }
-  function retrig(el, anim){ el.style.animation='none'; void el.offsetWidth; el.style.animation=anim; }
-
-  function render(dir, animate){
-    var r = reviews[current];
-    main.innerHTML = '<img src="'+r.img+'" alt="Khách hàng: '+r.name+' — '+r.aff+'" loading="lazy" style="object-fit:'+r.fit+'">';
-    affEl.textContent = r.aff;
-    nameEl.textContent = r.name;
-    quoteEl.textContent = '“'+r.quote+'”';
-    pag.textContent = pad(current+1)+' / '+pad(reviews.length);
-
-    thumbs.innerHTML = '';
-    reviews.forEach(function(rv,i){
-      if(i===current) return;
-      var b = document.createElement('button');
-      b.className = 'tsl-thumb';
-      b.setAttribute('aria-label','Xem đánh giá của '+rv.name);
-      b.innerHTML = '<img src="'+rv.img+'" alt="" loading="lazy">';
-      b.addEventListener('click', function(){ goTo(i, i>current?'right':'left'); });
-      thumbs.appendChild(b);
-    });
-
-    if(animate){
-      retrig(main, (dir==='right'?'tslUpIn':'tslDownIn')+' .6s '+EASE);
-      retrig(textInner, (dir==='right'?'tslLeftIn':'tslRightIn')+' .6s '+EASE);
-    }
+  var cards = sec.querySelectorAll('.rvw-card');
+  if(!('IntersectionObserver' in window)){
+    cards.forEach(function(c){ c.classList.add('is-in'); });
+    return;
   }
-
-  function goTo(i, dir){ current = i; render(dir, true); }
-
-  sec.querySelector('[data-next]').addEventListener('click', function(){ goTo((current+1)%reviews.length, 'right'); });
-  sec.querySelector('[data-prev]').addEventListener('click', function(){ goTo((current-1+reviews.length)%reviews.length, 'left'); });
-
-  render('right', false);
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        var i = parseInt(en.target.getAttribute('data-i'),10) || 0;
+        en.target.style.transitionDelay = ((i % 3) * 0.08) + 's';
+        en.target.classList.add('is-in');
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: .15 });
+  cards.forEach(function(c){ io.observe(c); });
 })();
 </script>
 
@@ -4466,6 +4372,51 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
 .cprem-submit{background:#1E7FE0;color:#fff}
 .cprem-submit:hover{box-shadow:0 10px 30px -8px rgba(30,127,224,.5)}
 .cprem-submit:disabled{background:#DCE6F0;color:#1E7FE0;border:1px solid rgba(30,127,224,.3)}
+
+/* ===== #stories → SLIDER (lướt ngang xem bài tiếp theo) ===== */
+#stories .story-slider{position:relative;padding:0 52px}
+#stories .story-viewport{position:relative}
+#stories .story-track{
+  display:grid;grid-auto-flow:column;
+  grid-auto-columns:calc((100% - 2*28px)/3);   /* 3 thẻ / khung nhìn (desktop) */
+  gap:28px;overflow-x:auto;overflow-y:visible;
+  scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  padding:6px 2px 8px;margin:0 -2px;
+  scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior-x:contain;
+}
+#stories .story-track::-webkit-scrollbar{display:none}
+#stories .story-track>.bcard{scroll-snap-align:start;min-width:0}
+/* Nút điều hướng — vuông navy, nằm ngoài khung thẻ, căn giữa; đồng bộ với cau-chuyen */
+#stories .story-nav{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:6;
+  width:40px;height:40px;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  background:#16305C;color:#fff;box-shadow:0 8px 20px rgba(15,34,68,.26);
+  transition:background .22s,color .22s,transform .22s,box-shadow .22s,opacity .22s;
+}
+#stories .story-nav:hover{background:#F4B41A;color:#16305C;box-shadow:0 10px 24px rgba(244,180,26,.42);transform:translateY(-50%) scale(1.06)}
+#stories .story-nav:active{transform:translateY(-50%) scale(.92)}
+#stories .story-nav:focus-visible{outline:2px solid #F4B41A;outline-offset:3px}
+#stories .story-nav svg{width:18px;height:18px;stroke:currentColor;stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+#stories .story-prev{left:-46px}
+#stories .story-next{right:-46px}
+#stories .story-nav[disabled]{opacity:.3;cursor:default;pointer-events:none;box-shadow:0 5px 14px rgba(15,34,68,.14)}
+/* Thanh phân trang */
+#stories .story-dots{display:flex;justify-content:center;gap:8px;margin-top:26px}
+#stories .story-dots button{
+  width:26px;height:4px;border-radius:0;border:none;cursor:pointer;padding:0;
+  background:#DFD8C8;transition:background .3s,width .3s;
+}
+#stories .story-dots button.active{background:#1E7FE0;width:44px}
+#stories .story-dots:empty{display:none}
+@media(max-width:1024px){
+  #stories .story-slider{padding:0}
+  #stories .story-track{grid-auto-columns:calc((100% - 28px)/2)}   /* 2 thẻ / khung nhìn */
+  #stories .story-nav{display:none}
+}
+@media(max-width:640px){
+  #stories .story-track{grid-auto-columns:86%;gap:16px}            /* 1 thẻ + hé lộ thẻ kế */
+}
 </style>
 
 <!-- BLOG / STORIES -->
@@ -4482,17 +4433,52 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
     <div class="sh c reveal">
       <h2 class="st">Câu chuyện</h2>
       <p class="story-sub">Từ hành trình chinh phục thị trường toàn cầu</p>
-      <p class="ss">Những khoảnh khắc thật, con người thật — từ lớp đào tạo Digital EMB, mùa Tết đoàn viên đến những đêm tiệc gắn kết của đại gia đình Ethan Ecom.</p>
+      <p class="ss">Những khoảnh khắc thật, con người thật, từ lớp đào tạo Digital EMB, mùa Tết đoàn viên đến những đêm tiệc gắn kết của đại gia đình Ethan Ecom.</p>
     </div>
 
-    <!-- Cards -->
-    <div class="blog-grid">
+    <!-- Cards — slider lướt ngang -->
+    <div class="story-slider reveal">
+      <div class="story-viewport">
+      <button class="story-nav story-prev" type="button" aria-label="Xem câu chuyện trước" disabled>
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="story-track" role="list">
 
-      <!-- Card 1 — Cyan -->
-      <div class="bcard bcard-cyan reveal d1">
+      <!-- Câu chuyện nổi bật — Over Limitation (Sự kiện) -->
+      <div class="bcard bcard-amber" role="listitem">
         <div class="bthumb">
           <div class="bthumb-overlay"></div>
-          <div class="img-ph ph-blog1"><img src="assets/images/blog/academy-cover.jpg" alt="Học viên Ethan Ecom Academy trong khóa đào tạo Digital EMB 2026" onerror="this.style.visibility='hidden'"></div>
+          <div class="img-ph ph-blog1"><img src="assets/images/blog/17-over-limitation-2025/ol-cover.jpg" alt="Sân khấu sự kiện sáng tạo Over Limitation 2025 tại Ethan Ecom" onerror="this.style.visibility='hidden'"></div>
+          <div class="bcat-badge">
+            <span class="bcat-dot bcat-dot-amber"></span>
+            <span class="bcat-label">Sự kiện</span>
+          </div>
+        </div>
+        <div class="bbody">
+          <div class="bmeta">
+            <div class="bmeta-item">
+              <svg class="bmeta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              18 Tháng 8, 2025
+            </div>
+            <div class="bmeta-item">
+              <svg class="bmeta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              6 phút đọc
+            </div>
+          </div>
+          <h3>Over Limitation 2025: Nơi tư duy giao thoa &amp; tỏa sáng</h3>
+          <p class="bdesc">Sân chơi multimedia bùng nổ nhất Gia Kiệm — hai đường đua Media &amp; Design và lễ vinh danh những quán quân dám bứt phá giới hạn.</p>
+          <div class="bfoot">
+            <a href="blog-over-limitation-2025" class="bread">Đọc thêm <span class="bread-arrow">→</span></a>
+            <div class="bdots"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 1 — Cyan -->
+      <div class="bcard bcard-cyan" role="listitem">
+        <div class="bthumb">
+          <div class="bthumb-overlay"></div>
+          <div class="img-ph ph-blog1"><img src="assets/images/blog/01-academy-digital-emb/academy-cover.jpg" alt="Học viên Ethan Ecom Academy trong khóa đào tạo Digital EMB 2026" onerror="this.style.visibility='hidden'"></div>
           <div class="bcat-badge">
             <span class="bcat-dot bcat-dot-cyan"></span>
             <span class="bcat-label">Đào tạo</span>
@@ -4510,19 +4496,19 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
             </div>
           </div>
           <h3>Ethan Ecom Academy: Khóa đào tạo Digital EMB miễn phí 100%</h3>
-          <p class="bdesc">30 suất học nghề "điêu khắc số" miễn phí — học theo quy trình sản xuất thật, cơ hội việc làm với lương từ 7 triệu/tháng.</p>
+          <p class="bdesc">30 suất học nghề "điêu khắc số" miễn phí, học theo quy trình sản xuất thật, cơ hội việc làm với lương từ 7 triệu/tháng.</p>
           <div class="bfoot">
-            <a href="blog-academy-digital-emb.html" class="bread">Đọc thêm <span class="bread-arrow">→</span></a>
+            <a href="blog-academy-digital-emb" class="bread">Đọc thêm <span class="bread-arrow">→</span></a>
             <div class="bdots"><span></span><span></span><span></span></div>
           </div>
         </div>
       </div>
 
       <!-- Card 2 — Purple -->
-      <div class="bcard bcard-purple reveal d2">
+      <div class="bcard bcard-purple" role="listitem">
         <div class="bthumb">
           <div class="bthumb-overlay"></div>
-          <div class="img-ph ph-blog2"><img src="assets/images/blog/tet-cover.jpg" alt="Đội ngũ Ethan Ecom cùng quà Tết 2026 trước kỳ nghỉ đoàn viên" onerror="this.style.visibility='hidden'"></div>
+          <div class="img-ph ph-blog2"><img src="assets/images/blog/02-tet-2026/tet-cover.jpg" alt="Đội ngũ Ethan Ecom cùng quà Tết 2026 trước kỳ nghỉ đoàn viên" onerror="this.style.visibility='hidden'"></div>
           <div class="bcat-badge">
             <span class="bcat-dot bcat-dot-purple"></span>
             <span class="bcat-label">Văn hoá</span>
@@ -4539,20 +4525,20 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
               5 phút đọc
             </div>
           </div>
-          <h3>Gác lại dự án, về nhà ăn Tết 2026 — Mang vibe Ethan về nhà</h3>
+          <h3>Gác lại dự án, về nhà ăn Tết 2026: Mang vibe Ethan về nhà</h3>
           <p class="bdesc">Hành trình đoàn viên của các Sparrows: quà thêu độc bản từ xưởng in-house và lời tri ân gửi người thuyền trưởng.</p>
           <div class="bfoot">
-            <a href="blog-tet-2026.html" class="bread">Đọc thêm <span class="bread-arrow">→</span></a>
+            <a href="blog-tet-2026" class="bread">Đọc thêm <span class="bread-arrow">→</span></a>
             <div class="bdots"><span></span><span></span><span></span></div>
           </div>
         </div>
       </div>
 
       <!-- Card 3 — Amber -->
-      <div class="bcard bcard-amber reveal d3">
+      <div class="bcard bcard-amber" role="listitem">
         <div class="bthumb">
           <div class="bthumb-overlay"></div>
-          <div class="img-ph ph-blog3"><img src="assets/images/blog/christmas-cover.jpg" alt="MC dẫn chương trình trên sân khấu Ethan Christmas Party 2025" onerror="this.style.visibility='hidden'"></div>
+          <div class="img-ph ph-blog3"><img src="assets/images/blog/03-christmas-party-2025/christmas-cover.jpg" alt="MC dẫn chương trình trên sân khấu Ethan Christmas Party 2025" onerror="this.style.visibility='hidden'"></div>
           <div class="bcat-badge">
             <span class="bcat-dot bcat-dot-amber"></span>
             <span class="bcat-label">Sự kiện</span>
@@ -4569,16 +4555,52 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
               5 phút đọc
             </div>
           </div>
-          <h3>Ethan Christmas Party 2025 — Đêm tiệc gắn kết đại gia đình</h3>
+          <h3>Ethan Christmas Party 2025: Đêm tiệc gắn kết đại gia đình</h3>
           <p class="bdesc">Không gian lễ hội ấm áp, văn nghệ bùng nổ năng lượng và khoảnh khắc trao giải tri ân một năm rực rỡ.</p>
           <div class="bfoot">
-            <a href="blog-christmas-party-2025.html" class="bread">Đọc thêm <span class="bread-arrow">→</span></a>
+            <a href="blog-christmas-party-2025" class="bread">Đọc thêm <span class="bread-arrow">→</span></a>
             <div class="bdots"><span></span><span></span><span></span></div>
           </div>
         </div>
       </div>
 
-    </div>
+      <!-- Card 4 — Trung Thu (Văn hoá) -->
+      <div class="bcard bcard-purple" role="listitem">
+        <div class="bthumb">
+          <div class="bthumb-overlay"></div>
+          <div class="img-ph ph-blog3"><img src="assets/images/blog/04-trung-thu-2025/trungthu-cover.jpg" alt="Đội ngũ Ethan Ecom quây quần bên nhau dịp Trung Thu 2025" onerror="this.style.visibility='hidden'"></div>
+          <div class="bcat-badge">
+            <span class="bcat-dot bcat-dot-purple"></span>
+            <span class="bcat-label">Văn hoá</span>
+          </div>
+        </div>
+        <div class="bbody">
+          <div class="bmeta">
+            <div class="bmeta-item">
+              <svg class="bmeta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              02 Tháng 10, 2025
+            </div>
+            <div class="bmeta-item">
+              <svg class="bmeta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              4 phút đọc
+            </div>
+          </div>
+          <h3>Trung Thu tại Ethan Ecom: Gói trọn tình thân</h3>
+          <p class="bdesc">Giao thoa truyền thống trong vũ trụ số, những phần quà tri ân và nụ cười bên bánh trung thu của những "kẻ kiến tạo".</p>
+          <div class="bfoot">
+            <a href="blog-trung-thu-2025" class="bread">Đọc thêm <span class="bread-arrow">→</span></a>
+            <div class="bdots"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+
+      </div><!-- /.story-track -->
+      <button class="story-nav story-next" type="button" aria-label="Xem câu chuyện tiếp theo">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      </div><!-- /.story-viewport -->
+      <div class="story-dots" role="tablist" aria-label="Chọn trang câu chuyện"></div>
+    </div><!-- /.story-slider -->
   </div>
 </section>
 
@@ -4775,7 +4797,7 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
     <header class="recruit__head">
       <p class="recruit__eyebrow">Gia nhập đội ngũ Ethan Ecom</p>
       <h2 class="recruit__title">Tuyển Dụng</h2>
-      <p class="recruit__sub">Mỗi vị trí là một hành trình riêng — nơi bạn được trao cơ hội
+      <p class="recruit__sub">Mỗi vị trí là một hành trình riêng, nơi bạn được trao cơ hội
         phát triển, đồng hành cùng đội ngũ trẻ và chinh phục những thị trường đầy tiềm năng.</p>
     </header>
 
@@ -4798,19 +4820,6 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
       </div>
     </div>
 
-  </div>
-
-  <!-- PILLS VỊ TRÍ TUYỂN DỤNG — rơi từ hàng tab khi cuộn qua 50% section -->
-  <div class="throwable-scene" id="throwScene">
-    <div class="t-el" data-w="190" data-h="48"><span class="t-inner p-indigo">Quality Control</span></div>
-    <div class="t-el" data-w="216" data-h="48"><span class="t-inner p-dark2">General Accountant</span></div>
-    <div class="t-el" data-w="134" data-h="48"><span class="t-inner p-cyan2">Seller POD</span></div>
-    <div class="t-el" data-w="248" data-h="48"><span class="t-inner p-dark2">Embroidery Technician</span></div>
-    <div class="t-el" data-w="186" data-h="48"><span class="t-inner p-indigo">Graphic Designer</span></div>
-    <div class="t-el" data-w="162" data-h="48"><span class="t-inner p-cyan2">Web Developer</span></div>
-    <div class="t-el" data-w="162" data-h="48"><span class="t-inner p-black">Video Creator</span></div>
-    <div class="t-el" data-w="178" data-h="48"><span class="t-inner p-indigo">TikTok Shop US</span></div>
-    <div class="t-el" data-w="210" data-h="48"><span class="t-inner p-dark2">Internet Marketing</span></div>
   </div>
 </section>
 
@@ -4875,7 +4884,7 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
       + '<ul class="job__benefits">'
         + BENEFITS.map(function(b){ return '<li>' + CHECK + '<span>' + b + '</span></li>'; }).join('')
       + '</ul>'
-      + '<a class="btn-apply" href="careers.html">Ứng tuyển ngay'
+      + '<a class="btn-apply" href="tuyen-dung">Ứng tuyển ngay'
         + '<svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true"><path d="M14 1l7 7-7 7M21 8H1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
       + '</a>';
     playFade(visualEl); playFade(colEl);
@@ -4899,344 +4908,7 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
 })();
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
-<script>
-(function(){
-  var sceneEl = document.getElementById('throwScene');
-  if(!sceneEl) return;
 
-  var Engine    = Matter.Engine;
-  var Bodies    = Matter.Bodies;
-  var Body      = Matter.Body;
-  var Composite = Matter.Composite;
-  var Sleeping  = Matter.Sleeping;
-
-  var engine, rafId, pills = [];
-  /* pill đang bị kéo */
-  var drag = null; /* { pill, prevX, prevY, offX, offY } */
-
-  function scenePos(clientX, clientY){
-    var r = sceneEl.getBoundingClientRect();
-    return { x: clientX - r.left, y: clientY - r.top };
-  }
-
-  function build(){
-    if(rafId){ cancelAnimationFrame(rafId); rafId = null; }
-    if(engine){ Engine.clear(engine); }
-    pills = [];
-    drag  = null;
-
-    sceneEl.querySelectorAll('.t-el').forEach(function(el){ el.removeAttribute('style'); });
-
-    var W = sceneEl.offsetWidth;
-    var H = sceneEl.offsetHeight;
-    if(!W || !H){ setTimeout(build, 100); return; }
-
-    engine = Engine.create({
-      gravity:{ x:0, y: isMobile ? 1.4 : 2.2 },
-      positionIterations: isMobile ? 4 : 6,
-      velocityIterations: isMobile ? 3 : 4,
-      enableSleeping: true
-    });
-    var world = engine.world;
-
-    var T = 60;
-    Composite.add(world, [
-      Bodies.rectangle(W/2,    H+T/2,  W*2, T,   { isStatic:true, restitution:0.2, friction:0.8 }),
-      Bodies.rectangle(-T/2,   H/2,    T,   H*4,  { isStatic:true, restitution:0.2, friction:0.5 }),
-      Bodies.rectangle(W+T/2,  H/2,    T,   H*4,  { isStatic:true, restitution:0.2, friction:0.5 }),
-    ]);
-
-    var els  = Array.from(sceneEl.querySelectorAll('.t-el'));
-    var cols = Math.max(1, Math.floor(W / 160));
-
-    /* Điểm spawn = hàng tab vị trí (#recruitTabs) — mỗi pill rơi từ đúng tab tên nó.
-       Tọa độ tab quy về hệ của scene (scene nằm cuối section → y tab là số âm phía trên) */
-    var sceneR = sceneEl.getBoundingClientRect();
-    var norm = function(s){ return (s || '').toLowerCase().replace(/[^a-z]/g, ''); };
-    var tabSpots = [];
-    document.querySelectorAll('#recruitTabs .tab').forEach(function(t){
-      var r = t.getBoundingClientRect();
-      tabSpots.push({ key: norm(t.textContent), x: r.left + r.width/2 - sceneR.left, y: r.top + r.height/2 - sceneR.top });
-    });
-
-    var isMobile = W < 640;
-    els.forEach(function(el, i){
-      var pw = parseInt(el.dataset.w, 10) || 140;
-      var ph = parseInt(el.dataset.h, 10) || 48;
-      if(isMobile){ pw = Math.round(pw * 0.72); ph = 34; }
-
-      /* Tab trùng tên pill (bỏ số thứ tự/khoảng trắng khi so) */
-      var key = norm(el.textContent), spot = null;
-      for(var s = 0; s < tabSpots.length; s++){
-        if(tabSpots[s].key.indexOf(key) !== -1 || key.indexOf(tabSpots[s].key) !== -1){ spot = tabSpots[s]; break; }
-      }
-
-      var col = i % cols;
-      var row = Math.floor(i / cols);
-      var sx, sy;
-      if(spot){
-        sx = spot.x + (Math.random()-0.5)*12;
-        /* jitter dọc để các pill không chạm sàn cùng lúc / không chồng cứng lên nhau */
-        sy = spot.y - Math.random()*60;
-      } else {
-        sx = (col + 0.5) * (W / cols) + (Math.random()-0.5)*20;
-        sy = -60 - row * 80 - Math.random() * 30;
-      }
-      sx = Math.max(pw/2+4, Math.min(W-pw/2-4, sx));
-
-      var body = Bodies.rectangle(sx, sy, pw, ph, {
-        restitution: isMobile ? 0.2  : 0.45,
-        friction:    isMobile ? 0.6  : 0.3,
-        frictionAir: isMobile ? 0.06 : 0.018,
-        density:     0.003
-      });
-      Body.setVelocity(body, { x:(Math.random()-0.5)*1.5, y:0 });
-      Body.setAngularVelocity(body, (Math.random()-0.5)*0.12);
-      Composite.add(world, body);
-
-      el.style.cssText = [
-        'position:absolute','top:0','left:0',
-        'width:'+pw+'px','height:'+ph+'px',
-        'pointer-events:auto','user-select:none',
-        'touch-action:none','will-change:transform','cursor:grab'
-      ].join(';');
-
-      var inner = el.querySelector('.t-inner');
-      if(inner) inner.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;box-sizing:border-box;white-space:nowrap;';
-
-      /* ── DOM drag — bắt thẳng trên element, không qua Matter mouse ── */
-      el.addEventListener('pointerdown', function(e){
-        e.preventDefault();
-        el.setPointerCapture(e.pointerId);
-        var sp = scenePos(e.clientX, e.clientY);
-        /* offset từ tâm body đến điểm chạm */
-        drag = {
-          pill: { body:body, el:el, w:pw, h:ph },
-          prevX: sp.x, prevY: sp.y,
-          offX: sp.x - body.position.x,
-          offY: sp.y - body.position.y
-        };
-        Sleeping.set(body, false);
-        Body.setStatic(body, true);   /* tắt gravity khi đang giữ */
-        el.style.cursor = 'grabbing';
-        el.style.zIndex = '999';
-      });
-
-      pills.push({ body:body, el:el, w:pw, h:ph });
-    });
-
-    /* Pointermove / up trên document để không miss khi kéo ra ngoài el */
-    document.addEventListener('pointermove', function(e){
-      if(!drag) return;
-      var sp = scenePos(e.clientX, e.clientY);
-      var hh = drag.pill.h / 2;
-
-      /* Chỉ chặn bottom — không cho kéo box xuống dưới đáy scene */
-      var maxY = sceneEl.offsetHeight - hh;
-
-      var tx = sp.x - drag.offX;
-      var ty = Math.min(maxY, sp.y - drag.offY);
-      Body.setPosition(drag.pill.body, { x:tx, y:ty });
-      /* velocity = delta / dt dùng để ném khi thả */
-      drag.velX = sp.x - drag.prevX;
-      drag.velY = sp.y - drag.prevY;
-      drag.prevX = sp.x;
-      drag.prevY = sp.y;
-    });
-
-    document.addEventListener('pointerup', function(){
-      if(!drag) return;
-      var b = drag.pill.body;
-      Body.setStatic(b, false);
-      /* apply velocity tích lũy lúc kéo để có momentum khi ném */
-      Body.setVelocity(b, { x: drag.velX*1.4||0, y: drag.velY*1.4||0 });
-      Body.setAngularVelocity(b, (drag.velX||0)*0.04);
-      drag.pill.el.style.cursor = 'grab';
-      drag.pill.el.style.zIndex = '1';
-      drag = null;
-    });
-
-    sceneEl.addEventListener('touchmove', function(e){ e.preventDefault(); }, {passive:false});
-
-    /* RAF loop — fixed 16ms timestep để tránh giật khi frame rate drop */
-    var lastT = performance.now();
-    var accumulator = 0;
-    var STEP = 16;
-    function loop(now){
-      rafId = requestAnimationFrame(loop);
-      var delta = Math.min(now - lastT, 50);
-      lastT = now;
-      accumulator += delta;
-      var stepped = false;
-      while(accumulator >= STEP){
-        Engine.update(engine, STEP);
-        accumulator -= STEP;
-        stepped = true;
-      }
-      if(stepped){
-        pills.forEach(function(p){
-          if(p.body.isSleeping) return;
-          var pos = p.body.position;
-          var lx  = pos.x - p.w/2;
-          var ly  = pos.y - p.h/2;
-          var deg = p.body.angle * (180/Math.PI);
-          p.el.style.transform = 'translate('+lx.toFixed(1)+'px,'+ly.toFixed(1)+'px) rotate('+deg.toFixed(1)+'deg)';
-        });
-      }
-    }
-    rafId = requestAnimationFrame(loop);
-
-    var resizeT;
-    window.addEventListener('resize', function(){
-      clearTimeout(resizeT);
-      resizeT = setTimeout(build, 350);
-    });
-  }
-
-  /* Thả pills khi người dùng cuộn qua 50% section tuyển dụng */
-  var recruitEl = document.getElementById('tuyen-dung') || sceneEl;
-  var started = false;
-  function checkStart(){
-    if(started) return;
-    var r = recruitEl.getBoundingClientRect();
-    if(r.top + r.height * 0.5 <= window.innerHeight){
-      started = true;
-      window.removeEventListener('scroll', checkStart);
-      build();
-    }
-  }
-  function arm(){
-    window.addEventListener('scroll', checkStart, {passive:true});
-    checkStart();
-  }
-  if(document.readyState === 'complete' || document.readyState === 'interactive'){ arm(); }
-  else { window.addEventListener('load', arm); }
-})();
-</script>
-
-<!-- CONTACT -->
-<section class="section cprem-section" id="contact" data-flow="#FDFEFE">
-  <div class="bg-deco" aria-hidden="true">
-  </div>
-  <!-- Background -->
-  <div class="cprem-bg" aria-hidden="true">
-    <div class="cprem-grid"></div>
-    <div class="cprem-blob1"></div>
-    <div class="cprem-blob2"></div>
-  </div>
-
-  <div class="container cprem-inner">
-    <div class="cprem-layout">
-
-      <!-- LEFT: Info -->
-      <div class="cprem-left reveal rl">
-        <span class="cprem-tagline">Ngay hôm nay</span>
-        <h2 class="cprem-headline">Hãy bắt đầu một<br>hành trình mới<br>cùng chúng tôi</h2>
-        <div class="cprem-divider"></div>
-        <p class="cprem-desc">Bạn muốn hợp tác, tìm hiểu về Ethan hay gia nhập đội ngũ? Hãy để lại lời nhắn — chúng tôi luôn sẵn sàng lắng nghe.</p>
-
-        <div class="cprem-contacts">
-
-          <a href="mailto:support@ethanecom.com" class="cprem-citem cprem-citem--cyan">
-            <div class="cprem-citem-slide"></div>
-            <div class="cprem-citem-ico cprem-ico--cyan">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            </div>
-            <div class="cprem-citem-text">
-              <p class="cprem-citem-label">Email CSKH</p>
-              <p class="cprem-citem-value">support@ethanecom.com</p>
-            </div>
-          </a>
-
-          <a href="tel:+84967473979" class="cprem-citem cprem-citem--rose">
-            <div class="cprem-citem-slide"></div>
-            <div class="cprem-citem-ico cprem-ico--rose">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div class="cprem-citem-text">
-              <p class="cprem-citem-label">Phone</p>
-              <p class="cprem-citem-value">+84 967 473 979</p>
-            </div>
-          </a>
-
-          <a href="#" class="cprem-citem cprem-citem--blue">
-            <div class="cprem-citem-slide"></div>
-            <div class="cprem-citem-ico cprem-ico--blue">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div class="cprem-citem-text">
-              <p class="cprem-citem-label">Địa chỉ</p>
-              <p class="cprem-citem-value">61/1G Võ Dõng, Gia Kiệm, Đồng Nai</p>
-            </div>
-          </a>
-
-          <a href="#" class="cprem-citem cprem-citem--cyan" style="pointer-events:none">
-            <div class="cprem-citem-slide"></div>
-            <div class="cprem-citem-ico cprem-ico--cyan">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div class="cprem-citem-text">
-              <p class="cprem-citem-label">Giờ làm việc</p>
-              <p class="cprem-citem-value">7:30 – 17:00 · T2 – T7</p>
-            </div>
-          </a>
-
-        </div>
-      </div>
-
-      <!-- RIGHT: Form with rotating border -->
-      <div class="cprem-right reveal rr">
-        <div class="cprem-box-wrap">
-          <div class="cprem-border-spin"></div>
-          <div class="cprem-form-card">
-            <h3 class="cprem-form-title">Gửi tin nhắn cho chúng tôi</h3>
-            <form class="cprem-form" id="cpremForm" novalidate>
-              <div class="cprem-frow">
-                <div class="cprem-field">
-                  <input type="text" id="cprem-name" class="cprem-input" placeholder="Họ và tên" required>
-                  <label for="cprem-name" class="cprem-label">Họ và tên</label>
-                  <div class="cprem-glow"></div>
-                </div>
-                <div class="cprem-field">
-                  <input type="email" id="cprem-email" class="cprem-input" placeholder="Email" required>
-                  <label for="cprem-email" class="cprem-label">Email</label>
-                  <div class="cprem-glow"></div>
-                </div>
-              </div>
-              <div class="cprem-field">
-                <input type="text" id="cprem-subject" class="cprem-input" placeholder="Chủ đề" required>
-                <label for="cprem-subject" class="cprem-label">Chủ đề</label>
-                <div class="cprem-glow"></div>
-              </div>
-              <div class="cprem-field">
-                <textarea id="cprem-msg" class="cprem-input cprem-textarea" placeholder="Nội dung" rows="4" required></textarea>
-                <label for="cprem-msg" class="cprem-label">Nội dung</label>
-                <div class="cprem-glow"></div>
-              </div>
-              <button type="submit" class="cprem-submit" id="cpremSubmit">
-                <span class="cprem-submit-idle">
-                  Gửi tin nhắn
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="cprem-arrow"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </span>
-                <span class="cprem-submit-loading" style="display:none">
-                  <svg class="cprem-spinner" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
-                  Đang xử lý...
-                </span>
-                <span class="cprem-submit-success" style="display:none">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
-                  Đã gửi thành công!
-                </span>
-                <div class="cprem-shimmer"></div>
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- INK REVEAL — CULTURE SHOWCASE -->
 <style>
@@ -5269,7 +4941,18 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
 }
 @keyframes inkCloudDrift{from{transform:translateX(-560px)}to{transform:translateX(100vw)}}
 @keyframes inkCloudBob{from{translate:0 -9px}to{translate:0 11px}}
-@media(max-width:768px){.ink-clouds img{width:calc(var(--w,300px)*.55);top:calc(var(--t,0px)*.6)}}
+/* Tablet & mobile ≤1024px: hạ chiều cao stage (540–840px là cỡ desktop),
+   thu dải mask mờ mép trên cho ảnh hiện nhiều hơn, và BỎ HẲN mây
+   (user yêu cầu — đỡ layer chuyển động trên màn nhỏ) */
+@media(max-width:1024px){
+  .ink-stage{
+    height:clamp(240px,42vw,400px);
+    -webkit-mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.45) 50px,#000 110px);
+            mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.45) 50px,#000 110px);
+  }
+  .ink-wrap{margin-top:24px}
+  .ink-clouds{display:none}
+}
 @media(prefers-reduced-motion:reduce){.ink-clouds{display:none}}
 .ink-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 </style>
@@ -5324,7 +5007,7 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
     </div>
     <div class="modal-caption">
       <span class="modal-dot"></span>
-      <strong>Ethan Ecom — Văn hoá & Con người</strong>
+      <strong>Ethan Ecom · Văn hoá & Con người</strong>
     </div>
   </div>
 </div>
@@ -5333,39 +5016,14 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
 <div id="contact-popup-root"></div>
 
 <!-- Shared JS (must be before page JS) -->
-<script src="assets/js/shared.js?v=housef02"></script>
-<script src="assets/js/contact-popup.js?v=20260718a"></script>
+<script src="assets/js/shared.js?v=housef05"></script>
+<script src="assets/js/contact-popup.js?v=20260722y"></script>
 <!-- GSAP + ScrollTrigger for spring card animations -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="assets/js/gsap-animations.js"></script>
 <script>
 /* ── PAGE-SPECIFIC JAVASCRIPT ── */
-
-/* ── CONTACT PREMIUM FORM ── */
-(function(){
-  const form = document.getElementById('cpremForm');
-  const btn = document.getElementById('cpremSubmit');
-  if (!form || !btn) return;
-  const idle = btn.querySelector('.cprem-submit-idle');
-  const loading = btn.querySelector('.cprem-submit-loading');
-  const success = btn.querySelector('.cprem-submit-success');
-  function setState(state) {
-    idle.style.display = state === 'idle' ? 'flex' : 'none';
-    loading.style.display = state === 'loading' ? 'flex' : 'none';
-    success.style.display = state === 'success' ? 'flex' : 'none';
-    btn.disabled = state !== 'idle';
-    btn.classList.toggle('is-success', state === 'success');
-  }
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    setState('loading');
-    setTimeout(function() {
-      setState('success');
-      setTimeout(function() { setState('idle'); form.reset(); }, 4000);
-    }, 2000);
-  });
-})();
 
 /* ── TEAM ACCORDION ── */
 (function(){
@@ -5675,6 +5333,9 @@ function closeModal() {
      kèm lượn sóng sin nhẹ, rồi tự lắng lại khi ngừng cuộn (lerp mềm). -->
 <script>
 (function(){
+  /* Mobile/reduced-motion: bỏ qua toàn bộ — vòng lặp rAF của trường hạt chạy
+     liên tục kể cả khi đứng yên → giật + tốn pin trên điện thoại */
+  if(window.innerWidth<768 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var decos=document.querySelectorAll('.bg-deco');
   if(!decos.length) return;
 
@@ -5779,6 +5440,64 @@ function closeModal() {
     });
     requestAnimationFrame(tick);
   })();
+})();
+</script>
+
+<!-- #stories — slider câu chuyện (lướt ngang, nút điều hướng + phân trang) -->
+<script>
+(function(){
+  var slider = document.querySelector('#stories .story-slider');
+  if(!slider) return;
+  var track = slider.querySelector('.story-track');
+  var prev  = slider.querySelector('.story-prev');
+  var next  = slider.querySelector('.story-next');
+  var dots  = slider.querySelector('.story-dots');
+  if(!track) return;
+
+  function pageW(){ return track.clientWidth; }
+  function pageCount(){ return Math.max(1, Math.round(track.scrollWidth / pageW())); }
+  function curPage(){ return Math.round(track.scrollLeft / pageW()); }
+
+  function buildDots(){
+    if(!dots) return;
+    var n = pageCount();
+    dots.innerHTML = '';
+    if(n < 2) return;                       /* 1 trang thì ẩn phân trang */
+    for(var i=0;i<n;i++){ (function(i){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('role','tab');
+      b.setAttribute('aria-label','Trang ' + (i+1));
+      b.addEventListener('click', function(){
+        track.scrollTo({ left: i * pageW(), behavior: 'smooth' });
+      });
+      dots.appendChild(b);
+    })(i); }
+  }
+
+  function sync(){
+    var p = curPage(), n = pageCount();
+    if(dots){ [].forEach.call(dots.children, function(d,i){ d.classList.toggle('active', i === p); }); }
+    if(prev) prev.disabled = p <= 0;
+    if(next) next.disabled = p >= n - 1;
+  }
+
+  if(prev) prev.addEventListener('click', function(){ track.scrollBy({ left: -pageW(), behavior: 'smooth' }); });
+  if(next) next.addEventListener('click', function(){ track.scrollBy({ left:  pageW(), behavior: 'smooth' }); });
+
+  var raf = 0;
+  track.addEventListener('scroll', function(){
+    if(!raf){ raf = requestAnimationFrame(function(){ raf = 0; sync(); }); }
+  }, { passive:true });
+
+  var rt;
+  window.addEventListener('resize', function(){
+    clearTimeout(rt);
+    rt = setTimeout(function(){ buildDots(); sync(); }, 160);
+  }, { passive:true });
+
+  buildDots();
+  sync();
 })();
 </script>
 

@@ -59,7 +59,7 @@ Next.js 14+ (App Router) · TypeScript · Tailwind CSS + CSS Modules · Framer M
 
 ## Cấu trúc thư mục (target)
 ```
-app/(marketing)/{page,about,services,portfolio,blog,careers,contact}  · app/{layout,globals.css}
+app/(marketing)/{page,about,services,vision,blog,careers,contact}  · app/{layout,globals.css}
 components/layout/{Header,Footer}  · components/home/*  · components/ui/*  · components/forms/ContactForm
 lib/{constants,utils}  · public/{images,icons}  · tailwind.config.ts
 ```

@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gác lại dự án, về nhà ăn Tết 2026 — Mang vibe Ethan Ecom về nhà</title>
+<title>Gác lại dự án, về nhà ăn Tết 2026: Mang vibe Ethan Ecom về nhà</title>
 <meta name="description" content="Khép lại một năm bứt phá trên bản đồ E-commerce toàn cầu, người Ethan Ecom trở về đón Tết 2026: những món quà thêu độc bản từ chính xưởng sản xuất, bao lì xì đỏ thắm và lời tri ân gửi người thuyền trưởng.">
 <meta name="keywords" content="Ethan Ecom, Tết 2026, văn hoá doanh nghiệp, quà Tết, đoàn viên, E-commerce xuyên biên giới, đời sống Ethan">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Gác lại dự án, về nhà ăn Tết 2026 — Mang vibe Ethan Ecom về nhà">
+<meta property="og:title" content="Gác lại dự án, về nhà ăn Tết 2026: Mang vibe Ethan Ecom về nhà">
 <meta property="og:description" content="Hành trình đoàn viên của người Ethan Ecom: mang thành quả một năm thực chiến toàn cầu về với mái ấm gia đình.">
-<meta property="og:image" content="assets/images/blog/tet-cover.jpg">
+<meta property="og:image" content="assets/images/blog/02-tet-2026/tet-cover.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Gác lại dự án, về nhà ăn Tết 2026 — Mang vibe Ethan Ecom về nhà",
   "description": "Hành trình đoàn viên của đội ngũ Ethan Ecom dịp Tết 2026: quà thêu in-house tặng gia đình, thưởng Tết và lời tri ân người dẫn dắt.",
-  "image": "assets/images/blog/tet-cover.jpg",
+  "image": "assets/images/blog/02-tet-2026/tet-cover.jpg",
   "datePublished": "2026-02-14",
   "inLanguage": "vi",
   "author": { "@type": "Organization", "name": "Ethan Ecom" },
@@ -26,7 +26,23 @@
 <link rel="stylesheet" href="assets/css/shared.css?v=housef02">
 <style>
 /* ── ARTICLE LAYOUT (dùng chung các trang bài viết) ── */
+html{scroll-behavior:smooth}
+/* clip thay cho hidden: vẫn chặn tràn ngang nhưng không phá position:sticky của mục lục */
+body{overflow-x:clip}
 .article-wrap{max-width:860px;margin:0 auto}
+.article-main{min-width:0}
+/* ── MỤC LỤC (table of contents sidebar) ── */
+.toc{display:none}
+.toc-title{font-family:var(--font-text);font-size:var(--fs-small);font-weight:var(--fw-semibold);letter-spacing:.16em;text-transform:uppercase;color:var(--muted,#5A6B82);margin:0 0 14px;padding-left:17px}
+.toc-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.toc-list a{display:block;padding:9px 17px;font-family:var(--font-text);font-size:var(--fs-base);line-height:1.45;color:var(--muted,#5A6B82);text-decoration:none;border-left:3px solid transparent;transition:color .2s,background .2s,border-color .2s}
+.toc-list a:hover{color:var(--navy);background:var(--surface,#EAF3FB)}
+.toc-list a.active{color:var(--blue);font-weight:var(--fw-semibold);background:var(--surface,#EAF3FB);border-left-color:var(--blue)}
+@media(min-width:1100px){
+  .article-wrap{max-width:1180px;display:grid;grid-template-columns:236px minmax(0,860px);gap:56px;justify-content:center}
+  .article-main{max-width:860px}
+  .toc{display:block;position:sticky;top:96px;max-height:calc(100vh - 120px);overflow-y:auto}
+}
 .article-meta{display:flex;align-items:center;gap:8px 22px;flex-wrap:wrap;font-family:var(--font-text);font-size:var(--fs-base);color:var(--muted,#5A6B82);margin-bottom:28px}
 .article-meta .am-item{display:inline-flex;align-items:center;gap:7px}
 .article-meta svg{width:15px;height:15px;stroke:var(--blue)}
@@ -34,7 +50,7 @@
 .article-cover{border-radius:0;overflow:hidden;margin-bottom:44px;box-shadow:0 10px 40px rgba(22,48,92,.12)}
 .article-cover img{width:100%;height:auto;display:block}
 .article-body p{font-size:var(--fs-md);color:var(--text);line-height:1.85;margin-bottom:20px}
-.article-body h2{font-family:var(--font-heading);font-size:var(--fs-h2);font-weight:var(--fw-medium);color:var(--navy);line-height:1.3;margin:48px 0 18px;text-transform:uppercase;letter-spacing:.03em}
+.article-body h2{font-family:var(--font-heading);font-size:var(--fs-h2);font-weight:var(--fw-medium);color:var(--navy);line-height:1.3;margin:48px 0 18px;text-transform:uppercase;letter-spacing:.03em;scroll-margin-top:96px}
 .article-body h2 span{color:var(--blue)}
 .article-body h3{font-family:var(--font-heading);font-size:var(--fs-h4);font-weight:var(--fw-medium);color:var(--navy);margin:30px 0 12px}
 .article-lead{font-family:var(--font-heading);font-size:var(--fs-h5);color:var(--navy);line-height:1.7;margin-bottom:24px}
@@ -86,13 +102,13 @@
   <div class="page-hero-orb page-hero-orb-2"></div>
   <div class="container page-hero-inner">
     <nav class="breadcrumb">
-      <a href="index.html">Trang chủ</a>
+      <a href="/">Trang chủ</a>
       <span class="breadcrumb-sep">/</span>
-      <a href="blog.html">Câu chuyện</a>
+      <a href="cau-chuyen">Câu chuyện</a>
       <span class="breadcrumb-sep">/</span>
       <span>Về nhà ăn Tết 2026</span>
     </nav>
-    <div class="page-hero-badge">🧧 Văn hoá — Hành trình đoàn viên</div>
+    <div class="page-hero-badge">🧧 Văn hoá · Hành trình đoàn viên</div>
     <h1 class="page-hero-title">Gác lại dự án, <em>về nhà ăn Tết 2026</em></h1>
     <p class="page-hero-sub">Khi những chú chim sẻ tạm gác lại bầu trời số, mang theo thành quả của một năm thực chiến toàn cầu để trở về với những giá trị nguyên bản nhất của tình thân.</p>
   </div>
@@ -104,6 +120,15 @@
     <div class="container">
       <div class="article-wrap">
 
+        <aside class="toc" aria-label="Mục lục bài viết">
+          <p class="toc-title">Mục lục</p>
+          <ul class="toc-list">
+            <li><a href="#sec-1">1. Gói trọn tình thân trong từng món quà</a></li>
+            <li><a href="#sec-2">2. Gửi người thuyền trưởng tâm huyết</a></li>
+          </ul>
+        </aside>
+
+        <div class="article-main">
         <div class="article-meta reveal">
           <span class="am-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -117,52 +142,52 @@
         </div>
 
         <figure class="article-cover reveal">
-          <img src="assets/images/blog/tet-cover.jpg" width="2048" height="1366" alt="Đội ngũ Ethan Ecom chụp ảnh cùng quà Tết 2026 trước khi về quê đoàn viên" loading="eager">
+          <img src="assets/images/blog/02-tet-2026/tet-cover.jpg" width="2048" height="1366" alt="Đội ngũ Ethan Ecom chụp ảnh cùng quà Tết 2026 trước khi về quê đoàn viên" loading="eager">
         </figure>
 
         <div class="article-body">
-          <p class="article-lead reveal">Sau một năm bứt phá với những cột mốc rực rỡ trên bản đồ E-commerce toàn cầu, các thành viên Ethan Ecom bắt đầu hành trình ngược dòng thời gian — trở về với Tết quê hương.</p>
-          <p class="reveal">Với người Ethan, đây không chỉ là một kỳ nghỉ. Đó là khoảnh khắc mỗi <em>Sparrow</em> nhìn lại sự trưởng thành của chính mình qua từng dự án, từng chiến dịch, từng sản phẩm được "điêu khắc" bằng tâm huyết suốt 12 tháng qua — rồi gói tất cả lại, mang về nhà làm quà.</p>
+          <p class="article-lead reveal">Sau một năm bứt phá với những cột mốc rực rỡ trên bản đồ E-commerce toàn cầu, các thành viên Ethan Ecom bắt đầu hành trình ngược dòng thời gian, trở về với Tết quê hương.</p>
+          <p class="reveal">Với người Ethan, đây không chỉ là một kỳ nghỉ. Đó là khoảnh khắc mỗi <em>Sparrow</em> nhìn lại sự trưởng thành của chính mình qua từng dự án, từng chiến dịch, từng sản phẩm được "điêu khắc" bằng tâm huyết suốt 12 tháng qua, rồi gói tất cả lại, mang về nhà làm quà.</p>
 
-          <h2 class="reveal">Gói trọn tình thân trong từng món quà</h2>
+          <h2 id="sec-1" class="reveal">Gói trọn tình thân trong từng món quà</h2>
 
           <h3 class="reveal">Nghệ thuật từ xưởng sản xuất</h3>
-          <p class="reveal">Những bộ sưu tập đồ thêu độc bản — kết tinh giữa công nghệ thêu hiện đại và bàn tay tài hoa của đội ngũ in-house — năm nay trở thành món quà trân quý gửi tặng cha mẹ. Sản phẩm vẫn thường ngày lên đường sang Mỹ, nay quay về đặt trong tủ kính gia đình: minh chứng giản dị nhất cho sự chuyên nghiệp và cái tâm mà chúng mình đặt vào công việc mỗi ngày.</p>
+          <p class="reveal">Những bộ sưu tập đồ thêu độc bản, kết tinh giữa công nghệ thêu hiện đại và bàn tay tài hoa của đội ngũ in-house, năm nay trở thành món quà trân quý gửi tặng cha mẹ. Sản phẩm vẫn thường ngày lên đường sang Mỹ, nay quay về đặt trong tủ kính gia đình: minh chứng giản dị nhất cho sự chuyên nghiệp và cái tâm mà chúng mình đặt vào công việc mỗi ngày.</p>
 
           <div class="agallery agallery--3 reveal">
-            <figure><img src="assets/images/blog/tet-01.jpg" alt="Thành viên Ethan Ecom nhận hộp quà Tết 2026" loading="lazy"></figure>
-            <figure><img src="assets/images/blog/tet-02.jpg" alt="Món quà thêu độc bản từ xưởng sản xuất Ethan Ecom" loading="lazy"></figure>
-            <figure><img src="assets/images/blog/tet-03.jpg" alt="Niềm vui của Sparrow Ethan Ecom bên quà Tết" loading="lazy"></figure>
+            <figure><img src="assets/images/blog/02-tet-2026/tet-01.jpg" alt="Thành viên Ethan Ecom nhận hộp quà Tết 2026" loading="lazy"></figure>
+            <figure><img src="assets/images/blog/02-tet-2026/tet-02.jpg" alt="Món quà thêu độc bản từ xưởng sản xuất Ethan Ecom" loading="lazy"></figure>
+            <figure><img src="assets/images/blog/02-tet-2026/tet-03.jpg" alt="Niềm vui của Sparrow Ethan Ecom bên quà Tết" loading="lazy"></figure>
           </div>
 
           <h3 class="reveal">Giá trị thực chiến toàn cầu</h3>
-          <p class="reveal">Thành quả từ những đêm trắng vận hành hệ thống xuyên biên giới được chuyển hóa thành niềm vui ấm áp: những xấp bao lì xì đỏ thắm, những khoản thưởng Tết xứng đáng. Mỗi Sparrow mang về quê không chỉ là quà cáp — mà là niềm tự hào của một thế hệ trẻ dám <strong>định nghĩa lại tương lai</strong> ngay từ Đồng Nai.</p>
+          <p class="reveal">Thành quả từ những đêm trắng vận hành hệ thống xuyên biên giới được chuyển hóa thành niềm vui ấm áp: những xấp bao lì xì đỏ thắm, những khoản thưởng Tết xứng đáng. Mỗi Sparrow mang về quê không chỉ là quà cáp, mà là niềm tự hào của một thế hệ trẻ dám <strong>định nghĩa lại tương lai</strong> ngay từ Đồng Nai.</p>
 
           <figure class="article-figure reveal">
-            <img src="assets/images/blog/tet-04.jpg" width="2048" height="1366" alt="Đại gia đình Ethan Ecom trong buổi tất niên trước kỳ nghỉ Tết" loading="lazy">
+            <img src="assets/images/blog/02-tet-2026/tet-04.jpg" width="2048" height="1366" alt="Đại gia đình Ethan Ecom trong buổi tất niên trước kỳ nghỉ Tết" loading="lazy">
             <figcaption>Buổi tất niên khép lại một năm rực rỡ của đại gia đình Ethan Ecom.</figcaption>
           </figure>
 
           <h3 class="reveal">Sự kết nối không khoảng cách</h3>
-          <p class="reveal">Tết tại Ethan Ecom bắt đầu từ sự thấu hiểu. Những hộp quà được thiết kế tối giản, sang trọng nhưng chứa đựng lời tri ân sâu sắc — nơi truyền thống gia đình gặp hơi thở của thời đại số, và khoảng cách giữa "công ty" với "mái nhà" gần như biến mất.</p>
+          <p class="reveal">Tết tại Ethan Ecom bắt đầu từ sự thấu hiểu. Những hộp quà được thiết kế tối giản, sang trọng nhưng chứa đựng lời tri ân sâu sắc, nơi truyền thống gia đình gặp hơi thở của thời đại số, và khoảng cách giữa "công ty" với "mái nhà" gần như biến mất.</p>
 
           <div class="agallery agallery--2 reveal">
-            <figure><img src="assets/images/blog/tet-06.jpg" alt="Các thành viên Ethan Ecom trao nhau lời chúc năm mới" loading="lazy"></figure>
-            <figure><img src="assets/images/blog/tet-07.jpg" alt="Khoảnh khắc gắn kết của đội ngũ Ethan Ecom dịp Tết 2026" loading="lazy"></figure>
+            <figure><img src="assets/images/blog/02-tet-2026/tet-06.jpg" alt="Các thành viên Ethan Ecom trao nhau lời chúc năm mới" loading="lazy"></figure>
+            <figure><img src="assets/images/blog/02-tet-2026/tet-07.jpg" alt="Khoảnh khắc gắn kết của đội ngũ Ethan Ecom dịp Tết 2026" loading="lazy"></figure>
           </div>
 
-          <h2 class="reveal">Gửi người thuyền trưởng tâm huyết</h2>
+          <h2 id="sec-2" class="reveal">Gửi người thuyền trưởng tâm huyết</h2>
           <div class="article-quote reveal">
-            <p>"Một năm đầy biến động đã qua đi, nhưng tại Ethan Ecom, chúng em chưa bao giờ cảm thấy đơn độc. Cảm ơn Sếp — người đã luôn giữ vững tay chèo, tin tưởng vào những ý tưởng đột phá và tạo ra một môi trường làm việc không giới hạn. Cảm ơn Sếp đã không chỉ lãnh đạo bằng mệnh lệnh, mà còn dẫn dắt bằng cái tâm, giúp đội ngũ Gen Z chúng em tự tin kiến tạo nên những giá trị thật trên bản đồ số toàn cầu. Chúc Sếp một năm mới bùng nổ và cùng Ethan Ecom chinh phục những đỉnh cao mới!"</p>
+            <p>"Một năm đầy biến động đã qua đi, nhưng tại Ethan Ecom, chúng em chưa bao giờ cảm thấy đơn độc. Cảm ơn Sếp, người đã luôn giữ vững tay chèo, tin tưởng vào những ý tưởng đột phá và tạo ra một môi trường làm việc không giới hạn. Cảm ơn Sếp đã không chỉ lãnh đạo bằng mệnh lệnh, mà còn dẫn dắt bằng cái tâm, giúp đội ngũ Gen Z chúng em tự tin kiến tạo nên những giá trị thật trên bản đồ số toàn cầu. Chúc Sếp một năm mới bùng nổ và cùng Ethan Ecom chinh phục những đỉnh cao mới!"</p>
             <cite>— Đội ngũ Sparrows, Ethan Ecom</cite>
           </div>
 
           <div class="agallery agallery--2 reveal">
-            <figure><img src="assets/images/blog/tet-05.jpg" alt="Tập thể Ethan Ecom chụp ảnh lưu niệm trước kỳ nghỉ Tết 2026" loading="lazy"></figure>
-            <figure><img src="assets/images/blog/tet-08.jpg" alt="Nụ cười đoàn viên của người Ethan Ecom ngày cuối năm" loading="lazy"></figure>
+            <figure><img src="assets/images/blog/02-tet-2026/tet-05.jpg" alt="Tập thể Ethan Ecom chụp ảnh lưu niệm trước kỳ nghỉ Tết 2026" loading="lazy"></figure>
+            <figure><img src="assets/images/blog/02-tet-2026/tet-08.jpg" alt="Nụ cười đoàn viên của người Ethan Ecom ngày cuối năm" loading="lazy"></figure>
           </div>
 
-          <p class="reveal">Chúc toàn thể Sparrows và gia đình một cái Tết đoàn viên trọn vẹn. Nghỉ ngơi thật sâu, yêu thương thật nhiều — để tháng Giêng quay lại, chúng ta cùng nhau viết tiếp những chương bùng nổ hơn nữa.</p>
+          <p class="reveal">Chúc toàn thể Sparrows và gia đình một cái Tết đoàn viên trọn vẹn. Nghỉ ngơi thật sâu, yêu thương thật nhiều, để tháng Giêng quay lại, chúng ta cùng nhau viết tiếp những chương bùng nổ hơn nữa.</p>
 
           <div class="tag-row reveal">
             <span class="tag-chip">#EthanEcom</span>
@@ -170,6 +195,7 @@
             <span class="tag-chip">#VănHoáEthan</span>
             <span class="tag-chip">#HànhTrìnhĐoànViên</span>
           </div>
+        </div>
         </div>
 
       </div>
@@ -184,24 +210,24 @@
         <h2 class="st">Câu chuyện khác từ Ethan Ecom</h2>
       </div>
       <div class="related-grid">
-        <a href="blog-academy-digital-emb.html" class="rel-card reveal d1">
-          <div class="rel-thumb"><img src="assets/images/blog/academy-cover.jpg" alt="Khóa đào tạo Digital EMB của Ethan Ecom Academy" loading="lazy"></div>
+        <a href="blog-academy-digital-emb" class="rel-card reveal d1">
+          <div class="rel-thumb"><img src="assets/images/blog/02-tet-2026/academy-cover.jpg" alt="Khóa đào tạo Digital EMB của Ethan Ecom Academy" loading="lazy"></div>
           <div class="rel-body">
             <div class="rel-tag">Đào tạo</div>
             <h4>Ethan Ecom Academy: Khóa đào tạo Digital EMB miễn phí 100%</h4>
             <span>16 Tháng 2, 2026 · 4 phút đọc</span>
           </div>
         </a>
-        <a href="blog-christmas-party-2025.html" class="rel-card reveal d2">
-          <div class="rel-thumb"><img src="assets/images/blog/christmas-cover.jpg" alt="Sân khấu Ethan Christmas Party 2025" loading="lazy"></div>
+        <a href="blog-christmas-party-2025" class="rel-card reveal d2">
+          <div class="rel-thumb"><img src="assets/images/blog/02-tet-2026/christmas-cover.jpg" alt="Sân khấu Ethan Christmas Party 2025" loading="lazy"></div>
           <div class="rel-body">
             <div class="rel-tag">Sự kiện</div>
-            <h4>Ethan Christmas Party 2025 — Đêm tiệc gắn kết</h4>
+            <h4>Ethan Christmas Party 2025: Đêm tiệc gắn kết</h4>
             <span>23 Tháng 12, 2025 · 5 phút đọc</span>
           </div>
         </a>
-        <a href="blog-trung-thu-2025.html" class="rel-card reveal d3">
-          <div class="rel-thumb"><img src="assets/images/blog/trungthu-cover.jpg" alt="Quà Trung Thu Ethan Ecom gửi tặng thành viên" loading="lazy"></div>
+        <a href="blog-trung-thu-2025" class="rel-card reveal d3">
+          <div class="rel-thumb"><img src="assets/images/blog/02-tet-2026/trungthu-cover.jpg" alt="Quà Trung Thu Ethan Ecom gửi tặng thành viên" loading="lazy"></div>
           <div class="rel-body">
             <div class="rel-tag">Văn hoá</div>
             <h4>Trung Thu tại Ethan Ecom: Gói trọn tình thân</h4>
@@ -217,11 +243,43 @@
 <div id="site-footer"></div>
 
 <!-- Shared JS (must be last) -->
-<script src="assets/js/shared.js?v=housef02"></script>
+<script src="assets/js/shared.js?v=housef05"></script>
 <script src="assets/js/page-animations.js"></script>
 
 <!-- Contact popup + dock 2 nút gim (Ứng tuyển ngay / Liên hệ ngay) -->
 <div id="contact-popup-root"></div>
-<script src="assets/js/contact-popup.js?v=20260718a"></script>
+<script src="assets/js/contact-popup.js?v=20260722y"></script>
+
+<!-- Scroll-spy: tự làm nổi mục lục theo section đang đọc -->
+<script>
+(function(){
+  var links = [].slice.call(document.querySelectorAll('.toc-list a'));
+  if(!links.length) return;
+  var targets = links.map(function(a){
+    return { link:a, el:document.getElementById(a.getAttribute('href').slice(1)) };
+  }).filter(function(t){ return t.el; });
+  if(!targets.length) return;
+  // offsetTop bỏ qua transform (class .reveal dùng translateY) → đo vị trí ổn định
+  function absTop(el){ var y=0; while(el){ y+=el.offsetTop; el=el.offsetParent; } return y; }
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var pos = window.scrollY + 140;
+    var current = targets[0].link;
+    for(var i=0;i<targets.length;i++){
+      if(absTop(targets[i].el) <= pos) current = targets[i].link;
+    }
+    if(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4){
+      current = targets[targets.length-1].link;
+    }
+    links.forEach(function(l){ l.classList.toggle('active', l===current); });
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(update); ticking = true; }
+  }, {passive:true});
+  window.addEventListener('resize', update, {passive:true});
+  update();
+})();
+</script>
 </body>
 </html>

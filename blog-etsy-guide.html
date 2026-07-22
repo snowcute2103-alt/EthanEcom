@@ -8,15 +8,15 @@
 <meta name="keywords" content="mở gian hàng Etsy, bán hàng Etsy 2026, Etsy cho người Việt, SEO Etsy, Etsy handmade, POD Etsy, Ethan Ecom">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mở gian hàng Etsy 2026 từ A–Z cho người Việt">
-<meta property="og:description" content="Điều kiện, setup từng bước, SEO Etsy và những lỗi khiến shop bị khóa — hướng dẫn đầy đủ cho người mới.">
-<meta property="og:image" content="assets/images/blog/etsy-seller-shop.jpg">
+<meta property="og:description" content="Điều kiện, setup từng bước, SEO Etsy và những lỗi khiến shop bị khóa, hướng dẫn đầy đủ cho người mới.">
+<meta property="og:image" content="assets/images/blog/13-etsy-guide/etsy-seller-shop.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Mở gian hàng Etsy 2026 từ A–Z cho người Việt",
   "description": "Điều kiện, setup từng bước, SEO Etsy và những lỗi khiến shop bị khóa — hướng dẫn đầy đủ cho người mới.",
-  "image": "assets/images/blog/etsy-seller-shop.jpg",
+  "image": "assets/images/blog/13-etsy-guide/etsy-seller-shop.jpg",
   "datePublished": "2026-04-10",
   "inLanguage": "vi",
   "author": { "@type": "Organization", "name": "Ethan Ecom" },
@@ -26,7 +26,23 @@
 <link rel="stylesheet" href="assets/css/shared.css?v=housef02">
 <style>
 /* ── ARTICLE LAYOUT (dùng chung các trang bài viết) ── */
+html{scroll-behavior:smooth}
+/* clip thay cho hidden: vẫn chặn tràn ngang nhưng không phá position:sticky của mục lục */
+body{overflow-x:clip}
 .article-wrap{max-width:860px;margin:0 auto}
+.article-main{min-width:0}
+/* ── MỤC LỤC (table of contents sidebar) ── */
+.toc{display:none}
+.toc-title{font-family:var(--font-text);font-size:var(--fs-small);font-weight:var(--fw-semibold);letter-spacing:.16em;text-transform:uppercase;color:var(--muted,#5A6B82);margin:0 0 14px;padding-left:17px}
+.toc-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.toc-list a{display:block;padding:9px 17px;font-family:var(--font-text);font-size:var(--fs-base);line-height:1.45;color:var(--muted,#5A6B82);text-decoration:none;border-left:3px solid transparent;transition:color .2s,background .2s,border-color .2s}
+.toc-list a:hover{color:var(--navy);background:var(--surface,#EAF3FB)}
+.toc-list a.active{color:var(--blue);font-weight:var(--fw-semibold);background:var(--surface,#EAF3FB);border-left-color:var(--blue)}
+@media(min-width:1100px){
+  .article-wrap{max-width:1180px;display:grid;grid-template-columns:236px minmax(0,860px);gap:56px;justify-content:center}
+  .article-main{max-width:860px}
+  .toc{display:block;position:sticky;top:96px;max-height:calc(100vh - 120px);overflow-y:auto}
+}
 .article-meta{display:flex;align-items:center;gap:8px 22px;flex-wrap:wrap;font-family:var(--font-text);font-size:var(--fs-base);color:var(--muted,#5A6B82);margin-bottom:28px}
 .article-meta .am-item{display:inline-flex;align-items:center;gap:7px}
 .article-meta svg{width:15px;height:15px;stroke:var(--blue)}
@@ -36,7 +52,7 @@
 .article-cover--crop{aspect-ratio:16/9}
 .article-cover--crop img{height:100%;object-fit:cover}
 .article-body p{font-size:var(--fs-md);color:var(--text);line-height:1.85;margin-bottom:20px}
-.article-body h2{font-family:var(--font-heading);font-size:var(--fs-h2);font-weight:var(--fw-medium);color:var(--navy);line-height:1.3;margin:48px 0 18px;text-transform:uppercase;letter-spacing:.03em}
+.article-body h2{font-family:var(--font-heading);font-size:var(--fs-h2);font-weight:var(--fw-medium);color:var(--navy);line-height:1.3;margin:48px 0 18px;text-transform:uppercase;letter-spacing:.03em;scroll-margin-top:96px}
 .article-body h2 span{color:var(--blue)}
 .article-body h3{font-family:var(--font-heading);font-size:var(--fs-h4);font-weight:var(--fw-medium);color:var(--navy);margin:30px 0 12px}
 .article-lead{font-family:var(--font-heading);font-size:var(--fs-h5);color:var(--navy);line-height:1.7;margin-bottom:24px}
@@ -104,15 +120,15 @@
   <div class="page-hero-orb page-hero-orb-2"></div>
   <div class="container page-hero-inner">
     <nav class="breadcrumb">
-      <a href="index.html">Trang chủ</a>
+      <a href="/">Trang chủ</a>
       <span class="breadcrumb-sep">/</span>
-      <a href="blog.html">Câu chuyện</a>
+      <a href="cau-chuyen">Câu chuyện</a>
       <span class="breadcrumb-sep">/</span>
       <span>Mở gian hàng Etsy</span>
     </nav>
-    <div class="page-hero-badge">🛍️ E-commerce — Etsy Guide</div>
+    <div class="page-hero-badge">🛍️ E-commerce · Etsy Guide</div>
     <h1 class="page-hero-title">Mở gian hàng Etsy 2026 <em>từ A–Z</em> cho người Việt</h1>
-    <p class="page-hero-sub">Etsy là chợ của những sản phẩm có câu chuyện — và sản phẩm thêu, in cá nhân hóa của người Việt hoàn toàn có cửa thắng lớn tại đây.</p>
+    <p class="page-hero-sub">Etsy là chợ của những sản phẩm có câu chuyện, và sản phẩm thêu, in cá nhân hóa của người Việt hoàn toàn có cửa thắng lớn tại đây.</p>
   </div>
 </section>
 
@@ -122,6 +138,22 @@
     <div class="container">
       <div class="article-wrap">
 
+        <aside class="toc" aria-label="Mục lục bài viết">
+          <p class="toc-title">Mục lục</p>
+          <ul class="toc-list">
+            <li><a href="#sec-1">1. Etsy là gì và ai nên bán ở đây?</a></li>
+            <li><a href="#sec-2">2. Chuẩn bị trước khi mở shop</a></li>
+            <li><a href="#sec-3">3. Setup shop từng bước</a></li>
+            <li><a href="#sec-4">4. SEO Etsy 2026: hệ thống chứ không phải mẹo vặt</a></li>
+            <li><a href="#sec-5">5. Định giá: đừng quên các lớp phí</a></li>
+            <li><a href="#sec-6">6. Vận chuyển quốc tế từ Việt Nam</a></li>
+            <li><a href="#sec-7">7. Tháng đầu tiên nên làm gì?</a></li>
+            <li><a href="#sec-8">8. Những lỗi khiến shop "bay màu"</a></li>
+            <li><a href="#sec-9">9. Câu hỏi thường gặp</a></li>
+          </ul>
+        </aside>
+
+        <div class="article-main">
         <div class="article-meta reveal">
           <span class="am-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -135,54 +167,54 @@
         </div>
 
         <figure class="article-cover reveal">
-          <img src="assets/images/blog/etsy-seller-shop.jpg" width="1600" height="1068" alt="Chủ gian hàng nhỏ chuẩn bị đơn hàng cho khách — tinh thần handmade đặc trưng của Etsy" loading="eager">
+          <img src="assets/images/blog/13-etsy-guide/etsy-seller-shop.jpg" width="1600" height="1068" alt="Chủ gian hàng nhỏ chuẩn bị đơn hàng cho khách, tinh thần handmade đặc trưng của Etsy" loading="eager">
         </figure>
 
         <div class="article-body">
-          <p class="article-lead reveal">Etsy khác Amazon ở một điểm cốt lõi: khách đến đây để tìm món đồ <strong>không nơi nào khác có</strong> — handmade, vintage và cá nhân hóa. Với thế mạnh xưởng thêu/in in-house, seller Việt bước vào Etsy với đúng loại sản phẩm nền tảng này yêu thích. Đây là hướng dẫn mở gian hàng Etsy 2026 từ A–Z, gom toàn bộ kinh nghiệm thực chiến của chúng mình vào một bài.</p>
+          <p class="article-lead reveal">Etsy khác Amazon ở một điểm cốt lõi: khách đến đây để tìm món đồ <strong>không nơi nào khác có</strong>, handmade, vintage và cá nhân hóa. Với thế mạnh xưởng thêu/in in-house, seller Việt bước vào Etsy với đúng loại sản phẩm nền tảng này yêu thích. Đây là hướng dẫn mở gian hàng Etsy 2026 từ A–Z, gom toàn bộ kinh nghiệm thực chiến của chúng mình vào một bài.</p>
 
-          <h2 class="reveal"><span>01.</span> Etsy là gì và ai nên bán ở đây?</h2>
-          <p class="reveal">Etsy là sàn thương mại điện tử chuyên về hàng thủ công, đồ vintage và nguyên liệu sáng tạo, với lượng người mua chủ lực đến từ Mỹ và châu Âu. Khác với tâm lý "săn giá rẻ" trên các sàn đại chúng, người mua Etsy sẵn sàng trả cao hơn cho món đồ có câu chuyện — đặc biệt là hàng <strong>cá nhân hóa</strong> theo tên, ngày kỷ niệm hay hình thú cưng.</p>
-          <p class="reveal">Ai nên bán ở đây? Người có khả năng tạo sản phẩm riêng: thêu, in theo yêu cầu, đồ da, trang sức, file thiết kế số. Ai chưa phù hợp: người muốn bán lại hàng chợ có sẵn — Etsy cấm reselling hàng sản xuất đại trà không có yếu tố sáng tạo của người bán, và hệ thống kiểm duyệt ngày càng gắt. Nếu bạn theo mô hình Print-on-Demand đúng nghĩa (xem bài <a href="blog-pod-la-gi.html">POD là gì</a>), bạn thuộc nhóm được chào đón — miễn là khai báo đối tác sản xuất minh bạch.</p>
+          <h2 id="sec-1" class="reveal"><span>01.</span> Etsy là gì và ai nên bán ở đây?</h2>
+          <p class="reveal">Etsy là sàn thương mại điện tử chuyên về hàng thủ công, đồ vintage và nguyên liệu sáng tạo, với lượng người mua chủ lực đến từ Mỹ và châu Âu. Khác với tâm lý "săn giá rẻ" trên các sàn đại chúng, người mua Etsy sẵn sàng trả cao hơn cho món đồ có câu chuyện, đặc biệt là hàng <strong>cá nhân hóa</strong> theo tên, ngày kỷ niệm hay hình thú cưng.</p>
+          <p class="reveal">Ai nên bán ở đây? Người có khả năng tạo sản phẩm riêng: thêu, in theo yêu cầu, đồ da, trang sức, file thiết kế số. Ai chưa phù hợp: người muốn bán lại hàng chợ có sẵn, Etsy cấm reselling hàng sản xuất đại trà không có yếu tố sáng tạo của người bán, và hệ thống kiểm duyệt ngày càng gắt. Nếu bạn theo mô hình Print-on-Demand đúng nghĩa (xem bài <a href="blog-pod-la-gi">POD là gì</a>), bạn thuộc nhóm được chào đón, miễn là khai báo đối tác sản xuất minh bạch.</p>
 
-          <h2 class="reveal"><span>02.</span> Chuẩn bị trước khi mở shop</h2>
+          <h2 id="sec-2" class="reveal"><span>02.</span> Chuẩn bị trước khi mở shop</h2>
           <ul class="reveal">
-            <li><strong>Giấy tờ định danh</strong> hợp lệ và thông tin nhất quán — Etsy xác minh nghiêm ngặt seller quốc tế; sai lệch nhỏ giữa các giấy tờ cũng có thể khiến shop bị treo ngay tuần đầu.</li>
+            <li><strong>Giấy tờ định danh</strong> hợp lệ và thông tin nhất quán, Etsy xác minh nghiêm ngặt seller quốc tế; sai lệch nhỏ giữa các giấy tờ cũng có thể khiến shop bị treo ngay tuần đầu.</li>
             <li><strong>Tài khoản nhận thanh toán</strong> qua cổng được hỗ trợ tại Việt Nam (Payoneer liên kết Etsy Payments) đứng tên trùng với giấy tờ định danh.</li>
-            <li><strong>Chọn niche trước khi chọn tên shop:</strong> Etsy ưu ái shop có chủ đề nhất quán. Hãy hoàn thành bước <a href="blog-nghien-cuu-niche-pod.html">nghiên cứu niche POD</a> trước — mở shop rồi mới nghĩ bán gì là làm ngược quy trình.</li>
-            <li><strong>10–20 mẫu sản phẩm</strong> sẵn sàng đăng ngay từ tuần đầu — shop lèo tèo 2 listing gần như vô hình với thuật toán.</li>
+            <li><strong>Chọn niche trước khi chọn tên shop:</strong> Etsy ưu ái shop có chủ đề nhất quán. Hãy hoàn thành bước <a href="blog-nghien-cuu-niche-pod">nghiên cứu niche POD</a> trước, mở shop rồi mới nghĩ bán gì là làm ngược quy trình.</li>
+            <li><strong>10–20 mẫu sản phẩm</strong> sẵn sàng đăng ngay từ tuần đầu, shop lèo tèo 2 listing gần như vô hình với thuật toán.</li>
             <li><strong>Bộ ảnh đạt chuẩn:</strong> mỗi listing cần tối thiểu 5–7 ảnh; chuẩn bị trước khi mở shop để không đăng vội ảnh xấu.</li>
           </ul>
 
-          <h2 class="reveal"><span>03.</span> Setup shop từng bước</h2>
+          <h2 id="sec-3" class="reveal"><span>03.</span> Setup shop từng bước</h2>
           <ol class="reveal">
-            <li>Chọn <strong>tên shop</strong> dễ đọc, gợi niche, chưa ai dùng trên mạng xã hội — thương hiệu bắt đầu từ đây.</li>
-            <li>Hoàn thiện <strong>banner, logo, About</strong>: kể câu chuyện xưởng của bạn kèm ảnh thật — mục About là công cụ tạo niềm tin mạnh nhất trên Etsy.</li>
+            <li>Chọn <strong>tên shop</strong> dễ đọc, gợi niche, chưa ai dùng trên mạng xã hội, thương hiệu bắt đầu từ đây.</li>
+            <li>Hoàn thiện <strong>banner, logo, About</strong>: kể câu chuyện xưởng của bạn kèm ảnh thật, mục About là công cụ tạo niềm tin mạnh nhất trên Etsy.</li>
             <li>Thiết lập <strong>chính sách</strong> đổi trả, thời gian xử lý (với hàng cá nhân hóa: ghi rõ 2–4 ngày sản xuất).</li>
-            <li>Khai báo <strong>production partner</strong> nếu bạn dùng xưởng in/thêu — minh bạch ngay từ đầu để không bị quét về sau.</li>
+            <li>Khai báo <strong>production partner</strong> nếu bạn dùng xưởng in/thêu, minh bạch ngay từ đầu để không bị quét về sau.</li>
             <li>Đăng loạt listing đầu tiên và bật <strong>Etsy Ads ngân sách nhỏ</strong> để lấy dữ liệu từ khóa thật.</li>
           </ol>
 
-          <h2 class="reveal"><span>04.</span> SEO Etsy 2026: hệ thống chứ không phải mẹo vặt</h2>
-          <p class="reveal">Thuật toán Etsy ghép truy vấn của khách với <strong>title + tag + category + attribute</strong>, sau đó xếp hạng theo tỷ lệ click, chuyển đổi và uy tín shop. SEO Etsy vì thế là một hệ thống — làm tốt một mảnh mà bỏ mảnh khác thì listing vẫn chìm.</p>
+          <h2 id="sec-4" class="reveal"><span>04.</span> SEO Etsy 2026: hệ thống chứ không phải mẹo vặt</h2>
+          <p class="reveal">Thuật toán Etsy ghép truy vấn của khách với <strong>title + tag + category + attribute</strong>, sau đó xếp hạng theo tỷ lệ click, chuyển đổi và uy tín shop. SEO Etsy vì thế là một hệ thống, làm tốt một mảnh mà bỏ mảnh khác thì listing vẫn chìm.</p>
           <h3 class="reveal">Title: viết cho khách trước, thuật toán sau</h3>
-          <p class="reveal">Mở đầu title bằng cụm từ khóa khách thật sự gõ ("Custom Pet Portrait Embroidered Sweatshirt"), theo sau là các biến thể tự nhiên. Đừng nhồi 140 ký tự toàn từ khóa ngăn cách bằng dấu phẩy — thuật toán hiện đánh giá cả trải nghiệm đọc, và khách nhìn title rối sẽ không click.</p>
+          <p class="reveal">Mở đầu title bằng cụm từ khóa khách thật sự gõ ("Custom Pet Portrait Embroidered Sweatshirt"), theo sau là các biến thể tự nhiên. Đừng nhồi 140 ký tự toàn từ khóa ngăn cách bằng dấu phẩy, thuật toán hiện đánh giá cả trải nghiệm đọc, và khách nhìn title rối sẽ không click.</p>
           <h3 class="reveal">13 tag: dùng đủ, dùng khôn</h3>
-          <p class="reveal">Dùng đủ <strong>13/13 tag</strong>, ưu tiên cụm dài 2–3 từ ("dog mom gift", "nurse graduation") thay vì từ đơn, và đừng lặp lại y nguyên cụm đã có trong title — mỗi tag là một cánh cửa truy vấn mới. Dành 2–3 tag cho dịp tặng quà (christmas gift, mothers day) vì người mua Etsy tìm theo dịp rất nhiều.</p>
+          <p class="reveal">Dùng đủ <strong>13/13 tag</strong>, ưu tiên cụm dài 2–3 từ ("dog mom gift", "nurse graduation") thay vì từ đơn, và đừng lặp lại y nguyên cụm đã có trong title, mỗi tag là một cánh cửa truy vấn mới. Dành 2–3 tag cho dịp tặng quà (christmas gift, mothers day) vì người mua Etsy tìm theo dịp rất nhiều.</p>
           <h3 class="reveal">Category và attribute: đừng bỏ trống</h3>
-          <p class="reveal">Chọn category sâu nhất có thể và điền hết attribute (màu, chất liệu, dịp, người nhận). Attribute hoạt động như tag ẩn và là điều kiện để listing xuất hiện khi khách dùng bộ lọc — bỏ trống nghĩa là tự loại mình khỏi một nửa lượt tìm kiếm có chủ đích.</p>
+          <p class="reveal">Chọn category sâu nhất có thể và điền hết attribute (màu, chất liệu, dịp, người nhận). Attribute hoạt động như tag ẩn và là điều kiện để listing xuất hiện khi khách dùng bộ lọc, bỏ trống nghĩa là tự loại mình khỏi một nửa lượt tìm kiếm có chủ đích.</p>
           <h3 class="reveal">Ảnh và video listing: nơi quyết định cú click</h3>
-          <p class="reveal">SEO đưa listing lên trang kết quả, nhưng ảnh mới quyết định khách click vào ai. Công thức 7 ảnh phổ biến: ảnh chính nền sạch, ảnh lifestyle có người dùng thật, ảnh cận chất liệu, ảnh kích thước, ảnh các biến thể, ảnh đóng gói, ảnh review. Video 5–15 giây quay sản phẩm thật giúp tăng đáng kể độ tin cậy — với hàng thêu, cảnh máy chạy chỉ luôn là "bằng chứng handmade" thuyết phục nhất.</p>
+          <p class="reveal">SEO đưa listing lên trang kết quả, nhưng ảnh mới quyết định khách click vào ai. Công thức 7 ảnh phổ biến: ảnh chính nền sạch, ảnh lifestyle có người dùng thật, ảnh cận chất liệu, ảnh kích thước, ảnh các biến thể, ảnh đóng gói, ảnh review. Video 5–15 giây quay sản phẩm thật giúp tăng đáng kể độ tin cậy, với hàng thêu, cảnh máy chạy chỉ luôn là "bằng chứng handmade" thuyết phục nhất.</p>
 
           <figure class="article-figure reveal">
-            <img src="assets/images/blog/etsy-vintage-product.jpg" width="1600" height="1067" alt="Sản phẩm được chụp theo phong cách mộc mạc đặc trưng thị hiếu người mua Etsy" loading="lazy">
-            <figcaption>Ảnh trên Etsy không cần studio đắt tiền — cần đúng "chất mộc" mà người mua tìm kiếm.</figcaption>
+            <img src="assets/images/blog/13-etsy-guide/etsy-vintage-product.jpg" width="1600" height="1067" alt="Sản phẩm được chụp theo phong cách mộc mạc đặc trưng thị hiếu người mua Etsy" loading="lazy">
+            <figcaption>Ảnh trên Etsy không cần studio đắt tiền, cần đúng "chất mộc" mà người mua tìm kiếm.</figcaption>
           </figure>
 
           <h3 class="reveal">Etsy Ads cơ bản cho người mới</h3>
           <p class="reveal">Tháng đầu, chạy Etsy Ads ngân sách nhỏ (1–3 USD/ngày) cho toàn bộ listing với mục tiêu <em>mua dữ liệu</em>, không phải mua đơn. Sau 30 ngày, vào Shop Stats: listing có view mà không có đơn là listing cần sửa ảnh hoặc giá, không phải sửa tag; từ khóa nào ra đơn thì đưa ngược vào title và tag của các listing khác. Tắt quảng cáo cho listing nhiều click không chuyển đổi để khỏi đốt tiền vô ích.</p>
 
-          <h2 class="reveal"><span>05.</span> Định giá: đừng quên các lớp phí</h2>
+          <h2 id="sec-5" class="reveal"><span>05.</span> Định giá: đừng quên các lớp phí</h2>
           <p class="reveal">Công thức giá bán tối thiểu = (chi phí sản xuất + vận chuyển + <strong>phí Etsy</strong>) ÷ (1 − biên lợi nhuận mong muốn). Cộng thêm khoảng 15% ngân sách marketing, bạn sẽ hiểu vì sao hàng cá nhân hóa (bán giá cao hơn 30–50% hàng thường) là lối chơi hợp lý nhất cho seller Việt. Bảng phí chi tiết:</p>
 
           <div class="article-table reveal">
@@ -198,50 +230,50 @@
               </tbody>
             </table>
           </div>
-          <p class="reveal">Cộng dồn lại, tổng phí thường chiếm khoảng 10–15% doanh thu (chưa kể Offsite Ads). Định giá mà quên lớp phí nào là lợi nhuận "bốc hơi" lớp đó — hãy làm bảng tính trước khi đăng listing đầu tiên.</p>
+          <p class="reveal">Cộng dồn lại, tổng phí thường chiếm khoảng 10–15% doanh thu (chưa kể Offsite Ads). Định giá mà quên lớp phí nào là lợi nhuận "bốc hơi" lớp đó, hãy làm bảng tính trước khi đăng listing đầu tiên.</p>
 
-          <h2 class="reveal"><span>06.</span> Vận chuyển quốc tế từ Việt Nam</h2>
-          <p class="reveal">Nỗi lo lớn nhất của seller Việt là ship — nhưng nó hoàn toàn quản trị được nếu khai báo trung thực ngay từ đầu. Ba con số khách nhìn thấy: <strong>processing time</strong> (thời gian sản xuất — với hàng cá nhân hóa nên ghi 2–4 ngày làm việc), <strong>thời gian vận chuyển</strong> và <strong>ngày nhận dự kiến</strong> Etsy tự tính từ hai số trên. Đặt dư một chút còn hơn hứa gấp rồi trễ: chỉ số giao đúng hạn là tín hiệu xếp hạng quan trọng.</p>
+          <h2 id="sec-6" class="reveal"><span>06.</span> Vận chuyển quốc tế từ Việt Nam</h2>
+          <p class="reveal">Nỗi lo lớn nhất của seller Việt là ship, nhưng nó hoàn toàn quản trị được nếu khai báo trung thực ngay từ đầu. Ba con số khách nhìn thấy: <strong>processing time</strong> (thời gian sản xuất, với hàng cá nhân hóa nên ghi 2–4 ngày làm việc), <strong>thời gian vận chuyển</strong> và <strong>ngày nhận dự kiến</strong> Etsy tự tính từ hai số trên. Đặt dư một chút còn hơn hứa gấp rồi trễ: chỉ số giao đúng hạn là tín hiệu xếp hạng quan trọng.</p>
           <ul class="reveal">
             <li><strong>Tuyến nhanh (express):</strong> phổ biến 7–12 ngày làm việc tới Mỹ; phù hợp hàng giá trị cao và mùa lễ.</li>
             <li><strong>Tuyến tiết kiệm:</strong> thường 2–4 tuần; chỉ dùng khi khách chấp nhận chờ và ngoài mùa cao điểm.</li>
             <li><strong>Tracking đầy đủ là bắt buộc:</strong> đơn không có mã theo dõi gần như chắc chắn thua khi khách khiếu nại "chưa nhận hàng".</li>
-            <li><strong>Khai hải quan trung thực</strong> về loại hàng và giá trị — khai gian để né thuế là rủi ro không đáng đổi cả shop.</li>
+            <li><strong>Khai hải quan trung thực</strong> về loại hàng và giá trị, khai gian để né thuế là rủi ro không đáng đổi cả shop.</li>
           </ul>
-          <p class="reveal">Mẹo mùa lễ: từ đầu tháng 11, chuyển toàn bộ sang tuyến nhanh và nới processing time thêm 1–2 ngày — đơn Giáng sinh trễ hẹn là nguồn review 1 sao lớn nhất trong năm của seller quốc tế.</p>
+          <p class="reveal">Mẹo mùa lễ: từ đầu tháng 11, chuyển toàn bộ sang tuyến nhanh và nới processing time thêm 1–2 ngày, đơn Giáng sinh trễ hẹn là nguồn review 1 sao lớn nhất trong năm của seller quốc tế.</p>
 
-          <h2 class="reveal"><span>07.</span> Tháng đầu tiên nên làm gì?</h2>
+          <h2 id="sec-7" class="reveal"><span>07.</span> Tháng đầu tiên nên làm gì?</h2>
           <ol class="reveal">
             <li><strong>Tuần 1:</strong> hoàn thiện 100% hồ sơ shop, đăng 10–15 listing đầu với title/tag chuẩn, bật Etsy Ads ngân sách nhỏ, đặt mua 1–2 đơn mẫu của đối thủ để học trải nghiệm đóng gói.</li>
-            <li><strong>Tuần 2:</strong> đăng thêm 5–10 listing (thuật toán thích shop hoạt động đều), bắt đầu trả lời mọi tin nhắn trong vòng vài giờ — tốc độ phản hồi là điểm cộng xếp hạng và là lý do khách chọn bạn.</li>
+            <li><strong>Tuần 2:</strong> đăng thêm 5–10 listing (thuật toán thích shop hoạt động đều), bắt đầu trả lời mọi tin nhắn trong vòng vài giờ, tốc độ phản hồi là điểm cộng xếp hạng và là lý do khách chọn bạn.</li>
             <li><strong>Tuần 3:</strong> đọc Shop Stats lần đầu: từ khóa nào mang view, listing nào có click. Sửa ảnh chính cho nhóm "nhiều view ít click"; đừng đụng vào những gì đang chạy tốt.</li>
-            <li><strong>Tuần 4:</strong> tổng kết tháng — giữ lại hướng sản phẩm có tín hiệu, lên kế hoạch danh mục tháng sau theo chiều sâu niche, xin review từ những khách đầu tiên bằng thiệp cảm ơn nhỏ trong gói hàng.</li>
+            <li><strong>Tuần 4:</strong> tổng kết tháng, giữ lại hướng sản phẩm có tín hiệu, lên kế hoạch danh mục tháng sau theo chiều sâu niche, xin review từ những khách đầu tiên bằng thiệp cảm ơn nhỏ trong gói hàng.</li>
           </ol>
-          <p class="reveal">Đừng kỳ vọng lợi nhuận trong 30 ngày đầu — mục tiêu đúng của tháng đầu là <em>dữ liệu và những review 5 sao đầu tiên</em>. Shop có 5–10 review chất lượng bước vào tháng thứ hai với vị thế hoàn toàn khác.</p>
+          <p class="reveal">Đừng kỳ vọng lợi nhuận trong 30 ngày đầu, mục tiêu đúng của tháng đầu là <em>dữ liệu và những review 5 sao đầu tiên</em>. Shop có 5–10 review chất lượng bước vào tháng thứ hai với vị thế hoàn toàn khác.</p>
 
-          <h2 class="reveal"><span>08.</span> Những lỗi khiến shop "bay màu"</h2>
+          <h2 id="sec-8" class="reveal"><span>08.</span> Những lỗi khiến shop "bay màu"</h2>
           <ul class="reveal">
-            <li><strong>Vi phạm bản quyền</strong> — dùng hình ảnh nhân vật, logo đội bóng, câu nói có trademark. Đây là lý do số 1 shop Việt bị khóa vĩnh viễn.</li>
-            <li><strong>Trễ hạn xử lý đơn hàng loạt</strong> — chỉ số ship đúng hạn tụt là thuật toán giảm phân phối ngay.</li>
-            <li><strong>Nhiều tài khoản trùng thông tin</strong> — Etsy quét rất gắt; một người một shop, làm tử tế.</li>
-            <li><strong>Tự thổi đơn, tự đánh giá</strong> — nhờ người quen mua ảo và để lại review là mẫu hành vi hệ thống nhận diện rất nhanh.</li>
-            <li><strong>Bỏ bê tin nhắn khiếu nại</strong> — khách mở case mà seller im lặng thì Etsy gần như luôn xử theo hướng bảo vệ người mua.</li>
+            <li><strong>Vi phạm bản quyền</strong>, dùng hình ảnh nhân vật, logo đội bóng, câu nói có trademark. Đây là lý do số 1 shop Việt bị khóa vĩnh viễn.</li>
+            <li><strong>Trễ hạn xử lý đơn hàng loạt</strong>, chỉ số ship đúng hạn tụt là thuật toán giảm phân phối ngay.</li>
+            <li><strong>Nhiều tài khoản trùng thông tin</strong>, Etsy quét rất gắt; một người một shop, làm tử tế.</li>
+            <li><strong>Tự thổi đơn, tự đánh giá</strong>, nhờ người quen mua ảo và để lại review là mẫu hành vi hệ thống nhận diện rất nhanh.</li>
+            <li><strong>Bỏ bê tin nhắn khiếu nại</strong>, khách mở case mà seller im lặng thì Etsy gần như luôn xử theo hướng bảo vệ người mua.</li>
           </ul>
 
           <div class="article-quote reveal">
-            <p>"Trên Etsy, shop thắng cuộc không phải shop rẻ nhất — mà là shop khiến khách cảm thấy món đồ được làm ra chỉ dành cho họ."</p>
+            <p>"Trên Etsy, shop thắng cuộc không phải shop rẻ nhất, mà là shop khiến khách cảm thấy món đồ được làm ra chỉ dành cho họ."</p>
             <cite>— Đội ngũ E-commerce, Ethan Ecom</cite>
           </div>
 
-          <h2 class="reveal">Câu hỏi thường gặp</h2>
+          <h2 id="sec-9" class="reveal">Câu hỏi thường gặp</h2>
           <h3 class="reveal">Người Việt Nam có mở shop Etsy hợp pháp được không?</h3>
-          <p class="reveal">Được. Etsy chấp nhận seller từ Việt Nam với giấy tờ định danh hợp lệ và tài khoản nhận thanh toán qua cổng được hỗ trợ như Payoneer. Điều kiện tiên quyết là mọi thông tin phải nhất quán và trung thực — phần lớn trường hợp bị khóa ngay khi mở là do khai thông tin vay mượn.</p>
+          <p class="reveal">Được. Etsy chấp nhận seller từ Việt Nam với giấy tờ định danh hợp lệ và tài khoản nhận thanh toán qua cổng được hỗ trợ như Payoneer. Điều kiện tiên quyết là mọi thông tin phải nhất quán và trung thực, phần lớn trường hợp bị khóa ngay khi mở là do khai thông tin vay mượn.</p>
           <h3 class="reveal">Bán POD trên Etsy có bị coi là "không handmade" không?</h3>
           <p class="reveal">Không, miễn là thiết kế do bạn tạo ra và bạn khai báo đối tác sản xuất (production partner) minh bạch. Etsy cấm bán lại hàng đại trà không có sáng tạo của người bán, chứ không cấm việc dùng xưởng in/thêu để hiện thực hóa thiết kế của chính bạn.</p>
           <h3 class="reveal">Bao lâu thì có đơn hàng đầu tiên?</h3>
-          <p class="reveal">Không có con số cam kết — phổ biến là trong vòng 2–8 tuần nếu shop có 15+ listing chuẩn SEO, ảnh tốt và giá hợp lý. Yếu tố rút ngắn thời gian nhiều nhất là chọn đúng niche có cầu và làm hàng cá nhân hóa; yếu tố kéo dài nhiều nhất là đăng ít listing rồi ngồi chờ.</p>
+          <p class="reveal">Không có con số cam kết, phổ biến là trong vòng 2–8 tuần nếu shop có 15+ listing chuẩn SEO, ảnh tốt và giá hợp lý. Yếu tố rút ngắn thời gian nhiều nhất là chọn đúng niche có cầu và làm hàng cá nhân hóa; yếu tố kéo dài nhiều nhất là đăng ít listing rồi ngồi chờ.</p>
           <h3 class="reveal">Nên bắt đầu với bao nhiêu vốn?</h3>
-          <p class="reveal">Với mô hình POD, vốn khởi điểm chủ yếu nằm ở phí listing (vài chục nghìn đồng mỗi mẫu), ngân sách Etsy Ads nhỏ và chi phí làm 1–2 sản phẩm mẫu để chụp ảnh thật. Tổng vài triệu đồng là đủ chạy tháng thử nghiệm đầu tiên một cách nghiêm túc — rẻ hơn rất nhiều so với ôm hàng tồn kho.</p>
+          <p class="reveal">Với mô hình POD, vốn khởi điểm chủ yếu nằm ở phí listing (vài chục nghìn đồng mỗi mẫu), ngân sách Etsy Ads nhỏ và chi phí làm 1–2 sản phẩm mẫu để chụp ảnh thật. Tổng vài triệu đồng là đủ chạy tháng thử nghiệm đầu tiên một cách nghiêm túc, rẻ hơn rất nhiều so với ôm hàng tồn kho.</p>
 
           <div class="tag-row reveal">
             <span class="tag-chip">#Etsy2026</span>
@@ -249,6 +281,7 @@
             <span class="tag-chip">#SEOEtsy</span>
             <span class="tag-chip">#EthanEcom</span>
           </div>
+        </div>
         </div>
 
       </div>
@@ -263,24 +296,24 @@
         <h2 class="st">Bài viết liên quan</h2>
       </div>
       <div class="related-grid">
-        <a href="blog-amazon-seo.html" class="rel-card reveal d1">
-          <div class="rel-thumb"><img src="assets/images/blog/amazon-seo-analytics.jpg" alt="5 chiến lược SEO Amazon giúp listing lên top trong 30 ngày" loading="lazy"></div>
+        <a href="blog-amazon-seo" class="rel-card reveal d1">
+          <div class="rel-thumb"><img src="assets/images/blog/13-etsy-guide/amazon-seo-analytics.jpg" alt="5 chiến lược SEO Amazon giúp listing lên top trong 30 ngày" loading="lazy"></div>
           <div class="rel-body">
             <div class="rel-tag">E-commerce</div>
             <h4>5 chiến lược SEO Amazon giúp listing lên top trong 30 ngày</h4>
             <span>28 Tháng 5, 2026 · 10 phút đọc</span>
           </div>
         </a>
-        <a href="blog-nghien-cuu-niche-pod.html" class="rel-card reveal d2">
-          <div class="rel-thumb"><img src="assets/images/blog/niche-research-desk.jpg" alt="Cách nghiên cứu niche POD có lợi nhuận: Quy trình 5 bước" loading="lazy"></div>
+        <a href="blog-nghien-cuu-niche-pod" class="rel-card reveal d2">
+          <div class="rel-thumb"><img src="assets/images/blog/13-etsy-guide/niche-research-desk.jpg" alt="Cách nghiên cứu niche POD có lợi nhuận: Quy trình 5 bước" loading="lazy"></div>
           <div class="rel-body">
             <div class="rel-tag">E-commerce</div>
             <h4>Cách nghiên cứu niche POD có lợi nhuận: Quy trình 5 bước</h4>
             <span>18 Tháng 4, 2026 · 10 phút đọc</span>
           </div>
         </a>
-        <a href="blog-pod-la-gi.html" class="rel-card reveal d3">
-          <div class="rel-thumb"><img src="assets/images/blog/pod-tshirt-mockup.jpg" alt="Print-on-Demand là gì? Toàn cảnh mô hình POD 2026" loading="lazy"></div>
+        <a href="blog-pod-la-gi" class="rel-card reveal d3">
+          <div class="rel-thumb"><img src="assets/images/blog/13-etsy-guide/pod-tshirt-mockup.jpg" alt="Print-on-Demand là gì? Toàn cảnh mô hình POD 2026" loading="lazy"></div>
           <div class="rel-body">
             <div class="rel-tag">E-commerce</div>
             <h4>Print-on-Demand là gì? Toàn cảnh mô hình POD 2026</h4>
@@ -296,11 +329,43 @@
 <div id="site-footer"></div>
 
 <!-- Shared JS (must be last) -->
-<script src="assets/js/shared.js?v=housef02"></script>
+<script src="assets/js/shared.js?v=housef05"></script>
 <script src="assets/js/page-animations.js"></script>
 
 <!-- Contact popup + dock 2 nút gim (Ứng tuyển ngay / Liên hệ ngay) -->
 <div id="contact-popup-root"></div>
-<script src="assets/js/contact-popup.js?v=20260718a"></script>
+<script src="assets/js/contact-popup.js?v=20260722y"></script>
+
+<!-- Scroll-spy: tự làm nổi mục lục theo section đang đọc -->
+<script>
+(function(){
+  var links = [].slice.call(document.querySelectorAll('.toc-list a'));
+  if(!links.length) return;
+  var targets = links.map(function(a){
+    return { link:a, el:document.getElementById(a.getAttribute('href').slice(1)) };
+  }).filter(function(t){ return t.el; });
+  if(!targets.length) return;
+  // offsetTop bỏ qua transform (class .reveal dùng translateY) → đo vị trí ổn định
+  function absTop(el){ var y=0; while(el){ y+=el.offsetTop; el=el.offsetParent; } return y; }
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var pos = window.scrollY + 140;
+    var current = targets[0].link;
+    for(var i=0;i<targets.length;i++){
+      if(absTop(targets[i].el) <= pos) current = targets[i].link;
+    }
+    if(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4){
+      current = targets[targets.length-1].link;
+    }
+    links.forEach(function(l){ l.classList.toggle('active', l===current); });
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(update); ticking = true; }
+  }, {passive:true});
+  window.addEventListener('resize', update, {passive:true});
+  update();
+})();
+</script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 /* ================================================================
    ETHAN ECOM — Page-Specific Advanced Animations
-   Loaded by: about.html, services.html, portfolio.html,
-              blog.html, contact.html
+   Loaded by: gioi-thieu.html, dich-vu, tam-nhin,
+              cau-chuyen, lien-he
 
    Effects:
      • Magnetic buttons
@@ -198,7 +198,8 @@
   function initParticles() {
     if (reduced || isMobile) return;
     var hero = $('.page-hero');
-    if (!hero) return;
+    /* Bỏ qua hero parallax 3D (.hpx) — section cao 300vh, canvas full-size quá tốn */
+    if (!hero || hero.classList.contains('hpx')) return;
 
     var canvas = document.createElement('canvas');
     canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.55';
@@ -575,7 +576,7 @@
     $$('.section--gray, .section').forEach(function (sec, i) {
       if (i % 2 !== 0) return;
       sec.style.position = 'relative';
-      sec.style.overflow = 'hidden';
+      sec.style.overflow = 'clip';  // clip (không phải hidden) để không tạo scroll-container phá position:sticky (mục lục bài viết)
       var blob = document.createElement('div');
       var colors = [
         'rgba(29,50,81,.04)', 'rgba(0,212,255,.03)',

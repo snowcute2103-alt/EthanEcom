@@ -4,13 +4,45 @@
    active nav detection, scroll animations, counter, parallax.
    ================================================================ */
 
+/* ════════════════════════════════════════════════════════════════
+   FORM EMAIL WEBHOOK (Google Apps Script) — NGUỒN URL DUY NHẤT toàn site.
+   Dùng chung cho MỌI form gửi mail: 2 popup (chat Liên hệ + Ứng tuyển) và
+   2 form inline (Liên hệ trên lien-he + Ứng tuyển modal trên tuyen-dung).
+   • Đổi webhook / đổi email nhận: sửa URL dưới đây + HR_EMAIL/SUPPORT_EMAIL
+     trong apps-script/Code.gs. KHÔNG sửa rải rác nhiều file.
+   • Để trống '' → popup tự fallback FormSubmit; form inline báo lỗi nhẹ.
+   ════════════════════════════════════════════════════════════════ */
+window.ETHAN_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxabpnYqPqCCvAG6q7AHX1U5GVhnXroYks69jDJoZCh0T5r7EJbM0Wcs-gpqMVflloNDw/exec';
+
+/* Đọc File → chuỗi base64 (bỏ tiền tố "data:...;base64,") để nhét vào JSON */
+window.ethanFileToBase64 = function (file) {
+  return new Promise(function (resolve, reject) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      var res = String(reader.result), c = res.indexOf(',');
+      resolve(c >= 0 ? res.slice(c + 1) : res);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+};
+
+/* POST payload JSON tới webhook. Không set Content-Type → "simple request",
+   tránh CORS preflight (Apps Script không trả OPTIONS). Trả Promise. */
+window.ethanSendForm = function (payload) {
+  if (!window.ETHAN_WEBHOOK_URL) return Promise.reject(new Error('webhook-not-configured'));
+  return fetch(window.ETHAN_WEBHOOK_URL, { method: 'POST', body: JSON.stringify(payload) })
+    .then(function (res) { if (!res.ok) throw new Error(res.status); return res.json(); })
+    .then(function (r) { if (!r || r.ok === false) throw new Error((r && r.error) || 'webhook'); return r; });
+};
+
 /* ── NAV PAGES (single source of truth) ── */
 const NAV_LINKS = [
-  { href: 'index.html',     label: 'Trang chủ',   icon: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
-  { href: 'about.html',     label: 'Giới thiệu',  icon: '<circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>' },
-  { href: 'vision.html',    label: 'Tầm nhìn',     icon: '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>' },
-  { href: 'blog.html',      label: 'Câu chuyện',   icon: '<path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>' },
-  { href: 'careers.html',   label: 'Tuyển dụng',  icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>' },
+  { href: '/',     label: 'Trang chủ',   icon: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
+  { href: 'gioi-thieu',     label: 'Giới thiệu',  icon: '<circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>' },
+  { href: 'tam-nhin',    label: 'Tầm nhìn',     icon: '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>' },
+  { href: 'cau-chuyen',      label: 'Câu chuyện',   icon: '<path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>' },
+  { href: 'tuyen-dung',   label: 'Tuyển dụng',  icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>' },
 ];
 
 /* ── BUILD HEADER HTML ── */
@@ -21,7 +53,7 @@ function buildHeader() {
   ).join('');
   const rightItems = NAV_LINKS.slice(3).map(l =>
     `<a href="${l.href}">${l.label}</a>`
-  ).join('') + `<a href="contact.html">Liên hệ</a>`;
+  ).join('') + `<a href="lien-he">Liên hệ</a>`;
   const mobItems = NAV_LINKS.map(l =>
     `<a href="${l.href}">${l.label}</a>`
   ).join('');
@@ -34,7 +66,7 @@ function buildHeader() {
     <nav class="nav nav-left" id="mainNav">
       ${leftItems}
     </nav>
-    <a href="index.html" class="logo">
+    <a href="/" class="logo">
       <img src="assets/images/logo.jpg" alt="Ethan Ecom">
     </a>
     <nav class="nav nav-right">
@@ -47,7 +79,12 @@ function buildHeader() {
 </header>
 <nav class="mob-nav" id="mob" aria-hidden="true">
   ${mobItems}
-  <a href="contact.html">Liên hệ →</a>
+  <a href="lien-he" class="mob-cta">Liên hệ →</a>
+  <div class="mob-nav-foot">
+    <a href="mailto:support@ethanecom.com">support@ethanecom.com</a>
+    <span class="sep">·</span>
+    <a href="tel:+84967473979">+84 967 473 979</a>
+  </div>
 </nav>
 `;
 }
@@ -60,7 +97,7 @@ function buildFooter() {
 
     <!-- Logo -->
     <div class="ft-logo">
-      <a class="ft-logo-badge" href="index.html" aria-label="Ethan Ecom — về trang chủ">
+      <a class="ft-logo-badge" href="/" aria-label="Ethan Ecom, về trang chủ">
         <img src="assets/images/logo.png" alt="Ethan Ecom">
       </a>
       <div class="ft-logo-sub">Ecommerce / Print On Demand / Digital Marketing</div>
@@ -69,12 +106,12 @@ function buildFooter() {
     <!-- Nav -->
     <nav class="ft-nav" aria-label="Điều hướng footer">
       <ul>
-        <li><a href="index.html">Trang chủ</a></li>
-        <li><a href="about.html">Giới thiệu</a></li>
-        <li><a href="vision.html">Tầm nhìn</a></li>
-        <li><a href="blog.html">Câu chuyện</a></li>
-        <li><a href="careers.html">Tuyển dụng</a></li>
-        <li><a href="contact.html">Liên hệ</a></li>
+        <li><a href="/">Trang chủ</a></li>
+        <li><a href="gioi-thieu">Giới thiệu</a></li>
+        <li><a href="tam-nhin">Tầm nhìn</a></li>
+        <li><a href="cau-chuyen">Câu chuyện</a></li>
+        <li><a href="tuyen-dung">Tuyển dụng</a></li>
+        <li><a href="lien-he">Liên hệ</a></li>
       </ul>
     </nav>
 
@@ -85,18 +122,18 @@ function buildFooter() {
 
       <div class="ft-col">
         <h3>Về Ethan Ecom</h3>
-        <p>Nơi khơi nguồn sáng tạo và hỗ trợ sự phát triển cá nhân. Doanh nghiệp TMĐT xuyên biên giới tự chủ sản xuất — Đồng lòng đồng sức, bứt phá gặt thành công.</p>
+        <p>Nơi khơi nguồn sáng tạo và hỗ trợ sự phát triển cá nhân. Doanh nghiệp TMĐT xuyên biên giới tự chủ sản xuất. Đồng lòng đồng sức, bứt phá gặt thành công.</p>
       </div>
 
       <div class="ft-col">
         <h3>Dịch vụ</h3>
         <ul>
-          <li><a href="services.html">TMĐT xuyên biên giới</a></li>
-          <li><a href="services.html">Print On Demand (POD)</a></li>
-          <li><a href="services.html">Thêu công nghiệp</a></li>
-          <li><a href="services.html">In giấy &amp; Sticker</a></li>
-          <li><a href="services.html">In nhựa 3D</a></li>
-          <li><a href="services.html">Digital Marketing</a></li>
+          <li><a href="dich-vu">TMĐT xuyên biên giới</a></li>
+          <li><a href="dich-vu">Print On Demand (POD)</a></li>
+          <li><a href="dich-vu">Thêu công nghiệp</a></li>
+          <li><a href="dich-vu">In giấy &amp; Sticker</a></li>
+          <li><a href="dich-vu">In nhựa 3D</a></li>
+          <li><a href="dich-vu">Digital Marketing</a></li>
         </ul>
       </div>
 
@@ -124,7 +161,7 @@ function buildFooter() {
         </p>
         <p>
           <span class="ft-label">Facebook</span>
-          <a href="https://facebook.com/ethanecom3979" target="_blank" rel="noopener">facebook.com/ethanecom3979</a>
+          <a href="https://www.facebook.com/ethanecom3979" target="_blank" rel="noopener">facebook.com/ethanecom3979</a>
         </p>
       </div>
 
@@ -134,14 +171,10 @@ function buildFooter() {
     <div class="ft-bottom">
       <div class="ft-social">
         Theo dõi chúng tôi:
-        <a href="https://facebook.com/ethanecom3979" target="_blank" rel="noopener">Facebook</a><span class="sep">|</span>
-        <a href="#" rel="noopener">Dribbble</a><span class="sep">|</span>
-        <a href="#" rel="noopener">X</a><span class="sep">|</span>
-        <a href="#" rel="noopener">Instagram</a><span class="sep">|</span>
-        <a href="#" rel="noopener">Behance</a>
+        <a href="https://www.facebook.com/ethanecom3979" target="_blank" rel="noopener">Facebook</a>
       </div>
       <div class="ft-copy">
-        © 2017–2026 Ethan Ecom — Công Ty TNHH MTV Phát Triển Công Nghệ Ethan. All rights reserved.
+        © 2017–2026 Ethan Ecom · Công Ty TNHH MTV Phát Triển Công Nghệ Ethan. All rights reserved.
       </div>
     </div>
 
@@ -159,11 +192,13 @@ function injectComponents() {
 
 /* ── ACTIVE NAV LINK ── */
 function setActiveNav() {
-  // Get current filename (e.g. "about.html" or "" for root)
-  const path = window.location.pathname.split('/').pop() || 'index.html';
+  // Chuẩn hoá về "slug" không đuôi để khớp cả URL sạch (/gioi-thieu) lẫn /x.html
+  // vd: "/gioi-thieu" → "gioi-thieu", "/dich-vu" → "services", "/" → "index"
+  const norm = s => ((s || '').split('/').pop().split('#')[0].split('?')[0]
+                      .replace(/\.html$/, '') || 'index');
+  const path = norm(window.location.pathname);
   document.querySelectorAll('.nav a, .mob-nav a').forEach(a => {
-    const href = (a.getAttribute('href') || '').split('#')[0];
-    if (href === path || (path === '' && href === 'index.html')) {
+    if (norm(a.getAttribute('href')) === path) {
       a.classList.add('active');
     }
   });
@@ -182,7 +217,7 @@ function initHeader() {
   const smhFirst = !!smh && (!hero || (smh.compareDocumentPosition(hero) & Node.DOCUMENT_POSITION_FOLLOWING));
   const isDarkHero = !smhFirst && hero && !document.body.classList.contains('light-header');
   /* Opt-in theo trang (body.header-always-dark): header luôn dùng style tối
-     giống trang chủ, bỏ qua auto-detect nền sáng/tối (vd: careers.html) */
+     giống trang chủ, bỏ qua auto-detect nền sáng/tối (vd: tuyen-dung) */
   const alwaysDark = document.body.classList.contains('header-always-dark');
   if (alwaysDark || isDarkHero) {
     hdr.classList.add('on-dark');
@@ -191,7 +226,7 @@ function initHeader() {
   }
 
   /* Opt-in theo trang (body.header-reveal-on-scroll): ẩn header khi ở top,
-     chỉ hiện ra khi người dùng cuộn xuống (vd: careers.html) */
+     chỉ hiện ra khi người dùng cuộn xuống (vd: tuyen-dung) */
   const revealOnScroll = document.body.classList.contains('header-reveal-on-scroll');
 
   let lastY = window.scrollY;
@@ -273,6 +308,7 @@ function initHamburger() {
     hbg.setAttribute('aria-expanded', 'true');
     hbg.setAttribute('aria-label', 'Đóng menu');
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('mob-open');
     /* Move keyboard focus into the menu */
     const first = mob.querySelector('a');
     if (first) setTimeout(() => first.focus(), 60);
@@ -285,6 +321,7 @@ function initHamburger() {
     hbg.setAttribute('aria-expanded', 'false');
     hbg.setAttribute('aria-label', 'Mở menu');
     document.body.style.overflow = '';
+    document.body.classList.remove('mob-open');
     if (returnFocus) hbg.focus();
   }
 
@@ -310,6 +347,11 @@ function initHamburger() {
   /* Close when clicking backdrop (outside links) */
   mob.addEventListener('click', e => {
     if (e.target === mob) closeMenu();
+  });
+
+  /* Resize về desktop (>1024px) khi menu đang mở → tự đóng, trả lại body scroll */
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024 && mob.classList.contains('open')) closeMenu(false);
   });
 }
 

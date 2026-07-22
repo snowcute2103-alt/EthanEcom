@@ -10,8 +10,6 @@
 /vision               → Vision — Tầm nhìn chiến lược, sứ mệnh đưa hàng Việt ra thế giới
 /services             → Dịch vụ (thêm vào nav nếu cần)
   /services/[slug]    → Chi tiết từng dịch vụ (9 dịch vụ)
-/portfolio            → Portfolio / Công trình (có thể gộp vào About hoặc riêng)
-  /portfolio/[slug]   → Chi tiết dự án
 /careers              → Tuyển dụng — Danh sách 14 vị trí, văn hoá công ty
   /careers/[id]       → Chi tiết vị trí + form ứng tuyển (Gửi CV về hr@ethanecom.com)
 /stories              → Stories / Blog — Câu chuyện, tin tức công ty

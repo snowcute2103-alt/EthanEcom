@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tầm nhìn | Ethan Ecom: Đưa sản phẩm Việt vươn tầm thế giới</title>
+<meta name="description" content="Tầm nhìn chiến lược của Ethan Ecom: trở thành công ty e-commerce có hệ thống vận hành bài bản, tự chủ sản phẩm và sản xuất, đưa sản phẩm Việt phát triển bền vững trên thị trường quốc tế.">
+<link rel="stylesheet" href="assets/css/shared.css?v=housef02">
+<!-- Font riêng cho board Hành trình 2026: serif Didone tương phản cao theo ảnh lịch gốc -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&display=swap">
+<style>
+/* ── PAGE-SPECIFIC STYLES ── */
+
+/* Nhịp chung kiểu orfeo: kicker nhỏ → heading serif lớn có từ khoá nhấn màu → 1 ý/section */
+.st--big{font-size:var(--fs-display);line-height:var(--lh-display,1.3)}
+.st em{font-style:normal;color:var(--blue)}
+.section--blue .st em{color:var(--yellow)}
+
+/* ── IMG ── */
+.img-ph{border-radius:0;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;min-height:40px}
+.img-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph-vision{background:linear-gradient(135deg,#2a4a76 0%,#1D3251 40%,#0d1e35 100%);height:460px}
+
+/* ── VISION STORY (text + image) ── */
+.story-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+.story-img-wrap{overflow:hidden;border-radius:0}
+.story-img-wrap .img-ph{border-radius:0}
+.story-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(27,79,216,.08);border:1px solid rgba(27,79,216,.15);color:var(--blue);font-size:var(--fs-base);font-weight:var(--fw-semibold);letter-spacing:2px;text-transform:uppercase;padding:7px 16px;border-radius:0;margin-bottom:20px}
+@media(min-width:769px){.story-grid{grid-template-columns:1fr 1fr;gap:72px}}
+
+/* ── NGUYÊN TẮC — statement full-bleed (điểm nhấn của trang) ── */
+.principle-hero{position:relative;overflow:hidden;text-align:center;color:var(--text);background:#fff}
+.principle-hero::before{content:'';position:absolute;width:460px;height:460px;border-radius:50%;top:-160px;right:-120px;background:radial-gradient(circle,rgba(244,180,26,.13) 0%,transparent 70%);pointer-events:none}
+.principle-hero::after{content:'';position:absolute;width:340px;height:340px;border-radius:50%;bottom:-120px;left:-80px;background:radial-gradient(circle,rgba(30,127,224,.07) 0%,transparent 70%);pointer-events:none}
+.ph-mark{font-family:var(--font-numeral);font-size:clamp(80px,10vw,130px);line-height:.55;color:rgba(244,180,26,.55);user-select:none}
+.ph-quote{font-family:var(--font-heading);font-size:var(--fs-display);line-height:var(--lh-display,1.35);font-weight:var(--fw-semibold);max-width:920px;margin:14px auto 0;color:var(--text)}
+.ph-quote em{font-style:normal;color:var(--blue);background:linear-gradient(transparent 82%,rgba(30,127,224,.16) 0)}
+.ph-dim{color:var(--text2)}
+.ph-sub{max-width:660px;margin:24px auto 0;color:var(--text2);font-size:var(--fs-base);line-height:1.85}
+.ph-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:34px}
+.ph-chip{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:9px 18px;border-radius:0;background:var(--surface);font-size:var(--fs-base);font-weight:var(--fw-semibold);color:var(--text)}
+.ph-chip b{font-family:var(--font-numeral);font-weight:var(--fw-semibold);color:var(--yellow)}
+
+/* ── SỨ MỆNH — deck 3 thẻ ảnh tối (kiểu statement cards orfeo) ── */
+/* reveal đặt ở wrapper (không đặt trên thẻ): .reveal.active{transform:none} sẽ đè mất tilt/stagger */
+.m-deck{display:grid;grid-template-columns:1fr;gap:22px;max-width:1180px;margin:0 auto}
+.m-deck>.reveal{display:flex}
+.m-card{position:relative;flex:1;border-radius:0;overflow:hidden;min-height:400px;display:flex;align-items:flex-end;color:#fff;box-shadow:0 18px 50px rgba(15,34,68,.22);transition:transform .45s var(--ease,ease),box-shadow .45s var(--ease,ease)}
+.m-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.m-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,34,68,.25) 0%,rgba(15,34,68,.62) 42%,rgba(11,23,46,.97) 100%)}
+.m-arrow{position:absolute;top:16px;right:16px;z-index:2;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;font-size:var(--fs-md);color:#fff;backdrop-filter:blur(4px)}
+.m-body{position:relative;z-index:1;padding:26px 24px 28px}
+.m-tag{display:inline-block;font-size:var(--fs-base);font-weight:var(--fw-semibold);letter-spacing:2px;text-transform:uppercase;color:var(--yellow);margin-bottom:10px}
+.m-card h3{font-family:var(--font-heading);font-size:var(--fs-h3);font-weight:var(--fw-semibold);color:#fff;margin-bottom:10px}
+.m-card p{font-size:var(--fs-base);color:rgba(255,255,255,.88);line-height:1.75;margin:0}
+.m-card p em{font-style:normal;color:var(--yellow)}
+@media(min-width:769px){
+  .m-deck{grid-template-columns:repeat(3,1fr);gap:26px;padding:18px 0 26px}
+  .m-deck>*:nth-child(1) .m-card{transform:rotate(-2.2deg) translateY(12px)}
+  .m-deck>*:nth-child(2) .m-card{transform:rotate(1.4deg) translateY(-8px)}
+  .m-deck>*:nth-child(3) .m-card{transform:rotate(-1.2deg) translateY(16px)}
+  .m-deck .m-card:hover{transform:rotate(0) translateY(-6px);box-shadow:0 26px 64px rgba(15,34,68,.32)}
+}
+
+/* ── LỘ TRÌNH — 3 thẻ số pastel bo lớn, xếp so le (kiểu how-it-works orfeo) ── */
+.roadmap{display:grid;grid-template-columns:1fr;gap:24px}
+/* .rm-wrap: JS scrub theo cuộn chuột đặt transform ở wrapper — tách khỏi transform tĩnh (stagger) và :hover trên .rm-card */
+.roadmap>.rm-wrap{display:flex;will-change:transform}
+.rm-card{position:relative;flex:1;border-radius:0;padding:34px 28px 88px;transition:transform .4s var(--ease,ease),box-shadow .4s var(--ease,ease)}
+.rm-card--1{background:#EAF3FB}
+.rm-card--2{background:#FFF3D6}
+.rm-card--3{background:#E8ECFA}
+.rm-num{font-family:var(--font-numeral);font-size:var(--fs-h3);font-weight:var(--fw-semibold);color:var(--navy);display:block;margin-bottom:16px}
+.rm-tag{display:inline-block;font-size:var(--fs-base);font-weight:var(--fw-semibold);letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.rm-card h3{font-family:var(--font-heading);font-size:var(--fs-md);font-weight:var(--fw-semibold);margin-bottom:10px}
+.rm-card p{font-size:var(--fs-base);color:var(--text);line-height:1.75}
+.rm-arrow{position:absolute;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;background:rgba(22,48,92,.08);display:flex;align-items:center;justify-content:center;font-size:var(--fs-md);color:var(--navy)}
+.rm-now-badge{position:absolute;top:20px;right:20px;background:linear-gradient(135deg,var(--yellow-2,#FFC107),var(--yellow,#F4B41A));color:var(--navy);font-size:var(--fs-caption,12px);font-weight:var(--fw-semibold);letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:0}
+@media(min-width:769px){
+  .roadmap{grid-template-columns:repeat(3,1fr);gap:28px;padding-bottom:72px}
+  .roadmap>*:nth-child(2) .rm-card{transform:translateY(32px)}
+  .roadmap>*:nth-child(3) .rm-card{transform:translateY(64px)}
+  .roadmap>*:nth-child(1) .rm-card:hover{transform:translateY(-6px);box-shadow:0 18px 48px rgba(27,79,216,.14)}
+  .roadmap>*:nth-child(2) .rm-card:hover{transform:translateY(26px);box-shadow:0 18px 48px rgba(27,79,216,.14)}
+  .roadmap>*:nth-child(3) .rm-card:hover{transform:translateY(58px);box-shadow:0 18px 48px rgba(27,79,216,.14)}
+}
+
+/* ── HÀNH TRÌNH 2026 (bìa lịch cosmos, full màn hình) ── */
+/* khối tiêu đề: nền = màu mép trên ảnh nền (#030b29) để liền mạch với board */
+.j26-sec{background:#030b29 url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1728 500' preserveAspectRatio='xMidYMid slice'><g fill='white'><circle cx='946' cy='176' r='1.2' opacity='0.22'/><circle cx='882' cy='175' r='0.8' opacity='0.41'/><circle cx='187' cy='223' r='0.7' opacity='0.24'/><circle cx='1716' cy='168' r='1.0' opacity='0.26'/><circle cx='1258' cy='225' r='0.6' opacity='0.26'/><circle cx='707' cy='391' r='1.0' opacity='0.19'/><circle cx='1161' cy='153' r='0.9' opacity='0.2'/><circle cx='712' cy='387' r='0.9' opacity='0.35'/><circle cx='1303' cy='292' r='1.0' opacity='0.25'/><circle cx='1065' cy='383' r='0.6' opacity='0.4'/><circle cx='637' cy='77' r='0.6' opacity='0.24'/><circle cx='128' cy='201' r='0.8' opacity='0.32'/><circle cx='807' cy='459' r='1.0' opacity='0.23'/><circle cx='1504' cy='346' r='1.3' opacity='0.35'/><circle cx='1659' cy='109' r='0.7' opacity='0.41'/><circle cx='47' cy='453' r='1.2' opacity='0.18'/><circle cx='268' cy='450' r='1.3' opacity='0.38'/><circle cx='1247' cy='375' r='0.7' opacity='0.14'/><circle cx='1082' cy='433' r='1.3' opacity='0.28'/><circle cx='24' cy='94' r='0.9' opacity='0.2'/><circle cx='57' cy='102' r='0.9' opacity='0.18'/><circle cx='203' cy='89' r='0.5' opacity='0.36'/><circle cx='1488' cy='107' r='1.0' opacity='0.39'/><circle cx='426' cy='170' r='1.2' opacity='0.35'/><circle cx='1071' cy='391' r='1.0' opacity='0.23'/><circle cx='1180' cy='386' r='0.5' opacity='0.23'/><circle cx='513' cy='435' r='0.7' opacity='0.33'/><circle cx='753' cy='192' r='0.9' opacity='0.39'/><circle cx='1134' cy='197' r='0.6' opacity='0.24'/><circle cx='814' cy='320' r='1.3' opacity='0.23'/><circle cx='1616' cy='447' r='0.9' opacity='0.2'/><circle cx='410' cy='452' r='0.6' opacity='0.32'/><circle cx='1124' cy='90' r='0.5' opacity='0.32'/><circle cx='100' cy='273' r='1.3' opacity='0.27'/><circle cx='543' cy='61' r='0.7' opacity='0.23'/><circle cx='210' cy='347' r='1.0' opacity='0.34'/><circle cx='193' cy='130' r='1.2' opacity='0.14'/><circle cx='642' cy='403' r='0.7' opacity='0.2'/><circle cx='1099' cy='131' r='0.8' opacity='0.25'/><circle cx='520' cy='326' r='1.1' opacity='0.35'/><circle cx='1685' cy='45' r='0.7' opacity='0.42'/><circle cx='1373' cy='375' r='0.7' opacity='0.18'/><circle cx='480' cy='439' r='1.1' opacity='0.24'/><circle cx='1135' cy='363' r='0.7' opacity='0.17'/><circle cx='1395' cy='350' r='1.1' opacity='0.35'/><circle cx='634' cy='324' r='0.8' opacity='0.39'/><circle cx='430' cy='120' r='2.6' opacity='.07'/><circle cx='430' cy='120' r='1' opacity='.55'/><circle cx='1290' cy='330' r='2.6' opacity='.07'/><circle cx='1290' cy='330' r='1' opacity='.55'/><circle cx='880' cy='425' r='2.6' opacity='.07'/><circle cx='880' cy='425' r='1' opacity='.55'/></g><g stroke='white' stroke-linecap='round' fill='none'><line x1='300' y1='90' x2='344' y2='148' opacity='.08' stroke-width='1.2'/><line x1='1460' y1='60' x2='1508' y2='124' opacity='.07' stroke-width='1.1'/><line x1='990' y1='310' x2='1030' y2='366' opacity='.06' stroke-width='1.1'/></g></svg>") center/cover no-repeat}
+body.typo-eco .j26-sec .sl{color:#9fc0ee}
+body.typo-eco .j26-sec .st{color:#fff}
+body.typo-eco .j26-sec .ss{color:rgba(255,255,255,.72)}
+.j26-board{position:relative;width:100%;height:138vh;height:138svh;min-height:880px;overflow:hidden;
+  --j26-gold:#d0a763;
+  /* nền = ảnh thật (trời sao + chân trời phát sáng); kéo giãn 100% để chân trời luôn đúng vị trí tương đối */
+  background:#0a2760 url('assets/images/nen-tamnhin.jpeg') center/100% 100% no-repeat;
+  font-family:'Playfair Display',var(--font-numeral),serif}
+/* dải hoà sắc: mép trên ảnh tan dần từ màu khối tiêu đề (#030b29) → xoá vệt ghép giữa 2 phần */
+.j26-board::before{content:'';position:absolute;left:0;right:0;top:0;height:160px;pointer-events:none;
+  background:linear-gradient(180deg,#030b29 0%,rgba(3,11,41,.72) 40%,rgba(3,11,41,.28) 72%,rgba(3,11,41,0) 100%)}
+.j26-svg{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+/* KHÔNG dùng vector-effect:non-scaling-stroke — Chromium sẽ đo dash theo px màn hình,
+   phá chuẩn hoá pathLength="1" → mất 21–47% đoạn cuối đường sau animation */
+.j26-path{fill:none;stroke:#aec6f0;stroke-width:1.2;opacity:.72}
+.j26-logo{position:absolute;top:6%;left:8.5%;z-index:4;width:clamp(96px,min(12.5vw,21vh),210px)}
+.j26-logo img{width:100%;height:auto;display:block;filter:drop-shadow(0 6px 18px rgba(0,0,0,.4))}
+.j26-year{position:absolute;right:5%;bottom:1%;z-index:2;font-family:'Montserrat',sans-serif;font-weight:300;letter-spacing:-.02em;line-height:1;color:#f8fafd;font-size:clamp(80px,min(17vw,30vh),330px);text-shadow:0 4px 34px rgba(10,18,50,.3)}
+.j26-item{position:absolute;z-index:3;display:flex;flex-direction:column;align-items:flex-start;transform:translate(var(--tx,0),0)}
+.j26-item.c{--tx:-50%;align-items:center;text-align:center}
+.j26-item.c.la{align-items:flex-start;text-align:left}
+.j26-s{font-size:clamp(12px,min(1.4vw,2.8vh),23px);font-weight:600;color:#fff;letter-spacing:.3px;line-height:1.22;white-space:nowrap;text-shadow:0 1px 8px rgba(10,18,50,.55)}
+/* dòng sát khít như ảnh gốc: dòng dưới ĐÈ sát lên dòng nhỏ phía trên (và ngược lại) */
+.j26-s+.j26-l{margin-top:-.3em}
+.j26-l+.j26-s{margin-top:-.12em}
+/* khối "Ăn Ý / Như Ý": 2 dòng căn phải + MỘT chữ Ý lớn vắt ngang cả hai (theo ảnh gốc) */
+.j26-y5{display:flex;align-items:center;gap:4px}
+.j26-y5-lines{display:flex;flex-direction:column;align-items:flex-end}
+.j26-y5-lines .j26-s{line-height:1.25}
+.j26-y5-big{color:var(--j26-gold);font-weight:600;font-size:clamp(34px,min(3.9vw,7.6vh),64px);line-height:.95;text-shadow:1px 2px 8px rgba(10,18,50,.45)}
+.j26-l{color:var(--j26-gold);font-weight:600;font-size:clamp(20px,min(2.75vw,5.4vh),46px);line-height:1.08;white-space:nowrap;text-shadow:1px 2px 8px rgba(10,18,50,.45)}
+.j26-l b{font-weight:600;font-size:1.22em}
+.j26-l .w{color:#fff;font-size:.56em;font-weight:600}
+.j26-dot{position:absolute;z-index:3;width:clamp(12px,1.05vw,19px);height:clamp(12px,1.05vw,19px);border-radius:50%;background:#cba05f;box-shadow:0 0 8px rgba(203,160,95,.55);transform:translate(-50%,-50%)}
+.j26-comet{position:absolute;z-index:4;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;pointer-events:none;opacity:0;transition:opacity .5s ease;
+  background:radial-gradient(circle,#fff 0%,#ffd9a0 45%,rgba(242,173,97,0) 72%);
+  box-shadow:0 0 18px 6px rgba(255,215,160,.55),0 0 46px 14px rgba(242,173,97,.3)}
+.j26-comet.on{opacity:1}
+/* vị trí 12 khối + 12 chấm (desktop) — toạ độ trích từ ảnh lịch gốc, tất cả khối canh giữa (.c) */
+.j26-p1{top:7.4%;left:38.7%}  .j26-d1{top:11.1%;left:46.1%}
+.j26-p2{top:6.2%;left:79.6%}  .j26-d2{top:6.1%;left:80.7%}
+.j26-p3{top:26.8%;left:29.6%} .j26-d3{top:22.1%;left:30.4%}
+.j26-p4{top:15.4%;left:58.1%} .j26-d4{top:32.7%;left:58.4%}
+.j26-p4 .j26-l{font-size:clamp(18px,min(2.5vw,4.9vh),42px);line-height:1.02}
+.j26-p5{top:24.4%;left:89%}   .j26-d5{top:28.8%;left:96.1%}
+.j26-p6{top:38.5%;left:18.6%} .j26-d6{top:42%;left:5.9%}
+.j26-p7{top:45.5%;left:43.7%} .j26-d7{top:57.6%;left:44.4%}
+.j26-p8{top:45.2%;left:73.6%} .j26-d8{top:41.6%;left:73.9%}
+.j26-p9{top:58.5%;left:55.2%} .j26-d9{top:68.1%;left:49.4%}
+.j26-p10{top:62.3%;left:82.6%}.j26-d10{top:73.9%;left:95.2%}
+.j26-p11{top:75.1%;left:16.4%}.j26-d11{top:72%;left:8.1%}
+.j26-p12{top:81.6%;left:41.8%}.j26-d12{top:96.5%;left:42.3%}
+/* animation: sao chổi chạy dọc đường kẻ (JS), qua chấm nào thì chấm + chữ đó sáng lên (.lit) */
+body.will-animate .j26-board .j26-item{opacity:0;transform:translate(var(--tx,0),16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+body.will-animate .j26-board .j26-dot{opacity:0;transform:translate(-50%,-50%) scale(0);transition:opacity .45s var(--ease),transform .45s var(--ease)}
+body.will-animate .j26-board .j26-path{stroke-dasharray:1;stroke-dashoffset:1}
+body.will-animate .j26-board .j26-year{opacity:0;transition:opacity 1.2s var(--ease)}
+body.will-animate .j26-board .j26-item.lit{opacity:1;transform:translate(var(--tx,0),0)}
+body.will-animate .j26-board .j26-dot.lit{opacity:1;transform:translate(-50%,-50%) scale(1)}
+body.will-animate .j26-board .j26-year.lit{opacity:1}
+@media (prefers-reduced-motion:reduce){
+  body.will-animate .j26-board .j26-item{opacity:1;transform:translate(var(--tx,0),0);transition:none}
+  body.will-animate .j26-board .j26-dot{opacity:1;transform:translate(-50%,-50%);transition:none}
+  body.will-animate .j26-board .j26-path{stroke-dasharray:none;stroke-dashoffset:0}
+  body.will-animate .j26-board .j26-year{opacity:1;transition:none}
+  .j26-comet{display:none}
+}
+/* wrapper cuộn ngang: desktop không sinh hộp (full-bleed như cũ) */
+.j26-scroll{display:contents}
+/* mobile: GIỮ nguyên bố cục số-8 — khóa tỉ lệ landscape rồi cho VUỐT NGANG (spec: không xếp dọc, chỉ thu nhỏ đều) */
+@media(max-width:768px){
+  .j26-scroll{display:block;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
+    overscroll-behavior-x:contain;scrollbar-width:none}
+  .j26-scroll::-webkit-scrollbar{display:none}
+  /* khung cố định 960×600 (tỉ lệ 8:5 ≈ desktop) → rộng hơn màn nên vuốt ngang xem hết */
+  .j26-board{width:960px;height:auto;aspect-ratio:8/6.1;min-height:0}
+  /* chữ px cố định, tỉ lệ theo khung 960px (≈ 0.667× desktop) — vẫn đọc rõ, không xuống dòng */
+  .j26-s{font-size:14px}
+  .j26-l{font-size:28px}
+  .j26-logo{width:118px}
+  .j26-year{font-size:180px}
+  .j26-y5-big{font-size:38px}
+  .j26-dot{width:11px;height:11px}
+}
+
+/* ── CTA blobs ── */
+.section--blue{position:relative;overflow:hidden}
+.section--blue::before{content:'';position:absolute;width:400px;height:400px;border-radius:50%;top:-120px;right:-100px;background:radial-gradient(circle,rgba(255,255,255,.06) 0%,transparent 70%);pointer-events:none}
+.section--blue::after{content:'';position:absolute;width:280px;height:280px;border-radius:50%;bottom:-80px;left:-60px;background:radial-gradient(circle,rgba(255,255,255,.04) 0%,transparent 70%);pointer-events:none}
+
+/* ── RESPONSIVE (mobile) ── */
+@media(max-width:768px){
+  .ph-vision{height:300px}
+  .m-card{min-height:340px}
+  .rm-card{padding:30px 24px 84px}
+}
+</style>
+</head>
+<body class="typo-eco">
+
+<!-- HEADER (injected by shared.js) -->
+<div id="site-header"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-dots"></div>
+  <div class="page-hero-orb page-hero-orb-1"></div>
+  <div class="page-hero-orb page-hero-orb-2"></div>
+  <div class="container page-hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Trang chủ</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Tầm nhìn</span>
+    </nav>
+    <div class="page-hero-badge">★ Định hướng 2026 – 2030</div>
+    <h1 class="page-hero-title">Tầm nhìn <em>Ethan Ecom</em></h1>
+    <p class="page-hero-sub">Từ một team nhỏ ở Đồng Nai đến công ty e-commerce vận hành bài bản, tự chủ sản phẩm, tự chủ sản xuất, đưa sản phẩm Việt phát triển bền vững trên thị trường quốc tế.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main id="main">
+
+  <!-- 1) VISION STATEMENT — đích đến -->
+  <section class="section">
+    <div class="container">
+      <div class="story-grid">
+        <div>
+          <div class="story-badge reveal">Đích đến của chúng tôi</div>
+          <h2 class="st st--big reveal">Công ty e-commerce<br><em>vận hành bài bản</em></h2>
+          <div class="divider reveal"></div>
+          <p class="reveal" style="margin-top:22px;color:var(--text);line-height:1.85;font-size:var(--fs-base)">Trong <strong>3–5 năm tới</strong>, Ethan không chỉ là một team bán hàng online, mà trở thành một <strong style="color:var(--blue)">công ty e-commerce có hệ thống vận hành bài bản</strong>: từ nghiên cứu sản phẩm, marketing, bán hàng đến sản xuất.</p>
+          <p class="reveal" style="margin-top:16px;color:var(--text);line-height:1.85;font-size:var(--fs-base)">Mục tiêu là xây dựng một đội ngũ đủ mạnh, <strong style="color:var(--blue)">tự chủ về sản phẩm và sản xuất</strong> để phát triển bền vững, thành công trên thị trường quốc tế, với thị trường trọng tâm là Mỹ qua TikTok Shop US, Etsy và Amazon.</p>
+          <p class="reveal" style="margin-top:16px;color:var(--text);line-height:1.85;font-size:var(--fs-base)">Và hơn thế: chứng minh rằng một <strong>doanh nghiệp tại địa phương</strong> vẫn có thể vươn ra thế giới, tạo cơ hội cho các bạn trẻ tài năng được phát triển sự nghiệp ngay trên quê hương mình, thay vì phải sống xa quê.</p>
+        </div>
+        <div class="story-img-wrap reveal rr">
+          <div class="img-ph ph-vision">
+            <img src="assets/images/donglong.jpg" alt="Ethan Ecom vươn ra thị trường quốc tế" loading="lazy" onerror="this.style.visibility='hidden'">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5) HÀNH TRÌNH 2026 (bìa lịch cosmos, full màn hình) -->
+  <section class="section j26-sec" style="padding-bottom:0">
+    <div class="container">
+      <div class="sh c reveal">
+        <div class="sl">Tinh thần Ethan</div>
+        <h2 class="st st--big">Hành trình 2026</h2>
+        <div class="divider c"></div>
+        <p class="ss">12 thông điệp văn hoá dẫn lối đội ngũ Ethan trong năm 2026, mỗi chặng một tinh thần, cùng nhau vươn khơi.</p>
+      </div>
+    </div>
+
+    <div class="j26-scroll">
+    <div class="j26-board reveal" role="img" aria-label="Bản đồ hành trình 2026 của Ethan Ecom với 12 thông điệp văn hoá nối nhau trên một hải trình">
+        <svg class="j26-svg" viewBox="0 0 1000 750" preserveAspectRatio="none" aria-hidden="true">
+          <!-- nền dùng ảnh thật (nen-tamnhin.jpeg) — SVG chỉ còn đường hải trình -->
+          <path class="j26-path" pathLength="1" d="
+            M 461,83
+            C 583.7,59.1 682,46 807,46
+            C 848,46 887,62 916,91
+            C 948.5,123.5 965.8,170.3 961,216
+            C 954.7,275.7 719,245 584,245
+            C 479,245 413.9,169.8 304,166
+            C 154.1,160.8 59,190 59,315
+            C 59,363 103,392 150,402
+            C 171.5,406.6 222.7,399.4 233,380
+            C 241,365 218,350 201,350
+            C 185,350 171,362 171,378
+            C 171,394 192.4,404.5 209,408
+            C 267.7,420.5 349,432 444,432
+            C 559,432 629,312 739,312
+            C 801,312 859.3,338.2 900,385
+            C 940.7,431.8 987,493.4 952,554
+            C 897,649.3 659,511 494,511
+            C 344,511 214.9,499.1 81,540
+            C 48.5,549.9 22.8,575.1 20,607
+            C 16.9,642.9 43.1,674.4 75,686
+            C 187.8,727 293,724 423,724"/>
+        </svg>
+
+        <div class="j26-comet" aria-hidden="true"></div>
+
+        <div class="j26-logo"><img src="assets/images/logo.png" alt="" loading="lazy"></div>
+
+        <div class="j26-item j26-p1 c la">
+          <div class="j26-s">Tầm nhìn mới</div>
+          <div class="j26-l"><span class="w">Vị thế</span> <b>M</b>ới</div>
+        </div>
+        <span class="j26-dot j26-d1"></span>
+
+        <div class="j26-item j26-p2 c">
+          <div class="j26-s">Tư duy</div>
+          <div class="j26-l"><b>Đ</b>ột Phá</div>
+        </div>
+        <span class="j26-dot j26-d2"></span>
+
+        <div class="j26-item j26-p3 c la">
+          <div class="j26-s">Tôn trọng lẫn nhau</div>
+          <div class="j26-l"><span class="w">Cùng nhau</span> <b>T</b>iến bước</div>
+        </div>
+        <span class="j26-dot j26-d3"></span>
+
+        <div class="j26-item j26-p4 c">
+          <div class="j26-s">Sức mạnh<br>của sự</div>
+          <div class="j26-l"><b>T</b>hấu<br><b>H</b>iểu</div>
+        </div>
+        <span class="j26-dot j26-d4"></span>
+
+        <div class="j26-item j26-p5 c">
+          <div class="j26-y5">
+            <div class="j26-y5-lines">
+              <div class="j26-s">Phối hợp Ăn</div>
+              <div class="j26-s">Công việc Như</div>
+            </div>
+            <span class="j26-y5-big">Ý</span>
+          </div>
+        </div>
+        <span class="j26-dot j26-d5"></span>
+
+        <div class="j26-item j26-p6 c la">
+          <div class="j26-s">Trọn vẹn niềm tin</div>
+          <div class="j26-l"><span class="w">Chinh phục</span> <b>Đ</b>ỉnh cao</div>
+        </div>
+        <span class="j26-dot j26-d6"></span>
+
+        <div class="j26-item j26-p7 c la">
+          <div class="j26-s">Tâm trạng tươi vui</div>
+          <div class="j26-l"><b>Đ</b>ẩy lùi</div>
+          <div class="j26-s">áp lực</div>
+        </div>
+        <span class="j26-dot j26-d7"></span>
+
+        <div class="j26-item j26-p8 c">
+          <div class="j26-s">Nâng tầm quản lý</div>
+          <div class="j26-l"><span class="w">Vững trí</span> <b>V</b>ươn xa</div>
+        </div>
+        <span class="j26-dot j26-d8"></span>
+
+        <div class="j26-item j26-p9 c la">
+          <div class="j26-s">Đầu lạnh tỉnh táo</div>
+          <div class="j26-l"><span class="w">Trái tim</span> <b>N</b>hiệt huyết</div>
+        </div>
+        <span class="j26-dot j26-d9"></span>
+
+        <div class="j26-item j26-p10 c la">
+          <div class="j26-s">Lắng nghe để hiểu</div>
+          <div class="j26-l"><b>T</b>hấu hiểu</div>
+          <div class="j26-s">để đi xa</div>
+        </div>
+        <span class="j26-dot j26-d10"></span>
+
+        <div class="j26-item j26-p11 c la">
+          <div class="j26-s">Tranh luận để</div>
+          <div class="j26-l"><b>P</b>hát triển</div>
+        </div>
+        <span class="j26-dot j26-d11"></span>
+
+        <div class="j26-item j26-p12 c la">
+          <div class="j26-s">Kết tinh thành quả</div>
+          <div class="j26-l"><b>R</b>ực rỡ</div>
+          <div class="j26-s">vinh quang</div>
+        </div>
+        <span class="j26-dot j26-d12"></span>
+
+        <div class="j26-year">2026</div>
+    </div>
+    </div>
+  </section>
+
+  <!-- 2) NGUYÊN TẮC BẤT DI BẤT DỊCH — statement full-bleed (điểm nhấn) -->
+  <section class="section principle-hero" id="nguyen-tac">
+    <div class="container">
+      <div class="ph-mark reveal" aria-hidden="true">&ldquo;</div>
+      <div class="sl reveal d1" style="margin-top:18px">Nguyên tắc bất di bất dịch</div>
+      <h2 class="ph-quote">
+        <span class="reveal d2">Không đánh đổi</span><br>
+        <span class="reveal d3"><em>sự tử tế</em> và <em>uy tín</em></span><br>
+        <span class="reveal d4">để lấy <span class="ph-dim">doanh số</span>.</span>
+      </h2>
+      <p class="ph-sub reveal d5">Doanh số có thể làm lại, uy tín thì không. Nguyên tắc này là la bàn cho mọi quyết định của Ethan: từ chất lượng từng sản phẩm gửi đi, đến cách chúng tôi đối xử với khách hàng, đồng đội và đối tác.</p>
+      <div class="ph-chips reveal d6">
+        <span class="ph-chip"><b>01</b> Đồng lòng</span>
+        <span class="ph-chip"><b>02</b> Tử tế</span>
+        <span class="ph-chip"><b>03</b> Trách nhiệm</span>
+        <span class="ph-chip"><b>04</b> Cải tiến</span>
+        <span class="ph-chip"><b>05</b> Bền bỉ</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3) MISSION — deck 3 thẻ ảnh -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="sh c reveal">
+        <div class="sl">Sứ mệnh</div>
+        <h2 class="st st--big">Điều chúng tôi làm <em>mỗi ngày</em></h2>
+        <div class="divider c"></div>
+        <p class="ss">Ngoài doanh số, mỗi ngày Ethan muốn tạo ra giá trị thật, cho khách hàng, cho con người và cho quê hương.</p>
+      </div>
+      <div class="m-deck">
+        <div class="reveal rs d1">
+        <article class="m-card">
+          <img src="assets/images/hero/maytheu.jpg" alt="Xưởng sản xuất in-house của Ethan Ecom" loading="lazy" onerror="this.style.visibility='hidden'">
+          <span class="m-arrow" aria-hidden="true">↗</span>
+          <div class="m-body">
+            <span class="m-tag">Sản phẩm</span>
+            <h3>Giá trị thật cho khách hàng</h3>
+            <p>Tạo ra những sản phẩm chất lượng, có <em>giá trị thật</em> cho khách hàng quốc tế, kiểm soát từ thiết kế đến xưởng sản xuất in-house, giữ vững <em>rating 4–5 sao</em> trên các sàn.</p>
+          </div>
+        </article>
+        </div>
+        <div class="reveal rs d2">
+        <article class="m-card">
+          <img src="assets/images/about/team-work.jpg" alt="Đội ngũ Ethan Ecom làm việc cùng nhau" loading="lazy" onerror="this.style.visibility='hidden'">
+          <span class="m-arrow" aria-hidden="true">↗</span>
+          <div class="m-body">
+            <span class="m-tag">Con người</span>
+            <h3>Môi trường để cùng đi lên</h3>
+            <p>Xây dựng môi trường làm việc chất lượng, văn hoá tốt hơn mỗi ngày, nơi mỗi thành viên được học hỏi, phát triển năng lực và <em>nhìn thấy tương lai của mình</em>.</p>
+          </div>
+        </article>
+        </div>
+        <div class="reveal rs d3">
+        <article class="m-card">
+          <img src="assets/images/about/congty.jpg" alt="Văn phòng Ethan Ecom tại Võ Dõng, Đồng Nai" loading="lazy" onerror="this.style.visibility='hidden'">
+          <span class="m-arrow" aria-hidden="true">↗</span>
+          <div class="m-body">
+            <span class="m-tag">Quê hương</span>
+            <h3>Doanh nghiệp địa phương vươn xa</h3>
+            <p>Kể câu chuyện Ethan lớn lên từng ngày, một công ty đặt tại <em>Võ Dõng, Đồng Nai</em> vẫn có thể <em>chinh phục thị trường Mỹ</em>, mở ra cơ hội cho người trẻ tài năng tại địa phương.</p>
+          </div>
+        </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4) ROADMAP — 3 giai đoạn, thẻ số so le -->
+  <section class="section">
+    <div class="container">
+      <div class="sh c reveal">
+        <div class="sl">Lộ trình phát triển</div>
+        <h2 class="st st--big">Ba giai đoạn <em>vươn tầm</em></h2>
+        <div class="divider c"></div>
+        <p class="ss">Ethan phát triển thương hiệu theo từng bước chắc chắn, mỗi giai đoạn là một nền móng cho giai đoạn kế tiếp.</p>
+      </div>
+      <div class="roadmap">
+        <div class="rm-wrap">
+        <div class="rm-card rm-card--1">
+          <span class="rm-now-badge">Hiện tại</span>
+          <span class="rm-num">01.</span>
+          <span class="rm-tag">Giai đoạn 1</span>
+          <h3>Đội ngũ &amp; thương hiệu tuyển dụng</h3>
+          <p>Xây dựng đội ngũ đủ mạnh và văn hoá vững, thu hút những người trẻ tài năng cùng chí hướng, đặt nền móng con người cho mọi mục tiêu dài hạn.</p>
+          <span class="rm-arrow" aria-hidden="true">↗</span>
+        </div>
+        </div>
+        <div class="rm-wrap">
+        <div class="rm-card rm-card--2">
+          <span class="rm-num">02.</span>
+          <span class="rm-tag">Giai đoạn 2</span>
+          <h3>Khách hàng &amp; đối tác B2B</h3>
+          <p>Mở rộng hợp tác với khách hàng và đối tác doanh nghiệp, phát huy thế mạnh tự chủ sản xuất in-house (POD, thêu, in) để trở thành đối tác tin cậy.</p>
+          <span class="rm-arrow" aria-hidden="true">↗</span>
+        </div>
+        </div>
+        <div class="rm-wrap">
+        <div class="rm-card rm-card--3">
+          <span class="rm-num">03.</span>
+          <span class="rm-tag">Giai đoạn 3</span>
+          <h3>Giá trị công ty &amp; nhà đầu tư</h3>
+          <p>Khẳng định giá trị doanh nghiệp với hệ thống vận hành bài bản, minh bạch, sẵn sàng cho những cơ hội đầu tư và bước phát triển lớn hơn.</p>
+          <span class="rm-arrow" aria-hidden="true">↗</span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER (injected by shared.js) -->
+<div id="site-footer"></div>
+
+<!-- Shared JS (must be last) -->
+<script src="assets/js/shared.js?v=housef05"></script>
+<script src="assets/js/page-animations.js"></script>
+
+<!-- Hành trình 2026: cuộn tới đâu vẽ tới đó — mỗi nhịp lướt lộ 2 điểm, 6 nhịp trọn 12; cuộn ngược thu lại -->
+<script>
+(function () {
+  var board = document.querySelector('.j26-board');
+  if (!board) return;
+  var path  = board.querySelector('.j26-path');
+  var comet = board.querySelector('.j26-comet');
+  var year  = board.querySelector('.j26-year');
+  var dots  = [].slice.call(board.querySelectorAll('.j26-dot'));
+  var items = [].slice.call(board.querySelectorAll('.j26-item'));
+
+  function litAll() {
+    dots.forEach(function (d) { d.classList.add('lit'); });
+    items.forEach(function (i) { i.classList.add('lit'); });
+    if (year) year.classList.add('lit');
+    if (path) { path.style.strokeDashoffset = 0; path.style.strokeDasharray = 'none'; }
+  }
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var mobile = window.matchMedia('(max-width: 768px)').matches;
+  if (!path.getTotalLength) { litAll(); return; } // trình duyệt không đo được path
+
+  var L = path.getTotalLength();
+
+  // ── Bắt chuẩn: neo 12 chấm đúng lên đường kẻ ──
+  // Lấy mẫu path, rồi theo đúng thứ tự hải trình tìm điểm gần nhất với vị trí CSS
+  // của từng chấm → ghi lại tiến độ (fraction) + đặt lại toạ độ % chính xác.
+  var ORDER = [1, 2, 5, 4, 3, 6, 7, 8, 10, 9, 11, 12]; // thứ tự chấm dọc theo đường (path mới theo ảnh gốc)
+  var N = 2400, samples = [];
+  for (var i = 0; i <= N; i++) samples.push(path.getPointAtLength(i / N * L));
+  var byN = {}, frac = {};
+  dots.forEach(function (d) {
+    var n = (d.className.match(/j26-d(\d+)/) || [])[1];
+    if (n) byN[n] = d;
+  });
+  var prev = 0;
+  ORDER.forEach(function (n) {
+    var d = byN[n]; if (!d) return;
+    var tx = d.offsetLeft / board.clientWidth * 1000;   // vị trí dự kiến → toạ độ viewBox
+    var ty = d.offsetTop / board.clientHeight * 750;
+    var lim = Math.min(prev + Math.round(N * .25), N), best = prev, bd = Infinity;
+    for (var k = prev; k <= lim; k++) {
+      var dx = samples[k].x - tx, dy = samples[k].y - ty, dd = dx * dx + dy * dy;
+      if (dd < bd) { bd = dd; best = k; }
+    }
+    prev = best;
+    frac[n] = best / N;
+    d.style.left = (samples[best].x / 10) + '%';   // % theo viewBox → đúng ở mọi viewport
+    d.style.top  = (samples[best].y / 7.5) + '%';
+  });
+
+  // mobile: giữ số-8 (chấm đã neo đúng đường) nhưng hiển thị tĩnh, cuộn ngang xem — không scrub
+  if (mobile || reduce) { litAll(); return; }
+
+  // ghép chấm j26-dN với khối chữ j26-pN + tiến độ sáng của nó trên đường
+  var pairs = dots.map(function (d) {
+    var n = (d.className.match(/j26-d(\d+)/) || [])[1];
+    return { dot: d, item: board.querySelector('.j26-p' + n), t: (frac[n] !== undefined ? frac[n] : 1), lit: false };
+  });
+
+  // ── Scrub theo cuộn: board đi qua viewport ≈ 6 nhịp lướt, mỗi nhịp lộ 2 điểm ──
+  // stops[k] = tiến độ đường tại chấm thứ 2k của hải trình → chia hành trình cuộn
+  // thành 6 đoạn ĐỀU nhau, cuối mỗi đoạn đường vẽ vừa chạm đúng chấm chẵn (2,4,…,12).
+  // Cuộn ngược thì đường và chữ thu lại (toggle 2 chiều).
+  var stops = [0];
+  for (var s = 1; s <= 6; s++) {
+    var n2 = ORDER[2 * s - 1];
+    stops.push(s === 6 ? 1 : (frac[n2] !== undefined ? frac[n2] : s / 6));
+  }
+  function fmap(p) { // tiến độ cuộn [0..1] → tiến độ đường (nội suy trong từng đoạn)
+    if (p <= 0) return 0;
+    if (p >= 1) return 1;
+    var seg = Math.min(5, Math.floor(p * 6)), lo = p * 6 - seg;
+    return stops[seg] + (stops[seg + 1] - stops[seg]) * lo;
+  }
+
+  var ticking = false;
+  function update() {
+    ticking = false;
+    var vh = window.innerHeight, r = board.getBoundingClientRect();
+    // bắt đầu sau khi lướt qua 10% board; mép dưới board chạm đáy màn → 1
+    var p = ((vh - r.top) / r.height - .1) / .9;
+    var f = fmap(Math.max(0, Math.min(1, p)));
+    path.style.strokeDashoffset = 1 - f;
+    var pt = path.getPointAtLength(f * L);
+    comet.style.left = (pt.x / 10) + '%';
+    comet.style.top  = (pt.y / 7.5) + '%';
+    comet.classList.toggle('on', f > .001 && f < .999);
+    pairs.forEach(function (pr) {
+      var on = f > 0 && f >= pr.t - .004; // f=0 (chưa qua 10%): tắt hết, kể cả chấm xuất phát
+      pr.dot.classList.toggle('lit', on);
+      if (pr.item) pr.item.classList.toggle('lit', on);
+    });
+    if (year) year.classList.toggle('lit', f >= .9);
+  }
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
+})();
+</script>
+
+<!-- Lộ trình: 3 thẻ trượt lên theo tiến độ cuộn, mỗi thẻ một tốc độ (scrub 2 chiều kiểu orfeo) -->
+<script>
+(function () {
+  var wraps = [].slice.call(document.querySelectorAll('.roadmap .rm-wrap'));
+  if (!wraps.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; // giữ tĩnh
+
+  var F_DESK = [40, 110, 180]; // biên độ trượt từng thẻ (desktop: thẻ sau đi quãng dài hơn)
+  var F_MOB  = 70;             // mobile xếp dọc: mỗi thẻ tự trượt khi vào màn
+  var ticking = false;
+
+  function ease(t) { return 1 - Math.pow(1 - t, 3); }
+
+  function update() {
+    ticking = false;
+    var vh = window.innerHeight, mob = window.innerWidth < 769;
+    wraps.forEach(function (w, i) {
+      // trừ translate hiện tại để lấy vị trí layout gốc — tránh vòng lặp đo trên chính transform
+      var top = w.getBoundingClientRect().top - (w._ty || 0);
+      var p = Math.max(0, Math.min(1, (vh - top) / (vh * .75)));
+      var ty = (1 - ease(p)) * (mob ? F_MOB : F_DESK[i]);
+      w._ty = ty;
+      w.style.transform = 'translateY(' + ty.toFixed(1) + 'px)';
+      w.style.opacity = Math.min(1, p * 1.6);
+    });
+  }
+
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+})();
+</script>
+
+<!-- Contact popup + dock 2 nút gim (Ứng tuyển ngay / Liên hệ ngay) -->
+<div id="contact-popup-root"></div>
+<script src="assets/js/contact-popup.js?v=20260722y"></script>
+</body>
+</html>
