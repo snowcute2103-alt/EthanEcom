@@ -3917,7 +3917,7 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
   @media (max-width:1023px){
     .eco-section{--eco-size:min(420px,86vw);padding:40px 0 96px}
     .eco-inner{grid-template-columns:1fr;gap:52px;padding:0 24px}
-    .eco-visual{position:static;padding:40px 0 64px} /* chừa chỗ cho cung ngoài tràn khỏi khối orbit */
+    .eco-visual{position:static;padding:40px 0 64px;overflow-x:clip} /* chừa chỗ cho cung ngoài tràn khỏi khối orbit; clip ngang để vòng 475px không đẩy trang tràn ngang trên mobile */
     .eco-title{font-size:clamp(24px,4.6vw,32px)}
   }
   @media (max-width:767px){
