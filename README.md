@@ -2,8 +2,6 @@
 
 > Trang hồ sơ năng lực trực tuyến của **Ethan Ecom** — nơi hàng Việt vươn tầm thế giới qua thiết kế đỉnh cao và công nghệ thực chiến.
 
-🌐 **Live site:** [https://snoww-dev.github.io/Ethan/](https://snoww-dev.github.io/Ethan/)
-
 ---
 
 ## Giới thiệu
