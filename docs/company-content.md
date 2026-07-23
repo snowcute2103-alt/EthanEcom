@@ -24,7 +24,7 @@
 | Email Tuyển dụng | hr@ethanecom.com |
 | Phone | +84 967 473 979 |
 | Quy mô | 88 nhân sự (report 18/06/2026) — 56 nữ / 32 nam |
-| Lĩnh vực | TMĐT xuyên biên giới (cross-border) — POD, thêu, in giấy, in nhựa 3D |
+| Lĩnh vực | TMĐT xuyên biên giới (cross-border) — thêu, in giấy, in nhựa 3D, POD |
 | Thị trường | Quốc tế, trọng tâm **Mỹ (~90%)** qua TikTok Shop US, Etsy (+ Amazon, eBay, Temu, Shopify) |
 | Sản phẩm chủ lực | Áo thun · Mũ · Cốc · Poster · Sticker |
 | USP | Tự chủ sản xuất in-house + tinh thần đồng đội & tư duy phát triển dài hạn |

@@ -135,7 +135,7 @@ function buildFooter() {
         <h3>Dịch vụ</h3>
         <ul>
           <li><a href="dich-vu">TMĐT xuyên biên giới</a></li>
-          <li><a href="dich-vu">Print On Demand (POD)</a></li>
+          <li><a href="dich-vu">Fulfillment đơn hàng</a></li>
           <li><a href="dich-vu">Thêu công nghiệp</a></li>
           <li><a href="dich-vu">In giấy &amp; Sticker</a></li>
           <li><a href="dich-vu">In nhựa 3D</a></li>
