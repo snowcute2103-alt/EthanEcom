@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ethan Ecom: TMĐT xuyên biên giới, tự chủ sản xuất tại Đồng Nai</title>
-<meta name="description" content="Ethan Ecom, nơi khơi nguồn sáng tạo và hỗ trợ sự phát triển cá nhân. Doanh nghiệp TMĐT xuyên biên giới, tự chủ sản xuất POD/thêu/in, bán đa sàn TikTok Shop US, Etsy, Amazon. Đồng lòng đồng sức, bứt phá gặt thành công.">
+<meta name="description" content="Ethan Ecom, nơi khơi nguồn sáng tạo và hỗ trợ sự phát triển cá nhân. Doanh nghiệp TMĐT xuyên biên giới, tự chủ sản xuất in-house (thêu, in giấy, in 3D), bán đa sàn TikTok Shop US, Etsy, Amazon. Đồng lòng đồng sức, bứt phá gặt thành công.">
 <link rel="stylesheet" href="assets/css/shared.css?v=housef08">
 <style>
 /* ── PAGE-SPECIFIC STYLES ── */
@@ -637,12 +637,14 @@
 @media(max-width:520px){
   .bs2{gap:30px;padding-top:16px}
   .bs2-left{gap:26px}                 /* trước 100px — nguồn khoảng trống lớn nhất */
-  .bs2-title{margin-bottom:18px}
+  /* Tiêu đề "CON NGƯỜI LÀ TÀI SẢN LỚN NHẤT" — co chữ theo bề ngang để luôn nằm 1 hàng */
+  .bs2-title{margin-bottom:18px;white-space:nowrap;font-size:clamp(15px,calc((100vw - 48px) * .051),23px)}
+  .bs2-label{display:none}            /* ẩn nhãn "Văn hoá công ty" trên điện thoại */
   .bs2-img img{max-height:196px}      /* trước 340px */
-  .bs2-grid{grid-template-columns:1fr}
-  .bs2-cell{min-height:0;padding:18px 18px;gap:10px}
-  .bs2-cell-text{font-size:14px;line-height:1.5}
-  .bs2-num{font-size:42px}            /* trước 70px (--fs-numeral) */
+  .bs2-grid{grid-template-columns:1fr 1fr}   /* 2 cột trên điện thoại */
+  .bs2-cell{min-height:150px;padding:16px 14px;gap:8px}
+  .bs2-cell-text{font-size:12.5px;line-height:1.45;max-width:none}
+  .bs2-num{font-size:36px}            /* trước 70px (--fs-numeral) */
 }
 
 /* ── STATS — Holographic 3D Cards ── */
@@ -1671,6 +1673,41 @@
   .tcard-dark p{font-size:var(--fs-caption)}
 }
 
+/* ── PHONE: banner trang chủ — ảnh gọn ở trên, chữ nằm DƯỚI ảnh trên nền sáng (chữ đổi màu navy/blue) ── */
+@media(max-width:640px){
+  /* Ảnh: đưa vào luồng, cao gọn; bỏ lớp phủ tối + đèn rọi vì chữ không còn nằm trên ảnh */
+  /* padding:0 !important để bỏ 36px section-padding ép vào → ảnh phủ kín khung, sát mép trên */
+  .hero{min-height:auto;background:#fff;justify-content:flex-start;padding:0 !important}
+  .hero-bg{position:relative;height:clamp(200px,34vh,300px);overflow:hidden}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.98) saturate(1.03)}
+  .hero-scrim{display:none}
+  .hero .lamp{display:none}
+
+  /* Khối chữ dưới ảnh — nền trắng, chữ tối (double-class để thắng .hero-inner padding ở ≤480) */
+  .hero-inner.hero-inner--center{
+    padding-top:clamp(26px,5vh,42px);
+    padding-bottom:clamp(26px,5vh,42px);
+  }
+  .hero-h1--center{
+    font-size:clamp(34px,10vw,44px);
+    background-image:linear-gradient(90deg,#16305C,#1E7FE0,#16305C);
+    background-size:200% 100%;
+  }
+  .hero-slogan{margin-top:12px}
+  .hero-slogan-text{
+    /* co chữ theo bề ngang + siết letter-spacing để slogan luôn nằm 1 hàng */
+    font-size:clamp(10px,calc((100vw - 32px) * .0335),15px);
+    letter-spacing:.02em;
+    white-space:nowrap;
+    color:#1B2A4A;
+  }
+  .hero-divider{
+    margin-top:14px;
+    background:linear-gradient(90deg,transparent,rgba(22,48,92,.32) 14%,rgba(22,48,92,.32) 86%,transparent);
+  }
+  .hero-lead,.hero-lead--sub{display:none}
+}
+
 /* ── SERVICES BENTO RESPONSIVE ── */
 @media(max-width:1024px){
   .svb-header{flex-direction:column;align-items:flex-start;gap:16px}
@@ -1700,7 +1737,7 @@
   /* Section sub */
   .ss{font-size:var(--fs-small)}
   /* Section padding */
-  section,.section{padding-top:48px !important;padding-bottom:48px !important}
+  section,.section{padding-top:30px !important;padding-bottom:30px !important}
 
   /* ── Hero ticker ── */
   .hero-ticker{display:none}
@@ -1866,7 +1903,7 @@
 /* ── 480px — very small phones ── */
 @media(max-width:480px){
   /* Tighter section padding */
-  section,.section{padding-top:36px !important;padding-bottom:36px !important}
+  section,.section{padding-top:30px !important;padding-bottom:30px !important}
 
   /* Hero */
   .hero-inner{padding:100px 16px 160px}
@@ -2598,6 +2635,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
   display:block;font-size:20px;font-weight:var(--fw-regular);
   letter-spacing:.24em;line-height:1.4;margin-top:14px;
 }
+.sub-br{display:none}   /* ngắt dòng phụ đề chỉ bật trên điện thoại */
 
 /* Layout: orbit (left) + panel (right) */
 .team-orbit .orbit-wrap{position:relative;display:flex;align-items:stretch;gap:var(--sp-2xl);margin-top:var(--sp-xl);z-index:1}
@@ -2725,6 +2763,25 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
   .team-orbit .member:not(.is-featured) .tag{opacity:1}
   .team-orbit .member:hover .bubble{transform:scale(1.15)}
   .team-orbit .orbit:has(.member:hover) .member:not(:hover) .bubble{transform:scale(1)}
+
+  /* ── Tap-to-focus (giống desktop): khối đang chọn giữ cỡ hiện tại,
+        các khối KHÔNG bấm vào thu nhỏ 1/2 cả ẢNH lẫn CHỮ ── */
+  .team-orbit .orbit{align-items:start}
+  .team-orbit .member{transition:width .4s cubic-bezier(.4,0,.2,1)}
+  .team-orbit .bubble{transition:width .4s cubic-bezier(.4,0,.2,1),height .4s cubic-bezier(.4,0,.2,1),box-shadow .4s}
+  .team-orbit .member .tag b,.team-orbit .member .tag span{transition:font-size .4s cubic-bezier(.4,0,.2,1)}
+  .team-orbit .member:not(.is-featured){--size:min(66px,17vw) !important}   /* 1/2 của 132px */
+  .team-orbit .member:not(.is-featured) .tag b{font-size:8px;letter-spacing:.05em}      /* 1/2 của 15px */
+  .team-orbit .member:not(.is-featured) .tag span{font-size:7px}                         /* 1/2 của 13px */
+  .team-orbit .member.is-featured .bubble{box-shadow:0 14px 34px rgba(13,32,54,.3)}
+}
+
+/* ≤520 — thu nhỏ 2 dòng tiêu đề "Đội ngũ của chúng tôi" + "Cùng nhau…" trên điện thoại */
+@media(max-width:520px){
+  .team-orbit{padding-top:60px !important}   /* +30px so với 30px chung → thoáng phần trên */
+  .team-orbit .team-head h2{font-size:20px}
+  .team-orbit .team-head h2 .sub{font-size:12px;letter-spacing:.1em;margin-top:10px}
+  .sub-br{display:inline}                    /* bật ngắt "Cùng nhau, chúng mình / vun đắp…" */
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -2809,7 +2866,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
 
     <!-- Header -->
     <div class="team-head">
-      <h2>Đội ngũ của chúng tôi<span class="sub">Cùng nhau, chúng mình vun đắp từng giá trị nhỏ.</span></h2>
+      <h2>Đội ngũ của chúng tôi<span class="sub">Cùng nhau, chúng mình <br class="sub-br">vun đắp từng giá trị nhỏ.</span></h2>
     </div>
 
     <!-- Avatars (left) + info panel (right) -->
@@ -2900,7 +2957,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
 
         <div class="panel-card" data-for="design">
           <div class="p-name">Design</div>
-          <div class="p-role">Đội Design EMB &amp; POD</div>
+          <div class="p-role">Đội Design sản phẩm &amp; thương hiệu</div>
           <p class="p-quote">Từng đường kim mũi chỉ đều bắt đầu từ một ý tưởng được chăm chút.</p>
         </div>
 
@@ -3048,6 +3105,10 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
     el.addEventListener('mouseenter', function(){
       if(i !== featured){ featured = i; layout(); }
     });
+    /* mobile (touch): bấm để chọn khối làm "featured" (to lên, các khối khác nhỏ 1/2) */
+    el.addEventListener('click', function(){
+      if(i !== featured){ featured = i; layout(); }
+    });
   });
   /* rời khỏi cụm avatar → về trạng thái nghỉ (Founder featured, khớp panel mặc định) */
   orbit.addEventListener('mouseleave', function(){
@@ -3134,7 +3195,7 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
   /* Cỡ chữ headline slide — role riêng của section này, chỉnh 1 chỗ tại đây */
   .wce-section{--fs-wce-slide:clamp(26px, 3.4vw, 46px); position:relative;background:#ffffff;padding:64px 0;overflow:hidden}
   .wce-inner{position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:0 20px}
-  .wce-header{text-align:center;max-width:880px;margin:0 auto 40px}
+  .wce-header{text-align:center;max-width:1040px;margin:0 auto 40px}
   .wce-eyebrow{font-family:var(--font-heading);font-weight:var(--fw-regular);font-size:20px;line-height:1.4;letter-spacing:.24em;color:var(--navy,#16305C);text-transform:uppercase;margin:0}
   .wce-title{font-family:var(--font-heading);font-weight:var(--fw-regular);font-size:var(--fs-display);line-height:1.3;letter-spacing:.05em;color:var(--navy,#16305C);text-transform:uppercase;margin:14px 0 0}
   .wce-lead{font-family:var(--font-text);font-weight:var(--fw-light);font-size:var(--fs-md);line-height:1.6;color:var(--navy,#16305C);max-width:640px;margin:12px auto 0}
@@ -3187,7 +3248,7 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
   <div class="wce-inner">
     <header class="wce-header reveal">
       <p class="wce-eyebrow">Vì sao chọn Ethan</p>
-      <h2 class="wce-title">Thế mạnh làm nên<br>một đội ngũ POD tự chủ</h2>
+      <h2 class="wce-title">Thế mạnh làm nên<br>một đội ngũ tự chủ toàn chuỗi</h2>
       <p class="wce-lead">Chúng tôi không thuê ngoài từng mảnh, thiết kế, marketing và sản xuất đều nằm trong một mái nhà, đó là lý do Ethan làm chủ được tốc độ và chất lượng.</p>
     </header>
 
@@ -4859,7 +4920,7 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
     { num:"02", name:"General Accountant", img:"assets/images/team/general-accountant.jpg",
       desc:"Phụ trách kế toán tổng hợp, quản lý sổ sách, báo cáo tài chính và dòng tiền cho hoạt động thương mại điện tử." },
     { num:"03", name:"Seller POD", img:"assets/images/team/seller-pod.jpg",
-      desc:"Khai phá ngách Print-on-Demand. Nắm bắt xu hướng nhanh nhạy và mở rộng các thị trường đầy tiềm năng trên Amazon và Etsy." },
+      desc:"Khai phá các ngách sản phẩm tiềm năng. Nắm bắt xu hướng nhanh nhạy và mở rộng thị trường trên Amazon và Etsy." },
     { num:"04", name:"Embroidery Technician", img:"assets/images/team/embroidery-technician.jpg",
       desc:"Vận hành máy thêu, xử lý file thiết kế và đảm bảo tiến độ sản xuất cho các đơn hàng thêu cá nhân hóa." },
     { num:"05", name:"Graphic Designer", img:"assets/images/team/graphic-designer.jpg",
