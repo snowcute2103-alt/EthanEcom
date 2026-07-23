@@ -177,6 +177,8 @@
 .emp-card:hover{border-color:rgba(43,143,255,.45);box-shadow:0 18px 48px rgba(9,16,32,.45);transform:translateY(-4px)}
 .emp-head{display:flex;align-items:center;gap:14px;padding:20px 22px;border-bottom:1px solid rgba(255,255,255,.08)}
 .emp-avatar-img{width:48px;height:48px;border-radius:50%;object-fit:cover;object-position:top;flex-shrink:0;background:#232733}
+/* avatar chữ tạm (người chưa có ảnh) */
+.emp-avatar-txt{display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:var(--fw-semibold);color:#9fc0ee;font-size:18px;text-transform:uppercase;background:linear-gradient(140deg,#1f2937,#111827)}
 .emp-id{flex:1;min-width:0}
 .emp-name{font-family:var(--font-lead);font-size:var(--fs-base);font-weight:var(--fw-semibold);color:#fff}
 .emp-role{font-size:var(--fs-caption);color:#9aa4b5;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -707,15 +709,15 @@ html.smx-lock,body.smx-lock{overflow:hidden}
       <div class="emp-grid">
         <div class="emp-card reveal d1">
           <div class="emp-head">
-            <img class="emp-avatar-img" src="assets/images/connguoi/Duyen-Seller.JPG" alt="Duyên" loading="lazy" decoding="async">
+            <img class="emp-avatar-img" src="assets/images/connguoi/Duyn-KD3.jpeg" alt="Duyên Trần" loading="lazy" decoding="async">
             <div class="emp-id">
-              <div class="emp-name">Duyên</div>
-              <div class="emp-role">Seller · Khối Kinh Doanh</div>
+              <div class="emp-name">Duyên Trần</div>
+              <div class="emp-role">Sell Manager · Khối Kinh Doanh</div>
             </div>
             <div class="emp-time">Hôm qua, 10:12</div>
           </div>
           <div class="emp-body">
-            <p class="emp-quote">Điều mình thích nhất ở Ethan là mọi người thật sự "đồng lòng". Khi đơn hàng dồn dập mùa lễ, cả team ở lại phụ nhau đóng gói, không có chuyện "việc ai người đó lo".</p>
+            <p class="emp-quote">Điều mình thích nhất ở Ethan là Boss luôn tạo cơ hội để nuôi dưỡng con người, không chỉ phục vụ trong công việc mà còn cả kỹ năng trong cuộc sống.</p>
           </div>
           <div class="emp-foot">
             <input class="emp-input" type="text" placeholder="Viết cảm nhận..." aria-label="Viết cảm nhận">
@@ -730,15 +732,15 @@ html.smx-lock,body.smx-lock{overflow:hidden}
         </div>
         <div class="emp-card reveal d2">
           <div class="emp-head">
-            <img class="emp-avatar-img" src="assets/images/connguoi/Thach-designer.JPG" alt="Thạch" loading="lazy" decoding="async">
+            <img class="emp-avatar-img" src="assets/images/connguoi/Hana-KD6.jpeg" alt="Hân Đặng" loading="lazy" decoding="async">
             <div class="emp-id">
-              <div class="emp-name">Thạch</div>
-              <div class="emp-role">Graphic Designer · Creative Design</div>
+              <div class="emp-name">Hân Đặng</div>
+              <div class="emp-role">Sell Manager · Khối Kinh Doanh</div>
             </div>
             <div class="emp-time">2 ngày trước</div>
           </div>
           <div class="emp-body">
-            <p class="emp-quote">Mình vào Ethan khi chưa biết gì về thiết kế cho thị trường Mỹ. Sau 6 tháng được đào tạo và làm thật, giờ mình tự tin lên design bán chạy. Ở đây học được là được làm ngay.</p>
+            <p class="emp-quote">Muốn đi riêng thì đi một mình, muốn đi chung thì đi cùng nhau.</p>
           </div>
           <div class="emp-foot">
             <input class="emp-input" type="text" placeholder="Viết cảm nhận..." aria-label="Viết cảm nhận">
@@ -753,15 +755,15 @@ html.smx-lock,body.smx-lock{overflow:hidden}
         </div>
         <div class="emp-card reveal d3">
           <div class="emp-head">
-            <img class="emp-avatar-img" src="assets/images/connguoi/Hana-Khoisanxuat.JPG" alt="Hana" loading="lazy" decoding="async">
+            <div class="emp-avatar-img emp-avatar-txt" aria-hidden="true">S</div>
             <div class="emp-id">
-              <div class="emp-name">Hana</div>
-              <div class="emp-role">Kỹ thuật thêu · Khối Sản Xuất</div>
+              <div class="emp-name">Sang Nguỵ</div>
+              <div class="emp-role">R&amp;D · Khối Sản Xuất</div>
             </div>
             <div class="emp-time">Tuần trước</div>
           </div>
           <div class="emp-body">
-            <p class="emp-quote">Xưởng thêu tự chủ nên mình được nhìn sản phẩm từ file design đến thành phẩm giao đi Mỹ. Cảm giác "cái mình làm ra có người thật ở nửa vòng trái đất dùng" rất khác.</p>
+            <p class="emp-quote">Trong thời gian làm việc tại Ethan, mình có cơ hội tìm hiểu sâu hơn về nhiều sản phẩm kinh doanh, từ đó mở rộng kiến thức và nâng cao hiểu biết về lĩnh vực của công ty. Bên cạnh đó, mình còn được đào tạo và thực hành sử dụng các loại máy móc, thiết bị hiện đại, giúp nâng cao kỹ năng chuyên môn và tích lũy nhiều kinh nghiệm thực tế. Ethan thật sự là môi trường giúp mình phát triển cả về kiến thức lẫn kỹ năng.</p>
           </div>
           <div class="emp-foot">
             <input class="emp-input" type="text" placeholder="Viết cảm nhận..." aria-label="Viết cảm nhận">
