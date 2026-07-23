@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tầm nhìn | Ethan Ecom: Đưa sản phẩm Việt vươn tầm thế giới</title>
 <meta name="description" content="Tầm nhìn chiến lược của Ethan Ecom: trở thành công ty e-commerce có hệ thống vận hành bài bản, tự chủ sản phẩm và sản xuất, đưa sản phẩm Việt phát triển bền vững trên thị trường quốc tế.">
-<link rel="stylesheet" href="assets/css/shared.css?v=housef08">
+<link rel="stylesheet" href="assets/css/shared.css?v=housef09">
 <!-- Font riêng cho board Hành trình 2026: serif Didone tương phản cao theo ảnh lịch gốc -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&display=swap">
 <style>
@@ -157,20 +157,28 @@ body.will-animate .j26-board .j26-year.lit{opacity:1}
 }
 /* wrapper cuộn ngang: desktop không sinh hộp (full-bleed như cũ) */
 .j26-scroll{display:contents}
-/* mobile: GIỮ nguyên bố cục số-8 — khóa tỉ lệ landscape rồi cho VUỐT NGANG (spec: không xếp dọc, chỉ thu nhỏ đều) */
+.j26-path-mob{display:none}
+/* ảnh tầm nhìn cho mobile — ẩn ở desktop */
+.j26-photo-mob{display:none}
+/* mobile: BỎ hẳn bản đồ hải trình → thay bằng ảnh tamnhin.jpeg cover toàn khung, hiện rõ dần khi cuộn */
 @media(max-width:768px){
-  .j26-scroll{display:block;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
-    overscroll-behavior-x:contain;scrollbar-width:none}
-  .j26-scroll::-webkit-scrollbar{display:none}
-  /* khung cố định 960×600 (tỉ lệ 8:5 ≈ desktop) → rộng hơn màn nên vuốt ngang xem hết */
-  .j26-board{width:960px;height:auto;aspect-ratio:8/6.1;min-height:0}
-  /* chữ px cố định, tỉ lệ theo khung 960px (≈ 0.667× desktop) — vẫn đọc rõ, không xuống dòng */
-  .j26-s{font-size:14px}
-  .j26-l{font-size:28px}
-  .j26-logo{width:118px}
-  .j26-year{font-size:180px}
-  .j26-y5-big{font-size:38px}
-  .j26-dot{width:11px;height:11px}
+  .j26-scroll{display:block}
+  /* ẩn toàn bộ phần bản đồ (đường, chấm, chữ, logo, năm) */
+  .j26-svg,.j26-item,.j26-dot,.j26-logo,.j26-year,.j26-comet{display:none!important}
+  /* khung = tỉ lệ ảnh (1536×2752) → ảnh cover khít, không viền */
+  .j26-board{width:100%;height:auto;aspect-ratio:1536/2752;min-height:0;background:none;border-radius:0}
+  /* dải hoà sắc phủ LÊN TRÊN ảnh (z-index:2) → mép trên ảnh tan vào nền navy header, xoá vệt ghép */
+  .j26-board::before{display:block;z-index:2;height:130px}
+  .j26-photo-mob{
+    display:block;position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:center;
+    opacity:.12;filter:blur(9px);transform:scale(1.06);
+    transition:opacity .25s linear,filter .25s linear,transform .25s linear;
+    will-change:opacity,filter,transform;
+  }
+}
+@media(max-width:768px) and (prefers-reduced-motion:reduce){
+  .j26-photo-mob{opacity:1;filter:none;transform:none;transition:none}
 }
 
 /* ── CTA blobs ── */
@@ -270,6 +278,9 @@ body.will-animate .j26-board .j26-year.lit{opacity:1}
             C 16.9,642.9 43.1,674.4 75,686
             C 187.8,727 293,724 423,724"/>
         </svg>
+
+        <!-- mobile: thay bản đồ bằng ảnh Tầm nhìn, cover toàn khung, hiện rõ dần khi cuộn -->
+        <img class="j26-photo-mob" src="assets/images/tamnhin.jpeg" alt="Tầm nhìn Ethan Ecom, hành trình vươn ra biển lớn" loading="lazy" decoding="async">
 
         <div class="j26-comet" aria-hidden="true"></div>
 
@@ -501,6 +512,9 @@ body.will-animate .j26-board .j26-year.lit{opacity:1}
   var mobile = window.matchMedia('(max-width: 768px)').matches;
   if (!path.getTotalLength) { litAll(); return; } // trình duyệt không đo được path
 
+  // mobile: bố cục DỌC riêng (đường .j26-path-mob, toạ độ CSS) — không neo lại, không scrub, hiện tĩnh
+  if (mobile) { litAll(); return; }
+
   var L = path.getTotalLength();
 
   // ── Bắt chuẩn: neo 12 chấm đúng lên đường kẻ ──
@@ -577,6 +591,32 @@ body.will-animate .j26-board .j26-year.lit{opacity:1}
   function onScroll() {
     if (!ticking) { ticking = true; requestAnimationFrame(update); }
   }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
+})();
+</script>
+
+<!-- Mobile: ảnh Tầm nhìn hiện rõ dần (mờ→nét, opacity thấp→1) theo tiến độ cuộn -->
+<script>
+(function () {
+  var img = document.querySelector('.j26-photo-mob');
+  if (!img) return;
+  if (!window.matchMedia('(max-width: 768px)').matches) return;      // chỉ chạy mobile
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; // CSS đã hiện rõ sẵn
+
+  var ticking = false;
+  function update() {
+    ticking = false;
+    var vh = window.innerHeight, r = img.getBoundingClientRect();
+    // p=0 khi mép trên ảnh còn ở đáy màn → p=1 khi ảnh đã trôi lên ~85% chiều cao màn
+    var p = (vh - r.top) / (vh * 0.85);
+    p = Math.max(0, Math.min(1, p));
+    img.style.opacity = (0.12 + 0.88 * p).toFixed(3);
+    img.style.filter  = 'blur(' + ((1 - p) * 9).toFixed(2) + 'px)';
+    img.style.transform = 'scale(' + (1.06 - 0.06 * p).toFixed(4) + ')';
+  }
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll, { passive: true });
   update();

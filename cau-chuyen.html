@@ -39,7 +39,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="assets/css/shared.css?v=housef08">
+<link rel="stylesheet" href="assets/css/shared.css?v=housef09">
 <style>
 /* ── PAGE-SPECIFIC STYLES ── */
 
@@ -169,10 +169,13 @@
    Hàng card nghiêng 3D → xoay phẳng + trượt ngang khi cuộn
 ══════════════════════════════════════════ */
 .hpx{
-  height:260vh;padding:150px 0 0;overflow:hidden;
+  height:auto;padding:88px 0 160px;overflow:hidden;
   perspective:1000px;transform-style:preserve-3d;
 }
-.hpx-head{padding-top:56px;padding-bottom:130px;max-width:1500px}
+.hpx-head{padding-top:24px;padding-bottom:12px;max-width:1500px;position:relative;z-index:2}
+/* kéo dải ảnh lên SÁT header (chữ tiêu đề nổi trên nền dải ảnh mờ); không dùng translateY âm để tránh thu nhỏ ảnh */
+/* header cao 160px → breadcrumb cách header 50px (y≈210); bù margin dải ảnh để vẫn sát header */
+@media(min-width:769px){ .hpx{padding-top:186px} .hpx-rows{margin-top:-398px} }
 .hpx .page-hero-title{font-size:clamp(38px,4.8vw,64px);line-height:1.1;margin-bottom:20px}
 .hpx .page-hero-sub{max-width:640px}
 .hpx-hint{
@@ -187,6 +190,8 @@
 .hpx-rows{position:relative;will-change:transform,opacity}
 .hpx-row{display:flex;gap:70px;margin-bottom:70px;will-change:transform}
 .hpx-row--rev{flex-direction:row-reverse}
+/* desktop/tablet: chỉ hiện 4 dải (ẩn dải 5); mobile giữ đủ 5 dải */
+@media(min-width:769px){ .hpx-rows > .hpx-row:nth-child(5){display:none} }
 
 .hpx-card{
   position:relative;display:block;flex-shrink:0;
@@ -218,8 +223,10 @@
   .hpx-row{gap:40px;margin-bottom:40px}
 }
 @media(max-width:768px){
-  .hpx{height:175vh;padding-top:110px}
-  .hpx-head{padding-top:24px;padding-bottom:70px}
+  /* mobile: cao ôm sát 5 hàng (không cố định vh) → hết khoảng đen, không cắt hàng dưới trên máy nhỏ */
+  .hpx{height:auto;padding-top:84px;padding-bottom:90px}
+  .hpx-head{padding-top:20px;padding-bottom:8px}
+  .hpx-rows{margin-top:-24px}
   .hpx-row{gap:20px;margin-bottom:20px}
   .hpx-card{width:236px;height:195px}
   .hpx-card::after{background:linear-gradient(180deg,transparent 42%,rgba(0,0,0,.78));opacity:1}
@@ -325,6 +332,50 @@
       <a class="hpx-card" href="gioi-thieu#culture-gallery">
         <img src="assets/images/vanhoa/vanhoa11.jpg" alt="Văn hóa Ethan, khoảnh khắc 11" loading="lazy" decoding="async">
         <span class="hpx-card-title">Một Ethan rất khác sau giờ làm</span>
+      </a>
+    </div>
+    <div class="hpx-row">
+      <a class="hpx-card" href="blog-tet-2026">
+        <img src="assets/images/blog/02-tet-2026/tet-03.jpg" alt="Khoảnh khắc Tết 2026 tại Ethan Ecom" loading="lazy" decoding="async">
+        <span class="hpx-card-title">Về nhà ăn Tết 2026: Mang vibe Ethan về nhà</span>
+      </a>
+      <a class="hpx-card" href="blog-christmas-party-2025">
+        <img src="assets/images/blog/03-christmas-party-2025/christmas-02.jpg" alt="Ethan Christmas Party 2025, khoảnh khắc tiệc" loading="lazy" decoding="async">
+        <span class="hpx-card-title">Đêm tiệc Giáng sinh rực rỡ</span>
+      </a>
+      <a class="hpx-card" href="blog-academy-digital-emb">
+        <img src="assets/images/blog/01-academy-digital-emb/academy-02.jpg" alt="Lớp học Ethan Academy Digital Embroidery" loading="lazy" decoding="async">
+        <span class="hpx-card-title">Ethan Academy: Học viên thực chiến</span>
+      </a>
+      <a class="hpx-card" href="blog-trung-thu-2025">
+        <img src="assets/images/blog/04-trung-thu-2025/trungthu-02.jpg" alt="Trung Thu 2025 tại Ethan Ecom" loading="lazy" decoding="async">
+        <span class="hpx-card-title">Trung Thu tại Ethan: Gói trọn tình thân</span>
+      </a>
+      <a class="hpx-card" href="blog-over-limitation-2025">
+        <img src="assets/images/blog/17-over-limitation-2025/ol-checkin.jpg" alt="Check-in sự kiện Over Limitation 2025" loading="lazy" decoding="async">
+        <span class="hpx-card-title">Over Limitation 2025: Giao thoa &amp; tỏa sáng</span>
+      </a>
+    </div>
+    <div class="hpx-row hpx-row--rev">
+      <a class="hpx-card" href="blog-christmas-party-2025">
+        <img src="assets/images/blog/03-christmas-party-2025/christmas-04.jpg" alt="Sân khấu Ethan Christmas Party 2025" loading="lazy" decoding="async">
+        <span class="hpx-card-title">Ethan Christmas Party 2025</span>
+      </a>
+      <a class="hpx-card" href="blog-tet-2026">
+        <img src="assets/images/blog/02-tet-2026/tet-05.jpg" alt="Trao quà Tết 2026 cho đội ngũ Ethan" loading="lazy" decoding="async">
+        <span class="hpx-card-title">Trao quà Tết, gửi trọn yêu thương</span>
+      </a>
+      <a class="hpx-card" href="blog-over-limitation-2025">
+        <img src="assets/images/blog/17-over-limitation-2025/ol-media-shoot.jpg" alt="Hậu trường media Over Limitation 2025" loading="lazy" decoding="async">
+        <span class="hpx-card-title">Hậu trường sáng tạo Over Limitation</span>
+      </a>
+      <a class="hpx-card" href="blog-academy-digital-emb">
+        <img src="assets/images/blog/01-academy-digital-emb/academy-04.jpg" alt="Học viên Ethan Academy trong buổi đào tạo" loading="lazy" decoding="async">
+        <span class="hpx-card-title">Ethan Academy: Digital EMB miễn phí 100%</span>
+      </a>
+      <a class="hpx-card" href="blog-trung-thu-2025">
+        <img src="assets/images/blog/04-trung-thu-2025/trungthu-03.jpg" alt="Đội ngũ Ethan Ecom dịp Trung Thu 2025" loading="lazy" decoding="async">
+        <span class="hpx-card-title">Trung Thu tại Ethan: Ấm áp sum vầy</span>
       </a>
     </div>
   </div>
@@ -805,8 +856,8 @@
 
   function cfg(){
     return window.innerWidth < 768
-      ? { ty0:-280, ty1:150, tx:460, rx:12, rz:14 }
-      : { ty0:-620, ty1:320, tx:900, rx:15, rz:20 };
+      ? { ty0:-180, ty1:24, tx:460, rx:12, rz:14 }
+      : { ty0:0, ty1:80, tx:900, rx:15, rz:20 };
   }
   /* map tiến độ p: [0→.2] chạy hết a→b (giống useTransform [0,0.2]) */
   function ramp(p,a,b){ var t = Math.min(p/0.2, 1); return a + (b-a)*t; }
@@ -836,10 +887,11 @@
     }
     rows.style.transform = 'rotateX('+cur.rx.toFixed(2)+'deg) rotateZ('+cur.rz.toFixed(2)+'deg) translateY('+cur.ty.toFixed(1)+'px)';
     rows.style.opacity = cur.op.toFixed(3);
-    var x = cur.tx.toFixed(1);
-    if (rowEls[0]) rowEls[0].style.transform = 'translateX('+x+'px)';
-    if (rowEls[1]) rowEls[1].style.transform = 'translateX(-'+x+'px)';
-    if (rowEls[2]) rowEls[2].style.transform = 'translateX('+x+'px)';
+    var x = cur.tx;
+    /* hàng chẵn = --rev (trượt phải, +x) · hàng lẻ = thường (trượt trái, -x) */
+    for (var i = 0; i < rowEls.length; i++) {
+      rowEls[i].style.transform = 'translateX(' + ((i % 2 ? -x : x)).toFixed(1) + 'px)';
+    }
     raf = settled ? null : requestAnimationFrame(tick);
   }
   function kick(){ if (raf === null) raf = requestAnimationFrame(tick); }

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tuyển dụng & Dịch vụ | Ethan Ecom: Môi trường sáng tạo, phát triển bứt phá</title>
 <meta name="description" content="Gia nhập đội ngũ Ethan Ecom, 14 vị trí đang tuyển dụng trong các lĩnh vực E-commerce, Design, Tech, Production. Xem đầy đủ mô tả công việc, yêu cầu và quyền lợi.">
-<link rel="stylesheet" href="assets/css/shared.css?v=housef08">
+<link rel="stylesheet" href="assets/css/shared.css?v=housef09">
 <style>
 /* ── PAGE-SPECIFIC STYLES ── */
 
@@ -385,7 +385,7 @@ body.svd-lock{overflow:hidden}
 .smh-card:hover{z-index:50}
 .smh-card:hover .smh-flip,.smh-card.is-flipped .smh-flip{transform:rotateY(180deg)}
 /* Card bo góc, không viền — isolation ép clip ảnh theo góc bo trong ngữ cảnh transform 3D */
-.smh-face{position:absolute;inset:0;border-radius:0;overflow:hidden;isolation:isolate;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 12px 30px -10px rgba(13,27,62,.42),0 2px 8px -4px rgba(13,27,62,.3)}
+.smh-face{position:absolute;inset:0;border-radius:8px;overflow:hidden;isolation:isolate;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 12px 30px -10px rgba(13,27,62,.42),0 2px 8px -4px rgba(13,27,62,.3)}
 .smh-front{background:linear-gradient(135deg,#e9edf4,#cdd7e6)}
 .smh-front::after{content:'';position:absolute;inset:0;background:rgba(6,12,24,.10);transition:background .3s;z-index:1}
 .smh-card:hover .smh-front::after{background:transparent}
@@ -2105,6 +2105,18 @@ var SVD_ICONS = [
   });
 
   if (reduce) return;   // keep the accessible static grid fallback
+
+  // Mobile: giảm số thẻ trong vòng (20 → 12) để ảnh không chen chúc, khoảng cách đều & dễ nhìn hơn
+  if (window.innerWidth < 768 && cards.length > 12) {
+    var keepN = 12, total = cards.length, subset = [], seen = {};
+    for (var ki = 0; ki < keepN; ki++) {
+      var idx = Math.round(ki * total / keepN) % total;
+      if (!seen[idx]) { seen[idx] = 1; subset.push(cards[idx]); }
+    }
+    cards.forEach(function(c){ if (subset.indexOf(c) < 0) c.style.display = 'none'; });
+    cards = subset;
+    N = cards.length;   // cur (dưới) sẽ map lại theo cards đã rút gọn
+  }
 
   var W=0, H=0, isMobile=false, IW=64, IH=90;
   var scatter = [];

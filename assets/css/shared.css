@@ -1134,8 +1134,8 @@ body.typo-eco .feat-body h2{  /* tiêu đề bài nổi bật (blog) — card l�
   .foot-main { padding: 52px 0 40px; }
   .page-hero { padding: 124px 0 76px; }
   /* Mobile header height — cao hơn để logo lớn */
-  .hi { height: 74px; position: relative; }
-  .header.scrolled .hi { height: 62px; }
+  .hi { height: 92px; position: relative; }
+  .header.scrolled .hi { height: 78px; }
   /* Bố cục 3 phần: ☰ menu trái · LOGO giữa · ☎ gọi phải
      — 2 icon TRẦN (không viền/nền), nhỏ & cân nhau (~21px), vùng chạm ≥44px nhờ padding */
   .hamburger { order: 1; border: none; background: none; backdrop-filter: none;
@@ -1148,10 +1148,10 @@ body.typo-eco .feat-body h2{  /* tiêu đề bài nổi bật (blog) — card l�
   /* Logo LỚN + canh giữa tuyệt đối (không phụ thuộc bề rộng 2 icon bên) */
   .logo { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
           margin: 0; padding: 0; order: 2; }
-  .logo img { height: 66px; }
-  .header.scrolled .logo img { height: 54px; }
+  .logo img { height: 84px; }
+  .header.scrolled .logo img { height: 68px; }
   /* Menu gọn hơn cho điện thoại: link nhỏ & sát nhau, số & nút nhỏ lại */
-  .mob-nav { padding: 86px 22px 30px; }
+  .mob-nav { padding: 104px 22px 30px; }
   .mob-nav a { font-size: 16px; padding: 13px 2px; gap: 12px; letter-spacing: .12em; }
   .mob-nav a::before { font-size: 10px; min-width: 26px; }
   .mob-nav .mob-cta-group { margin-top: 20px; gap: 10px; }
