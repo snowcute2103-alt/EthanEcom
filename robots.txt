@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ethanecom.com/sitemap.xml
