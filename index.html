@@ -1737,7 +1737,7 @@
   /* Section sub */
   .ss{font-size:var(--fs-small)}
   /* Section padding */
-  section,.section{padding-top:30px !important;padding-bottom:30px !important}
+  section,.section{padding-top:50px !important;padding-bottom:30px !important}
 
   /* ── Hero ticker ── */
   .hero-ticker{display:none}
@@ -1903,7 +1903,7 @@
 /* ── 480px — very small phones ── */
 @media(max-width:480px){
   /* Tighter section padding */
-  section,.section{padding-top:30px !important;padding-bottom:30px !important}
+  section,.section{padding-top:50px !important;padding-bottom:30px !important}
 
   /* Hero */
   .hero-inner{padding:100px 16px 160px}
@@ -2760,28 +2760,32 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
   /* ── CAROUSEL vòng (coverflow, chạy 2 chiều/loop): khối GIỮA to,
         2 khối 2 bên luôn hiện & bị mép cắt còn 1/2. Vuốt trái/phải để xoay. ── */
   .team-orbit .orbit{
-    position:relative;height:258px;
+    position:relative;height:290px;          /* +room: vòng giữa 250px + đổ bóng không bị cắt */
     width:100vw;margin-left:calc(50% - 50vw);  /* full-bleed: 2 khối 2 bên sát mép màn hình */
     display:block;overflow:hidden;padding:0;margin-top:20px;   /* cách chữ phía trên 20px */
     touch-action:pan-y;                       /* dọc = cuộn trang · ngang = vuốt carousel */
   }
+  /* Vị trí & CỠ đổi bằng transform (translateX + scale) → chạy trên GPU, trượt mượt,
+     không reflow như khi animate left/width/height. */
   .team-orbit .member{
     position:absolute;top:50%;left:50%;width:0;height:0;margin:0;
     display:block;cursor:pointer;opacity:0;pointer-events:none;z-index:0;
-    --size:104px;
-    transition:left .46s cubic-bezier(.4,0,.2,1),opacity .46s ease;
+    transform:translateX(0) scale(.28);
+    transition:transform .55s cubic-bezier(.22,.61,.36,1),opacity .5s ease;
+    will-change:transform,opacity;
   }
   .team-orbit .member .tag{display:none}      /* thông tin hiển thị ở panel bên dưới */
+  .team-orbit .member .bubble{animation:none} /* tắt float trên mobile → carousel mượt, không giật */
   .team-orbit .bubble{
     position:absolute;left:0;top:0;transform:translate(-50%,-50%);
-    width:var(--size);height:var(--size);
-    transition:width .46s cubic-bezier(.4,0,.2,1),height .46s cubic-bezier(.4,0,.2,1),box-shadow .46s,opacity .46s;
+    width:250px;height:250px;                 /* cỡ gốc cố định; to/nhỏ do scale trên .member */
+    transition:box-shadow .5s,opacity .5s;
   }
   /* Vị trí: giữa (to) · trái (mép trái, nửa) · phải (mép phải, nửa) · ẩn */
-  .team-orbit .member.pos-center{left:50%;--size:250px;opacity:1;z-index:5;pointer-events:auto}
-  .team-orbit .member.pos-left  {left:0;   --size:124px;opacity:1;z-index:3;pointer-events:auto}
-  .team-orbit .member.pos-right {left:100%;--size:124px;opacity:1;z-index:3;pointer-events:auto}
-  .team-orbit .member.pos-hidden{left:50%;--size:70px; opacity:0;z-index:0}
+  .team-orbit .member.pos-center{transform:translateX(0)     scale(1);  opacity:1;z-index:5;pointer-events:auto}
+  .team-orbit .member.pos-left  {transform:translateX(-50vw) scale(.5); opacity:1;z-index:3;pointer-events:auto}
+  .team-orbit .member.pos-right {transform:translateX(50vw)  scale(.5); opacity:1;z-index:3;pointer-events:auto}
+  .team-orbit .member.pos-hidden{transform:translateX(0)     scale(.28);opacity:0;z-index:0}
   .team-orbit .member.pos-center .bubble{box-shadow:0 12px 30px rgba(13,32,54,.32)}
   .team-orbit .member.pos-left .bubble,.team-orbit .member.pos-right .bubble{opacity:.82}
 
@@ -5135,8 +5139,26 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
   .ink-stage{height:auto;-webkit-mask-image:none;mask-image:none}
   .ink-stage img{position:static;inset:auto;width:100%;height:auto;object-fit:contain}
   .ink-dark{padding-bottom:0 !important}
-  .ink-wrap{margin-bottom:0}
+  .ink-dark .divider.c{margin-top:8px}          /* giảm khoảng cách chữ → divider */
+  .ink-dark .ink-wrap{margin-top:12px;margin-bottom:0}   /* giảm khoảng cách chữ → ảnh */
 }
+/* ── Mobile: ẩn ảnh congty, hiện slide 3 ảnh toà nhà chạy nối tiếp liên tục (marquee liền mạch) ── */
+.ink-slide{display:none}
+@media(max-width:768px){
+  .ink-stage .ink-desk-img{display:none}
+  .ink-slide{display:block;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw)}
+  .ink-track{display:flex;gap:10px;width:max-content;animation:inkSlide 22s linear infinite;will-change:transform}
+  .ink-slide:hover .ink-track,.ink-slide:active .ink-track{animation-play-state:paused}
+  .ink-stage .ink-track img{
+    position:static;inset:auto;flex:0 0 300px;width:300px;height:500px;
+    object-fit:cover;border-radius:0;display:block;
+  }
+}
+/* dịch đúng 1 bộ 3 ảnh (3×300px + 3×gap10px = 930px) → nối vòng liền mạch, không đứt quãng */
+@keyframes inkSlide{from{transform:translateX(0)}to{transform:translateX(-930px)}}
+@media(prefers-reduced-motion:reduce){.ink-track{animation:none}}
+/* Mobile: tiêu đề "Câu chuyện" (section stories trang chủ) tăng lên 26px */
+@media(max-width:768px){ .section--blog-dark .st{font-size:26px !important} }
 </style>
 <section class="section ink-dark" data-flow="#FDFEFE">
   <div class="bg-deco" aria-hidden="true">
@@ -5149,7 +5171,18 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
     </div>
     <div class="ink-wrap">
       <div class="ink-stage reveal">
-        <img src="assets/images/about/congty.jpg" alt="Không gian làm việc tại công ty Ethan Ecom" loading="lazy" onerror="this.style.visibility='hidden'">
+        <img class="ink-desk-img" src="assets/images/about/congty.jpg" alt="Không gian làm việc tại công ty Ethan Ecom" loading="lazy" onerror="this.style.visibility='hidden'">
+        <!-- Mobile: slide 3 ảnh toà nhà chạy nối tiếp liên tục (marquee, lặp liền mạch nhờ nhân đôi) -->
+        <div class="ink-slide" role="group" aria-label="Ảnh không gian Ethan Ecom">
+          <div class="ink-track">
+            <img src="assets/images/about/toanha-mobile1.jpeg" alt="Không gian Ethan Ecom 1" loading="lazy">
+            <img src="assets/images/about/toanha-moblie.jpeg"  alt="Không gian Ethan Ecom 2" loading="lazy">
+            <img src="assets/images/about/toanha-moblie2.jpeg" alt="Không gian Ethan Ecom 3" loading="lazy">
+            <img src="assets/images/about/toanha-mobile1.jpeg" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/images/about/toanha-moblie.jpeg"  alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/images/about/toanha-moblie2.jpeg" alt="" aria-hidden="true" loading="lazy">
+          </div>
+        </div>
       </div>
       <!-- Mây trôi quanh đường wave: một phần đè nền trắng, một phần đè ảnh.
            --w cỡ · --t vị trí dọc so với mép wave · --o độ mờ · --d tốc độ · --dl delay âm (lệch nhịp) -->

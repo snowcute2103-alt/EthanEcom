@@ -56,7 +56,7 @@ function buildHeader() {
   ).join('') + `<a href="lien-he">Liên hệ</a>`;
   const mobItems = NAV_LINKS.map(l =>
     `<a href="${l.href}">${l.label}</a>`
-  ).join('');
+  ).join('') + `<a href="lien-he">Liên hệ</a>`;
 
   return `
 <a href="#main" class="skip-link">Bỏ qua tới nội dung</a>
@@ -82,16 +82,16 @@ function buildHeader() {
 </header>
 <nav class="mob-nav" id="mob" aria-hidden="true">
   ${mobItems}
-  <div class="mob-cta-group">
-    <button type="button" class="mob-cta mob-cta--apply" data-cp="apply">Ứng tuyển ngay</button>
-    <button type="button" class="mob-cta mob-cta--contact" data-cp="contact">Liên hệ ngay</button>
-  </div>
   <div class="mob-nav-foot">
     <a href="mailto:support@ethanecom.com">support@ethanecom.com</a>
     <span class="sep">·</span>
     <a href="tel:+84967473979">+84 967 473 979</a>
   </div>
 </nav>
+<div class="mcta-dock" role="group" aria-label="Ứng tuyển và liên hệ">
+  <button type="button" class="mcta mcta--apply" data-cp="apply">Ứng tuyển ngay</button>
+  <button type="button" class="mcta mcta--contact" data-cp="contact">Liên hệ ngay</button>
+</div>
 `;
 }
 
@@ -345,8 +345,8 @@ function initHamburger() {
 
   mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeMenu(false)));
 
-  /* Nút "Ứng tuyển ngay" / "Liên hệ ngay" trong menu → đóng menu rồi mở đúng popup của dock */
-  mob.querySelectorAll('[data-cp]').forEach(btn => btn.addEventListener('click', () => {
+  /* Nút "Ứng tuyển ngay" / "Liên hệ ngay" (dock đáy màn hình + fallback) → đóng menu rồi mở đúng popup */
+  document.querySelectorAll('[data-cp]').forEach(btn => btn.addEventListener('click', () => {
     closeMenu(false);
     var id = btn.getAttribute('data-cp') === 'apply' ? 'cpTrigger' : 'cpTriggerContact';
     var trigger = document.getElementById(id);
