@@ -172,7 +172,7 @@
 }
 
 /* ── EMPLOYEE VOICES — comment card tối kiểu chat (đồng bộ tuyen-dung) ── */
-.emp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.emp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:980px;margin:0 auto}
 .emp-card{position:relative;background:#14171f;border:1px solid rgba(255,255,255,.08);border-radius:0;display:flex;flex-direction:column;overflow:hidden;transition:border-color .3s,box-shadow .3s,transform .3s}
 .emp-card:hover{border-color:rgba(43,143,255,.45);box-shadow:0 18px 48px rgba(9,16,32,.45);transform:translateY(-4px)}
 .emp-head{display:flex;align-items:center;gap:14px;padding:20px 22px;border-bottom:1px solid rgba(255,255,255,.08)}
@@ -764,6 +764,29 @@ html.smx-lock,body.smx-lock{overflow:hidden}
           </div>
           <div class="emp-body">
             <p class="emp-quote">Trong thời gian làm việc tại Ethan, mình có cơ hội tìm hiểu sâu hơn về nhiều sản phẩm kinh doanh, từ đó mở rộng kiến thức và nâng cao hiểu biết về lĩnh vực của công ty. Bên cạnh đó, mình còn được đào tạo và thực hành sử dụng các loại máy móc, thiết bị hiện đại, giúp nâng cao kỹ năng chuyên môn và tích lũy nhiều kinh nghiệm thực tế. Ethan thật sự là môi trường giúp mình phát triển cả về kiến thức lẫn kỹ năng.</p>
+          </div>
+          <div class="emp-foot">
+            <input class="emp-input" type="text" placeholder="Viết cảm nhận..." aria-label="Viết cảm nhận">
+            <div class="emp-reacts">
+              <button type="button" class="emp-react" aria-label="Thả cảm xúc yêu thích">😍</button>
+              <button type="button" class="emp-react" aria-label="Thả tim">❤️</button>
+              <button type="button" class="emp-react" aria-label="Thả lửa">🔥</button>
+              <button type="button" class="emp-react" aria-label="Thả sét">⚡</button>
+              <button type="button" class="emp-react" aria-label="Thả like">👍</button>
+            </div>
+          </div>
+        </div>
+        <div class="emp-card reveal d4">
+          <div class="emp-head">
+            <img class="emp-avatar-img" src="assets/images/connguoi/Tien-KD5.jpeg" alt="Vũ Quốc Tiến" loading="lazy" decoding="async">
+            <div class="emp-id">
+              <div class="emp-name">Vũ Quốc Tiến</div>
+              <div class="emp-role">Media · Creative Design</div>
+            </div>
+            <div class="emp-time">3 ngày trước</div>
+          </div>
+          <div class="emp-body">
+            <p class="emp-quote">Mọi người rất thân thiện và nhiệt tình. Nhớ hồi mới vào làm, mình chưa biết quay dựng sản phẩm, nhưng nhờ mọi người hỗ trợ, người chỉ mình sắp xếp bố cục, người chỉ cách quay và góc máy, người chỉ thao tác edit trên máy, nhờ vậy mà chỉ sau 2 tuần mình đã có thể làm tốt công việc media rồi!</p>
           </div>
           <div class="emp-foot">
             <input class="emp-input" type="text" placeholder="Viết cảm nhận..." aria-label="Viết cảm nhận">
