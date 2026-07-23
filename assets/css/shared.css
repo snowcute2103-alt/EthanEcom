@@ -18,8 +18,9 @@
 
 /* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 110px; }
-body { font-family: var(--font-text); color: #000000; line-height: var(--lh-body); overflow-x: hidden; background: #fff; font-size: var(--fs-md); }
+html { scroll-behavior: smooth; scroll-padding-top: 110px; overflow-x: clip; }
+/* overflow-x: clip (không phải hidden) → chặn cuộn/giựt ngang do reveal .rr/.rl (translateX ±50px) tràn khung, mà KHÔNG phá position:sticky */
+body { font-family: var(--font-text); color: #000000; line-height: var(--lh-body); overflow-x: clip; background: #fff; font-size: var(--fs-md); }
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
