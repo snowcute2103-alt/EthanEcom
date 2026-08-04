@@ -1,5 +1,10 @@
 {
+  "scripts": {
+    "build:min": "node tools/build-assets.js"
+  },
   "devDependencies": {
-    "puppeteer": "^24.43.0"
+    "clean-css": "^5.3.3",
+    "puppeteer": "^24.43.0",
+    "terser": "^5.49.0"
   }
 }

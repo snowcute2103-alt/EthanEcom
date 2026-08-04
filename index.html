@@ -76,7 +76,7 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@400;500;600;700&family=Fahkwang:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@400;500;600;700&family=Fahkwang:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@400;500;600;700&family=Fahkwang:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"></noscript>
-<link rel="stylesheet" href="assets/css/shared.css?v=housef09">
+<link rel="stylesheet" href="assets/css/shared.min.css?v=housef10">
 <style>
 /* ── PAGE-SPECIFIC STYLES ── */
 
@@ -3487,7 +3487,11 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
   function render(instant){
     if (instant) track.style.transition = 'none';
     track.style.transform = 'translateX(' + (-pos * 100) + '%)';
-    if (instant){ void track.offsetWidth; track.style.transition = ''; }
+    if (instant){
+      // rAF kép thay cho void track.offsetWidth — đợi trình duyệt paint xong vị trí
+      // "nhảy thầm" rồi mới bật lại transition, không ép layout đồng bộ giữa tác vụ JS.
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){ track.style.transition = ''; }); });
+    }
     var li = logical();
     cells.forEach(function(c, k){ c.classList.toggle('is-active', k === pos); });
     slides.forEach(function(s, k){ s.setAttribute('aria-hidden', k === li ? 'false' : 'true'); });
@@ -5334,17 +5338,21 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
       desc:"Thiết kế sản phẩm in ấn (áo, cốc, poster, giấy in...) đúng thị hiếu khách hàng Mỹ, đúng chuẩn kỹ thuật để đưa vào sản xuất và đăng bán." },
     { num:"04", name:"Designer EMB", img:"assets/images/team/embroidery-manager.webp", href:"tuyen-dung-designer-emb",
       desc:"Digitize thiết kế thành file thêu chuẩn, tối ưu đường chỉ và mật độ mũi thêu cho máy thêu công nghiệp — quyết định chất lượng sản phẩm thêu." },
-    { num:"05", name:"NV Đứng Máy Thêu", img:"assets/images/team/embroidery-technician.webp", href:"tuyen-dung-dung-may-theu",
-      desc:"Vận hành máy thêu vi tính: lên khung, canh chỉnh, thay chỉ — đảm bảo mũi thêu đẹp, đúng file thiết kế. Có ca hành chánh và ca đêm." },
-    { num:"06", name:"Nhân viên QC", img:"assets/images/team/quality-control.webp", href:"tuyen-dung-qc-ca-hanh-chanh",
-      desc:"Kiểm soát chất lượng hàng in, khắc, thêu trước khi đóng gói xuất hàng — không cần kinh nghiệm, được đào tạo từ đầu. Có ca hành chánh và ca đêm." },
-    { num:"07", name:"Vận Hành Máy In Giấy", img:"assets/images/team/printer.webp", href:"tuyen-dung-van-hanh-may-in-giay",
+    { num:"05", name:"NV Đứng Máy Thêu — Ca Hành chánh", img:"assets/images/team/embroidery-technician.webp", href:"tuyen-dung-dung-may-theu",
+      desc:"Vận hành máy thêu vi tính: lên khung, canh chỉnh, thay chỉ — đảm bảo mũi thêu đẹp, đúng file thiết kế. Làm việc giờ hành chánh." },
+    { num:"06", name:"NV Đứng Máy Thêu — Ca Đêm", img:"assets/images/team/embroidery-technician1.webp", href:"tuyen-dung-dung-may-theu-ca-dem",
+      desc:"Vận hành máy thêu vi tính trong ca đêm: lên khung, canh chỉnh, thay chỉ — duy trì sản lượng liên tục, bàn giao ca rõ ràng cho ca kế tiếp." },
+    { num:"07", name:"Nhân viên QC — Ca Hành chánh", img:"assets/images/team/quality-control.webp", href:"tuyen-dung-qc-ca-hanh-chanh",
+      desc:"Kiểm soát chất lượng hàng in, khắc, thêu trước khi đóng gói xuất hàng — không cần kinh nghiệm, được đào tạo từ đầu. Làm việc giờ hành chánh." },
+    { num:"08", name:"Nhân viên QC — Ca Đêm", img:"assets/images/team/inspector.webp", href:"tuyen-dung-qc-ca-dem",
+      desc:"Kiểm soát chất lượng hàng in, khắc, thêu trong ca đêm trước khi đóng gói xuất hàng, đảm bảo hàng đạt chuẩn trước khi bàn giao ca sáng hôm sau." },
+    { num:"09", name:"Vận Hành Máy In Giấy", img:"assets/images/team/printer.webp", href:"tuyen-dung-van-hanh-may-in-giay",
       desc:"Vận hành máy in giấy cho các dòng thiệp, wrapping paper, suncatcher... đúng file, đúng màu sắc và đúng tiến độ sản xuất." },
-    { num:"08", name:"Vận Hành Máy Laser", img:"assets/images/team/laser.jpg", href:"tuyen-dung-van-hanh-may-laser",
+    { num:"10", name:"Vận Hành Máy Laser", img:"assets/images/team/laser.jpg", href:"tuyen-dung-van-hanh-may-laser",
       desc:"Cắt/khắc laser trên gỗ, mica, da, giấy — chỉnh thông số theo từng chất liệu, sản phẩm ra đúng kích thước và độ sắc nét yêu cầu." },
-    { num:"09", name:"Chuyên viên HR", img:"assets/images/team/hr.webp", href:"tuyen-dung-chuyen-vien-hr",
+    { num:"11", name:"Chuyên viên HR", img:"assets/images/team/hr.webp", href:"tuyen-dung-chuyen-vien-hr",
       desc:"Xây dựng văn hoá doanh nghiệp, tuyển dụng và onboarding — đồng hành cùng đội ngũ đang tăng trưởng nhanh của Ethan." },
-    { num:"10", name:"Chuyên viên IT — AI", img:"assets/images/team/web-developer.jpg", href:"tuyen-dung-chuyen-vien-it-ai",
+    { num:"12", name:"Chuyên viên IT — AI", img:"assets/images/team/web-developer.jpg", href:"tuyen-dung-chuyen-vien-it-ai",
       desc:"Nghiên cứu và triển khai Claude, ChatGPT, Gemini vào quy trình từng bộ phận — mục tiêu tăng hiệu suất làm việc 2–3 lần." }
   ];
 
@@ -5362,7 +5370,12 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
     }).join('');
   }
 
-  function playFade(el){ el.classList.remove('fade'); void el.offsetWidth; el.classList.add('fade'); }
+  function playFade(el){
+    // rAF kép thay cho void el.offsetWidth — vẫn restart animation .fade
+    // nhưng không ép trình duyệt tính layout đồng bộ (forced reflow) ngay giữa tác vụ JS.
+    el.classList.remove('fade');
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ el.classList.add('fade'); }); });
+  }
 
   function renderPanel(){
     var j = JOBS[current];
@@ -5375,9 +5388,9 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
       + '<ul class="job__benefits">'
         + BENEFITS.map(function(b){ return '<li>' + CHECK + '<span>' + b + '</span></li>'; }).join('')
       + '</ul>'
-      + '<button type="button" class="btn-apply" onclick="window.ethanOpenApply && window.ethanOpenApply(\'' + (j.href || '') + '\')">Ứng tuyển ngay'
+      + '<a class="btn-apply" href="' + (j.href || '#') + '">Xem thêm'
         + '<svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true"><path d="M14 1l7 7-7 7M21 8H1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-      + '</button>';
+      + '</a>';
     playFade(visualEl); playFade(colEl);
   }
 
@@ -5520,12 +5533,12 @@ document.querySelectorAll('.team-orbit .member').forEach(function(member){
 <div id="contact-popup-root"></div>
 
 <!-- Shared JS (must be before page JS) -->
-<script src="assets/js/shared.js?v=housef07"></script>
-<script src="assets/js/contact-popup.js?v=housef07"></script>
+<script src="assets/js/shared.min.js?v=housef08"></script>
+<script src="assets/js/contact-popup.min.js?v=housef08"></script>
 <!-- GSAP + ScrollTrigger for spring card animations -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous"></script>
-<script src="assets/js/gsap-animations.js"></script>
+<script src="assets/js/gsap-animations.min.js"></script>
 <script>
 /* ── PAGE-SPECIFIC JAVASCRIPT ── */
 

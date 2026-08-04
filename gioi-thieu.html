@@ -79,7 +79,7 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@400;500;600;700&family=Fahkwang:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@400;500;600;700&family=Fahkwang:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@400;500;600;700&family=Fahkwang:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"></noscript>
-<link rel="stylesheet" href="assets/css/shared.css?v=housef09">
+<link rel="stylesheet" href="assets/css/shared.min.css?v=housef10">
 <style>
 /* ── PAGE-SPECIFIC STYLES ── */
 
@@ -1143,9 +1143,9 @@ html.smx-lock,body.smx-lock{overflow:hidden}
 <div id="site-footer"></div>
 
 <!-- Shared JS (must be last) -->
-<script src="assets/js/shared.js?v=housef07"></script>
-<script src="assets/js/page-animations.js"></script>
-<script src="assets/js/world-map-paths.js"></script>
+<script src="assets/js/shared.min.js?v=housef08"></script>
+<script src="assets/js/page-animations.min.js"></script>
+<script src="assets/js/world-map-paths.min.js"></script>
 <script>
 /* ── PAGE-SPECIFIC JAVASCRIPT ── */
 
@@ -1223,7 +1223,7 @@ html.smx-lock,body.smx-lock{overflow:hidden}
 
   function proj(lat,lng){ return { x:((lng+180)/360)*800, y:((90-lat)/180)*400 }; }
 
-  /* Lục địa tô đặc theo đường biên thật — path sinh sẵn ở assets/js/world-map-paths.js
+  /* Lục địa tô đặc theo đường biên thật — path sinh sẵn ở assets/js/world-map-paths.min.js
      (Natural Earth, chiếu equirectangular 800×400, đơn giản hoá Douglas-Peucker).
      Màu gán theo quốc gia (2 nước láng giềng luôn khác màu); VN / US / UK tô nổi bật. */
   var PAL=['#E8935E','#A9C178','#EFD37E','#E5A0B8','#A489D4','#C08552'];
@@ -1915,6 +1915,6 @@ html.smx-lock,body.smx-lock{overflow:hidden}
   if(target.classList.contains('is-on')){ wasOn=true; launch(); }
 })();
 </script>
-<script src="assets/js/contact-popup.js?v=housef07"></script>
+<script src="assets/js/contact-popup.min.js?v=housef08"></script>
 </body>
 </html>

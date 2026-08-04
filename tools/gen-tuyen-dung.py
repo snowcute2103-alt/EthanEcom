@@ -38,7 +38,15 @@ def fit_lis(pairs, idx):
 
 
 def hours_text(job):
-    return SHARED["hours_night"] if job["hours"] == "night" else SHARED["hours_day"]
+    if job["hours"] == "night":
+        return "%s (%s)" % (SHARED["hours_night"], SHARED["hours_night_note"])
+    return SHARED["hours_day"]
+
+
+def hours_html(job):
+    if job["hours"] == "night":
+        return '%s<br><span class="v-note">%s</span>' % (esc(SHARED["hours_night"]), esc(SHARED["hours_night_note"]))
+    return esc(SHARED["hours_day"])
 
 
 def jsonld(job):
@@ -145,6 +153,8 @@ TEMPLATE = r"""<!DOCTYPE html>
 .jd-fact:hover{border-color:var(--blue)}
 .jd-fact .k{display:block;font-size:var(--fs-caption);font-weight:var(--fw-bold);letter-spacing:.18em;text-transform:uppercase;color:#9ca3af;margin-bottom:7px}
 .jd-fact .v{font-family:var(--font-lead);font-size:var(--fs-base);font-weight:var(--fw-semibold);color:var(--navy);line-height:1.5}
+.jd-fact .v-note{display:inline-block;margin-top:4px;font-family:var(--font-alt);font-size:var(--fs-small);font-weight:var(--fw-regular,400);color:#8a95a6}
+.jd-fact--hl .v-note{color:rgba(255,255,255,.65)}
 .jd-fact--hl{background:var(--navy);border-color:var(--navy)}
 .jd-fact--hl .k{color:rgba(255,255,255,.55)}
 .jd-fact--hl .v{color:var(--yellow)}
@@ -459,7 +469,7 @@ def render(job):
         "%%SALARY%%": esc(job["salary"]),
         "%%BLOCK%%": esc(job["block"]),
         "%%REPORT_TO%%": esc(job["reportTo"]),
-        "%%HOURS%%": esc(hours_text(job)),
+        "%%HOURS%%": hours_html(job),
         "%%LOCATION%%": esc(job["location"]),
         "%%PROBATION%%": esc(SHARED["probation"]),
         "%%TYPE%%": esc(job["type"]),
