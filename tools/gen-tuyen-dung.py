@@ -40,13 +40,13 @@ def fit_lis(pairs, idx):
 def hours_text(job):
     if job["hours"] == "night":
         return "%s (%s)" % (SHARED["hours_night"], SHARED["hours_night_note"])
-    return SHARED["hours_day"]
+    return "%s (%s)" % (SHARED["hours_day"], SHARED["hours_day_note"])
 
 
 def hours_html(job):
     if job["hours"] == "night":
         return '%s<br><span class="v-note">%s</span>' % (esc(SHARED["hours_night"]), esc(SHARED["hours_night_note"]))
-    return esc(SHARED["hours_day"])
+    return '%s<br><span class="v-note">%s</span>' % (esc(SHARED["hours_day"]), esc(SHARED["hours_day_note"]))
 
 
 def jsonld(job):

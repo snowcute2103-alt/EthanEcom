@@ -1,6 +1,7 @@
 {
   "shared": {
-    "hours_day": "7:30 – 17:00, Thứ 2 – Thứ 7 (nghỉ trưa 1h30)",
+    "hours_day": "7:30 – 17:00, Thứ 2 – Thứ 7",
+    "hours_day_note": "Nghỉ trưa 1h30",
     "hours_night": "Ca 3: 17:00 – 1:00 sáng hôm sau, Thứ 2 – Thứ 7",
     "hours_night_note": "Nghỉ giữa ca 30 phút",
     "probation": "1 tháng",
