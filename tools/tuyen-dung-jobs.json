@@ -959,6 +959,74 @@
       "imgAlt": "Nhân viên quản lý kho nguyên vật liệu tại Ethan Ecom"
     },
     {
+      "slug": "tuyen-dung-ky-thuat-van-hanh-may-san-xuat",
+      "title": "Kỹ thuật viên Vận hành Máy Sản xuất",
+      "display": "KTV Vận Hành Máy Sản Xuất",
+      "heroHtml": "Kỹ thuật viên Vận hành<br><em>Máy Sản xuất</em>",
+      "code": "SX-KTV-01",
+      "count": "Nhiều",
+      "deptKey": "sx",
+      "deptLabel": "Sản xuất",
+      "block": "Khối Sản Xuất — Bộ phận Vận hành Máy",
+      "reportTo": "Tổ trưởng Sản xuất / Quản lý xưởng",
+      "location": "Xưởng Ethanecom — 61/1G Võ Dõng, Thống Nhất, Đồng Nai",
+      "hours": "day",
+      "type": "Toàn thời gian (Full-time), làm tại xưởng",
+      "salary": "Mức lương: 8 – 20 triệu + KPI + OT (trao đổi theo năng lực)",
+      "salaryCard": "8–20 triệu + KPI + OT",
+      "salaryMin": 8000000,
+      "salaryMax": 20000000,
+      "metaDesc": "Ethan Ecom tuyển Kỹ thuật viên Vận hành Máy Sản xuất tại Thống Nhất, Đồng Nai — lương 8–20 triệu + KPI + OT. Vận hành máy in công nghiệp, CNC, laser, cắt kỹ thuật số. CV: hr@ethanecom.com.",
+      "context": "Ethan Ecom đang mở rộng hệ thống sản xuất với nhiều dòng máy: máy in công nghiệp, máy CNC, máy laser, máy cắt kỹ thuật số và các thiết bị tự động hoá. Vị trí này dành cho các bạn trẻ yêu thích máy móc, kỹ thuật, mong muốn phát triển lâu dài trong sản xuất hiện đại. Không yêu cầu nhiều kinh nghiệm, công ty đào tạo bài bản theo từng dòng máy và quy trình thực tế.",
+      "objective": "Vận hành ổn định các dòng máy sản xuất, đảm bảo sản phẩm đầu ra đúng thông số kỹ thuật và chất lượng yêu cầu.",
+      "duties": [
+        "Vận hành máy in, máy CNC, máy laser, máy cắt và các thiết bị sản xuất tại công ty",
+        "Thiết lập thông số máy theo từng sản phẩm và yêu cầu kỹ thuật",
+        "Theo dõi quá trình vận hành, kiểm tra chất lượng sản phẩm đầu ra",
+        "Vệ sinh, bảo dưỡng máy móc định kỳ",
+        "Phát hiện và phối hợp xử lý các lỗi kỹ thuật trong quá trình sản xuất",
+        "Thực hiện đúng quy trình vận hành và quy định an toàn máy móc",
+        "Đề xuất cải tiến để nâng cao năng suất và chất lượng sản phẩm"
+      ],
+      "requirements": [
+        "Tốt nghiệp Trung cấp, Cao đẳng hoặc Đại học các ngành Cơ khí, Cơ điện tử, Tự động hoá, Điện – Điện tử, Công nghệ kỹ thuật in hoặc ngành liên quan",
+        "Chấp nhận sinh viên mới tốt nghiệp và các bạn đang chờ bằng, không yêu cầu kinh nghiệm",
+        "Yêu thích máy móc, kỹ thuật và công việc sản xuất",
+        "Cẩn thận, có trách nhiệm, chủ động học hỏi và sẵn sàng làm việc lâu dài"
+      ],
+      "preferred": [
+        "Biết sử dụng phần mềm thiết kế (CorelDRAW, Illustrator...)",
+        "Từng tiếp xúc với máy CNC, laser, máy in"
+      ],
+      "fitPairs": [
+        ["Yêu thích máy móc, tò mò muốn hiểu cách vận hành từng dòng máy", "Ngại học kỹ thuật mới, chỉ muốn làm việc lặp lại đơn giản"],
+        ["Cẩn thận, có trách nhiệm với sản phẩm đầu ra", "Chủ quan, bỏ qua quy định an toàn khi vận hành máy"],
+        ["Chủ động học hỏi, sẵn sàng được đào tạo từ đầu", "Che giấu lỗi máy, đợi người khác phát hiện"],
+        ["Muốn gắn bó lâu dài, có lộ trình lên kỹ thuật viên chính/trưởng nhóm", "Tìm việc tạm thời, không có ý định gắn bó lâu dài"]
+      ],
+      "roadmap": [
+        "Làm quen và vận hành được ít nhất một dòng máy dưới sự hướng dẫn",
+        "Vận hành độc lập, tự xử lý được các lỗi kỹ thuật cơ bản",
+        "Đạt năng suất chuẩn, có thể luân chuyển hỗ trợ thêm dòng máy khác"
+      ],
+      "kpis": [
+        "Sản lượng hoàn thành/ngày đạt chuẩn năng suất",
+        "Tỷ lệ lỗi sản phẩm (sai thông số, lỗi kỹ thuật)",
+        "Thời gian dừng máy do sự cố kỹ thuật"
+      ],
+      "perks": [
+        "Mức lương cứng 8 – 20 triệu + KPI + OT (trao đổi theo năng lực), BHXH đầy đủ",
+        "Thưởng lễ/Tết, lương tháng 13, du lịch hàng năm",
+        "Được training bài bản về vận hành, bảo trì và xử lý lỗi máy",
+        "Lộ trình phát triển rõ ràng: Kỹ thuật viên → Kỹ thuật viên chính → Trưởng nhóm kỹ thuật",
+        "Môi trường \"One Team One Goal\" — tập thể tử tế, ghi nhận xứng đáng"
+      ],
+      "emailTitle": "Kỹ thuật viên vận hành máy - Họ tên",
+      "applyChannel": "zalo",
+      "img": "assets/images/team/may-san-xuat.webp",
+      "imgAlt": "Kỹ thuật viên vận hành máy sản xuất tại xưởng Ethan Ecom"
+    },
+    {
       "slug": "tuyen-dung-chuyen-vien-it-ai",
       "title": "Chuyên viên IT — Nghiên cứu & Ứng dụng AI",
       "display": "Chuyên viên IT — Ứng dụng AI",

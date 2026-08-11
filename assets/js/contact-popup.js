@@ -802,6 +802,7 @@
                   <option value="tuyen-dung-van-hanh-may-in-giay">NV Vận Hành Máy In Giấy &middot; Khối Sản Xuất</option>
                   <option value="tuyen-dung-van-hanh-may-in-uv">NV Vận Hành Máy In UV Phẳng &middot; Khối Sản Xuất</option>
                   <option value="tuyen-dung-quan-ly-kho">NV Quản lý Kho NVL &middot; Khối Sản Xuất</option>
+                  <option value="tuyen-dung-ky-thuat-van-hanh-may-san-xuat">KTV Vận Hành Máy Sản Xuất &middot; Khối Sản Xuất</option>
                   <option value="tuyen-dung-chuyen-vien-it-ai">Chuyên viên IT — Ứng dụng AI &middot; Khối hỗ trợ</option>
                 </select>
               </div>

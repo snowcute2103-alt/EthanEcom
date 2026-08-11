@@ -48,7 +48,7 @@
 - Sub: "Môi trường sáng tạo, cởi mở — Hỗ trợ máy tính, Ăn trưa tại công ty, Lương thưởng hấp dẫn"
 - Thẻ tuyển dụng nổi bật: Leader TikTokShop US / Web Developer / Video Creator / Graphic Designer / Internet Marketing...
 - Tag màu theo bộ phận + tên vị trí + button "Ứng tuyển"
-- Button: "Xem tất cả 15 vị trí" → `/careers`
+- Button: "Xem tất cả 16 vị trí" → `/careers`
 
 ### 10. Testimonials — Khách hàng nói gì *(animation: stagger fadeIn cards)*
 - Grid 2×2 hoặc carousel auto-slide

@@ -111,7 +111,7 @@ Mô tả ngắn thương hiệu: *"Ethan Ecom – nơi khơi nguồn sáng tạo
 
 ---
 
-## Vị trí tuyển dụng (Careers — 15 vị trí, cập nhật 2026-07-28)
+## Vị trí tuyển dụng (Careers — 16 vị trí, cập nhật 2026-08-11)
 
 > Nguồn chi tiết từng JD: `tools/tuyen-dung-jobs.json` (mỗi vị trí 1 trang riêng `tuyen-dung-<slug>.html`, sinh bằng `tools/gen-tuyen-dung.py`).
 
@@ -131,6 +131,7 @@ Mô tả ngắn thương hiệu: *"Ethan Ecom – nơi khơi nguồn sáng tạo
 | NV Vận Hành Máy In Giấy | SX2-INGIAY-01 | SX2 Giấy | 01 | Từ 7 Tr + OT + thưởng | tuyen-dung-van-hanh-may-in-giay |
 | NV Vận Hành Máy In UV Phẳng (UV Flatbed) | SX-UVFLATBED-01 | Bộ phận In UV | 01 | Từ 7 Tr + OT + thưởng | tuyen-dung-van-hanh-may-in-uv |
 | NV Quản lý Kho Nguyên Vật Liệu | SX-KHO-01 | Kho NVL | 01 | 8–10 Tr + OT + thưởng | tuyen-dung-quan-ly-kho |
+| Kỹ thuật viên Vận hành Máy Sản xuất | SX-KTV-01 | Bộ phận Vận hành Máy | Nhiều | 8–20 Tr + KPI + OT | tuyen-dung-ky-thuat-van-hanh-may-san-xuat |
 | Chuyên viên IT — Nghiên cứu & Ứng dụng AI | IT-AI-01 | Khối hỗ trợ — IT | 01 | 8–20 Tr + thưởng hiệu quả | tuyen-dung-chuyen-vien-it-ai |
 
 Ứng tuyển: CV về **hr@ethanecom.com** (tiêu đề `[Tên Vị Trí] - [Họ tên]`); khối văn phòng/thiết kế thêm kênh fanpage Ethan Ecom, khối sản xuất thêm gọi/Zalo **0967 473 979**. Địa điểm: 61/1G Võ Dõng (2), Thống Nhất, Đồng Nai. Giờ hành chánh 7:30–17:00 T2–T7; ca đêm 18:00–1:00. Thử việc 1 tháng.
