@@ -709,20 +709,12 @@
   .cw-hint {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 12px;
     padding: 10px 18px 14px;
     border-top: 1px solid rgba(255,255,255,.08);
     color: rgba(255,255,255,.5);
     font-size: 12px;
-  }
-  .cw-hint kbd {
-    font-family: inherit;
-    background: rgba(255,255,255,.08);
-    border: 1px solid rgba(255,255,255,.15);
-    border-radius: 0;
-    padding: 2px 7px;
-    color: rgba(255,255,255,.75);
   }
   .cw-online { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
   .cw-online i {
@@ -733,7 +725,6 @@
   }
   @media (max-width: 768px) {
     .cw-panel { right: 14px; bottom: 122px; width: calc(100vw - 28px); }
-    .cw-hint span:first-child { display: none; }
   }
   @media (prefers-reduced-motion: reduce) {
     .cw-panel { animation: none; }
@@ -874,7 +865,6 @@
         </form>
       </div>
       <div class="cw-hint">
-        <span>Nhấn <kbd>Shift + Enter</kbd> để xuống dòng</span>
         <span class="cw-online"><i aria-hidden="true"></i>Phản hồi trong 24h làm việc</span>
       </div>
     </div>
