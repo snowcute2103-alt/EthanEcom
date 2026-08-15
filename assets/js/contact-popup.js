@@ -529,20 +529,20 @@
     transform: translateY(-3px);
     box-shadow: 0 16px 38px rgba(0,0,0,.28);
   }
-  /* 3 — Nội Bộ: nền vàng phẳng, viền vàng đậm hơn */
+  /* 3 — Nội Bộ: nền vàng đồng (gold), viền đậm hơn */
   .cp-trigger--internal {
     min-width: 168px;
     padding: 9px 22px;
-    background: var(--yellow, #F4B41A);
+    background: #CFA23C;
     color: #fff;
     font-weight: 600;
-    border-color: var(--yellow-2, #FFC107);
+    border-color: #A58230;
     font-size: 10px;
-    box-shadow: 0 8px 20px rgba(244,180,26,.28);
+    box-shadow: 0 8px 20px rgba(207,162,60,.28);
     animation: cp-tab-in 0.6s 1.24s cubic-bezier(0.34,1.56,0.64,1) both;
   }
   .cp-trigger--internal:hover {
-    background: var(--yellow-2, #FFC107);
+    background: #DDB65A;
     color: #fff;
     border-color: #fff;
     transform: translateY(-3px);
