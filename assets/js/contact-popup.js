@@ -19,6 +19,9 @@
 
 (function () {
 
+  /* Trang Nội bộ (portal riêng, deploy Vercel) — đổi khi có domain thật */
+  const INTERNAL_PORTAL_URL = 'https://noibo.ethanecom.com';
+
   /* ── INJECT CSS ── */
   const css = `
 
@@ -526,6 +529,23 @@
     transform: translateY(-3px);
     box-shadow: 0 16px 38px rgba(0,0,0,.28);
   }
+  /* 3 — Nội Bộ: khung trầm hơn (không cạnh tranh 2 CTA khách hàng), viền mảnh */
+  .cp-trigger--internal {
+    min-width: 168px;
+    padding: 9px 22px;
+    background: rgba(15,34,68,.82);
+    color: rgba(255,255,255,.75);
+    border-color: rgba(255,255,255,.18);
+    font-size: 10px;
+    box-shadow: 0 8px 20px rgba(15,34,68,.22);
+    animation: cp-tab-in 0.6s 1.24s cubic-bezier(0.34,1.56,0.64,1) both;
+  }
+  .cp-trigger--internal:hover {
+    background: var(--navy-deep, #0F2244);
+    color: #fff;
+    border-color: rgba(255,255,255,.4);
+    transform: translateY(-3px);
+  }
   .cp-trigger:focus-visible {
     outline: 3px solid var(--yellow, #F4B41A);
     outline-offset: 3px;
@@ -875,6 +895,7 @@
     <div class="cp-dock">
       <button class="cp-trigger cp-trigger--apply" id="cpTrigger" aria-label="Ứng tuyển ngay">Ứng tuyển ngay</button>
       <button class="cp-trigger cp-trigger--contact" id="cpTriggerContact" aria-label="Liên hệ ngay">Liên hệ ngay</button>
+      <a class="cp-trigger cp-trigger--internal" href="${INTERNAL_PORTAL_URL}" target="_blank" rel="noopener noreferrer" aria-label="Nội bộ — đăng nhập theo vị trí công việc">Nội Bộ</a>
     </div>
   `;
 

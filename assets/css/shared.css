@@ -740,16 +740,17 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
     box-shadow: 0 -6px 24px rgba(15,34,68,.22);
   }
   .mcta {
-    flex: 1 1 50%; min-width: 0;
+    flex: 1 1 0; min-width: 0;
     display: flex; align-items: center; justify-content: center; text-align: center;
-    padding: 11px 8px; min-height: 46px;
+    padding: 11px 6px; min-height: 46px;
     border: 1px solid rgba(0,0,0,.25); border-radius: 0; -webkit-appearance: none; appearance: none;
     font-family: var(--font-lead); font-weight: var(--fw-semibold);
     font-size: 11px; letter-spacing: .05em; text-transform: uppercase;
     cursor: pointer; transition: filter .2s, background .2s, color .2s;
   }
-  .mcta--apply   { background: #fff; color: var(--navy, #16305C); }
-  .mcta--contact { background: #176BD0; color: #fff; }
+  .mcta--apply    { background: #fff; color: var(--navy, #16305C); }
+  .mcta--contact  { background: #176BD0; color: #fff; }
+  .mcta--internal { background: var(--navy-deep, #0F2244); color: rgba(255,255,255,.85); font-size: 10px; }
   .mcta:active   { filter: brightness(.95); }
   /* chừa chỗ để bar không che nội dung/footer cuối trang */
   body { padding-bottom: 56px; }
