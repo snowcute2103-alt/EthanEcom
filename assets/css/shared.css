@@ -750,7 +750,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
   }
   .mcta--apply    { background: #fff; color: var(--navy, #16305C); }
   .mcta--contact  { background: #176BD0; color: #fff; }
-  .mcta--internal { background: var(--navy-deep, #0F2244); color: rgba(255,255,255,.85); font-size: 10px; }
+  .mcta--internal { background: var(--yellow, #F4B41A); color: var(--navy-deep, #0F2244); border: none; font-size: 10px; }
   .mcta:active   { filter: brightness(.95); }
   /* chừa chỗ để bar không che nội dung/footer cuối trang */
   body { padding-bottom: 56px; }
