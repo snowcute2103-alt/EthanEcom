@@ -897,7 +897,7 @@
     <div class="cp-dock">
       <button class="cp-trigger cp-trigger--apply" id="cpTrigger" aria-label="Ứng tuyển ngay">Ứng tuyển ngay</button>
       <button class="cp-trigger cp-trigger--contact" id="cpTriggerContact" aria-label="Liên hệ ngay">Liên hệ ngay</button>
-      <a class="cp-trigger cp-trigger--internal" href="${INTERNAL_PORTAL_URL}" target="_blank" rel="noopener noreferrer" aria-label="Nội bộ — đăng nhập theo vị trí công việc">Nội Bộ</a>
+      <a class="cp-trigger cp-trigger--internal" href="${INTERNAL_PORTAL_URL}" target="_blank" rel="noopener noreferrer" aria-label="Nội bộ Ethan — đăng nhập theo vị trí công việc">Nội Bộ Ethan</a>
     </div>
   `;
 

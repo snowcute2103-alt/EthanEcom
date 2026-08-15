@@ -91,7 +91,7 @@ function buildHeader() {
 <div class="mcta-dock" role="group" aria-label="Ứng tuyển, liên hệ và nội bộ">
   <button type="button" class="mcta mcta--apply" data-cp="apply">Ứng tuyển ngay</button>
   <button type="button" class="mcta mcta--contact" data-cp="contact">Liên hệ ngay</button>
-  <a class="mcta mcta--internal" href="https://noibo.ethanecom.com" target="_blank" rel="noopener noreferrer">Nội Bộ</a>
+  <a class="mcta mcta--internal" href="https://noibo.ethanecom.com" target="_blank" rel="noopener noreferrer">Nội Bộ Ethan</a>
 </div>
 `;
 }
