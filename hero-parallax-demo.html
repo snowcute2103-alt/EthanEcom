@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero Parallax 3D + Center Badge — Standalone Demo</title>
+<style>
+/* ══════════════════════════════════════════
+   RESET / BASE (chỉ để demo chạy độc lập —
+   trong dự án thật bạn dùng font & biến màu của bạn)
+══════════════════════════════════════════ */
+:root{
+  --font-heading: 'Georgia', 'Times New Roman', serif;
+  --font-text: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --fs-base: 15px;
+  --fs-caption: 13px;
+  --fw-semibold: 600;
+  --ink: #3b2f26;
+  --gold: #b89a6b;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font-text);background:#fff}
+a{text-decoration:none;color:inherit}
+.container{max-width:1500px;margin:0 auto;padding:0 24px}
+
+/* ══════════════════════════════════════════
+   HERO PARALLAX 3D (Aceternity-style, vanilla JS)
+   Hàng ảnh nghiêng 3D → xoay phẳng + trượt ngang khi cuộn trang
+══════════════════════════════════════════ */
+.hpx{
+  height:auto;padding:24px 0 60px;overflow:hidden;
+  perspective:1000px;transform-style:preserve-3d;
+  background:#0a0a0a;position:relative;
+}
+/* .hpx-stage bọc rows + badge */
+.hpx-stage{position:relative}
+
+.hpx-rows{position:relative;margin-top:-400px;margin-left:-300px;will-change:transform,opacity}
+/* justify-content:center — mỗi hàng có dư thẻ (7 thẻ) để phủ hết chiều ngang kể cả màn hình rất rộng */
+.hpx-row{display:flex;gap:22px;margin-bottom:22px;justify-content:center;will-change:transform}
+.hpx-row--rev{flex-direction:row-reverse}
+
+.hpx-card{
+  position:relative;display:block;flex-shrink:0;
+  width:340px;height:460px;
+  border-radius:18px;overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+  transition:transform .35s cubic-bezier(.4,0,.2,1);
+}
+.hpx-card:hover{transform:translateY(-18px)}
+.hpx-card img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:left top;display:block;
+}
+.hpx-card::after{
+  content:'';position:absolute;inset:0;background:#000;
+  opacity:0;transition:opacity .35s;pointer-events:none;
+}
+.hpx-card:hover::after{opacity:.72}
+.hpx-card-title{
+  position:absolute;left:18px;right:18px;bottom:16px;z-index:2;
+  color:#fff;font-family:var(--font-heading);
+  font-size:var(--fs-base);font-weight:var(--fw-semibold);line-height:1.4;
+  opacity:0;transform:translateY(6px);
+  transition:opacity .35s,transform .35s;
+}
+.hpx-card:hover .hpx-card-title{opacity:1;transform:translateY(0)}
+
+/* ══════════════════════════════════════════
+   BADGE TRÒN Ở CHÍNH GIỮA MÀN HÌNH — fixed, không xoay/trượt theo lưới ảnh,
+   JS bật/tắt opacity tùy hero có đang nằm trong khung nhìn hay không
+══════════════════════════════════════════ */
+.hpx-badge{
+  position:fixed; left:50%; top:50%;
+  width:min(18vw,220px); aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  z-index:50; pointer-events:none;
+  opacity:0; transition:opacity .3s ease;
+}
+.hpx-badge.is-visible{opacity:1}
+.hpx-badge-face{
+  position:absolute; inset:6%;
+  background:#fdfbf6;
+  border-radius:50%;
+  box-shadow:0 16px 40px rgba(0,0,0,.45);
+  display:flex; align-items:center; justify-content:center;
+}
+.hpx-badge-ring{position:absolute; inset:0; border-radius:50%; border:1.5px solid var(--gold)}
+.hpx-badge-ring.alt{inset:3%; opacity:.55; transform:translate(2px,-2px)}
+.hpx-badge-center{text-align:center; color:var(--ink); font-family:var(--font-heading)}
+.hpx-badge-center .amp{font-size:clamp(13px,1.6vw,18px); line-height:1; margin:1px 0}
+.hpx-badge-center .name{
+  font-size:clamp(10px,1.1vw,13px); font-weight:600;
+  letter-spacing:.05em; text-transform:uppercase; line-height:1.25;
+}
+.hpx-badge svg{position:absolute; inset:0; width:100%; height:100%; overflow:visible}
+.hpx-badge svg text{
+  font-family:var(--font-heading); font-size:8px; letter-spacing:1.8px;
+  fill:var(--ink); text-transform:uppercase;
+}
+
+/* Tablet/Mobile — thu nhỏ card, luôn hiện tiêu đề (fallback cho touch, không có hover) */
+@media(max-width:1024px){
+  .hpx-card{width:260px;height:350px}
+  .hpx-row{gap:16px;margin-bottom:16px}
+}
+@media(max-width:768px){
+  .hpx{height:auto;padding-top:16px;padding-bottom:40px}
+  .hpx-row{gap:8px;margin-bottom:8px}
+  .hpx-card{width:190px;height:260px}
+  .hpx-card::after{background:linear-gradient(180deg,transparent 42%,rgba(0,0,0,.78));opacity:1}
+  .hpx-card:hover::after{opacity:1}
+  .hpx-card-title{opacity:1;transform:none;left:12px;right:12px;bottom:10px;font-size:var(--fs-caption)}
+  .hpx-badge{width:min(40vw,150px)}
+  .hpx-badge svg text{font-size:6.5px;letter-spacing:1.2px}
+}
+
+/* Reduced motion / no-JS: hero gọn, hàng card phẳng cuộn ngang được */
+@media(prefers-reduced-motion:reduce){
+  .hpx{height:auto;padding-bottom:100px}
+  .hpx-row{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .hpx-card::after{background:linear-gradient(180deg,transparent 42%,rgba(0,0,0,.78));opacity:1}
+  .hpx-card-title{opacity:1;transform:none}
+}
+
+.spacer{height:120vh;display:flex;align-items:center;justify-content:center;color:#888;font-family:var(--font-text)}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     HTML — copy nguyên khối <section> này
+══════════════════════════════════════════ -->
+<section class="hpx" id="hero-parallax">
+  <div class="hpx-stage">
+    <div class="hpx-rows">
+      <div class="hpx-row">
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23334155'/%3E%3C/svg%3E" alt="Ảnh 29">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 29</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23a16207'/%3E%3C/svg%3E" alt="Ảnh 30">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 30</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23be123c'/%3E%3C/svg%3E" alt="Ảnh 31">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 31</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%230e7490'/%3E%3C/svg%3E" alt="Ảnh 32">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 32</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%236d28d9'/%3E%3C/svg%3E" alt="Ảnh 33">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 33</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23166534'/%3E%3C/svg%3E" alt="Ảnh 34">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 34</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%237c2d12'/%3E%3C/svg%3E" alt="Ảnh 35">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 35</span>
+        </a>
+      </div>
+      <div class="hpx-row hpx-row--rev">
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%234338ca'/%3E%3C/svg%3E" alt="Ảnh 36">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 36</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23b45309'/%3E%3C/svg%3E" alt="Ảnh 37">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 37</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23065f46'/%3E%3C/svg%3E" alt="Ảnh 38">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 38</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%239f1239'/%3E%3C/svg%3E" alt="Ảnh 39">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 39</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23374151'/%3E%3C/svg%3E" alt="Ảnh 40">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 40</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%230891b2'/%3E%3C/svg%3E" alt="Ảnh 41">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 41</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%2392400e'/%3E%3C/svg%3E" alt="Ảnh 42">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 42</span>
+        </a>
+      </div>
+      <div class="hpx-row">
+        <a class="hpx-card" href="#">
+          <img loading="eager" fetchpriority="high" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%231D3251'/%3E%3C/svg%3E" alt="Ảnh 1">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 1</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%232a4a76'/%3E%3C/svg%3E" alt="Ảnh 2">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 2</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23dc2626'/%3E%3C/svg%3E" alt="Ảnh 3">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 3</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23059669'/%3E%3C/svg%3E" alt="Ảnh 4">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 4</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%238b5cf6'/%3E%3C/svg%3E" alt="Ảnh 5">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 5</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23f97316'/%3E%3C/svg%3E" alt="Ảnh 21">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 21</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%234f46e5'/%3E%3C/svg%3E" alt="Ảnh 22">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 22</span>
+        </a>
+      </div>
+      <div class="hpx-row hpx-row--rev">
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23f59e0b'/%3E%3C/svg%3E" alt="Ảnh 6">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 6</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23ec4899'/%3E%3C/svg%3E" alt="Ảnh 7">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 7</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%231D3251'/%3E%3C/svg%3E" alt="Ảnh 8">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 8</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%232a4a76'/%3E%3C/svg%3E" alt="Ảnh 9">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 9</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23dc2626'/%3E%3C/svg%3E" alt="Ảnh 10">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 10</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%2314b8a6'/%3E%3C/svg%3E" alt="Ảnh 23">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 23</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23be185d'/%3E%3C/svg%3E" alt="Ảnh 24">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 24</span>
+        </a>
+      </div>
+      <div class="hpx-row">
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23059669'/%3E%3C/svg%3E" alt="Ảnh 11">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 11</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%238b5cf6'/%3E%3C/svg%3E" alt="Ảnh 12">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 12</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23f59e0b'/%3E%3C/svg%3E" alt="Ảnh 13">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 13</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23ec4899'/%3E%3C/svg%3E" alt="Ảnh 14">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 14</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%231D3251'/%3E%3C/svg%3E" alt="Ảnh 15">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 15</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23eab308'/%3E%3C/svg%3E" alt="Ảnh 25">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 25</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%237c3aed'/%3E%3C/svg%3E" alt="Ảnh 26">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 26</span>
+        </a>
+      </div>
+      <div class="hpx-row hpx-row--rev">
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%232a4a76'/%3E%3C/svg%3E" alt="Ảnh 16">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 16</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23dc2626'/%3E%3C/svg%3E" alt="Ảnh 17">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 17</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23059669'/%3E%3C/svg%3E" alt="Ảnh 18">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 18</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%238b5cf6'/%3E%3C/svg%3E" alt="Ảnh 19">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 19</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23f59e0b'/%3E%3C/svg%3E" alt="Ảnh 20">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 20</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23059669'/%3E%3C/svg%3E" alt="Ảnh 27">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 27</span>
+        </a>
+        <a class="hpx-card" href="#">
+          <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23dc2626'/%3E%3C/svg%3E" alt="Ảnh 28">
+          <span class="hpx-card-title">Tiêu đề thẻ ảnh 28</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BADGE TRÒN — đặt NGOÀI .hpx (section cha có perspective/transform-style, thứ sẽ biến .hpx
+     thành containing block của phần tử fixed bên trong nó, khiến "position:fixed" không còn
+     canh theo viewport nữa). Đặt ở cấp <body> để top/left:50% luôn là chính giữa MÀN HÌNH thật. -->
+<div class="hpx-badge" id="hpx-badge">
+  <div class="hpx-badge-ring"></div>
+  <div class="hpx-badge-ring alt"></div>
+  <div class="hpx-badge-face">
+    <div class="hpx-badge-center">
+      <div class="name">Your</div>
+      <div class="amp">&amp;</div>
+      <div class="name">Brand</div>
+    </div>
+  </div>
+  <svg viewBox="0 0 300 300">
+    <defs>
+      <path id="arcTop" d="M 40,150 A 110,110 0 0 1 260,150" fill="none"/>
+      <path id="arcBottom" d="M 260,150 A 110,110 0 0 1 40,150" fill="none"/>
+    </defs>
+    <text><textPath href="#arcTop" startOffset="50%" text-anchor="middle">Since 2024</textPath></text>
+    <text><textPath href="#arcBottom" startOffset="50%" text-anchor="middle">www.yoursite.com</textPath></text>
+  </svg>
+</div>
+
+<div class="spacer">↓ Cuộn tiếp để xem hiệu ứng dừng lại khi hero đã trôi qua (nội dung trang thật đặt ở đây) ↓</div>
+
+<!-- ══════════════════════════════════════════
+     JS — copy nguyên khối script này (đặt cuối body)
+══════════════════════════════════════════ -->
+<script>
+/* Hero parallax 3D — port vanilla từ Aceternity HeroParallax (framer-motion)
+   rotateX 15→0, rotateZ 20→0, translateY âm→dương, opacity .2→1 trong 20% đầu;
+   các hàng ảnh trượt ngang ngược chiều nhau suốt chiều cao section. Lerp rAF thay spring.
+   Badge tròn KHÔNG bị transform này tác động vì nó là sibling của .hpx-rows, không phải con. */
+(function(){
+  var hero = document.getElementById('hero-parallax');
+  if (!hero) return;
+  var badge = document.getElementById('hpx-badge');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (badge) badge.classList.add('is-visible');
+    return;
+  }
+  var rows = hero.querySelector('.hpx-rows');
+  if (!rows) return;
+  var rowEls = rows.children;
+
+  function cfg(){
+    return window.innerWidth < 768
+      ? { ty0:-180, ty1:24, tx:460, rx:12, rz:14 }
+      : { ty0:0, ty1:80, tx:900, rx:15, rz:20 };
+  }
+  /* map tiến độ p: [0→.2] chạy hết a→b (giống useTransform([0,0.2])) */
+  function ramp(p,a,b){ var t = Math.min(p/0.2, 1); return a + (b-a)*t; }
+
+  function targets(){
+    var c = cfg();
+    var r = hero.getBoundingClientRect();
+    var p = r.height ? Math.max(0, Math.min(1, -r.top / r.height)) : 0;
+    return {
+      rx: ramp(p, c.rx, 0),
+      rz: ramp(p, c.rz, 0),
+      ty: ramp(p, c.ty0, c.ty1),
+      op: ramp(p, 0.2, 1),
+      tx: c.tx * p
+    };
+  }
+
+  var cur = null, raf = null;
+  function tick(){
+    var t = targets();
+    var k = cur ? 0.09 : 1;              /* frame đầu: snap thẳng vào trạng thái p=0 */
+    if (!cur) cur = {};
+    var settled = true;
+    for (var key in t){
+      cur[key] = (cur[key] === undefined) ? t[key] : cur[key] + (t[key]-cur[key])*k;
+      if (Math.abs(t[key]-cur[key]) > 0.05) settled = false;
+    }
+    rows.style.transform = 'rotateX('+cur.rx.toFixed(2)+'deg) rotateZ('+cur.rz.toFixed(2)+'deg) translateY('+cur.ty.toFixed(1)+'px)';
+    rows.style.opacity = cur.op.toFixed(3);
+    var x = cur.tx;
+    /* lật trái-phải so với bản trước: hàng chẵn = --rev (trượt phải, +x) · hàng lẻ = thường (trượt trái, -x) */
+    for (var i = 0; i < rowEls.length; i++) {
+      rowEls[i].style.transform = 'translateX(' + ((i % 2 ? -x : x)).toFixed(1) + 'px)';
+    }
+    /* badge fixed giữa màn hình — chỉ hiện khi hero còn nằm trong khung nhìn */
+    if (badge) {
+      var heroRect = hero.getBoundingClientRect();
+      var inView = heroRect.bottom > 0 && heroRect.top < window.innerHeight;
+      badge.classList.toggle('is-visible', inView);
+    }
+    raf = settled ? null : requestAnimationFrame(tick);
+  }
+  function kick(){ if (raf === null) raf = requestAnimationFrame(tick); }
+
+  window.addEventListener('scroll', kick, { passive:true });
+  window.addEventListener('resize', function(){ cur = null; kick(); }, { passive:true });
+  kick();
+})();
+</script>
+</body>
+</html>

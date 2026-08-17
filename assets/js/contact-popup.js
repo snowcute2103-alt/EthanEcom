@@ -507,13 +507,6 @@
     box-shadow: 0 12px 30px rgba(15,34,68,.20);
     animation: cp-tab-in 0.6s 1s cubic-bezier(0.34,1.56,0.64,1) both;
   }
-  .cp-trigger--apply:hover {
-    background: var(--yellow, #F4B41A);
-    color: var(--navy-deep, #0F2244);
-    border-color: var(--yellow, #F4B41A);
-    transform: translateY(-3px);
-    box-shadow: 0 16px 38px rgba(244,180,26,.38);
-  }
   /* 2 — Liên hệ ngay: khung nền đậm (navy đặc, chữ trắng) */
   .cp-trigger--contact {
     background: linear-gradient(135deg, var(--navy, #16305C) 0%, var(--navy-deep, #0F2244) 100%);
@@ -522,13 +515,6 @@
     box-shadow: 0 12px 30px rgba(15,34,68,.35);
     animation: cp-tab-in 0.6s 1.12s cubic-bezier(0.34,1.56,0.64,1) both;
   }
-  .cp-trigger--contact:hover {
-    background: #fff;
-    color: var(--text, #1A2433);
-    border-color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 16px 38px rgba(0,0,0,.28);
-  }
   /* 3 — Nội Bộ: nền vàng đồng (gold), viền đậm hơn */
   .cp-trigger--internal {
     min-width: 168px;
@@ -536,7 +522,8 @@
     background: #CFA23C;
     color: #fff;
     font-weight: 600;
-    border-color: #A58230;
+    border-width: 1px;
+    border-color: #fff;
     font-size: 10px;
     box-shadow: 0 8px 20px rgba(207,162,60,.28);
     animation: cp-tab-in 0.6s 1.24s cubic-bezier(0.34,1.56,0.64,1) both;

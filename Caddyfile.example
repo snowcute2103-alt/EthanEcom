@@ -16,6 +16,19 @@ ethanecom.com, www.ethanecom.com {
 
     encode zstd gzip                    # nén (đang bật rồi — giữ nguyên)
 
+    # ── Security headers ──
+    # CSP dùng 'unsafe-inline' cho script/style vì site có 33+ thuộc tính
+    # onclick="..." và <style> nội tuyến trên mọi trang (không build step để
+    # tách ra). Muốn bỏ unsafe-inline phải refactor hết onclick sang
+    # addEventListener trong assets/js/ trước — việc riêng, rủi ro cao hơn.
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "SAMEORIGIN"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formsubmit.co https://www.googletagmanager.com https://www.google-analytics.com; frame-src https://www.google.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'"
+    }
+
     # Clean URL: /gioi-thieu → gioi-thieu.html (giống serve.py)
     try_files {path} {path}.html {path}/ =404
 
