@@ -54,3 +54,11 @@ logs/
 *.tmp
 *.temp
 .cache/
+
+# Python virtualenvs / bytecode
+.venv/
+__pycache__/
+*.pyc
+
+# AEO pipeline — dữ liệu trung gian, tái tạo được bằng extract.py/score.py/generate.py
+tools/aeo/output/
