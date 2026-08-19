@@ -38,7 +38,6 @@ window.ethanSendForm = function (payload) {
 
 /* ── NAV PAGES (single source of truth) ── */
 const NAV_LINKS = [
-  { href: './',    label: 'Trang chủ',   icon: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
   { href: 'gioi-thieu',     label: 'Giới thiệu',  icon: '<circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>' },
   { href: 'tam-nhin',    label: 'Tầm nhìn',     icon: '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>' },
   { href: 'cau-chuyen',      label: 'Câu chuyện',   icon: '<path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>' },
@@ -53,7 +52,8 @@ function buildHeader() {
   ).join('');
   const rightItems = NAV_LINKS.slice(3).map(l =>
     `<a href="${l.href}">${l.label}</a>`
-  ).join('') + `<a href="lien-he">Liên hệ</a>`;
+  ).join('') + `<a href="lien-he">Liên hệ</a>`
+    + `<a href="https://noibo.ethanecom.com" target="_blank" rel="noopener noreferrer">Nội bộ</a>`;
   const mobItems = NAV_LINKS.map(l =>
     `<a href="${l.href}">${l.label}</a>`
   ).join('') + `<a href="lien-he">Liên hệ</a>`;
@@ -88,10 +88,9 @@ function buildHeader() {
     <a href="tel:+84967473979">+84 967 473 979</a>
   </div>
 </nav>
-<div class="mcta-dock" role="group" aria-label="Ứng tuyển, liên hệ và nội bộ">
+<div class="mcta-dock" role="group" aria-label="Ứng tuyển và liên hệ">
   <button type="button" class="mcta mcta--apply" data-cp="apply">Ứng tuyển ngay</button>
   <button type="button" class="mcta mcta--contact" data-cp="contact">Liên hệ ngay</button>
-  <a class="mcta mcta--internal" href="https://noibo.ethanecom.com" target="_blank" rel="noopener noreferrer">Nội Bộ Ethan</a>
 </div>
 `;
 }
