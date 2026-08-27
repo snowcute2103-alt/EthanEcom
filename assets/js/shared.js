@@ -4,6 +4,16 @@
    active nav detection, scroll animations, counter, parallax.
    ================================================================ */
 
+/* Microsoft Clarity — theo dõi hành vi và session replay trên toàn website. */
+(function (c, l, a, r, i, t, y) {
+  c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+  t = l.createElement(r);
+  t.async = 1;
+  t.src = 'https://www.clarity.ms/tag/' + i;
+  y = l.getElementsByTagName(r)[0];
+  y.parentNode.insertBefore(t, y);
+})(window, document, 'clarity', 'script', 'y8usvcaeq5');
+
 /* ════════════════════════════════════════════════════════════════
    FORM EMAIL WEBHOOK (Google Apps Script) — NGUỒN URL DUY NHẤT toàn site.
    Dùng chung cho MỌI form gửi mail: 2 popup (chat Liên hệ + Ứng tuyển) và
