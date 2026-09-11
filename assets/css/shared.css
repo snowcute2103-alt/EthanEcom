@@ -516,7 +516,7 @@ body.will-animate .reveal.active { opacity: 1; transform: none; }
 
 .nav a {
   font-family: var(--font-lead);
-  font-size:var(--fs-base); font-weight:var(--fw-light);
+  font-size:var(--fs-base); font-weight:var(--fw-medium);
   letter-spacing: .16em; text-transform: uppercase;
   color: rgba(255,255,255,.82);
   transition: color .25s;

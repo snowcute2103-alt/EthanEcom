@@ -70,7 +70,7 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@400;500;600;700&family=Fahkwang:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@400;500;600;700&family=Fahkwang:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@400;500;600;700&family=Fahkwang:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"></noscript>
-<link rel="stylesheet" href="assets/css/shared.min.css?v=housef10">
+<link rel="stylesheet" href="assets/css/shared.min.css?v=housef11">
 <!-- Font riêng cho board Hành trình 2026: serif Didone tương phản cao theo ảnh lịch gốc -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&display=swap">
 <style>
@@ -84,14 +84,19 @@
 /* ── IMG ── */
 .img-ph{border-radius:0;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;min-height:40px}
 .img-ph img{width:100%;height:100%;object-fit:cover;display:block}
-.ph-vision{background:linear-gradient(135deg,#2a4a76 0%,#1D3251 40%,#0d1e35 100%);height:460px}
+.ph-vision{background:linear-gradient(135deg,#2a4a76 0%,#1D3251 40%,#0d1e35 100%);aspect-ratio:2000/1126;height:auto}
 
-/* ── VISION STORY (text + image) ── */
+/* ── VISION STORY (2 cột: chữ trái, ảnh phải, không cắt) ── */
 .story-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+@media(min-width:769px){.story-grid{grid-template-columns:0.85fr 1.15fr;gap:56px}}
 .story-img-wrap{overflow:hidden;border-radius:0}
 .story-img-wrap .img-ph{border-radius:0}
+.story-highlight{position:relative;margin-top:22px;padding:20px 24px 20px 28px;background:#EAF3FB;border-left:3px solid var(--blue);border-radius:0;overflow:hidden}
+.story-highlight--full{margin:40px 0 0;padding:24px 28px 24px 32px}
+.story-highlight-mark{position:absolute;top:-14px;right:14px;font-family:var(--font-heading);font-size:72px;line-height:1;color:rgba(27,79,216,.12);pointer-events:none}
+.story-highlight p{position:relative;margin:0;color:#16305C;line-height:1.7;font-size:var(--fs-base);font-weight:var(--fw-medium,500)}
+.story-highlight strong{color:var(--blue)}
 .story-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(27,79,216,.08);border:1px solid rgba(27,79,216,.15);color:var(--blue);font-size:var(--fs-base);font-weight:var(--fw-semibold);letter-spacing:2px;text-transform:uppercase;padding:7px 16px;border-radius:0;margin-bottom:20px}
-@media(min-width:769px){.story-grid{grid-template-columns:1fr 1fr;gap:72px}}
 
 /* ── NGUYÊN TẮC — statement full-bleed (điểm nhấn của trang) ── */
 .principle-hero{position:relative;overflow:hidden;text-align:center;color:var(--text);background:#fff}
@@ -110,9 +115,11 @@
 /* reveal đặt ở wrapper (không đặt trên thẻ): .reveal.active{transform:none} sẽ đè mất tilt/stagger */
 .m-deck{display:grid;grid-template-columns:1fr;gap:22px;max-width:1180px;margin:0 auto}
 .m-deck>.reveal{display:flex}
-.m-card{position:relative;flex:1;border-radius:0;overflow:hidden;min-height:560px;display:flex;align-items:flex-end;color:#fff;box-shadow:0 18px 50px rgba(15,34,68,.22);transition:transform .45s var(--ease,ease),box-shadow .45s var(--ease,ease)}
+.m-card{position:relative;flex:1;border-radius:0;overflow:hidden;min-height:680px;display:flex;align-items:flex-end;color:#fff;box-shadow:0 18px 50px rgba(15,34,68,.22);transition:transform .45s var(--ease,ease),box-shadow .45s var(--ease,ease)}
 .m-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.m-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,34,68,.25) 0%,rgba(15,34,68,.62) 42%,rgba(11,23,46,.97) 100%)}
+.m-img-connguoi{object-position:center bottom}
+.m-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 0%,transparent 50%,rgba(15,34,68,.55) 72%,rgba(11,23,46,.96) 100%)}
+.m-card--connguoi::after{background:linear-gradient(180deg,rgba(15,34,68,.7) 0%,transparent 26%,transparent 52%,rgba(15,34,68,.55) 72%,rgba(11,23,46,.96) 100%)}
 .m-arrow{position:absolute;top:16px;right:16px;z-index:2;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;font-size:var(--fs-md);color:#fff;backdrop-filter:blur(4px)}
 .m-body{position:relative;z-index:1;padding:26px 24px 28px}
 .m-tag{display:inline-block;font-size:var(--fs-base);font-weight:var(--fw-semibold);letter-spacing:2px;text-transform:uppercase;color:var(--yellow);margin-bottom:10px}
@@ -253,8 +260,7 @@ body.will-animate .j26-board .j26-year.lit{opacity:1}
 
 /* ── RESPONSIVE (mobile) ── */
 @media(max-width:768px){
-  .ph-vision{height:300px}
-  .m-card{min-height:460px}
+  .m-card{min-height:560px}
   .rm-card{padding:30px 24px 84px}
 }
 </style>
@@ -340,15 +346,18 @@ body.will-animate .j26-board .j26-year.lit{opacity:1}
           <div class="story-badge reveal">Đích đến của chúng tôi</div>
           <h2 class="st st--big reveal">Công ty e-commerce<br><em>vận hành bài bản</em></h2>
           <div class="divider reveal"></div>
-          <p class="reveal" style="margin-top:22px;color:var(--text);line-height:1.85;font-size:var(--fs-base)">Trong <strong>3–5 năm tới</strong>, Ethan không chỉ là một team bán hàng online, mà trở thành một <strong style="color:var(--blue)">công ty e-commerce có hệ thống vận hành bài bản</strong>: từ nghiên cứu sản phẩm, marketing, bán hàng đến sản xuất.</p>
-          <p class="reveal" style="margin-top:16px;color:var(--text);line-height:1.85;font-size:var(--fs-base)">Mục tiêu là xây dựng một đội ngũ đủ mạnh, <strong style="color:var(--blue)">tự chủ về sản phẩm và sản xuất</strong> để phát triển bền vững, thành công trên thị trường quốc tế, với thị trường trọng tâm là Mỹ qua TikTok Shop US, Etsy và Amazon.</p>
-          <p class="reveal" style="margin-top:16px;color:var(--text);line-height:1.85;font-size:var(--fs-base)">Và hơn thế: chứng minh rằng một <strong>doanh nghiệp tại địa phương</strong> vẫn có thể vươn ra thế giới, tạo cơ hội cho các bạn trẻ tài năng được phát triển sự nghiệp ngay trên quê hương mình, thay vì phải sống xa quê.</p>
+          <p class="reveal" style="margin-top:18px;color:var(--text);line-height:1.7;font-size:var(--fs-base)">Trong <strong>3–5 năm tới</strong>, Ethan không chỉ là một team bán hàng online, mà trở thành một <strong style="color:var(--blue)">công ty e-commerce có hệ thống vận hành bài bản</strong>: từ nghiên cứu sản phẩm, marketing, bán hàng đến sản xuất.</p>
+          <p class="reveal" style="margin-top:14px;color:var(--text);line-height:1.7;font-size:var(--fs-base)">Mục tiêu là xây dựng một đội ngũ đủ mạnh, <strong style="color:var(--blue)">tự chủ về sản phẩm và sản xuất</strong> để phát triển bền vững, thành công trên thị trường quốc tế, với thị trường trọng tâm là Mỹ qua TikTok Shop US, Etsy và Amazon.</p>
         </div>
         <div class="story-img-wrap reveal rr">
           <div class="img-ph ph-vision">
-            <img src="assets/images/donglong.webp" alt="Ethan Ecom vươn ra thị trường quốc tế" loading="lazy" onerror="this.style.visibility='hidden'" width="1600" height="1066">
+            <img src="assets/images/donglong.webp" alt="Ethan Ecom vươn ra thị trường quốc tế" loading="lazy" onerror="this.style.visibility='hidden'" width="2000" height="1126">
           </div>
         </div>
+      </div>
+      <div class="story-highlight story-highlight--full reveal">
+        <span class="story-highlight-mark">&rdquo;</span>
+        <p>Và hơn thế: chứng minh rằng một <strong>doanh nghiệp tại địa phương</strong> vẫn có thể vươn ra thế giới, tạo cơ hội cho các bạn trẻ tài năng được phát triển sự nghiệp ngay trên quê hương mình, thay vì phải sống xa quê.</p>
       </div>
     </div>
   </section>
@@ -527,8 +536,8 @@ body.will-animate .j26-board .j26-year.lit{opacity:1}
         </article>
         </div>
         <div class="reveal rs d2">
-        <article class="m-card">
-          <img src="assets/images/tamnhin/connguoi.webp" alt="Đội ngũ con người Ethan Ecom" loading="lazy" onerror="this.style.visibility='hidden'" width="900" height="1200">
+        <article class="m-card m-card--connguoi">
+          <img class="m-img-connguoi" src="assets/images/tamnhin/connguoi.webp" alt="Đội ngũ con người Ethan Ecom" loading="lazy" onerror="this.style.visibility='hidden'" width="900" height="1324">
           <span class="m-arrow" aria-hidden="true">↗</span>
           <div class="m-body">
             <span class="m-tag">Con người</span>
@@ -600,7 +609,7 @@ body.will-animate .j26-board .j26-year.lit{opacity:1}
 <div id="site-footer"></div>
 
 <!-- Shared JS (must be last) -->
-<script src="assets/js/shared.min.js?v=housef08"></script>
+<script src="assets/js/shared.min.js?v=housef10"></script>
 <script src="assets/js/page-animations.min.js"></script>
 
 <!-- Hành trình 2026: cuộn tới đâu vẽ tới đó — mỗi nhịp lướt lộ 2 điểm, 6 nhịp trọn 12; cuộn ngược thu lại -->

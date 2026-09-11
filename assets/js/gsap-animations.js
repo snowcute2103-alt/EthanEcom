@@ -102,6 +102,39 @@
       },
     });
 
+    /* ── HERO SPLIT ON SCROLL — cuộn xuống: "ETHAN" bay hết sang trái, "ECOM" bay hết sang phải, slogan mờ dần ── */
+    (function heroSplitScroll() {
+      var heroSection = document.getElementById('hero');
+      var wordLeft  = document.querySelector('.hero-word--left');
+      var wordRight = document.querySelector('.hero-word--right');
+      if (!heroSection || !wordLeft || !wordRight) return;
+      if (window.innerWidth <= 640) return; // hero mobile là bố cục khác hẳn (ảnh nhỏ trên nền trắng), không áp hiệu ứng
+
+      /* Trong lúc ghim, scrollY vẫn tăng dù trang không thật sự trôi → logic ẩn header khi "cuộn xuống"
+         của shared.js (dựa thuần vào scrollY) tưởng nhầm là đang cuộn và tự ẩn header giữa chừng lúc
+         chữ đang tách. Đánh dấu body.hero-pin-active để shared.js tạm bỏ qua việc ẩn header (xem initHeader). */
+      function setPinActive(v){ document.body.classList.toggle('hero-pin-active', v); }
+
+      /* Ghim hero lại trong lúc chữ tách ra — nếu không ghim, khối chữ (margin-top âm, nằm cao trong hero)
+         sẽ cuộn khuất khỏi màn hình trước khi kịp thấy hiệu ứng tách ngang. */
+      gsap.timeline({
+        scrollTrigger: {
+          trigger     : heroSection,
+          start       : 'top top',
+          end         : '+=650',      // đổi số này thì sửa luôn hằng số 650 trong shared.js (applyParallax, lớp hero) cho khớp
+          scrub       : true,
+          pin         : true,
+          onEnter     : function(){ setPinActive(true); },
+          onEnterBack : function(){ setPinActive(true); },
+          onLeave     : function(){ setPinActive(false); },
+          onLeaveBack : function(){ setPinActive(false); },
+        },
+      })
+        .to('.hero-slogan, .hero-divider', { opacity: 0, duration: 0.3, ease: 'none' }, 0)
+        .to(wordLeft,  { x: '-120vw', ease: 'none', duration: 1 }, 0)
+        .to(wordRight, { x: '120vw',  ease: 'none', duration: 1 }, 0);
+    })();
+
     /* ── HOVER EFFECTS — desktop only ── */
     if (isMobile) return;
 

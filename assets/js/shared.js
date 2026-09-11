@@ -286,8 +286,9 @@ function initHeader() {
         /* Ẩn ở top, hiện khi đã cuộn xuống — và giữ hiện suốt */
         hdr.classList.toggle('nav-hidden', y <= 60);
       } else {
-        /* Hide header khi scroll xuống */
-        if (scrolledDown) hdr.classList.add('nav-hidden');
+        /* Hide header khi scroll xuống — trừ lúc hero đang ghim cho hiệu ứng tách chữ
+           (scrollY vẫn tăng dù trang chưa thật sự trôi, xem hero-pin-active trong gsap-animations.js) */
+        if (scrolledDown && !document.body.classList.contains('hero-pin-active')) hdr.classList.add('nav-hidden');
 
         /* Show header khi scroll lên */
         if (scrolledUp) hdr.classList.remove('nav-hidden');
@@ -571,13 +572,17 @@ function initParallax() {
 
     /* ── Homepage hero layers ── */
     if (heroBg && sy < vh * 1.8) {
-      ty(heroBg,   sy * 0.45);
-      ty(heroDots, sy * 0.65);
-      if (heroInner) heroInner.style.transform = `translateY(${(sy * -0.08).toFixed(2)}px)`;
-      ty(orb1, sy * 0.28);
-      ty(orb2, sy * -0.22);
-      ty(orb3, sy * 0.18);
-      ty(orb4, sy * 0.35);
+      /* 650px đầu, hero bị ghim (pin) cho hiệu ứng tách chữ "ETHAN ECOM" (xem gsap-animations.js,
+         ScrollTrigger end:'+=650') — lúc đó hero đứng yên trên màn hình dù scrollY vẫn tăng, nên phải
+         trừ khoảng ghim này ra khỏi sy, nếu không lớp ảnh bị đẩy xuống lộ nền tối #0d0b09 phía sau. */
+      const heroSy = Math.max(0, sy - 650);
+      ty(heroBg,   heroSy * 0.45);
+      ty(heroDots, heroSy * 0.65);
+      if (heroInner) heroInner.style.transform = `translateY(${(heroSy * -0.08).toFixed(2)}px)`;
+      ty(orb1, heroSy * 0.28);
+      ty(orb2, heroSy * -0.22);
+      ty(orb3, heroSy * 0.18);
+      ty(orb4, heroSy * 0.35);
     }
 
     /* ── Inner-page hero ── */

@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /_template.html
+Disallow: /hero-parallax-demo.html
 
 Sitemap: https://ethanecom.com/sitemap.xml
